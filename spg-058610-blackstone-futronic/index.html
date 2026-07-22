@@ -139,6 +139,15 @@
   .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
   #price-chart-box { height:460px; width:100%; }
 
+  figure.reducer-figs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 6px; }
+  .rfig { background:var(--note-bg); border:1px solid var(--line); border-radius:14px; padding:12px 12px 14px; }
+  .rfig .imgbox { background:#fff; border:1px solid var(--line); border-radius:10px; height:180px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .rfig .imgbox img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+  .rfig .cap b { display:block; font-size:12.5px; font-weight:700; color:var(--ink); letter-spacing:-0.2px; margin-top:10px; }
+  .rfig .cap span { display:block; font-size:11px; color:var(--ink-faint); line-height:1.5; margin-top:3px; word-break:keep-all; }
+  .rfig-credit { font-size:10px; color:var(--ink-faint); margin:4px 0 2px; line-height:1.5; }
+  @media (max-width:720px){ figure.reducer-figs { grid-template-columns:1fr; } }
+
   footer.report-foot { text-align:center; font-size:11px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
   footer.report-foot a { color:var(--accent); text-decoration:none; }
 
@@ -270,6 +279,21 @@
 
     <h4>3.2.1. 국내 유일의 감속기 전 라인업 양산 능력</h4>
     <p>에스피지는 유성, SH, SR 감속기 3종을 모두 생산할 수 있는 전 세계 유일의 기업임. 일본 경쟁사들이 특정 분야(HDS-SH, Nabtesco-SR)에 편중된 것과 대조적으로, 에스피지는 로봇 제조사가 필요로 하는 모든 종류의 감속기를 일괄 공급할 수 있는 토털 솔루션 역량을 갖춤. 이는 고객사의 설계 편의성을 높이고 조달 리스크를 줄이는 핵심 경쟁력으로 작용함.</p>
+    <figure class="reducer-figs">
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/planetary.gif" alt="유성 감속기 작동 원리 애니메이션" loading="lazy" width="300"></div>
+        <div class="cap"><b>유성(Planetary) 감속기</b><span>여러 기어가 태양기어 주위를 도는 구조 · 높은 강성과 범용성</span></div>
+      </div>
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/harmonic.gif" alt="하모닉(SH·파동) 감속기 작동 원리 애니메이션" loading="lazy" width="300"></div>
+        <div class="cap"><b>하모닉(SH) 감속기</b><span>얇은 플렉스플라인의 탄성 변형 · 초경량·초정밀, 협동·휴머노이드용</span></div>
+      </div>
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/cycloidal.gif" alt="RV(SR·사이클로이드) 감속기 작동 원리 애니메이션" loading="lazy" width="300"></div>
+        <div class="cap"><b>RV(SR) 감속기</b><span>사이클로이드 롤러 구동 · 고강성·고부하, 대형 관절용</span></div>
+      </div>
+    </figure>
+    <div class="rfig-credit">원리 애니메이션 출처: Wikimedia Commons — Planetary Gear Animation (Laserlicht, CC0) · HarmonicDriveAni (Jahobr, CC0) · Cycloidal drive (Petteri Aimonen, Public Domain). 각 유형의 작동 개념을 나타낸 것으로 에스피지 실제 제품과 다를 수 있음.</div>
 
     <h4>3.2.2. 국산화를 통한 가격 및 납기 경쟁력 극대화</h4>
     <p>정밀 감속기 시장에서 에스피지의 최대 강점은 비용 효율성임. 일본산 대비 약 40% 이상의 가격 경쟁력을 확보하고 있으며, 수입 시 최대 1년까지 소요되던 납기를 국내 생산을 통해 1개월 이내로 단축시킴. 이는 로봇 양산을 준비하는 국내외 로봇 기업들에게 유인책이 되고 있으며, 기술 검증(PoC) 이후 본격적인 수주 확대의 기반이 됨.</p>
@@ -420,6 +444,21 @@
 
     <h4>3.2.1. The only maker in Korea mass-producing the full reducer lineup</h4>
     <p>SPG is the only company in the world capable of producing all three reducer types — planetary, SH, and SR. In contrast to Japanese competitors concentrated in one area (HDS in SH, Nabtesco in SR), SPG offers a total-solution capability, supplying every reducer type a robot manufacturer needs at once. This raises customers' design convenience and lowers procurement risk — a core competitive strength.</p>
+    <figure class="reducer-figs">
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/planetary.gif" alt="Planetary gear reducer working-principle animation" loading="lazy" width="300"></div>
+        <div class="cap"><b>Planetary reducer</b><span>Gears orbit a central sun gear · high stiffness, general-purpose</span></div>
+      </div>
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/harmonic.gif" alt="Harmonic (SH / strain-wave) reducer working-principle animation" loading="lazy" width="300"></div>
+        <div class="cap"><b>Harmonic (SH) reducer</b><span>Elastic flexing of a thin flexspline · ultra-light &amp; precise, for cobots/humanoids</span></div>
+      </div>
+      <div class="rfig">
+        <div class="imgbox"><img src="assets/cycloidal.gif" alt="RV (SR / cycloidal) reducer working-principle animation" loading="lazy" width="300"></div>
+        <div class="cap"><b>RV (SR) reducer</b><span>Cycloidal roller drive · high rigidity &amp; load, for large joints</span></div>
+      </div>
+    </figure>
+    <div class="rfig-credit">Principle animations: Wikimedia Commons — Planetary Gear Animation (Laserlicht, CC0) · HarmonicDriveAni (Jahobr, CC0) · Cycloidal drive (Petteri Aimonen, Public Domain). Illustrative of each gear type; actual SPG products may differ.</div>
 
     <h4>3.2.2. Maximizing price &amp; lead-time competitiveness through localization</h4>
     <p>SPG's greatest strength in precision reducers is cost efficiency. It holds a price advantage of roughly 40%+ over Japanese product, and has cut delivery lead times — up to a year for imports — to within one month through domestic production. This is a strong draw for Korean and overseas robot companies preparing for mass production, and the foundation for full-scale order expansion after technical validation (PoC).</p>
