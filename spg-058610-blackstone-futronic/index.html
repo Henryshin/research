@@ -132,6 +132,13 @@
   .filter-note { background:var(--note-bg); color:var(--ink-faint); font-size:11.3px; padding:10px 14px; border-radius:6px; margin:13px 0 0; line-height:1.6; border-left:2px solid var(--line-2); }
   .filter-note b { color:var(--ink-soft); }
 
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:11.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
   footer.report-foot { text-align:center; font-size:11px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
   footer.report-foot a { color:var(--accent); text-decoration:none; }
 
@@ -460,16 +467,24 @@
 
 </article>
 
-<!-- ==================== PRICE CHART (shared, language-aware heading) ==================== -->
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
 <div class="section" id="price-chart">
   <h2><span class="num">₩</span><span class="ct-ko" hidden>에스피지(058610) 주가 차트</span><span class="ct-en" hidden>SPG Co. (058610) Price Chart</span></h2>
-  <div class="sub-h"><span class="ct-ko" hidden>TradingView 인터랙티브 차트 · 기간 변경·줌 가능 · KRX:058610</span><span class="ct-en" hidden>Interactive chart by TradingView · zoom &amp; change timeframe · KRX:058610</span></div>
-  <div id="tv-chart" style="height:480px;border-radius:12px;overflow:hidden"></div>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-07-22 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-07-22</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-07-22 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-07-22 (Yahoo Finance daily). Not real-time; for information only.</span></div>
 </div>
 
 </div>
 
-<script src="https://s3.tradingview.com/tv.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
 <script>
   var TOC = {
     en: [['es1','1 · Overview'],['es2','2 · Ownership'],['es3','3 · Business'],['es4','4 · Financials']],
@@ -501,24 +516,47 @@
     if (!l) { try { l = localStorage.getItem('spg-lang'); } catch (e) {} }
     if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
     setLang(l);
-    try {
-      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      new TradingView.widget({
-        container_id: 'tv-chart',
-        symbol: 'KRX:058610',
-        interval: 'D',
-        range: '12M',
-        autosize: true,
-        theme: dark ? 'dark' : 'light',
-        style: '1',
-        locale: (l === 'ko') ? 'kr' : 'en',
-        hide_side_toolbar: true,
-        allow_symbol_change: false,
-        save_image: false,
-        withdateranges: true
-      });
-    } catch (e) {}
+    initChart();
   })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var last = _data[_data.length-1].time;
+    var from = new Date(last); from.setMonth(from.getMonth()-months);
+    var fromStr = from.toISOString().slice(0,10);
+    _chart.timeScale().setVisibleRange({ from: fromStr, to: last });
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.SPG_OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    _data = window.SPG_OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return '₩' + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    // reference bands: current price + 52w high/low
+    _series.createPriceLine({ price: 66000, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: '66,000 (07-21)' });
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
 </script>
 </body>
 </html>
