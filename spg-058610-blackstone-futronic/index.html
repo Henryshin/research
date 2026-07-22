@@ -10,9 +10,6 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Henry Shin Research">
 <meta name="theme-color" content="#3f4d1e">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
 
@@ -53,7 +50,6 @@
     --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c;
     --note-bg:#f3f4ea; --hl:#eef0e2;
     --nav-bg:rgba(250,250,246,0.88);
-    --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
     --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
   }
   @media (prefers-color-scheme: dark) {
@@ -100,7 +96,7 @@
     background:var(--accent-hero); opacity:0.22; }
   .hero .eyebrow { display:inline-block; font-size:11px; letter-spacing:1.2px; color:#fff; background:var(--brand);
     border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
-  .hero h1 { font-family:var(--serif); font-size:40px; font-weight:400; letter-spacing:-0.3px; line-height:1.12;
+  .hero h1 { font-size:33px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
     margin:0 0 16px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
   .hero .meta { font-size:12.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
   .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
@@ -110,13 +106,13 @@
   .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
   .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
   .kpi-card .label { font-size:10.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
-  .kpi-card .value { font-family:var(--serif); font-size:27px; font-weight:400; color:var(--ink); letter-spacing:0; line-height:1.05; }
-  .kpi-card .value .unit { font-size:12.5px; color:var(--ink-faint); font-weight:400; margin-left:3px; font-family:inherit; }
+  .kpi-card .value { font-size:24px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:12.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
   .kpi-card .sub { font-size:10.5px; color:var(--ink-faint); margin-top:7px; }
 
   .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
-  .section h2 { font-family:var(--serif); font-size:22px; font-weight:400; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
-  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:12px; font-weight:700; flex-shrink:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  .section h2 { font-size:19px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:12px; font-weight:700; flex-shrink:0; }
   .section .sub-h { font-size:12px; color:var(--ink-faint); margin:0 0 18px 36px; }
   .section h3 { font-size:14px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
   .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
@@ -124,10 +120,6 @@
   .section p { font-size:13px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
   .section p b { color:var(--ink); }
   .lang-ko .section p { font-size:13.5px; line-height:1.78; word-break:keep-all; }
-  .lang-ko .hero h1 { font-family:'Pretendard','Malgun Gothic',sans-serif; font-weight:800; font-size:33px; letter-spacing:-0.8px; }
-  .lang-ko .section h2 { font-family:'Pretendard','Malgun Gothic',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.3px; }
-  .lang-ko .kpi-card .value { font-family:'Pretendard','Malgun Gothic',sans-serif; font-weight:800; font-size:24px; letter-spacing:-0.5px; }
-  .lang-ko .kpi-card .value .unit { font-weight:600; }
 
   .tbl-wrap { overflow-x:auto; }
   table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:12.5px; margin:6px 0 8px; }
@@ -468,8 +460,16 @@
 
 </article>
 
+<!-- ==================== PRICE CHART (shared, language-aware heading) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>에스피지(058610) 주가 차트</span><span class="ct-en" hidden>SPG Co. (058610) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>TradingView 인터랙티브 차트 · 기간 변경·줌 가능 · KRX:058610</span><span class="ct-en" hidden>Interactive chart by TradingView · zoom &amp; change timeframe · KRX:058610</span></div>
+  <div id="tv-chart" style="height:480px;border-radius:12px;overflow:hidden"></div>
 </div>
 
+</div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
 <script>
   var TOC = {
     en: [['es1','1 · Overview'],['es2','2 · Ownership'],['es3','3 · Business'],['es4','4 · Financials']],
@@ -484,6 +484,9 @@
     for (var i = 0; i < btns.length; i++) {
       btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
     }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
     var toc = document.getElementById('toc');
     var html = '';
     for (var j = 0; j < TOC[l].length; j++) {
@@ -498,6 +501,23 @@
     if (!l) { try { l = localStorage.getItem('spg-lang'); } catch (e) {} }
     if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
     setLang(l);
+    try {
+      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      new TradingView.widget({
+        container_id: 'tv-chart',
+        symbol: 'KRX:058610',
+        interval: 'D',
+        range: '12M',
+        autosize: true,
+        theme: dark ? 'dark' : 'light',
+        style: '1',
+        locale: (l === 'ko') ? 'kr' : 'en',
+        hide_side_toolbar: true,
+        allow_symbol_change: false,
+        save_image: false,
+        withdateranges: true
+      });
+    } catch (e) {}
   })();
 </script>
 </body>
