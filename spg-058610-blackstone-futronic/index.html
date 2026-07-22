@@ -68,6 +68,7 @@
     font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
     color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
     -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
   }
   [hidden] { display:none !important; }
 
@@ -121,7 +122,7 @@
   .section p b { color:var(--ink); }
   .lang-ko .section p { font-size:13.5px; line-height:1.78; word-break:keep-all; }
 
-  .tbl-wrap { overflow-x:auto; }
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:12.5px; margin:6px 0 8px; }
   table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:11.5px; letter-spacing:-0.2px; white-space:nowrap; }
   table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
@@ -151,16 +152,44 @@
   .rfig .cap b { display:block; font-size:12.5px; font-weight:700; color:var(--ink); letter-spacing:-0.2px; margin-top:10px; }
   .rfig .cap span { display:block; font-size:11px; color:var(--ink-faint); line-height:1.5; margin-top:3px; word-break:keep-all; }
   .rfig-credit { font-size:10px; color:var(--ink-faint); margin:4px 0 2px; line-height:1.5; }
-  @media (max-width:720px){ figure.reducer-figs { grid-template-columns:1fr; } }
-
   footer.report-foot { text-align:center; font-size:11px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
   footer.report-foot a { color:var(--accent); text-decoration:none; }
 
+  /* ---- Tablet & below ---- */
   @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
     .kpi-grid { grid-template-columns:repeat(2,1fr); }
-    .hero h1 { font-size:21px; }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
     .section { padding:20px 18px; }
-    .nav .toc { display:none; }
+    #price-chart-box { height:380px; }
+    figure.reducer-figs { grid-template-columns:1fr 1fr; }
+  }
+
+  /* ---- Phones ---- */
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:13px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:12px; }  /* larger tap targets */
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:20px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:10px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:11.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:20px; }
+    .kpi-card .value .unit { font-size:11px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:17px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .bullet-list li { font-size:13.5px; }   /* readable body on phone */
+    table.tbl { font-size:12px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    figure.reducer-figs { grid-template-columns:1fr; gap:12px; }
+    .rfig .imgbox { height:200px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
   }
 </style>
 </head>
