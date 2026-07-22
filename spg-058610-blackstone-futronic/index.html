@@ -525,10 +525,10 @@
     var btns = document.querySelectorAll('.chart-range button');
     for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
     if(!_chart||!_data||!_data.length) return;
-    var last = _data[_data.length-1].time;
-    var from = new Date(last); from.setMonth(from.getMonth()-months);
-    var fromStr = from.toISOString().slice(0,10);
-    _chart.timeScale().setVisibleRange({ from: fromStr, to: last });
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
   }
   function initChart(){
     if (typeof LightweightCharts === 'undefined' || !window.SPG_OHLC) return;
