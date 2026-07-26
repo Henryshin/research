@@ -10,6 +10,16 @@
 
   gtag('config', 'G-1NSTL7K368');
 </script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -->
+<script>
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById('visit-count');
+      if (el) el.textContent = d.value.toLocaleString();
+    })
+    .catch(function(){});
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Soulbrain (KOSDAQ 357780) Equity Analysis — Memory Process-Materials Localization Leader</title>
