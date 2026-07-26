@@ -10,15 +10,27 @@
 
   gtag('config', 'G-1NSTL7K368');
 </script>
-<!-- Simple visit counter (abacus.jasoncameron.dev) -->
+<!-- Simple visit counter (abacus.jasoncameron.dev) — today = KST calendar day -->
 <script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var el = document.getElementById('visit-count');
+      var el = document.getElementById('visit-count-total');
       if (el) el.textContent = d.value.toLocaleString();
     })
     .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById('visit-count-today');
+      if (el) el.textContent = d.value.toLocaleString();
+    })
+    .catch(function(){});
+})();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +58,29 @@
   * { box-sizing:border-box; }
   body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink); background:var(--bg); line-height:1.55; margin:0; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden; }
-  .container { max-width:820px; margin:0 auto; padding:40px 22px 64px; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:820px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .nav .brand { font-weight:800; font-size:13.5px; color:var(--ink); letter-spacing:-0.2px; white-space:nowrap; }
+  .nav-right { display:flex; align-items:center; gap:10px; margin-left:auto; flex-wrap:wrap; }
+
+  .visit-box { display:flex; align-items:center; background:var(--card); border:1px solid var(--line);
+    border-radius:999px; box-shadow:var(--shadow); }
+  .visit-tile { display:flex; align-items:baseline; gap:5px; padding:6px 12px; }
+  .visit-tile .vlabel { font-size:10px; text-transform:uppercase; letter-spacing:0.4px; color:var(--ink-faint); font-weight:700; }
+  .visit-tile .vvalue { font-size:12.5px; font-weight:800; color:var(--ink); letter-spacing:-0.2px; }
+  .visit-sep { width:1px; height:14px; background:var(--line); }
+
+  .lang-toggle { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:11.5px; font-weight:700;
+    padding:6px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+
+  .container { max-width:820px; margin:0 auto; padding:32px 22px 64px; }
   .hero { background:var(--card); color:var(--ink); border:1px solid var(--line); position:relative; overflow:hidden;
     border-radius:24px; padding:42px 38px 36px; margin-bottom:26px; box-shadow:var(--shadow); }
   .hero::after { content:""; position:absolute; right:-70px; bottom:-110px; width:280px; height:280px; border-radius:48px;
@@ -66,7 +100,11 @@
   footer { text-align:center; font-size:11px; color:var(--ink-faint); padding-top:26px; line-height:1.7; }
 
   @media (max-width:560px) {
-    .container { padding:26px 15px 52px; }
+    .nav-inner { padding:9px 15px; gap:8px; }
+    .nav .brand { font-size:13px; }
+    .visit-tile { padding:5px 9px; }
+    .lang-toggle button { padding:6px 11px; font-size:11px; }
+    .container { padding:20px 15px 52px; }
     .hero { padding:28px 22px 26px; border-radius:18px; }
     .hero h1 { font-size:26px; }
     .hero p { font-size:13px; }
@@ -76,61 +114,132 @@
 </style>
 </head>
 <body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">Henry Shin Research</span>
+    <div class="nav-right">
+      <div class="visit-box" title="Site visits">
+        <div class="visit-tile">
+          <span class="vlabel ct-en">Today</span><span class="vlabel ct-ko" hidden>오늘</span>
+          <span class="vvalue" id="visit-count-today">—</span>
+        </div>
+        <span class="visit-sep"></span>
+        <div class="visit-tile">
+          <span class="vlabel ct-en">Total</span><span class="vlabel ct-ko" hidden>전체</span>
+          <span class="vvalue" id="visit-count-total">—</span>
+        </div>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+        <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
   <div class="hero">
-    <div class="eyebrow">Independent Equity Research</div>
+    <div class="eyebrow ct-en">Independent Equity Research</div>
+    <div class="eyebrow ct-ko" hidden>독립 주식 리서치</div>
     <h1>Henry Shin Research</h1>
-    <p>Independent equity notes on Korean and global stocks — with a focus on the robotics, physical-AI, and industrial component supply chain. For information only; not investment advice.</p>
+    <p class="ct-en">Independent equity notes on Korean and global stocks — with a focus on the robotics, physical-AI, and industrial component supply chain. For information only; not investment advice.</p>
+    <p class="ct-ko" hidden>한국 및 글로벌 주식에 대한 독립 리서치 노트 — 로보틱스, 피지컬 AI, 산업 부품 공급망에 집중합니다. 정보 제공 목적이며 투자 자문이 아닙니다.</p>
   </div>
 
-  <h2 class="sec">Latest notes</h2>
+  <h2 class="sec ct-en">Latest notes</h2>
+  <h2 class="sec ct-ko" hidden>최신 리서치</h2>
 
-  <a class="card" href="./rainbow-robotics-277810-samsung-humanoid/">
+  <a class="card" data-href="./rainbow-robotics-277810-samsung-humanoid/" href="./rainbow-robotics-277810-samsung-humanoid/">
     <span class="tag">KOSDAQ 277810</span>
-    <h3>Rainbow Robotics (277810) Equity Analysis</h3>
-    <p>Samsung Electronics' 35%-owned robot subsidiary — the "joints & body" of Samsung's humanoid value chain: full-stack actuator moat, call-option ownership, and a three-scenario valuation showing the stock overvalued across the board on earnings. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Jul 2026 · Figures updated 2026-07-22 · Humanoid · Physical AI</div>
+    <h3 class="ct-en">Rainbow Robotics (277810) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>레인보우로보틱스(277810) 분석보고서</h3>
+    <p class="ct-en">Samsung Electronics' 35%-owned robot subsidiary — the "joints & body" of Samsung's humanoid value chain: full-stack actuator moat, call-option ownership, and a three-scenario valuation showing the stock overvalued across the board on earnings. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>삼성전자 지분 35%의 로봇 자회사 — 삼성 휴머노이드 밸류체인의 '관절과 몸통' 담당. 풀스택 액추에이터 경쟁우위, 콜옵션 지배구조, 3-시나리오 밸류에이션 결과 실적 기준 전 구간 고평가. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Jul 2026 · Figures updated 2026-07-22 · Humanoid · Physical AI</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 7월 · 수치 업데이트 2026-07-22 · 휴머노이드 · 피지컬 AI</div>
   </a>
 
-  <a class="card" href="./tck-064760-sic-ring/">
+  <a class="card" data-href="./tck-064760-sic-ring/" href="./tck-064760-sic-ring/">
     <span class="tag">KOSDAQ 064760</span>
-    <h3>TCK / Tokai Carbon Korea (064760) Equity Analysis</h3>
-    <p>The global 80–90% monopolist in CVD solid-SiC etch focus rings: before/after-market split, weakening pricing power, and a conservative three-scenario model. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Jun 2026 · Figures updated 2026-07-22 · Semiconductor consumables · SiC</div>
+    <h3 class="ct-en">TCK / Tokai Carbon Korea (064760) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>티씨케이(064760) 분석보고서</h3>
+    <p class="ct-en">The global 80–90% monopolist in CVD solid-SiC etch focus rings: before/after-market split, weakening pricing power, and a conservative three-scenario model. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>CVD 고체-SiC 식각 포커스링 글로벌 80~90% 독점기업: 신품/재생 시장 구조, 약화되는 가격 결정력, 보수적 3-시나리오 모델. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Jun 2026 · Figures updated 2026-07-22 · Semiconductor consumables · SiC</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 6월 · 수치 업데이트 2026-07-22 · 반도체 소모품 · SiC</div>
   </a>
 
-  <a class="card" href="./kioxia-285a-nand-memory/">
+  <a class="card" data-href="./kioxia-285a-nand-memory/" href="./kioxia-285a-nand-memory/">
     <span class="tag">TSE Prime 285A</span>
-    <h3>Kioxia Holdings (285A) Equity Analysis</h3>
-    <p>The world's #3 NAND pure-play at the AI memory supercycle peak: 5-firm oligopoly, NAND-only earnings volatility, and a top-down TAM×share valuation. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Jun 2026 · Figures updated 2026-07-22 · NAND flash · SSD · AI memory</div>
+    <h3 class="ct-en">Kioxia Holdings (285A) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>키옥시아(285A) 분석보고서</h3>
+    <p class="ct-en">The world's #3 NAND pure-play at the AI memory supercycle peak: 5-firm oligopoly, NAND-only earnings volatility, and a top-down TAM×share valuation. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>AI 메모리 슈퍼사이클 정점의 세계 3위 NAND 순수 플레이: 5개사 과점 구조, NAND 단일 사업의 실적 변동성, 톱다운 TAM×점유율 밸류에이션. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Jun 2026 · Figures updated 2026-07-22 · NAND flash · SSD · AI memory</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 6월 · 수치 업데이트 2026-07-22 · NAND 플래시 · SSD · AI 메모리</div>
   </a>
 
-  <a class="card" href="./soulbrain-357780-semiconductor-materials/">
+  <a class="card" data-href="./soulbrain-357780-semiconductor-materials/" href="./soulbrain-357780-semiconductor-materials/">
     <span class="tag">KOSDAQ 357780</span>
-    <h3>Soulbrain (357780) Equity Analysis</h3>
-    <p>Korea's de-facto No. 1 in semiconductor etchants, CMP slurry, and precursors, ~83% semiconductor: top-down SAM×share valuation after the June rally reversed. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Jun 2026 · Figures updated 2026-07-22 · Semiconductor materials · Memory cycle</div>
+    <h3 class="ct-en">Soulbrain (357780) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>솔브레인(357780) 분석보고서</h3>
+    <p class="ct-en">Korea's de-facto No. 1 in semiconductor etchants, CMP slurry, and precursors, ~83% semiconductor: top-down SAM×share valuation after the June rally reversed. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>한국 반도체 식각액·CMP 슬러리·전구체 사실상 1위, 반도체 비중 약 83%: 6월 랠리 반락 이후 톱다운 SAM×점유율 밸류에이션. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Jun 2026 · Figures updated 2026-07-22 · Semiconductor materials · Memory cycle</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 6월 · 수치 업데이트 2026-07-22 · 반도체 소재 · 메모리 사이클</div>
   </a>
 
-  <a class="card" href="./dongjin-semichem-005290-euv-photoresist/">
+  <a class="card" data-href="./dongjin-semichem-005290-euv-photoresist/" href="./dongjin-semichem-005290-euv-photoresist/">
     <span class="tag">KOSDAQ 005290</span>
-    <h3>Dongjin Semichem (005290) Equity Analysis</h3>
-    <p>Korea's only mass-producer of semiconductor/display photoresist, with an early EUV-photoresist option: bottom-up scenario model on the core cycle plus EUV/HBM CMP upside. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Jun 2026 · Figures updated 2026-07-22 · Photoresist · EUV · HBM CMP</div>
+    <h3 class="ct-en">Dongjin Semichem (005290) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>동진쎄미켐(005290) 분석보고서</h3>
+    <p class="ct-en">Korea's only mass-producer of semiconductor/display photoresist, with an early EUV-photoresist option: bottom-up scenario model on the core cycle plus EUV/HBM CMP upside. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>한국 유일 반도체·디스플레이 포토레지스트 양산업체, EUV 포토레지스트 초기 옵션 보유: 코어 사이클 바텀업 시나리오 모델 + EUV/HBM CMP 업사이드. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Jun 2026 · Figures updated 2026-07-22 · Photoresist · EUV · HBM CMP</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 6월 · 수치 업데이트 2026-07-22 · 포토레지스트 · EUV · HBM CMP</div>
   </a>
 
-  <a class="card" href="./spg-058610-blackstone-futronic/">
+  <a class="card" data-href="./spg-058610-blackstone-futronic/" href="./spg-058610-blackstone-futronic/">
     <span class="tag">KOSDAQ 058610</span>
-    <h3>SPG Co. (058610) Equity Analysis</h3>
-    <p>Korea's small geared-motor specialist and the only maker mass-producing the full robot precision-reducer lineup (planetary, SH, SR): company overview, ownership, business analysis, and financial projection. Figures updated Jul 22, 2026.</p>
-    <div class="meta">Original Feb 2026 · Figures updated 2026-07-22 · Robotics reducers · Physical AI</div>
+    <h3 class="ct-en">SPG Co. (058610) Equity Analysis</h3>
+    <h3 class="ct-ko" hidden>에스피지(058610) 분석보고서</h3>
+    <p class="ct-en">Korea's small geared-motor specialist and the only maker mass-producing the full robot precision-reducer lineup (planetary, SH, SR): company overview, ownership, business analysis, and financial projection. Figures updated Jul 22, 2026.</p>
+    <p class="ct-ko" hidden>한국 소형 기어드모터 전문기업이자 유일하게 로봇 정밀감속기 풀라인업(유성·SH·SR)을 양산: 기업 개요, 지배구조, 사업 분석, 재무 추정. 수치 업데이트 2026-07-22.</p>
+    <div class="meta ct-en">Original Feb 2026 · Figures updated 2026-07-22 · Robotics reducers · Physical AI</div>
+    <div class="meta ct-ko" hidden>최초작성 2026년 2월 · 수치 업데이트 2026-07-22 · 로봇 감속기 · 피지컬 AI</div>
   </a>
 
   <footer>
-    © 2026 Henry Shin Research · For information only, not investment advice.
-    <br>Site visits: <span id="visit-count">—</span>
+    <span class="ct-en">© 2026 Henry Shin Research · For information only, not investment advice.</span>
+    <span class="ct-ko" hidden>© 2026 Henry Shin Research · 정보 제공 목적이며 투자 자문이 아닙니다.</span>
   </footer>
 </div>
+
+<script>
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var cards = document.querySelectorAll('a.card[data-href]');
+    for (var c = 0; c < cards.length; c++) {
+      cards[c].setAttribute('href', cards[c].getAttribute('data-href') + '?lang=' + l);
+    }
+    try { localStorage.setItem('home-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('home-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+  })();
+</script>
 </body>
 </html>
