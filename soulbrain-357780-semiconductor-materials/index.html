@@ -10,15 +10,27 @@
 
   gtag('config', 'G-1NSTL7K368');
 </script>
-<!-- Simple visit counter (abacus.jasoncameron.dev) -->
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day -->
 <script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var el = document.getElementById('visit-count');
+      var el = document.getElementById('visit-count-total');
       if (el) el.textContent = d.value.toLocaleString();
     })
     .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById('visit-count-today');
+      if (el) el.textContent = d.value.toLocaleString();
+    })
+    .catch(function(){});
+})();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
