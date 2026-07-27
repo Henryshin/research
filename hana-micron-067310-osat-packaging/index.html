@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val.toLocaleString();
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hana Micron (KOSDAQ 067310) Equity Analysis — Korea's #1 OSAT, Q1 2026 Turnaround</title>
+<meta name="description" content="Equity analysis of Hana Micron (067310), Korea's #1 semiconductor back-end outsourcing (OSAT) provider: ownership, HBM/AI benefit pathways, customer concentration, and a three-scenario FY28E bottom-up valuation. Korean/English. Figures updated July 24, 2026.">
+<meta name="keywords" content="Hana Micron, 067310, 하나마이크론, KOSDAQ, OSAT, semiconductor packaging, back-end test, Hana Materials, 하나머티리얼즈, HBM, DRAM, NAND, Samsung Electronics, SK hynix, ASE, Amkor, Korean semiconductor stocks">
+<link rel="canonical" href="https://henryshin.github.io/research/hana-micron-067310-osat-packaging/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/hana-micron-067310-osat-packaging/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/hana-micron-067310-osat-packaging/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/hana-micron-067310-osat-packaging/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hana Micron (KOSDAQ 067310) Equity Analysis — Korea's #1 OSAT, Q1 2026 Turnaround">
+<meta property="og:description" content="Ownership, HBM/AI benefit pathways, customer concentration, and a three-scenario FY28E bottom-up valuation for Hana Micron (067310), Korea's #1 OSAT. Korean/English. Figures updated Jul 24, 2026.">
+<meta property="og:url" content="https://henryshin.github.io/research/hana-micron-067310-osat-packaging/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hana Micron (KOSDAQ 067310) Equity Analysis">
+<meta name="twitter:description" content="Korea's #1 OSAT at a Q1 2026 turnaround: HBM/AI benefit pathways, customer concentration, three-scenario FY28E valuation. KO/EN. Figures updated Jul 24, 2026.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "Hana Micron (KOSDAQ 067310) Equity Analysis — Korea's #1 OSAT, Q1 2026 Turnaround",
+  "description": "Equity analysis of Hana Micron (067310): ownership, HBM/AI benefit pathways, customer concentration, and a three-scenario FY28E bottom-up valuation. Available in Korean and English. Figures updated July 24, 2026.",
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-07-24",
+  "inLanguage": ["en", "ko"],
+  "author": { "@type": "Person", "name": "Henry Shin" },
+  "publisher": { "@type": "Organization", "name": "Henry Shin Research" },
+  "about": [
+    { "@type": "Corporation", "name": "Hana Micron Inc.", "tickerSymbol": "KRX:067310" }
+  ],
+  "keywords": "Hana Micron 067310, 하나마이크론, OSAT, semiconductor packaging, back-end test, Hana Materials, HBM, memory outsourcing",
+  "mainEntityOfPage": "https://henryshin.github.io/research/hana-micron-067310-osat-packaging/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:13.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:11.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:11.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:11px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:33px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:13px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:12.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:10.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:24px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:12.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:10.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:19px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:12px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:12px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:14px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:12.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:13px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:13px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:13.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:12.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:11.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { background:var(--note-bg); color:var(--ink-faint); font-size:11.3px; padding:10px 14px; border-radius:6px; margin:13px 0 0; line-height:1.6; border-left:2px solid var(--line-2); }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:11.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:11px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:11px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:11px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:21px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:13px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:12px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:20px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:10px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:11.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:20px; }
+    .kpi-card .value .unit { font-size:11px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:17px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:13.5px; }
+    table.tbl { font-size:12px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSDAQ 067310</div>
+    <h1>하나마이크론(067310) 분석보고서</h1>
+    <p class="lede">국내 OSAT 1위, Q1 2026 턴어라운드 확인 · KOSDAQ 반도체 후공정 패키징·테스트(OSAT) · 현재가 33,200원 · 시총 약 2.2조원 (2026-07-24)</p>
+    <div class="meta">
+      <span>최초작성 2026-06-25 (v7)</span>
+      <span>수치 업데이트 2026-07-24 (기준주가 33,200원, 07-24 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">현재가</div>
+      <div class="value">33,200<span class="unit">원</span></div>
+      <div class="sub">52주 10,640 ~ 58,500원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">시가총액</div>
+      <div class="value">2조 2,038<span class="unit">억원</span></div>
+      <div class="sub">발행주식수 6,638만 주</div>
+    </div>
+    <div class="kpi-card warn">
+      <div class="label">트레일링 PER</div>
+      <div class="value">57.8<span class="unit">배</span></div>
+      <div class="sub">FY25 지배주주순이익 381억 기준</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Bull TP (FY28E)</div>
+      <div class="value">45,500<span class="unit">원</span></div>
+      <div class="sub">현재가 대비 +37.0%</div>
+    </div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>회사 개요</h2>
+    <div class="sub-h">사업 본질 · 연결 구조 · 실적 개요</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>내용</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">종목/코드</td><td>하나마이크론 / 067310</td><td class="rowlab">시가총액</td><td>약 2.2조원 (33,200원 기준)</td></tr>
+        <tr><td class="rowlab">설립/상장</td><td>2001년 / 2005년</td><td class="rowlab">발행주식수</td><td>66,378,151주 (2025.12.31)</td></tr>
+        <tr><td class="rowlab">상장시장</td><td>KOSDAQ (반도체 후공정)</td><td class="rowlab">결산월</td><td>12월</td></tr>
+        <tr><td class="rowlab">주력 사업</td><td colspan="3">메모리 패키징·테스트 OSAT + 반도체 소재(하나머티리얼즈)</td></tr>
+        <tr><td class="rowlab">주요 고객</td><td>삼성전자·SK하이닉스</td><td class="rowlab">해외 거점</td><td>브라질·베트남 공장</td></tr>
+        <tr><td class="rowlab">핵심 지위</td><td>국내 OSAT 1위·글로벌 약 11위</td><td class="rowlab">대표이사</td><td>최창호</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>하나마이크론은 반도체 후공정 외주(OSAT, Outsourced Semiconductor Assembly and Test) 전문기업으로, 메모리 칩의 패키징(조립)·테스트를 삼성전자·SK하이닉스로부터 위탁받아 수행함.</p>
+    <p>자회사 하나머티리얼즈(반도체 전공정용 Si·SiC 부품)를 연결로 보유해 소재~후공정 수직 계열 구도를 갖추고 있으며, 브라질·베트남에 해외 생산법인을 두고 현지 공급과 증설을 병행하는 글로벌 생산 체제를 운영함.</p>
+    <p>FY25 연결 매출 1조5,344억원·영업이익 1,277억원을 기록했으며, Q1 2026에 매출 5,076억원(+64% YoY)·영업이익 720억원(+514% YoY)으로 OSAT 업황 턴어라운드가 실적으로 확인됨.</p>
+  </div>
+
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>지배구조</h2>
+    <div class="sub-h">최대주주 · 순환출자 · 유동주식비율</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>내용</th><th class="num">지분율</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">최대주주 및 특수관계인 합계</td><td>최창호 외 특수관계인</td><td class="num">26.35%</td></tr>
+        <tr><td class="rowlab">　최창호 (최대주주)</td><td>10,071,667주</td><td class="num">15.20%</td></tr>
+        <tr><td class="rowlab">　하나머티리얼즈㈜ (자회사)</td><td>6,482,350주</td><td class="num">9.78%</td></tr>
+        <tr><td class="rowlab">　특수관계인</td><td>909,712주</td><td class="num">1.37%</td></tr>
+        <tr><td class="rowlab">5% 이상 주주</td><td>해당 없음</td><td class="num">—</td></tr>
+        <tr><td class="rowlab">자기주식</td><td>없음</td><td class="num">0.00%</td></tr>
+        <tr><td class="rowlab">기타 소액주주 등</td><td>48,914,422주</td><td class="num">73.65%</td></tr>
+        <tr><td class="rowlab">유동주식비율</td><td>최대주주+특수관계인(최창호·특관) 제외 기준</td><td class="num">83.43%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">출처: DART 사업보고서 (2025.12), 주식소유현황. 기준일 2025년 12월 31일.</div>
+    <p>창업주 최창호 회장이 15.20%를 보유한 최대주주이며, 자회사인 하나머티리얼즈㈜가 모회사 주식 9.78%를 보유하는 순환출자 구조임. 하나머티리얼즈를 포함한 최대주주 및 특수관계인 합산 지분은 26.35%로, 경영권은 안정적임.</p>
+    <p>5% 이상 외부 주주는 없으며, 자기주식도 보유하지 않음. 유동주식비율은 최창호·특수관계인(16.57%)만 제외하면 83.43%, 하나머티리얼즈 9.78%를 추가 제외하면 73.65% 수준임. 하나머티리얼즈의 모회사 지분 보유는 순환출자에 해당하나 경영권에 영향이 없으며 시장 오버행 요인은 미미함.</p>
+  </div>
+
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>산업 분석</h2>
+    <div class="sub-h">3.1 OSAT 구조 · 3.2 밸류체인 · 3.3 HBM·AI 수혜 · 3.4 전방 수요</div>
+    <p>OSAT 작동 구조(기초) → 밸류체인 위치(시장) → HBM·AI 수혜 경로(핵심 쟁점) → 전방 수요 동인 순으로 살핌.</p>
+
+    <h3><span class="no">3.1.</span>OSAT — 반도체 후공정 외주의 구조</h3>
+    <p>반도체는 전공정(웨이퍼 위에 회로를 만드는 공정)과 후공정(완성된 웨이퍼를 칩 단위로 자르고 포장·검사하는 공정)으로 나뉨. 후공정은 패키징(칩 보호·외부 연결 조립)과 테스트(불량 선별)로 구성되며, OSAT은 이를 외주받아 수행하는 사업임.</p>
+    <p>전공정이 '웨이퍼를 빚는 단계'라면 후공정은 '완성된 칩을 포장하고 검수하는 단계'임. 메모리사(삼성·SK하이닉스)가 전공정(웨이퍼)에 집중하고 후공정 물량을 외주로 돌릴수록 OSAT 매출이 늘어남.</p>
+    <p>패키징은 와이어본딩 같은 전통 방식부터 플립칩·범프·SiP(시스템인패키지)·2.5D/3D 적층 등 첨단 방식까지 난이도가 다양함. 첨단 패키징일수록 물량당 매출(P)이 높아져 OSAT 수익성에 유리하나, 가장 고난도인 HBM 적층은 메모리사가 직접 내재화하는 비중이 높음.</p>
+
+    <h3><span class="no">3.2.</span>밸류체인 위치</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>단계</th><th>플레이어</th><th>하나 위치</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">칩 제조 (고객)</td><td>삼성전자·SK하이닉스</td><td>직접 고객 — 후공정 위탁</td></tr>
+        <tr class="hl"><td class="rowlab">후공정 외주 (OSAT)</td><td>ASE·Amkor·JCET·하나</td><td>국내 1위, 글로벌 약 11위</td></tr>
+        <tr><td class="rowlab">소재 (자회사)</td><td>하나머티리얼즈</td><td>Si/SiC 부품 — 연결 편입</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>매출이 메모리사의 후공정 외주 물량에 연동됨. 하나마이크론은 메모리사와 외주 OSAT 사이의 관문에 위치해 외주화 비율이 높아질수록 직접 수혜를 봄. 다만 HBM 같은 고난도 후공정은 IDM이 직접 수행하는 비중이 높아, 하나의 직접 수혜는 주로 범용 D램·낸드 외주 확대에서 나옴.</p>
+
+    <h3><span class="no">3.3.</span>HBM·AI 수혜 경로</h3>
+    <p>수혜 등급: ◎ 구조적 직접 / ○ 간접·일부 직접 / × 전용 아님</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>수혜 경로</th><th>직접성</th><th>설명</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">HBM 핵심 적층 (TC본딩)</td><td>× (전용 아님)</td><td>HBM 적층은 고객 내재화·한미반도체 TC본더 영역. 하나의 직접 몫 작음</td></tr>
+        <tr><td class="rowlab">HBM·첨단 패키징 후공정 일부</td><td>○ (일부 직접)</td><td>AI 수요 확대로 첨단 패키징 후공정 물량 일부를 OSAT가 수탁. 부분 수혜</td></tr>
+        <tr class="hl"><td class="rowlab">범용 D램·낸드 외주 확대</td><td>◎ (구조적 직접)</td><td>IDM이 HBM에 capa 집중 → 범용 후공정이 OSAT로 외주화. 동사 핵심 동인</td></tr>
+        <tr><td class="rowlab">하나머티리얼즈 전공정 소재</td><td>○ (간접)</td><td>메모리 capex 전반(HBM 포함)에 연동되는 소재 수요. HBM 전용 아님</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><b>HBM 직접수혜 종합:</b> 후공정 일부 직접(○) — 동사의 실질 동인은 'IDM의 HBM 집중 → 범용 메모리 후공정 외주 확대'(◎)임. Q1 2026 OSAT 매출 +64%·OP +1,578%는 이 경로가 현실화된 증거임.</p>
+    <p>Q1 2026 실적이 이 수혜 경로를 실증함. 반도체 제조(OSAT) 부문이 전년 동기 대비 +64% 성장하며 영업이익이 1,578% 급증했고, OPM이 역사적 6~8%대에서 12.2%로 도약했음. HBM 집중에 따른 범용 메모리 외주 확대와 베트남 신규 capa 가동률 정상화가 동시에 작용한 결과임.</p>
+
+    <h3><span class="no">3.4.</span>전방 수요 동인</h3>
+    <p>OSAT 매출의 1차 동인은 고객(삼성·SK하이닉스)의 메모리 생산량과 후공정 외주 비율임. AI 수요로 메모리사가 HBM·고부가 제품에 전공정 capa를 집중하면, 상대적으로 범용 D램·낸드의 후공정이 OSAT로 외주화되어 하나마이크론 물량이 늘어나는 구조임.</p>
+    <p>2차 동인은 하나마이크론 자체 증설(베트남 라인 가동)임. 신규 capa가 가동률을 끌어올려야 외주 물량 증가가 매출로 실현됨. 증설은 차입을 동반해 가동 초기에는 감가상각·금융비용이 이익률을 눌렀으며, Q1 2026에서 가동률 정상화 레버리지가 본격 발현 중임.</p>
+  </div>
+
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>경쟁 구도</h2>
+    <div class="sub-h">4.1 글로벌 탑티어 대비 포지션 · 4.2 진입장벽·해자 평가</div>
+
+    <h3><span class="no">4.1.</span>글로벌 탑티어 vs 동사 포지션</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>글로벌 탑티어</th><th>동사 포지션</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">글로벌 1위</td><td>ASE (대만) — 점유 약 30%+</td><td>국내 1위·글로벌 약 11위, 점유 한 자릿수 이하</td></tr>
+        <tr><td class="rowlab">상위 경쟁권</td><td>Amkor (미국)·JCET (중국)·PTI (대만)</td><td>상위 3~4사 대비 규모·고객·기술 격차 존재</td></tr>
+        <tr><td class="rowlab">기술 위상</td><td>탑티어는 2.5D/3D·CoWoS급 첨단 패키징 주도</td><td>범용 메모리 패키징·테스트 중심, 첨단은 추격 단계</td></tr>
+        <tr><td class="rowlab">가격결정력</td><td>글로벌 경쟁력·가격결정력 보유</td><td>거대 고객 대비 단가 협상력 약 — 외주 단가 압력 상시</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>글로벌 OSAT 1위 ASE 점유 30%+. 한국 전체 점유 약 4.3%. 하나마이크론은 그 안에서 국내 1위·글로벌 약 11위 OSAT. 정확 MS는 비공개.(출처: 디일렉 글로벌 OSAT 순위)</p>
+    <p>하나마이크론의 투자 매력은 '해자'보다 '범용 외주 확대 사이클의 베타'로 보는 것이 합리적임. 국내 메모리사와의 장기 외주 관계가 안정적 물량의 원천이나, 동시에 고객집중·가격결정력 약화의 원인이기도 함.</p>
+
+    <h3><span class="no">4.2.</span>진입장벽·해자 평가</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>평가 항목</th><th>수준</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">고객 관계 해자</td><td>중</td><td>삼성·SK 장기 외주 관계·품질 신뢰. 단 고객집중 리스크와 동전 양면</td></tr>
+        <tr><td class="rowlab">기술 해자 (범용)</td><td>중</td><td>패키징·테스트 턴키 역량. 다수 OSAT 경쟁으로 차별성 제한</td></tr>
+        <tr><td class="rowlab">기술 해자 (첨단)</td><td>하~중</td><td>2.5D/3D 등 첨단 패키징은 탑티어 대비 추격 단계</td></tr>
+        <tr><td class="rowlab">가격결정력</td><td>하</td><td>거대 고객 대비 단가 협상력 약, 외주 단가 압력 상시</td></tr>
+        <tr><td class="rowlab">규모의 경제</td><td>하~중</td><td>글로벌 탑티어 대비 capa·자본력 열위, 증설은 차입 의존</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>사업 모델</h2>
+    <div class="sub-h">5.1 매출 구조 · 5.2 고객집중도</div>
+
+    <h3><span class="no">5.1.</span>매출 구조</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>부문</th><th class="num">FY25 매출</th><th class="num">FY25 OPM</th><th>특성</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">반도체 제조 (OSAT)</td><td class="num">12,609억</td><td class="num">6.2%</td><td>메모리 패키징·테스트 외주. 고객 외주 정책·가동률 연동</td></tr>
+        <tr><td class="rowlab">반도체 재료 (하나머티리얼즈)</td><td class="num">2,729억</td><td class="num">18.5%</td><td>Si·SiC 부품. 전공정 capex 연동. 소수주주 지분 존재</td></tr>
+        <tr><td class="rowlab">기타 (신기술투자)</td><td class="num">6억</td><td class="num">적자</td><td>재무적 투자 목적 소형 자회사</td></tr>
+        <tr class="hl"><td class="rowlab">연결 합산</td><td class="num">15,344억</td><td class="num">8.3%</td><td>내부거래 제거 후</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">출처: DART 사업보고서 (2025.12), 사업부문별 영업실적. 하나마이크론㈜ 별도 기준 OSAT 매출 및 하나머티리얼즈 공시 매출 합산.</div>
+    <p>OSAT 매출은 '처리 물량(Q) × 물량당 매출(P)'로 분해되며, Q는 고객 외주 비율과 동사 처리점유에, P는 패키징 믹스(첨단화 정도)에 좌우됨. 재료부문은 독립적 이익 동인(OPM 18.5%)을 보유하나 소수주주(하나머티리얼즈 비지배주주) 지분이 연결 지배주주 순이익 전환율을 낮추는 구조적 요인임.</p>
+
+    <h3><span class="no">5.2.</span>고객집중도</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>고객</th><th>노출도</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">삼성전자</td><td>주요</td><td>메모리 패키징·테스트 최대 위탁처</td></tr>
+        <tr><td class="rowlab">SK하이닉스</td><td>주요</td><td>범용 메모리 후공정 위탁</td></tr>
+        <tr><td class="rowlab">기타·해외</td><td>보조</td><td>브라질·베트남 법인 통한 현지 공급</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>삼성·SK 양대 메모리사 의존도가 높으며, 양사의 후공정 외주 정책 변화가 매출에 직접 영향을 미침. 단가 협상력은 거대 고객사 대비 약한 편으로, 사업 모델은 '거대 고객의 외주 물량을 수탁해 capa로 처리하는 베타형 구조'임.</p>
+  </div>
+
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>재무 분석</h2>
+    <div class="sub-h">FY21~FY25 추이 · 6.1 Q1 2026 턴어라운드</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액</td><td class="num">6,695</td><td class="num">8,944</td><td class="num">9,680</td><td class="num">12,507</td><td class="num">15,344</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">+34%</td><td class="num">+8%</td><td class="num">+29%</td><td class="num">+23%</td></tr>
+        <tr><td class="rowlab">영업이익</td><td class="num">1,049</td><td class="num">1,035</td><td class="num">579</td><td class="num">1,068</td><td class="num">1,277</td></tr>
+        <tr><td class="rowlab">영업이익률</td><td class="num">15.7%</td><td class="num">11.6%</td><td class="num">6.0%</td><td class="num">8.5%</td><td class="num">8.3%</td></tr>
+        <tr><td class="rowlab">법인세차감전이익</td><td class="num">913</td><td class="num">906</td><td class="num">139</td><td class="num">△20</td><td class="num">800</td></tr>
+        <tr><td class="rowlab">연결 당기순이익</td><td class="num">671</td><td class="num">582</td><td class="num">9.6</td><td class="num">△111</td><td class="num">655</td></tr>
+        <tr class="hl"><td class="rowlab">지배주주순이익</td><td class="num">257</td><td class="num">28</td><td class="num">△135</td><td class="num">△238</td><td class="num">381</td></tr>
+        <tr><td class="rowlab">EPS (원, 지배주주)</td><td class="num">687</td><td class="num">66</td><td class="num">△313</td><td class="num">△423</td><td class="num">637</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">출처: DART 연결감사보고서 각 연도 (2021·2022: 사업보고서 2022.12, 2023: 사업보고서 2023.12, 2024·2025: 사업보고서 2025.12). 단위 억원. 지배주주순이익·EPS는 공시 실적값.</div>
+    <p><b>성장성:</b> 매출은 FY21 6,695억에서 FY25 1조5,344억으로 4년간 2.3배 성장함. 메모리 외주 확대와 베트남 증설이 외형을 키웠음.</p>
+    <p><b>수익성 사이클:</b> 영업이익률은 FY21 15.7%(슈퍼사이클)에서 FY23 6.0%(업황 둔화)까지 하락했다가 FY25 8.3%로 회복함. 가동률·믹스에 따라 OPM 변동성이 매우 큰 사업 구조임.</p>
+    <p><b>순이익 전환율 구조:</b> 지배주주순이익이 영업이익 대비 크게 낮은 이유는 두 가지임. ①이자비용: FY25 금융비용 880억원(이자비용 653억 포함)으로 영업이익의 약 절반을 금융비용이 잠식. ②비지배지분: 하나머티리얼즈 소수주주 지분으로 연결순이익의 상당 부분이 비지배주주에게 귀속됨. FY25 기준 영업이익→지배주주순이익 전환율은 29.8%에 불과함.</p>
+    <p>FY22·FY24는 지배주주순이익이 각각 28억·△238억으로 영업이익과 극단적으로 괴리됨. FY22는 전환율 2.7%로 영업이익 1,035억에도 지배주주 몫이 28억에 그쳤으며, FY24는 금융비용·비지배지분·업황 부진이 겹쳐 적자를 기록함.</p>
+
+    <h3><span class="no">6.1.</span>Q1 2026 실적 — 턴어라운드 확인</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">Q1 2026</th><th class="num">Q1 2025</th><th class="num">YoY</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">연결 매출</td><td class="num">5,076</td><td class="num">3,117</td><td class="num">+63%</td></tr>
+        <tr><td class="rowlab">영업이익</td><td class="num">720</td><td class="num">117</td><td class="num">+514%</td></tr>
+        <tr><td class="rowlab">영업이익률</td><td class="num">14.2%</td><td class="num">3.8%</td><td class="num">+10.4%p</td></tr>
+        <tr><td class="rowlab">연결 당기순이익</td><td class="num">728</td><td class="num">5.7</td><td class="num">흑자전환</td></tr>
+        <tr class="hl"><td class="rowlab">지배주주순이익</td><td class="num">610</td><td class="num">△35</td><td class="num">흑자전환</td></tr>
+        <tr><td class="rowlab">EPS (원)</td><td class="num">1,019</td><td class="num">△62</td><td class="num">흑자전환</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>부문</th><th class="num">Q1 2026 매출</th><th class="num">Q1 2026 OPM</th><th>YoY (매출/OP)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">반도체 제조 (OSAT)</td><td class="num">4,143억</td><td class="num">12.2%</td><td>+64% / OP +1,578%</td></tr>
+        <tr><td class="rowlab">반도체 재료 (하나머티리얼즈)</td><td class="num">925억</td><td class="num">22.4%</td><td>+59% / OP +138%</td></tr>
+        <tr><td class="rowlab">기타</td><td class="num">9억</td><td class="num">흑자</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">출처: DART 분기보고서 (2026.03), 제출일 2026-05-14. 단위 억원.</div>
+    <p>Q1 2026 영업이익 720억은 FY25 전체(1,277억)의 56%에 달하는 분기 실적임. OSAT부문 OPM이 역사적 6~8%대에서 12.2%로 도약한 것은 베트남 증설 가동률 정상화와 메모리 외주 물량 급증이 동시에 작용한 결과임.</p>
+    <p>단, Q1 2026 지배주주순이익 610억은 영업이익 720억 대비 전환율 84.7%로 역사적 평균(30%대)을 크게 상회함. 이는 기타영업외수익 371억(외화 관련·기타 일시 항목 추정)이 분기 내에 발생한 영향이 크므로, 정상화된 분기 순이익 전환율은 40~50% 수준으로 해석하는 것이 적절함.</p>
+  </div>
+
+  <div class="section" id="ks7">
+    <h2><span class="num">7</span>밸류에이션</h2>
+    <div class="sub-h">7.1 적용 PER · 7.2 시나리오(FY28E) · 7.3 서사 · 7.4 리스크</div>
+    <p>반도체 제조(OSAT)와 반도체 재료(하나머티리얼즈) 부문을 OPM 기준 분리 추정한 뒤 합산하는 Bottom-up 구조로 FY28E 시나리오를 산정함. 지배순이익 전환율은 FY25 실적 기반 35%(이자·NCI 종합 반영), PER은 OSAT peer 수준 20배를 3 시나리오 공통 적용함.</p>
+
+    <h3><span class="no">7.1.</span>적용 PER</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>글로벌 peer</th><th>사업 영역</th><th class="num">Forward PER</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">ASE Group (대만)</td><td>글로벌 OSAT 1위</td><td class="num">약 15배</td><td>OSAT 표준 멀티플</td></tr>
+        <tr><td class="rowlab">Amkor Technology (미국)</td><td>글로벌 OSAT 2위</td><td class="num">약 15배</td><td>OSAT 표준 멀티플</td></tr>
+        <tr><td class="rowlab">Peer 평균</td><td>—</td><td class="num">15</td><td>—</td></tr>
+        <tr class="hl"><td class="rowlab">너프 적용 사유 및 적용 PER</td><td>국내 추격자 + 고객집중 + 낮은 가격결정력 → peer 평균 +5배 성장 프리미엄 부여</td><td class="num">20</td><td>3 시나리오 동일</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>하나마이크론은 글로벌 탑티어 대비 규모·기술·M/S 열위이나, 국내 OSAT 1위·삼성·SK 장기 외주 관계 및 성장 국면을 감안해 peer 평균 15배 대비 +5배 성장 프리미엄을 부여. 3 시나리오 모두 동일 PER 20배 적용.</p>
+
+    <h3><span class="no">7.2.</span>시나리오 분석 (FY28E, 부문별 Bottom-up)</h3>
+    <p>공통 가정: 발행주식수 66,378,151주 (2025.12.31 기준), 현재가 33,200원 (2026-07-24 종가 기준). 지배순이익 = 영업이익 × 35% (FY25 실제 전환율 29.8% 기반, 이자비용 점진적 축소 가정으로 35%로 상향). PER 3 시나리오 동일 20배.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab" colspan="5">[OSAT 부문]</td></tr>
+        <tr><td class="rowlab">처리물량 Q (kwpm)</td><td class="num">1,500</td><td class="num">1,800</td><td class="num">2,500</td><td>FY25 추정 ~1,050kwpm 출발. Base+43%/Bull+71%/Best+138%</td></tr>
+        <tr><td class="rowlab">물량당 매출 P (억/kwpm)</td><td class="num">13.0</td><td class="num">14.0</td><td class="num">15.0</td><td>FY25 추정 ~12억/kwpm. 첨단 패키징 믹스 개선</td></tr>
+        <tr><td class="rowlab">OSAT 매출 (억원)</td><td class="num">19,500</td><td class="num">25,200</td><td class="num">37,500</td><td>▸ Q×P</td></tr>
+        <tr><td class="rowlab">OSAT OPM</td><td class="num">10%</td><td class="num">13%</td><td class="num">16%</td><td>FY25 6.2%, Q1 2026 12.2%. Base=가동률 정상화 / Bull=첨단 믹스 개선 / Best=SA 수요 폭발</td></tr>
+        <tr><td class="rowlab">OSAT 영업이익 (억원)</td><td class="num">1,950</td><td class="num">3,276</td><td class="num">6,000</td><td>▸ OSAT 매출 × OPM</td></tr>
+        <tr><td class="rowlab" colspan="5">[재료 부문]</td></tr>
+        <tr><td class="rowlab">재료 매출 (억원)</td><td class="num">4,000</td><td class="num">5,200</td><td class="num">6,500</td><td>FY25 2,729억 출발. Base+47%/Bull+90%/Best+138%. SiC 신사업 진입 반영</td></tr>
+        <tr><td class="rowlab">재료 OPM</td><td class="num">18%</td><td class="num">20%</td><td class="num">22%</td><td>FY25 18.5%, Q1 2026 22.4%. SiC 믹스 확대에 따른 마진 개선</td></tr>
+        <tr><td class="rowlab">재료 영업이익 (억원)</td><td class="num">720</td><td class="num">1,040</td><td class="num">1,430</td><td>▸ 재료 매출 × OPM</td></tr>
+        <tr><td class="rowlab" colspan="5">[합산]</td></tr>
+        <tr><td class="rowlab">총매출 (억원)</td><td class="num">23,500</td><td class="num">30,400</td><td class="num">44,000</td><td>▸ OSAT+재료 합산</td></tr>
+        <tr><td class="rowlab">총영업이익 (억원)</td><td class="num">2,670</td><td class="num">4,316</td><td class="num">7,430</td><td>▸ OSAT OP + 재료 OP</td></tr>
+        <tr><td class="rowlab">Blended OPM</td><td class="num">11.4%</td><td class="num">14.2%</td><td class="num">16.9%</td><td>참고 (독립 키팩터 아님)</td></tr>
+        <tr><td class="rowlab">지배주주순이익 (억원)</td><td class="num">935</td><td class="num">1,511</td><td class="num">2,601</td><td>▸ 영업이익 × 35%</td></tr>
+        <tr><td class="rowlab">EPS (원)</td><td class="num">1,408</td><td class="num">2,275</td><td class="num">3,918</td><td>▸ 순이익 / 66,378,151주</td></tr>
+        <tr><td class="rowlab">적용 PER (배)</td><td class="num">20</td><td class="num">20</td><td class="num">20</td><td>3 시나리오 동일</td></tr>
+        <tr><td class="rowlab">목표주가 (원)</td><td class="num">28,160</td><td class="num">45,500</td><td class="num">78,360</td><td>▸ EPS × PER</td></tr>
+        <tr class="hl"><td class="rowlab">현재가 대비 상승률</td><td class="num">△15%</td><td class="num">+37%</td><td class="num">+136%</td><td>현재가 33,200원 기준</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">현재가 33,200원(2026-07-24 종가) 기준 재계산. 발행주식수 66,378,151주·지배순이익=영업이익×35%·PER 20배는 3 시나리오 공통. 목표주가·EPS 등은 별첨 엑셀 그대로이며 현재가 기준 상승률만 교체함.</div>
+    <p>Base TP 28,160원(△15%) / Bull TP 45,500원(+37%) / Best TP 78,360원(+136%). 현재 주가 33,200원은 Base 시나리오(OPM 10%, 처리물량 +43%)는 이미 상회하나, Bull 시나리오(OPM 13%, 처리물량 +71%) 대비로는 27% 낮은 수준에서 형성되어 있음.</p>
+
+    <h3><span class="no">7.3.</span>시나리오 서사</h3>
+    <h4>Base — OSAT 가동률 정상화, 범용 외주 확대 컨센서스</h4>
+    <p>OSAT 처리물량 1,500kwpm(FY25 추정 대비 +43%) × ASP 13억 → 매출 1.95조, OPM 10%로 영업이익 1,950억임. 재료부문은 SiC 신사업 기여로 4,000억/OPM 18%로 720억을 더함. 총영업이익 2,670억, 지배순이익 935억, EPS 1,408원, TP 28,160원임.</p>
+    <p>베트남 신규 라인이 정상 가동되고, IDM의 HBM 집중에 따른 범용 메모리 외주 확대가 증권사 컨센서스(FY26 영업이익 ~2,173억원) 수준으로 흡수되는 시나리오임. 현재 주가(33,200원)는 Base TP를 18% 상회해, Base에 그칠 경우 downside 위험이 존재함. OPM이 FY25 8.3%에서 10%로 소폭 개선에 그칠 때의 보수 결과임.</p>
+    <h4>Bull — Q1 2026 OPM 추세 유지, 재료부문 SiC 기여</h4>
+    <p>OSAT 처리물량 1,800kwpm(+71%) × ASP 14억 → 매출 2.52조, OPM 13%(Q1 2026 OSAT OPM 12.2%에서 추가 개선). 재료부문 5,200억/OPM 20%로 1,040억 기여. 총영업이익 4,316억, 지배순이익 1,511억, EPS 2,275원, TP 45,500원임.</p>
+    <p>Q1 2026 OSAT OPM 12.2%가 FY28E까지 13%로 소폭 추가 상승하는 시나리오임. 고정비 레버리지가 유지되려면 외주 물량이 지속 증가해야 하며, 메모리 업황 둔화·IDM 내재화 확대 시 이 가정이 깨짐. 현재 주가(33,200원)는 Bull TP(45,500원)를 27% 밑도는 수준으로, 시장이 아직 Bull 시나리오를 반영하지 않고 있음.</p>
+    <h4>Best — SA 컴퓨팅 수요 폭발, OSAT 외주 급증</h4>
+    <p>SA(소버린 AI, Sovereign AI) 컴퓨팅 수요 급증 → 삼성·SK의 HBM 집중 가속 → 범용 D램·낸드 후공정 외주화 비율이 현재 대비 크게 높아지는 시나리오임. OSAT 처리물량 2,500kwpm(+138%) × ASP 15억 → 매출 3.75조, OPM 16%로 영업이익 6,000억. 재료부문 SiC가 글로벌 점유를 확대하며 6,500억/OPM 22%로 1,430억 기여. 총영업이익 7,430억, TP 78,360원(+136%)임.</p>
+    <p>Best 시나리오의 전제: OSAT 외주화 비율이 IDM 총 후공정 물량의 25%→40% 이상으로 상승하고, 하나마이크론이 국내 물량의 주요 수탁처로 자리잡는 것임. 하나마이크론은 글로벌 점유 한 자릿수의 추격자이므로, 외주 물량 급증 시 ASE·Amkor 등 탑티어와 분점한다는 점을 감안해야 함.</p>
+
+    <h3><span class="no">7.4.</span>리스크</h3>
+    <ul>
+      <li><b>기타영업외수익 일시성:</b> Q1 2026 기타영업외수익 371억이 외화 관련 등 일시 항목이면 정상화 시 지배순이익이 크게 감소함. 분기 EPS 1,019원의 지속 가능성을 확인하기 전까지 보수적으로 접근할 필요가 있음.</li>
+      <li><b>금융비용 부담:</b> FY25 금융비용 880억원(이자비용 653억원 포함)으로 영업이익의 약 69%에 달함. 금리 상승 또는 차입 증가 시 지배순이익 전환율이 FY25(29.8%) 아래로 재추락할 수 있음.</li>
+      <li><b>메모리 업황 사이클:</b> FY23 OPM 6.0%, 지배순이익 △135억 사례처럼 업황 둔화 시 OSAT는 가동률이 직접 타격받아 적자 전환도 가능한 사업 구조임.</li>
+      <li><b>고객집중 및 내재화 위험:</b> 삼성·SK 양사가 후공정을 내재화하거나 외주를 축소하면 물량이 직접 타격받음. 첨단 패키징(HBM 적층 등)에서 탑티어 OSAT가 국내 물량을 흡수할 경우에도 점유가 약화됨.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="ks8">
+    <h2><span class="num">8</span>결론</h2>
+    <div class="sub-h">턴어라운드 확인 · 추격자 구조 · 구조적 순이익 희석</div>
+    <p>Q1 2026 OSAT 영업이익 507억(OPM 12.2%)으로 턴어라운드가 실적으로 확인됨. 이후 주가는 5월 고점(52,900원) 대비 조정돼 현재 33,200원으로, FY28E Bull 시나리오(TP 45,500원, OPM 13%·처리물량 +71% 전제)를 27% 밑도는 수준임.</p>
+    <p>밸류체인 내 관점에서 하나마이크론은 'Q는 늘어도 P 상승이 제한적인 추격자 구조'임. 외주 단가 협상력이 약해 물량 증가의 상당 부분이 수익성 개선보다 매출 확대로 분산됨. 또한 이자비용(FY25 653억원)과 비지배지분이 지배주주 몫 순이익을 구조적으로 희석하는 구조는 그대로여서, 안전마진은 Bull 이상 시나리오의 실현 여부에 달려 있음.</p>
+    <p>상승 여력은 Bull 시나리오(TP 45,500원) 실현 시 +37%, Best 시나리오(SA 컴퓨팅 수요 폭발 → 외주화 급증, TP 78,360원)에서는 +136%임. 기타영업외수익 추이 정상화 여부, 금융비용 감소 속도, 하나머티리얼즈 SiC 점유 확대가 핵심 모니터링 지표임.</p>
+    <div class="filter-note"><b>주가 갱신 안내</b> — 본문은 2026-06-25 작성 원문을 그대로 보존하되, 현재가·시가총액·상승률 등 주가 연동 수치만 2026-07-24 종가(33,200원) 기준으로 갱신함. 작성 시점 이후 주가가 52,900원 → 33,200원으로 조정되어 밸류에이션 결론이 달라진 문장(7.2 하단·7.3 Base/Bull 서사·8장 결론)은 현재가에 맞게 최소 범위로 고침. 추정치·시나리오 가정·목표주가는 원문 그대로임.</div>
+  </div>
+
+  <footer class="report-foot">
+    작성지침 v6.9.2 적용. 현재가 33,200원·시가총액 2조 2,038억원(2026-07-24 종가, KRX). 재무·기술·경쟁 정보는 DART 2025 사업보고서·1Q26 분기보고서 연결 기준. 본 보고서는 정보 제공 목적이며 투자 권유가 아님.<br>
+    최초작성 2026-06-25 · 수치 업데이트 2026-07-24 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSDAQ 067310</div>
+    <h1>Hana Micron (067310) Equity Analysis</h1>
+    <p class="lede">Korea's #1 OSAT, Q1 2026 turnaround confirmed · KOSDAQ semiconductor back-end packaging &amp; test (OSAT) · Current price 33,200 KRW · Market cap ~2.2tn KRW (2026-07-24)</p>
+    <div class="meta">
+      <span>Original 2026-06-25 (v7)</span>
+      <span>Figures updated 2026-07-24 (ref. price 33,200 KRW, Jul 24 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Share price</div>
+      <div class="value">33,200<span class="unit">KRW</span></div>
+      <div class="sub">52w range 10,640 – 58,500</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Market cap</div>
+      <div class="value">2,203.8<span class="unit">bn KRW</span></div>
+      <div class="sub">66.38M shares outstanding</div>
+    </div>
+    <div class="kpi-card warn">
+      <div class="label">Trailing P/E</div>
+      <div class="value">57.8<span class="unit">x</span></div>
+      <div class="sub">On FY25 controlling NP of 38.1bn KRW</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Bull-case TP (FY28E)</div>
+      <div class="value">45,500<span class="unit">KRW</span></div>
+      <div class="sub">+37.0% vs current price</div>
+    </div>
+  </div>
+
+  <div class="section" id="es1">
+    <h2><span class="num">1</span>Company Overview</h2>
+    <div class="sub-h">Business essence · consolidation structure · earnings snapshot</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Detail</th><th>Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Name / Code</td><td>Hana Micron / 067310</td><td class="rowlab">Market cap</td><td>~2.2tn KRW (at 33,200 KRW)</td></tr>
+        <tr><td class="rowlab">Founded / Listed</td><td>2001 / 2005</td><td class="rowlab">Shares outstanding</td><td>66,378,151 (2025.12.31)</td></tr>
+        <tr><td class="rowlab">Exchange</td><td>KOSDAQ (semiconductor back-end)</td><td class="rowlab">Fiscal year-end</td><td>December</td></tr>
+        <tr><td class="rowlab">Core business</td><td colspan="3">Memory packaging &amp; test OSAT + semiconductor materials (Hana Materials)</td></tr>
+        <tr><td class="rowlab">Key customers</td><td>Samsung Electronics · SK hynix</td><td class="rowlab">Overseas bases</td><td>Brazil · Vietnam plants</td></tr>
+        <tr><td class="rowlab">Market position</td><td>#1 in Korea, ~#11 globally</td><td class="rowlab">CEO</td><td>Choi Chang-ho</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Hana Micron is a specialist in semiconductor back-end outsourcing (OSAT, Outsourced Semiconductor Assembly and Test), performing packaging (assembly) and test of memory chips on consignment from Samsung Electronics and SK hynix.</p>
+    <p>It consolidates its subsidiary Hana Materials (Si and SiC parts for semiconductor front-end processes), giving it a vertically aligned materials-to-back-end structure, and operates a global production system with overseas manufacturing entities in Brazil and Vietnam that combine local supply with capacity expansion.</p>
+    <p>FY25 consolidated revenue was 1,534.4bn KRW with operating profit of 127.7bn KRW. In Q1 2026, revenue of 507.6bn KRW (+64% YoY) and operating profit of 72.0bn KRW (+514% YoY) confirmed the OSAT cycle turnaround in reported earnings.</p>
+  </div>
+
+  <div class="section" id="es2">
+    <h2><span class="num">2</span>Ownership Structure</h2>
+    <div class="sub-h">Largest shareholder · cross-shareholding · free float</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Detail</th><th class="num">Stake</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Largest shareholder &amp; related parties (total)</td><td>Choi Chang-ho and related parties</td><td class="num">26.35%</td></tr>
+        <tr><td class="rowlab">　Choi Chang-ho (largest shareholder)</td><td>10,071,667 shares</td><td class="num">15.20%</td></tr>
+        <tr><td class="rowlab">　Hana Materials Co., Ltd. (subsidiary)</td><td>6,482,350 shares</td><td class="num">9.78%</td></tr>
+        <tr><td class="rowlab">　Other related parties</td><td>909,712 shares</td><td class="num">1.37%</td></tr>
+        <tr><td class="rowlab">5%+ shareholders</td><td>None</td><td class="num">—</td></tr>
+        <tr><td class="rowlab">Treasury shares</td><td>None</td><td class="num">0.00%</td></tr>
+        <tr><td class="rowlab">Other minority shareholders</td><td>48,914,422 shares</td><td class="num">73.65%</td></tr>
+        <tr><td class="rowlab">Free float ratio</td><td>Excluding largest shareholder + related parties (Choi and affiliates)</td><td class="num">83.43%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">Source: DART annual report (2025.12), shareholding status. As of December 31, 2025.</div>
+    <p>Founder and chairman Choi Chang-ho is the largest shareholder with 15.20%, and subsidiary Hana Materials Co., Ltd. holds 9.78% of the parent — a cross-shareholding structure. Including Hana Materials, the combined stake of the largest shareholder and related parties is 26.35%, so management control is stable.</p>
+    <p>There are no external shareholders above 5%, and the company holds no treasury shares. The free float is 83.43% if only Choi and related parties (16.57%) are excluded, and 73.65% if Hana Materials' 9.78% is also excluded. Hana Materials' holding of parent shares constitutes cross-shareholding but does not affect control, and the market overhang factor is negligible.</p>
+  </div>
+
+  <div class="section" id="es3">
+    <h2><span class="num">3</span>Industry Analysis</h2>
+    <div class="sub-h">3.1 OSAT structure · 3.2 Value chain · 3.3 HBM/AI pathways · 3.4 End demand</div>
+    <p>We proceed in the order of how OSAT works (fundamentals) → position in the value chain (market) → HBM/AI benefit pathways (the key issue) → end-demand drivers.</p>
+
+    <h3><span class="no">3.1.</span>OSAT — the structure of semiconductor back-end outsourcing</h3>
+    <p>Semiconductor manufacturing splits into front-end (building circuits on the wafer) and back-end (dicing the finished wafer into chips, then packaging and testing them). The back-end consists of packaging (protecting the chip and assembling external connections) and test (screening defects); OSAT is the business of performing this work on an outsourced basis.</p>
+    <p>If the front-end is "shaping the wafer," the back-end is "packaging and inspecting the finished chip." The more memory makers (Samsung, SK hynix) concentrate on the front-end (wafers) and push back-end volume out to subcontractors, the more OSAT revenue grows.</p>
+    <p>Packaging spans a wide range of difficulty, from traditional methods such as wire bonding to advanced approaches including flip-chip, bumping, SiP (system-in-package), and 2.5D/3D stacking. The more advanced the packaging, the higher the revenue per unit of volume (P), which helps OSAT profitability — but HBM stacking, the most demanding of all, is largely internalized by the memory makers themselves.</p>
+
+    <h3><span class="no">3.2.</span>Position in the value chain</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Stage</th><th>Players</th><th>Hana's position</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Chip manufacturing (customer)</td><td>Samsung Electronics · SK hynix</td><td>Direct customers — back-end consignment</td></tr>
+        <tr class="hl"><td class="rowlab">Back-end outsourcing (OSAT)</td><td>ASE · Amkor · JCET · Hana</td><td>#1 in Korea, ~#11 globally</td></tr>
+        <tr><td class="rowlab">Materials (subsidiary)</td><td>Hana Materials</td><td>Si/SiC parts — consolidated</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Revenue is tied to the memory makers' outsourced back-end volume. Hana Micron sits at the gateway between the memory makers and outsourced OSAT, so it benefits directly as the outsourcing ratio rises. That said, highly demanding back-end work such as HBM is largely performed in-house by the IDMs, so Hana's direct benefit comes mainly from the expansion of commodity DRAM and NAND outsourcing.</p>
+
+    <h3><span class="no">3.3.</span>HBM/AI benefit pathways</h3>
+    <p>Benefit grades: ◎ structurally direct / ○ indirect or partly direct / × not dedicated</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Benefit pathway</th><th>Directness</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">HBM core stacking (TC bonding)</td><td>× (not dedicated)</td><td>HBM stacking belongs to customer in-house lines and Hanmi Semiconductor's TC bonders. Hana's direct share is small</td></tr>
+        <tr><td class="rowlab">Part of HBM / advanced packaging back-end</td><td>○ (partly direct)</td><td>As AI demand expands, OSATs take on part of the advanced-packaging back-end volume. Partial benefit</td></tr>
+        <tr class="hl"><td class="rowlab">Expansion of commodity DRAM/NAND outsourcing</td><td>◎ (structurally direct)</td><td>IDMs concentrate capacity on HBM → commodity back-end is outsourced to OSATs. The company's core driver</td></tr>
+        <tr><td class="rowlab">Hana Materials front-end materials</td><td>○ (indirect)</td><td>Materials demand tied to overall memory capex (including HBM). Not HBM-specific</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><b>Overall HBM direct benefit:</b> partly direct in the back-end (○) — the company's real driver is "IDMs concentrating on HBM → expansion of commodity memory back-end outsourcing" (◎). Q1 2026 OSAT revenue of +64% and OP of +1,578% is evidence that this pathway has materialized.</p>
+    <p>Q1 2026 results demonstrate this benefit pathway. The semiconductor manufacturing (OSAT) division grew +64% YoY with operating profit surging 1,578%, and OPM jumped from a historical 6–8% range to 12.2%. This was the combined result of expanded commodity memory outsourcing driven by HBM concentration and the normalization of utilization at new Vietnam capacity.</p>
+
+    <h3><span class="no">3.4.</span>End-demand drivers</h3>
+    <p>The primary driver of OSAT revenue is the memory output of customers (Samsung, SK hynix) and their back-end outsourcing ratio. As AI demand pushes memory makers to concentrate front-end capacity on HBM and high-value products, the back-end of commodity DRAM and NAND is relatively more outsourced to OSATs, increasing Hana Micron's volume.</p>
+    <p>The secondary driver is Hana Micron's own capacity expansion (bringing Vietnam lines online). New capacity must lift utilization for higher outsourced volume to translate into revenue. Expansion has been debt-funded, so depreciation and financing costs weighed on margins in the early ramp; in Q1 2026 the leverage from utilization normalization is now coming through in earnest.</p>
+  </div>
+
+  <div class="section" id="es4">
+    <h2><span class="num">4</span>Competitive Landscape</h2>
+    <div class="sub-h">4.1 Global top tier vs the company · 4.2 Entry barriers and moat</div>
+
+    <h3><span class="no">4.1.</span>Global top tier vs the company's position</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Global top tier</th><th>Company's position</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Global #1</td><td>ASE (Taiwan) — ~30%+ share</td><td>#1 in Korea, ~#11 globally, single-digit share or below</td></tr>
+        <tr><td class="rowlab">Upper competitive tier</td><td>Amkor (US) · JCET (China) · PTI (Taiwan)</td><td>Gaps in scale, customers, and technology vs the top 3–4</td></tr>
+        <tr><td class="rowlab">Technology standing</td><td>Top tier leads 2.5D/3D and CoWoS-class advanced packaging</td><td>Focused on commodity memory packaging and test; still catching up on advanced</td></tr>
+        <tr><td class="rowlab">Pricing power</td><td>Holds global competitiveness and pricing power</td><td>Weak price negotiation vs giant customers — constant pressure on outsourcing rates</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Global OSAT leader ASE holds 30%+ share. Korea's total share is about 4.3%. Within that, Hana Micron is Korea's #1 and roughly the world's #11 OSAT. Its exact market share is not disclosed. (Source: TheElec global OSAT rankings)</p>
+    <p>Hana Micron's investment appeal is better understood as "beta on the commodity outsourcing expansion cycle" than as a moat. Long-term outsourcing relationships with Korean memory makers are the source of stable volume, but they are simultaneously the cause of customer concentration and weak pricing power.</p>
+
+    <h3><span class="no">4.2.</span>Entry barriers and moat assessment</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Assessment item</th><th>Level</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Customer-relationship moat</td><td>Medium</td><td>Long-term outsourcing ties and quality trust with Samsung and SK — but the flip side is customer-concentration risk</td></tr>
+        <tr><td class="rowlab">Technology moat (commodity)</td><td>Medium</td><td>Turnkey packaging and test capability. Differentiation limited by many competing OSATs</td></tr>
+        <tr><td class="rowlab">Technology moat (advanced)</td><td>Low–Medium</td><td>Still catching up to the top tier in 2.5D/3D and other advanced packaging</td></tr>
+        <tr><td class="rowlab">Pricing power</td><td>Low</td><td>Weak negotiating leverage against giant customers; constant pressure on outsourcing rates</td></tr>
+        <tr><td class="rowlab">Economies of scale</td><td>Low–Medium</td><td>Inferior capacity and capital strength vs the global top tier; expansion relies on borrowing</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="section" id="es5">
+    <h2><span class="num">5</span>Business Model</h2>
+    <div class="sub-h">5.1 Revenue structure · 5.2 Customer concentration</div>
+
+    <h3><span class="no">5.1.</span>Revenue structure</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Division</th><th class="num">FY25 revenue</th><th class="num">FY25 OPM</th><th>Characteristics</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Semiconductor manufacturing (OSAT)</td><td class="num">1,260.9bn</td><td class="num">6.2%</td><td>Memory packaging and test outsourcing. Tied to customer outsourcing policy and utilization</td></tr>
+        <tr><td class="rowlab">Semiconductor materials (Hana Materials)</td><td class="num">272.9bn</td><td class="num">18.5%</td><td>Si and SiC parts. Tied to front-end capex. Minority interests present</td></tr>
+        <tr><td class="rowlab">Other (new-tech investment)</td><td class="num">0.6bn</td><td class="num">Loss</td><td>Small subsidiary held for financial-investment purposes</td></tr>
+        <tr class="hl"><td class="rowlab">Consolidated total</td><td class="num">1,534.4bn</td><td class="num">8.3%</td><td>After elimination of intercompany transactions</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">Source: DART annual report (2025.12), divisional operating results. OSAT revenue on a Hana Micron Co., Ltd. standalone basis plus Hana Materials' disclosed revenue. Figures in KRW.</div>
+    <p>OSAT revenue decomposes into "processed volume (Q) × revenue per unit of volume (P)," where Q depends on the customer outsourcing ratio and the company's share of that processing, and P depends on the packaging mix (degree of advancement). The materials division has an independent profit driver (OPM 18.5%), but minority interests (non-controlling shareholders of Hana Materials) are a structural factor that lowers the conversion rate to consolidated controlling net profit.</p>
+
+    <h3><span class="no">5.2.</span>Customer concentration</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Customer</th><th>Exposure</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Samsung Electronics</td><td>Major</td><td>Largest consignor of memory packaging and test</td></tr>
+        <tr><td class="rowlab">SK hynix</td><td>Major</td><td>Consigns commodity memory back-end work</td></tr>
+        <tr><td class="rowlab">Others / overseas</td><td>Secondary</td><td>Local supply through the Brazil and Vietnam entities</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Dependence on the two major memory makers, Samsung and SK, is high, and changes in their back-end outsourcing policy directly affect revenue. Pricing power is weak relative to these giant customers, so the business model is "a beta-type structure that takes on giant customers' outsourced volume and processes it with capacity."</p>
+  </div>
+
+  <div class="section" id="es6">
+    <h2><span class="num">6</span>Financial Analysis</h2>
+    <div class="sub-h">FY21–FY25 trend · 6.1 Q1 2026 turnaround</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item (bn KRW)</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue</td><td class="num">669.5</td><td class="num">894.4</td><td class="num">968.0</td><td class="num">1,250.7</td><td class="num">1,534.4</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">+34%</td><td class="num">+8%</td><td class="num">+29%</td><td class="num">+23%</td></tr>
+        <tr><td class="rowlab">Operating profit</td><td class="num">104.9</td><td class="num">103.5</td><td class="num">57.9</td><td class="num">106.8</td><td class="num">127.7</td></tr>
+        <tr><td class="rowlab">Operating margin</td><td class="num">15.7%</td><td class="num">11.6%</td><td class="num">6.0%</td><td class="num">8.5%</td><td class="num">8.3%</td></tr>
+        <tr><td class="rowlab">Pre-tax profit</td><td class="num">91.3</td><td class="num">90.6</td><td class="num">13.9</td><td class="num">−2.0</td><td class="num">80.0</td></tr>
+        <tr><td class="rowlab">Consolidated net profit</td><td class="num">67.1</td><td class="num">58.2</td><td class="num">0.96</td><td class="num">−11.1</td><td class="num">65.5</td></tr>
+        <tr class="hl"><td class="rowlab">Controlling net profit</td><td class="num">25.7</td><td class="num">2.8</td><td class="num">−13.5</td><td class="num">−23.8</td><td class="num">38.1</td></tr>
+        <tr><td class="rowlab">EPS (KRW, controlling)</td><td class="num">687</td><td class="num">66</td><td class="num">−313</td><td class="num">−423</td><td class="num">637</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">Source: DART consolidated audit reports by year (2021–2022: annual report 2022.12; 2023: annual report 2023.12; 2024–2025: annual report 2025.12). Controlling net profit and EPS are as reported.</div>
+    <p><b>Growth:</b> Revenue grew 2.3x over four years, from 669.5bn KRW in FY21 to 1,534.4bn KRW in FY25. Expanded memory outsourcing and the Vietnam build-out drove the top line.</p>
+    <p><b>Profitability cycle:</b> Operating margin fell from 15.7% in FY21 (super-cycle) to 6.0% in FY23 (industry slowdown), then recovered to 8.3% in FY25. This is a business with very high OPM volatility depending on utilization and mix.</p>
+    <p><b>Net-profit conversion structure:</b> Controlling net profit is far below operating profit for two reasons. (1) Interest expense: FY25 financial costs of 88.0bn KRW (including 65.3bn KRW of interest expense) consumed about half of operating profit. (2) Non-controlling interests: because of minority holdings in Hana Materials, a substantial portion of consolidated net profit accrues to non-controlling shareholders. On an FY25 basis, the conversion rate from operating profit to controlling net profit was only 29.8%.</p>
+    <p>In FY22 and FY24, controlling net profit of 2.8bn KRW and −23.8bn KRW respectively diverged extremely from operating profit. FY22 had a 2.7% conversion rate — operating profit of 103.5bn KRW yielded only 2.8bn KRW for controlling shareholders — while FY24 posted a loss as financial costs, minority interests, and a weak cycle compounded.</p>
+
+    <h3><span class="no">6.1.</span>Q1 2026 results — turnaround confirmed</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item (bn KRW)</th><th class="num">Q1 2026</th><th class="num">Q1 2025</th><th class="num">YoY</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Consolidated revenue</td><td class="num">507.6</td><td class="num">311.7</td><td class="num">+63%</td></tr>
+        <tr><td class="rowlab">Operating profit</td><td class="num">72.0</td><td class="num">11.7</td><td class="num">+514%</td></tr>
+        <tr><td class="rowlab">Operating margin</td><td class="num">14.2%</td><td class="num">3.8%</td><td class="num">+10.4%p</td></tr>
+        <tr><td class="rowlab">Consolidated net profit</td><td class="num">72.8</td><td class="num">0.57</td><td class="num">To profit</td></tr>
+        <tr class="hl"><td class="rowlab">Controlling net profit</td><td class="num">61.0</td><td class="num">−3.5</td><td class="num">To profit</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td class="num">1,019</td><td class="num">−62</td><td class="num">To profit</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Division</th><th class="num">Q1 2026 revenue</th><th class="num">Q1 2026 OPM</th><th>YoY (revenue / OP)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Semiconductor manufacturing (OSAT)</td><td class="num">414.3bn</td><td class="num">12.2%</td><td>+64% / OP +1,578%</td></tr>
+        <tr><td class="rowlab">Semiconductor materials (Hana Materials)</td><td class="num">92.5bn</td><td class="num">22.4%</td><td>+59% / OP +138%</td></tr>
+        <tr><td class="rowlab">Other</td><td class="num">0.9bn</td><td class="num">Profit</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">Source: DART quarterly report (2026.03), filed 2026-05-14.</div>
+    <p>Q1 2026 operating profit of 72.0bn KRW represents 56% of full-year FY25 (127.7bn KRW) in a single quarter. The OSAT division's jump in OPM from a historical 6–8% to 12.2% was the combined result of utilization normalization at the Vietnam expansion and a surge in outsourced memory volume.</p>
+    <p>However, Q1 2026 controlling net profit of 61.0bn KRW implies an 84.7% conversion rate against operating profit of 72.0bn KRW, far above the historical average (around 30%). This largely reflects 37.1bn KRW of other non-operating income recognized within the quarter (presumed FX-related and other one-off items), so it is more appropriate to read the normalized quarterly net-profit conversion rate at around 40–50%.</p>
+  </div>
+
+  <div class="section" id="es7">
+    <h2><span class="num">7</span>Valuation</h2>
+    <div class="sub-h">7.1 Applied P/E · 7.2 Scenarios (FY28E) · 7.3 Narratives · 7.4 Risks</div>
+    <p>FY28E scenarios are built bottom-up by estimating the semiconductor manufacturing (OSAT) and semiconductor materials (Hana Materials) divisions separately on an OPM basis and then summing them. The controlling net-profit conversion rate is set at 35% based on FY25 results (reflecting interest and NCI together), and a P/E of 20x — in line with OSAT peers — is applied uniformly across all three scenarios.</p>
+
+    <h3><span class="no">7.1.</span>Applied P/E</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Global peer</th><th>Business area</th><th class="num">Forward P/E</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">ASE Group (Taiwan)</td><td>Global OSAT #1</td><td class="num">~15x</td><td>Standard OSAT multiple</td></tr>
+        <tr><td class="rowlab">Amkor Technology (US)</td><td>Global OSAT #2</td><td class="num">~15x</td><td>Standard OSAT multiple</td></tr>
+        <tr><td class="rowlab">Peer average</td><td>—</td><td class="num">15</td><td>—</td></tr>
+        <tr class="hl"><td class="rowlab">Adjustment rationale and applied P/E</td><td>Domestic challenger + customer concentration + weak pricing power → peer average plus a 5x growth premium</td><td class="num">20</td><td>Same across all three scenarios</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Hana Micron is inferior to the global top tier in scale, technology, and market share, but given its position as Korea's #1 OSAT, its long-term outsourcing relationships with Samsung and SK, and its growth phase, a 5x growth premium is added to the 15x peer average. A uniform 20x P/E is applied to all three scenarios.</p>
+
+    <h3><span class="no">7.2.</span>Scenario analysis (FY28E, divisional bottom-up)</h3>
+    <p>Common assumptions: 66,378,151 shares outstanding (as of 2025.12.31), current price 33,200 KRW (2026-07-24 close). Controlling net profit = operating profit × 35% (based on the FY25 actual conversion rate of 29.8%, raised to 35% assuming a gradual reduction in interest expense). P/E of 20x is identical across the three scenarios.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab" colspan="5">[OSAT division]</td></tr>
+        <tr><td class="rowlab">Processed volume Q (kwpm)</td><td class="num">1,500</td><td class="num">1,800</td><td class="num">2,500</td><td>From an estimated ~1,050kwpm in FY25. Base +43% / Bull +71% / Best +138%</td></tr>
+        <tr><td class="rowlab">Revenue per volume P (bn KRW/kwpm)</td><td class="num">1.30</td><td class="num">1.40</td><td class="num">1.50</td><td>From an estimated ~1.2bn/kwpm in FY25. Improving advanced-packaging mix</td></tr>
+        <tr><td class="rowlab">OSAT revenue (bn KRW)</td><td class="num">1,950</td><td class="num">2,520</td><td class="num">3,750</td><td>▸ Q × P</td></tr>
+        <tr><td class="rowlab">OSAT OPM</td><td class="num">10%</td><td class="num">13%</td><td class="num">16%</td><td>FY25 6.2%, Q1 2026 12.2%. Base = utilization normalization / Bull = advanced mix improvement / Best = SA demand surge</td></tr>
+        <tr><td class="rowlab">OSAT operating profit (bn KRW)</td><td class="num">195.0</td><td class="num">327.6</td><td class="num">600.0</td><td>▸ OSAT revenue × OPM</td></tr>
+        <tr><td class="rowlab" colspan="5">[Materials division]</td></tr>
+        <tr><td class="rowlab">Materials revenue (bn KRW)</td><td class="num">400</td><td class="num">520</td><td class="num">650</td><td>From 272.9bn in FY25. Base +47% / Bull +90% / Best +138%. Reflects entry into the SiC business</td></tr>
+        <tr><td class="rowlab">Materials OPM</td><td class="num">18%</td><td class="num">20%</td><td class="num">22%</td><td>FY25 18.5%, Q1 2026 22.4%. Margin improvement from a growing SiC mix</td></tr>
+        <tr><td class="rowlab">Materials operating profit (bn KRW)</td><td class="num">72.0</td><td class="num">104.0</td><td class="num">143.0</td><td>▸ Materials revenue × OPM</td></tr>
+        <tr><td class="rowlab" colspan="5">[Total]</td></tr>
+        <tr><td class="rowlab">Total revenue (bn KRW)</td><td class="num">2,350</td><td class="num">3,040</td><td class="num">4,400</td><td>▸ OSAT + materials</td></tr>
+        <tr><td class="rowlab">Total operating profit (bn KRW)</td><td class="num">267.0</td><td class="num">431.6</td><td class="num">743.0</td><td>▸ OSAT OP + materials OP</td></tr>
+        <tr><td class="rowlab">Blended OPM</td><td class="num">11.4%</td><td class="num">14.2%</td><td class="num">16.9%</td><td>For reference (not an independent key factor)</td></tr>
+        <tr><td class="rowlab">Controlling net profit (bn KRW)</td><td class="num">93.5</td><td class="num">151.1</td><td class="num">260.1</td><td>▸ Operating profit × 35%</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td class="num">1,408</td><td class="num">2,275</td><td class="num">3,918</td><td>▸ Net profit / 66,378,151 shares</td></tr>
+        <tr><td class="rowlab">Applied P/E (x)</td><td class="num">20</td><td class="num">20</td><td class="num">20</td><td>Same across all three scenarios</td></tr>
+        <tr><td class="rowlab">Target price (KRW)</td><td class="num">28,160</td><td class="num">45,500</td><td class="num">78,360</td><td>▸ EPS × P/E</td></tr>
+        <tr class="hl"><td class="rowlab">Upside vs current price</td><td class="num">−15%</td><td class="num">+37%</td><td class="num">+136%</td><td>Against a current price of 33,200 KRW</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note">Recalculated against the current price of 33,200 KRW (2026-07-24 close). The 66,378,151 shares outstanding, controlling net profit = operating profit × 35%, and the 20x P/E are common to all three scenarios. Target prices, EPS, and other figures are unchanged from the attached spreadsheet; only the upside against the current price has been replaced.</div>
+    <p>Base TP 28,160 KRW (−15%) / Bull TP 45,500 KRW (+37%) / Best TP 78,360 KRW (+136%). At 33,200 KRW the share price is already above the Base scenario (OPM 10%, volume +43%) but sits 27% below the Bull scenario (OPM 13%, volume +71%).</p>
+
+    <h3><span class="no">7.3.</span>Scenario narratives</h3>
+    <h4>Base — utilization normalization, consensus commodity outsourcing expansion</h4>
+    <p>OSAT processed volume of 1,500kwpm (+43% vs the FY25 estimate) × ASP 1.3bn KRW → revenue of 1.95tn KRW, and at 10% OPM, operating profit of 195.0bn KRW. The materials division adds 72.0bn KRW on 400bn KRW of revenue at 18% OPM, helped by the new SiC business. Total operating profit of 267.0bn KRW, controlling net profit of 93.5bn KRW, EPS of 1,408 KRW, and a TP of 28,160 KRW.</p>
+    <p>This is the scenario in which the new Vietnam lines run normally and the expansion of commodity memory outsourcing driven by IDMs' HBM concentration is absorbed at the level of broker consensus (FY26 operating profit of ~217.3bn KRW). At 33,200 KRW the current price is 18% above the Base TP, so downside risk exists if only the Base case materializes. This is the conservative outcome if OPM improves only modestly, from 8.3% in FY25 to 10%.</p>
+    <h4>Bull — Q1 2026 OPM trend sustained, SiC contribution from materials</h4>
+    <p>OSAT processed volume of 1,800kwpm (+71%) × ASP 1.4bn KRW → revenue of 2.52tn KRW at 13% OPM (a further improvement from the 12.2% OSAT OPM in Q1 2026). The materials division contributes 104.0bn KRW on 520bn KRW at 20% OPM. Total operating profit of 431.6bn KRW, controlling net profit of 151.1bn KRW, EPS of 2,275 KRW, and a TP of 45,500 KRW.</p>
+    <p>This is the scenario in which the 12.2% OSAT OPM of Q1 2026 rises modestly further to 13% by FY28E. Sustaining fixed-cost leverage requires outsourced volume to keep growing, and this assumption breaks if the memory cycle slows or IDMs expand in-house capacity. At 33,200 KRW the current price is 27% below the Bull TP of 45,500 KRW, meaning the market has not yet priced in the Bull scenario.</p>
+    <h4>Best — SA computing demand surge, outsourcing volume spike</h4>
+    <p>This is the scenario in which surging SA (Sovereign AI) computing demand accelerates Samsung's and SK's HBM concentration, pushing the outsourcing ratio for commodity DRAM and NAND back-end work far above current levels. OSAT processed volume of 2,500kwpm (+138%) × ASP 1.5bn KRW → revenue of 3.75tn KRW at 16% OPM for operating profit of 600.0bn KRW. Hana Materials expands its global SiC share, contributing 143.0bn KRW on 650bn KRW at 22% OPM. Total operating profit of 743.0bn KRW and a TP of 78,360 KRW (+136%).</p>
+    <p>The premise of the Best scenario is that the OSAT outsourcing ratio rises from roughly 25% of IDMs' total back-end volume to over 40%, and that Hana Micron establishes itself as a principal consignee for Korean volume. Since Hana Micron is a challenger with single-digit global share, one must account for the fact that a spike in outsourced volume would be shared with top-tier players such as ASE and Amkor.</p>
+
+    <h3><span class="no">7.4.</span>Risk factors</h3>
+    <ul>
+      <li><b>One-off nature of other non-operating income:</b> If the 37.1bn KRW of other non-operating income in Q1 2026 consists of FX-related and similar one-off items, controlling net profit would fall sharply once it normalizes. A conservative stance is warranted until the sustainability of the 1,019 KRW quarterly EPS is confirmed.</li>
+      <li><b>Financing-cost burden:</b> FY25 financial costs of 88.0bn KRW (including 65.3bn KRW of interest expense) amount to about 69% of operating profit. If rates rise or borrowings increase, the controlling net-profit conversion rate could fall back below the FY25 level of 29.8%.</li>
+      <li><b>Memory cycle:</b> As in FY23 — 6.0% OPM and −13.5bn KRW controlling net profit — a slowdown hits OSAT utilization directly, and the business structure can swing to a loss.</li>
+      <li><b>Customer concentration and in-house risk:</b> If Samsung and SK internalize back-end work or reduce outsourcing, volume takes a direct hit. Share would also weaken if top-tier OSATs absorb Korean volume in advanced packaging (HBM stacking and the like).</li>
+    </ul>
+  </div>
+
+  <div class="section" id="es8">
+    <h2><span class="num">8</span>Conclusion</h2>
+    <div class="sub-h">Turnaround confirmed · challenger structure · structural net-profit dilution</div>
+    <p>Q1 2026 OSAT operating profit of 50.7bn KRW (12.2% OPM) confirms the turnaround in reported earnings. The share price has since corrected from its May high of 52,900 KRW to 33,200 KRW, leaving it 27% below the FY28E Bull scenario (TP 45,500 KRW, premised on 13% OPM and +71% processed volume).</p>
+    <p>Viewed within the value chain, Hana Micron has "a challenger structure in which Q can grow but P gains are limited." Weak negotiating power on outsourcing rates means much of the volume growth disperses into revenue expansion rather than margin improvement. Moreover, the structure in which interest expense (65.3bn KRW in FY25) and non-controlling interests structurally dilute the controlling shareholders' share of net profit remains intact, so the margin of safety depends on whether the Bull scenario or better is realized.</p>
+    <p>Upside is +37% if the Bull scenario (TP 45,500 KRW) materializes and +136% under the Best scenario (an SA computing demand surge driving an outsourcing spike, TP 78,360 KRW). Normalization of other non-operating income, the pace of decline in financing costs, and Hana Materials' expansion of SiC share are the key monitoring indicators.</p>
+    <div class="filter-note"><b>Note on price update</b> — The body text preserves the original report written on 2026-06-25 verbatim; only price-linked figures such as the current price, market capitalization, and upside have been updated to the 2026-07-24 close (33,200 KRW). Sentences whose valuation conclusion changed because the price moved from 52,900 KRW to 33,200 KRW after the original was written (end of 7.2, the Base and Bull narratives in 7.3, and the Conclusion) have been minimally revised to match the current price. Estimates, scenario assumptions, and target prices are unchanged from the original.</div>
+  </div>
+
+  <footer class="report-foot">
+    Prepared under writing guideline v6.9.2. Current price 33,200 KRW; market cap 2,203.8bn KRW (2026-07-24 close, KRX). Financial, technical, and competitive information is on a consolidated basis per the DART FY2025 annual report and 1Q26 quarterly report. This report is for informational purposes only and is not investment advice.<br>
+    Original 2026-06-25 · Figures updated 2026-07-24 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>하나마이크론(067310) 주가 차트</span><span class="ct-en" hidden>Hana Micron (067310) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-07-24 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-07-24</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-07-24 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-07-24 (Yahoo Finance daily). Not real-time; for information only.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Overview'],['es2','2 · Ownership'],['es3','3 · Industry'],['es4','4 · Competition'],['es5','5 · Business'],['es6','6 · Financials'],['es7','7 · Valuation'],['es8','8 · Conclusion']],
+    ko: [['ks1','1 · 회사 개요'],['ks2','2 · 지배구조'],['ks3','3 · 산업 분석'],['ks4','4 · 경쟁 구도'],['ks5','5 · 사업 모델'],['ks6','6 · 재무 분석'],['ks7','7 · 밸류에이션'],['ks8','8 · 결론']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('hana-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('hana-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return sym + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
