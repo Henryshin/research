@@ -73,6 +73,22 @@ def parse_report(html):
     }
 
 
+def parse_about(html):
+    """About 페이지. 리포트가 아니므로 티커 배지 없이 영문 h1 을 제목으로 쓴다.
+
+    (허브 카드를 돌려쓰면 그림엔 '7 REPORTS' 인데 제목은 'About & Method' 라
+     따로 논다. 전용 카드를 뽑는다.)
+    """
+    h1 = plain(H1_EN_RE.search(html).group(1)) if H1_EN_RE.search(html) else ""
+    dm = TWDESC_RE.search(html) or OGDESC_RE.search(html)
+    return {
+        "category": "ABOUT & METHOD",
+        "ticker": "",
+        "company": h1 or "About & Method",
+        "hook": first_sentence(plain(dm.group(1)), 120) if dm else "",
+    }
+
+
 def parse_hub(html):
     n = len(CARD_RE.findall(html))
     title = plain(TITLE_RE.search(html).group(1)) if TITLE_RE.search(html) else ""
@@ -149,7 +165,7 @@ def targets(args):
     if not slugs:
         for p in sorted(glob.glob(os.path.join(ROOT, "*", "index.html"))):
             d = os.path.basename(os.path.dirname(p))
-            if d.startswith("_") or d == "about":
+            if d.startswith("_"):
                 continue
             out.append((d, p, os.path.join(ROOT, d, "assets", "og.png")))
         out.append(("(hub)", *hub))
@@ -178,7 +194,12 @@ def main():
             print(f"{label:38s} SKIP (존재 — --force 로 재생성)")
             continue
         html = open(src, encoding="utf-8").read()
-        d = parse_hub(html) if label == "(hub)" else parse_report(html)
+        if label == "(hub)":
+            d = parse_hub(html)
+        elif label == "about":
+            d = parse_about(html)
+        else:
+            d = parse_report(html)
         if not d["company"]:
             print(f"{label:38s} SKIP (회사명 추출 실패)")
             continue

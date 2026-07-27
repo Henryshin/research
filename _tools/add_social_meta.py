@@ -74,8 +74,12 @@ def build_block(img_url, alt):
 
 
 def png_for(rel_dir):
-    """페이지 디렉토리(ROOT 기준 상대) -> (png 절대경로, 사이트 내 상대 URL 경로)"""
-    if rel_dir in ("", "about"):
+    """페이지 디렉토리(ROOT 기준 상대) -> (png 절대경로, 사이트 내 상대 URL 경로)
+
+    about 도 전용 카드를 쓴다. 허브 카드를 돌려쓰면 그림엔 '7 REPORTS' 인데
+    제목은 'About & Method' 로 떠서 따로 논다.
+    """
+    if rel_dir == "":
         return os.path.join(ROOT, "assets", "og.png"), "assets/og.png"
     return (os.path.join(ROOT, rel_dir, "assets", "og.png"),
             f"{rel_dir}/assets/og.png")
