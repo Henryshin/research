@@ -74,10 +74,14 @@ class Renderer:
             self._pw.stop()
         return False
 
-    def shot(self, html, w, h, wait_ms=0):
+    def shot(self, html, w, h, wait_ms=0, scale=None):
+        # scale 은 샷마다 덮어쓸 수 있다. 3000px 배너를 2배로 그리면 6000px 이라
+        # 과하다. (sync_playwright 를 중첩 기동하면 asyncio 충돌이 나므로
+        # Renderer 를 두 개 띄우는 방식은 쓸 수 없다.)
+        scale = self.scale if scale is None else scale
         ctx = self._browser.new_context(
             viewport={"width": w, "height": h},
-            device_scale_factor=self.scale,
+            device_scale_factor=scale,
             # 사이트 CSS에 prefers-color-scheme:dark 가 있다. 카드는 라이트 고정.
             color_scheme="light",
         )
@@ -109,7 +113,7 @@ class Renderer:
         ctx.close()
 
         img = Image.open(io.BytesIO(buf)).convert("RGB")
-        if self.scale != 1:
+        if scale != 1:
             # 2배로 그린 뒤 축소 = 텍스트 가장자리 품질이 눈에 띄게 좋아진다.
             img = img.resize((w, h), Image.LANCZOS)
         return img
