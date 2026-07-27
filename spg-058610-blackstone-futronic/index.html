@@ -38,7 +38,6 @@
   }
   try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-spg-058610-blackstone-futronic').catch(function(){});
-  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-spg-058610-blackstone-futronic-daily-' + today).catch(function(){});
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
