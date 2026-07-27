@@ -245,6 +245,10 @@
   }
 
 /* type-scale:+2px, flat-notes */
+  /* copy-guard */
+  .container, .nav-inner { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+  .container img, .container figure { -webkit-user-drag:none; user-drag:none; }
+
 </style>
 </head>
 <body>
@@ -698,5 +702,14 @@
     window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
   }
 </script>
+<!-- copy-guard -->
+<script>
+(function () {
+  function block(e) { e.preventDefault(); return false; }
+  var events = ['copy', 'cut', 'contextmenu', 'dragstart', 'selectstart'];
+  for (var i = 0; i < events.length; i++) document.addEventListener(events[i], block);
+})();
+</script>
+
 </body>
 </html>
