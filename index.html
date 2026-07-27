@@ -129,10 +129,6 @@
   }
 
 /* type-scale:+2px, flat-notes */
-  /* copy-guard */
-  .container, .nav-inner { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
-  .container img, .container figure { -webkit-user-drag:none; user-drag:none; }
-
 </style>
 </head>
 <body>
@@ -243,6 +239,8 @@
   </a>
 
   <footer>
+    <span class="ct-en"><a href="./about/">About &amp; Method</a> · How these notes are researched, sourced, and updated.</span>
+    <span class="ct-ko" hidden><a href="./about/">소개 &amp; 방법론</a> · 자료의 출처와 계산 방식, 갱신 원칙.</span><br>
     <span class="ct-en">© 2026 Henry Shin Research · For information only, not investment advice.</span>
     <span class="ct-ko" hidden>© 2026 Henry Shin Research · 정보 제공 목적이며 투자 자문이 아닙니다.</span>
   </footer>
@@ -273,14 +271,5 @@
     setLang(l);
   })();
 </script>
-<!-- copy-guard -->
-<script>
-(function () {
-  function block(e) { e.preventDefault(); return false; }
-  var events = ['copy', 'cut', 'contextmenu', 'dragstart', 'selectstart'];
-  for (var i = 0; i < events.length; i++) document.addEventListener(events[i], block);
-})();
-</script>
-
 </body>
 </html>

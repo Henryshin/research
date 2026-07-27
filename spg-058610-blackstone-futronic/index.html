@@ -244,11 +244,20 @@
     .disclaimer { padding:16px 16px; }
   }
 
-/* type-scale:+2px, flat-notes */
-  /* copy-guard */
-  .container, .nav-inner { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
-  .container img, .container figure { -webkit-user-drag:none; user-drag:none; }
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
 
+/* type-scale:+2px, flat-notes */
 </style>
 </head>
 <body>
@@ -298,6 +307,12 @@
       <div class="label">29F PER (BULL)</div>
       <div class="value">23.7<span class="unit">배</span></div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">로봇용 정밀 감속기 국산화 업체. 트레일링 PER 114배이고 BULL 가정을 반영한 FY29E 기준으로도 23.7배로, 성장 제조업 25배 멀티플을 적용하면 현재 주가가 적정 수준.</span></div>
+    <div class="tldr-row"><span class="tldr-k">촉매</span><span class="tldr-v">정밀 감속기 양산 확대. 2024년 매출 약 130억원에서 2026년 13만대, 2029년 33만대 생산을 반영. 일본산 대비 40% 이상 가격 경쟁력과 납기 1년에서 1개월 단축이 근거.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">밸류에이션 자체가 부담. 현재 PER 114배, FY29E 포워드 기준으로도 26배로 오버밸류에이션 구간에 진입한 것으로 판단. (원문에 별도 리스크 절 없음)</span></div>
   </div>
 
   <div class="section" id="ks1">
@@ -463,6 +478,12 @@
       <div class="label">29E P/E (Bull)</div>
       <div class="value">23.7<span class="unit">x</span></div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">THESIS</span><span class="tldr-v">A domestic supplier of precision reducers for robots. Trailing P/E is 114x and even the bull-case FY29E figure is 23.7x, so on a 25x growth-manufacturing multiple the current price looks fair.</span></div>
+    <div class="tldr-row"><span class="tldr-k">CATALYST</span><span class="tldr-v">The precision-reducer ramp. From roughly 13.0bn KRW of revenue in 2024, the model carries 130k units in 2026 rising to 330k in 2029, supported by a 40%+ price advantage over Japanese parts and lead times cut from a year to a month.</span></div>
+    <div class="tldr-row"><span class="tldr-k">RISK</span><span class="tldr-v">Valuation itself. At 114x trailing and 26x on FY29E forward earnings, the report judges the stock to have entered overvalued territory. (The original carries no separate risk section.)</span></div>
   </div>
 
   <div class="section" id="es1">
@@ -702,14 +723,5 @@
     window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
   }
 </script>
-<!-- copy-guard -->
-<script>
-(function () {
-  function block(e) { e.preventDefault(); return false; }
-  var events = ['copy', 'cut', 'contextmenu', 'dragstart', 'selectstart'];
-  for (var i = 0; i < events.length; i++) document.addEventListener(events[i], block);
-})();
-</script>
-
 </body>
 </html>

@@ -236,11 +236,20 @@
     .disclaimer { padding:16px 16px; }
   }
 
-/* type-scale:+2px, flat-notes */
-  /* copy-guard */
-  .container, .nav-inner { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
-  .container img, .container figure { -webkit-user-drag:none; user-drag:none; }
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
 
+/* type-scale:+2px, flat-notes */
 </style>
 </head>
 <body>
@@ -292,6 +301,12 @@
       <div class="value">360,600<span class="unit">원</span></div>
       <div class="sub">현재가 대비 +28.1%</div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">국내 고순도 식각액 1위. 단가(P)가 아니라 물량(Q)에 실적이 연동되는 Q 레버리지 구조이며, 현재가 281,500원은 탑다운 Base TP(약 361,000원)를 28% 하회.</span></div>
+    <div class="tldr-row"><span class="tldr-k">촉매</span><span class="tldr-v">소재 시장(SAM) 성장과 점유율 확대가 상방을 결정. Base는 SAM 120억달러·점유 5.9% 고정, Bull은 연 11% 성장·점유 6.6%를 가정. 1Q26 매출 2,638억원(+25.9% YoY), OPM 16.9%.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">고객이 삼성전자·SK하이닉스에 집중돼 양사 capex 사이클에 실적이 묶임. 메모리 capex가 컨센서스를 하회하거나 점유율이 정체되면 Base 하단으로 회귀.</span></div>
   </div>
 
   <div class="section" id="ks1">
@@ -551,6 +566,12 @@
       <div class="value">360,600<span class="unit">KRW</span></div>
       <div class="sub">+28.1% vs current price</div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">THESIS</span><span class="tldr-v">Korea's leader in high-purity etchants. Earnings track volume (Q), not price (P), and at 281,500 KRW the stock sits 28% below the top-down Base TP of roughly 361,000.</span></div>
+    <div class="tldr-row"><span class="tldr-k">CATALYST</span><span class="tldr-v">Upside is set by materials SAM growth times share gain. Base holds SAM at $12bn and share at 5.9%; Bull assumes 11% annual growth and 6.6% share. 1Q26 revenue was 263.8bn KRW (+25.9% YoY) at a 16.9% operating margin.</span></div>
+    <div class="tldr-row"><span class="tldr-k">RISK</span><span class="tldr-v">Customers are concentrated in Samsung Electronics and SK hynix, tying earnings to their capex cycle. If memory capex undershoots consensus or share stalls, the case reverts to the low end of Base.</span></div>
   </div>
 
   <div class="section" id="es1">
@@ -885,14 +906,5 @@
     window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
   }
 </script>
-<!-- copy-guard -->
-<script>
-(function () {
-  function block(e) { e.preventDefault(); return false; }
-  var events = ['copy', 'cut', 'contextmenu', 'dragstart', 'selectstart'];
-  for (var i = 0; i < events.length; i++) document.addEventListener(events[i], block);
-})();
-</script>
-
 </body>
 </html>

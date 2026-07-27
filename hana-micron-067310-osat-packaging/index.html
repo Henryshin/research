@@ -236,11 +236,20 @@
     .disclaimer { padding:16px 16px; }
   }
 
-/* type-scale:+2px, flat-notes */
-  /* copy-guard */
-  .container, .nav-inner { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
-  .container img, .container figure { -webkit-user-drag:none; user-drag:none; }
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
 
+/* type-scale:+2px, flat-notes */
 </style>
 </head>
 <body>
@@ -292,6 +301,12 @@
       <div class="value">45,500<span class="unit">원</span></div>
       <div class="sub">현재가 대비 +37.0%</div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">국내 OSAT 1위. 현재가 33,200원은 Base TP(28,160원)는 이미 넘어섰으나 Bull TP(45,500원)를 27% 밑도는 구간.</span></div>
+    <div class="tldr-row"><span class="tldr-k">촉매</span><span class="tldr-v">Q1 2026 OSAT 영업이익률이 역사적 6~8%대에서 12.2%로 도약. 베트남 증설 가동률 정상화와 IDM의 HBM 집중에 따른 범용 메모리 외주 확대가 동시에 작용.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">FY25 금융비용 880억원이 영업이익의 69%를 잠식. 비지배지분까지 겹쳐 영업이익에서 지배주주순이익으로의 전환율이 29.8%에 그침.</span></div>
   </div>
 
   <div class="section" id="ks1">
@@ -615,6 +630,12 @@
       <div class="value">45,500<span class="unit">KRW</span></div>
       <div class="sub">+37.0% vs current price</div>
     </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">THESIS</span><span class="tldr-v">Korea's #1 OSAT. At 33,200 KRW the stock has already cleared the Base TP of 28,160 but sits 27% below the Bull TP of 45,500.</span></div>
+    <div class="tldr-row"><span class="tldr-k">CATALYST</span><span class="tldr-v">Q1 2026 OSAT operating margin jumped from a historical 6-8% to 12.2%, as Vietnam capacity normalized just as IDMs pushed commodity memory back-end work out to OSATs.</span></div>
+    <div class="tldr-row"><span class="tldr-k">RISK</span><span class="tldr-v">FY25 financial costs of 88.0bn KRW consumed 69% of operating profit. With minority interests on top, only 29.8% of operating profit reached controlling shareholders.</span></div>
   </div>
 
   <div class="section" id="es1">
@@ -1012,14 +1033,5 @@
     window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
   }
 </script>
-<!-- copy-guard -->
-<script>
-(function () {
-  function block(e) { e.preventDefault(); return false; }
-  var events = ['copy', 'cut', 'contextmenu', 'dragstart', 'selectstart'];
-  for (var i = 0; i < events.length; i++) document.addEventListener(events[i], block);
-})();
-</script>
-
 </body>
 </html>

@@ -7,6 +7,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://henryshin.github.io/research/about/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://henryshin.github.io/research/hana-micron-067310-osat-packaging/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
