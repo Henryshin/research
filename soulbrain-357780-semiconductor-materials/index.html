@@ -17,8 +17,12 @@
   var kst = new Date(Date.now() + 9 * 3600 * 1000);
   var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
   function setCount(id, val) {
-    var el = document.getElementById(id);
-    if (el) el.textContent = val.toLocaleString();
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
   }
   var gateKey = 'hs-counted:' + location.pathname;
   var already = false;
@@ -34,6 +38,7 @@
   }
   try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-soulbrain-357780-semiconductor-materials').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-soulbrain-357780-semiconductor-materials-daily-' + today).catch(function(){});
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
