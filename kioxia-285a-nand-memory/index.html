@@ -10,28 +10,44 @@
 
   gtag('config', 'G-1NSTL7K368');
 </script>
-<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day -->
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
 <script>
 (function(){
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
   var kst = new Date(Date.now() + 9 * 3600 * 1000);
   var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val.toLocaleString();
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var el = document.getElementById('visit-count-total');
-      if (el) el.textContent = d.value.toLocaleString();
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
     })
     .catch(function(){});
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var el = document.getElementById('visit-count-today');
-      if (el) el.textContent = d.value.toLocaleString();
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
     })
     .catch(function(){});
-})();
-</script>
+})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kioxia Holdings (TSE Prime 285A) Equity Analysis — NAND Pure-Play at the AI Supercycle Peak</title>
