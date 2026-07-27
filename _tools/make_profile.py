@@ -28,7 +28,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BRAND = os.path.join(ROOT, "_brand")
 
 P = PALETTE
-TAGLINE = "Korea's semiconductor &amp; robotics supply chain, in English"
+# 포지셔닝(2026-07-27 확정): 섹터를 좁히지 않는다. 리포트는 현재 반도체·로봇에
+# 몰려 있지만, 차별점은 섹터가 아니라 "한국어 1차 자료를 읽어 영어로 낸다"는
+# 정보 비대칭 자체다. 나중에 다른 섹터를 다뤄도 브랜드를 갈아엎지 않아도 된다.
+TAGLINE = "Korean stocks, researched in Korean and published in English"
 
 
 def avatar_html(size=400):

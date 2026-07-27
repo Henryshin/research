@@ -44,6 +44,8 @@ BLOCK_RE = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
 CANON_RE = re.compile(r'<link\s+rel="canonical"\s+href="([^"]+)"\s*/?>', re.I)
 ANCHOR_RE = re.compile(r'<meta\s+name="theme-color"[^>]*>', re.I)
 OGTITLE_RE = re.compile(r'<meta\s+property="og:title"\s+content="([^"]*)"', re.I)
+# 블록 밖에 이미 twitter:card 를 선언한 페이지가 있는지 (리포트는 있고 허브는 없음)
+TWCARD_RE = re.compile(r'<meta\s+name="twitter:card"', re.I)
 
 
 def site_base(canonical):
@@ -59,10 +61,19 @@ def site_base(canonical):
     return origin, base
 
 
-def build_block(img_url, alt):
+def build_block(img_url, alt, need_card):
+    """need_card: 페이지가 twitter:card 를 아직 선언하지 않았으면 여기서 넣는다.
+
+    twitter:image 만 있고 twitter:card 가 없으면 X 는 기본값(작은 summary)으로
+    떨어져 큰 이미지가 안 나온다. 허브가 정확히 그 상태였다(구버전 head).
+    twitter:title/description 은 없으면 og:title/og:description 으로 폴백되므로
+    따로 넣지 않는다.
+    """
     alt = escape(alt, quote=True)
-    return "\n".join([
-        START,
+    lines = [START]
+    if need_card:
+        lines.append('<meta name="twitter:card" content="summary_large_image">')
+    return "\n".join(lines + [
         f'<meta property="og:image" content="{img_url}">',
         '<meta property="og:image:width" content="1200">',
         '<meta property="og:image:height" content="630">',
@@ -111,7 +122,9 @@ def process(path, dry=False):
     alt = unescape(tm.group(1)) if tm else "Henry Shin Research"
     alt = alt.split("—")[0].strip() + " — social card"
 
-    block = build_block(img_url, alt)
+    # 기존 블록 밖에 twitter:card 가 있는지로 판단(우리 블록 안의 것은 제외)
+    outside = BLOCK_RE.sub("", html)
+    block = build_block(img_url, alt, need_card=not TWCARD_RE.search(outside))
 
     if START in html:
         new = BLOCK_RE.sub(block + "\n", html, count=1)
