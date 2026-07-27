@@ -33,6 +33,7 @@
     return;
   }
   try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-dongjin-semichem-005290-euv-photoresist').catch(function(){});
   fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
     .then(function(r){ return r.json(); })
     .then(function(d){
