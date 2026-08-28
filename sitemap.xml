@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://henryshin.github.io/research/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -11,6 +11,12 @@
     <lastmod>2026-07-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://henryshin.github.io/research/hana-micron-067310-osat-packaging/</loc>

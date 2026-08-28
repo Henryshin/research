@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-samyang-foods-003230-buldak-export-share').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samyang Foods (003230, KOSPI) Equity Analysis — Buldak Export Monopoly</title>
+<meta name="description" content="Equity analysis of Samyang Foods (003230), the maker of Buldak Bokkeum-myeon and dominant player in Korea's instant-noodle export boom (67.4% share): capacity-constrained growth, the See's Candies moat analogy, and a three-scenario FY28E valuation. Korean/English. Figures updated August 28, 2026.">
+<meta name="keywords" content="Samyang Foods, 삼양식품, 003230, KOSPI, Buldak, 불닭볶음면, ramen export, instant noodle, Korean food stocks, See's Candies moat, capacity constraint, FY28E valuation">
+<link rel="canonical" href="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<!-- social:auto (add_social_meta.py) -->
+<meta property="og:image" content="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/assets/og.png?v=5f85c3aa">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Samyang Foods (003230, KOSPI) Equity Analysis — social card">
+<meta name="twitter:image" content="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/assets/og.png?v=5f85c3aa">
+<meta name="twitter:image:alt" content="Samyang Foods (003230, KOSPI) Equity Analysis — social card">
+<!-- /social:auto -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Samyang Foods (003230, KOSPI) Equity Analysis — Buldak Export Monopoly">
+<meta property="og:description" content="Capacity-constrained growth, the See's Candies moat analogy, and a three-scenario FY28E valuation for Samyang Foods (003230), maker of Buldak Bokkeum-myeon. Korean/English. Figures updated Aug 28, 2026.">
+<meta property="og:url" content="https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Samyang Foods (003230) Equity Analysis">
+<meta name="twitter:description" content="Buldak export monopoly, capacity as the growth ceiling, See's Candies moat analogy, three-scenario FY28E valuation. KO/EN. Figures updated Aug 28, 2026.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "Samyang Foods (003230, KOSPI) Equity Analysis — Buldak Export Monopoly",
+  "description": "Equity analysis of Samyang Foods (003230): capacity-constrained growth, ramen export market share, the See's Candies moat analogy, and a three-scenario FY28E valuation. Available in Korean and English. Figures updated August 28, 2026.",
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-08-28",
+  "inLanguage": ["en", "ko"],
+  "author": { "@type": "Person", "name": "Henry Shin" },
+  "publisher": { "@type": "Organization", "name": "Henry Shin Research" },
+  "about": [
+    { "@type": "Corporation", "name": "Samyang Foods", "tickerSymbol": "KRX:003230" }
+  ],
+  "keywords": "Samyang Foods 003230, 삼양식품, Buldak, ramen export, instant noodle export monopoly",
+  "mainEntityOfPage": "https://henryshin.github.io/research/samyang-foods-003230-buldak-export-share/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:15.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:13.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:13px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:35px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:15px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:14.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:12.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:14.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:12.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:14px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:14px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:16px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:14.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:15px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:15px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:15.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:13.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { color:var(--ink-faint); font-size:13.3px; margin:8px 0 4px; line-height:1.62; }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:13.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:13px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:13px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:13px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:15px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:14px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:22px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:12px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:13.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:22px; }
+    .kpi-card .value .unit { font-size:13px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:19px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:15.5px; }
+    table.tbl { font-size:14px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
+
+/* type-scale:+2px, flat-notes */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 003230</div>
+    <h1>삼양식품(003230) 분석보고서</h1>
+    <p class="lede">FY25 매출 2조 3,518억(+36.1%)·영업이익률 22.3% · 1H26 매출 1조 4,847억(+37.2%)·영업이익률 23.8% · 해외 매출 비중 83.8%(2Q26)의 라면 수출 기업 · 현재가 1,544,000원 · 시총 약 11.63조원 (2026-08-28)</p>
+    <div class="meta">
+      <span>최초작성 2026-08-25 (vF)</span>
+      <span>수치 업데이트 2026-08-28 (기준주가 1,544,000원, 08-28 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">현재가</div>
+      <div class="value">1,544,000<span class="unit">원</span></div>
+      <div class="sub">52주 981,000 ~ 1,665,000원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">시가총액</div>
+      <div class="value">11조 6,310<span class="unit">억원</span></div>
+      <div class="sub">발행주식수 7,533,015주</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">트레일링 PER</div>
+      <div class="value">29.9<span class="unit">배</span></div>
+      <div class="sub">FY25 지배주주순이익 3,894억 기준</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Best TP (FY28E)</div>
+      <div class="value">1,935,440<span class="unit">원</span></div>
+      <div class="sub">현재가 대비 +25.4%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">국내 최초 라면 제조사에서 불닭볶음면 흥행으로 수출 기업으로 성격이 바뀜. FY25 해외 매출 비중 80.1%, 2Q26 83.8%. 성장의 제약은 수요가 아니라 생산능력이며, 밀양2공장(2025-07 완공)과 중국 자싱공장(2027-01 가동 예정)이 향후 3년의 외형을 결정함.</span></div>
+    <div class="tldr-row"><span class="tldr-k">밸류에이션</span><span class="tldr-v">상대가치 Base 목표주가(1,273,571원)와 DCF 적정주가(1,250,305원)는 현재가를 밑돌지만, 자본이 ROE 26.5%로 복리 성장한다고 보는 계통은 기대수익률 10.5%로 요구수익률(10.0%)을 근소하게 상회 — 두 계통의 괴리가 이 회사 판단의 핵심.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">매출의 91.7%가 면스낵, 그 안에서도 불닭 브랜드 한 가지에 의존해 다변화가 낮음. 중국 자싱공장은 첫 해외 생산기지로 현지 생산 원가·품질 검증 실적이 아직 없음. 최대주주 지분에 걸린 주식담보계약도 계속 확인 대상.</span></div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>회사 개요</h2>
+    <div class="sub-h">설립·사업 본질 · 실적 개요</div>
+    <p>삼양식품은 1963년 국내 최초로 라면을 출시한 면류 제조사이며, 2012년 내놓은 불닭볶음면이 해외에서 팔리기 시작하면서 수출 기업으로 성격이 바뀐 회사임.</p>
+    <p>FY25 연결 매출 2조 3,518억원 가운데 해외가 1조 8,839억원으로 80.1%를 차지하고, 2Q26에는 그 비중이 83.8%까지 올라감.</p>
+    <p>성장의 제약은 수요가 아니라 생산능력이어서, 2025년 7월 완공된 밀양2공장과 2027년 1월 가동 예정인 중국 자싱공장이 향후 3년의 외형을 결정함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>내용</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">종목/코드</td><td>삼양식품 / 003230 (KOSPI)</td><td class="rowlab">시가총액</td><td>11조 6,310억원 (2026-08-28)</td></tr>
+        <tr><td class="rowlab">설립</td><td>1961년 9월 15일</td><td class="rowlab">상장</td><td>1975년 6월 (KOSPI)</td></tr>
+        <tr><td class="rowlab">대표이사</td><td>김정수 회장 · 김동찬 부사장</td><td class="rowlab">결산월</td><td>12월</td></tr>
+        <tr><td class="rowlab">본사</td><td>서울 중구 퇴계로 159 (충무로2가)</td><td class="rowlab">임직원수</td><td>3,219명 (2026-06-30, 별도)</td></tr>
+        <tr><td class="rowlab">발행주식수</td><td>7,533,015주 (자기주식 2주)</td><td class="rowlab">현재가</td><td>1,544,000원 (2026-08-28)</td></tr>
+        <tr><td class="rowlab">FY25 매출</td><td>2조 3,518억원 (+36.1%)</td><td class="rowlab">FY25 영업이익</td><td>5,242억원 (OPM 22.3%)</td></tr>
+        <tr><td class="rowlab">1H26 매출</td><td>1조 4,847억원 (+37.2%)</td><td class="rowlab">1H26 영업이익</td><td>3,533억원 (OPM 23.8%)</td></tr>
+        <tr><td class="rowlab">사업 부문</td><td>면스낵 91.7% · 용역서비스 4.0% · 소스조미소재 3.0% · 냉동 2.6%</td><td class="rowlab">연결 구조</td><td>종속회사 15사(국내4·해외11) · 국내 생산 3곳 · 해외 판매법인 6곳</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) · 종가·시가총액 2026-08-28 (Yahoo Finance)</div>
+  </div>
+
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>산업 분석</h2>
+    <div class="sub-h">2.1 수출액과 연결 매출의 차이 · 2.2 한국 라면 수출 시장과 점유율 · 2.3 생산능력이 성장률을 정하는 구간 · 2.4 원재료와 환율</div>
+
+    <h3><span class="no">2.1.</span>수출액과 연결 매출의 차이</h3>
+    <p>삼양식품의 성장을 관세청 라면 수출 통계로 읽는 관행이 널리 쓰이지만, 수출액과 연결 매출은 인식 시점과 가격 기준이 달라 1.25배 벌어짐.</p>
+    <p>관세청이 잡는 수출액은 세관을 통과한 선적가이고, 연결 매출은 해외 판매법인이 현지 도소매에 되판 가격이어서 그 사이의 재판매 마진만큼 차이가 남.</p>
+    <p>FY25 기준으로 세관 신고 라면 수출액 1조 4,592억원에 대해 연결 면스낵 수출 매출은 1조 8,239억원이며, 차액 3,647억원이 현지 재판매 마진과 스낵·기타 수출임.</p>
+    <p>이 구조 때문에 해외 판매법인이 재고를 쌓는 분기에는 수출액이 먼저 늘고 연결 매출은 뒤따르며, 반대로 재고를 소진하는 분기에는 순서가 뒤집힘.</p>
+    <p>2027년 1월 중국 자싱공장이 돌기 시작하면 중국向 물량이 세관을 거치지 않게 되므로, 수출 통계와 연결 매출을 잇는 고리가 그만큼 끊어짐.</p>
+
+    <h3><span class="no">2.2.</span>한국 라면 수출 시장과 점유율</h3>
+    <p>한국 라면 수출액은 2021년 7,719억원에서 2025년 2조 1,642억원으로 4년간 2.8배가 되었고, 이 시장에서 삼양식품의 점유율은 48.3%에서 67.4%로 19.1%p 올라감.</p>
+    <p>시장 자체가 커지는 동시에 그 안에서 점유율까지 올라간 구간이었고, 4년간 수출액 증가분 1조 3,923억원 중 삼양식품 몫이 1조 865억원으로 78.0%임.</p>
+    <p>다만 2026년 상반기 점유율이 66.0%로 전년 67.4% 대비 1.4%p 내려왔는데, 이는 경쟁 심화보다 국내 공장이 이미 한계 가동 상태여서 늘어난 수요를 다 받지 못한 결과에 가까움.</p>
+    <p>점유율이 이미 3분의 2에 이르렀으므로 앞으로의 성장은 점유율 확대가 아니라 시장 자체의 확대와 해외 현지 생산에서 나와야 함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>기간</th><th class="num">한국 라면 수출액</th><th class="num">삼양식품 라면 수출액</th><th class="num">삼양식품 점유율</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">2021년</td><td class="num">7,719</td><td class="num">3,727</td><td class="num">48.3%</td></tr>
+        <tr><td class="rowlab">2022년</td><td class="num">9,892</td><td class="num">5,258</td><td class="num">53.2%</td></tr>
+        <tr><td class="rowlab">2023년</td><td class="num">12,435</td><td class="num">7,324</td><td class="num">58.9%</td></tr>
+        <tr><td class="rowlab">2024년</td><td class="num">17,045</td><td class="num">10,693</td><td class="num">62.7%</td></tr>
+        <tr class="hl"><td class="rowlab">2025년</td><td class="num">21,642</td><td class="num">14,592</td><td class="num">67.4%</td></tr>
+        <tr><td class="rowlab">2026년 상반기</td><td class="num">13,892</td><td class="num">9,175</td><td class="num">66.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 회사 IR 자료(2026-08-19) 한국 라면 수출 동향 · 관세청 집계 · 억원</div>
+
+    <h3><span class="no">2.3.</span>생산능력이 성장률을 정하는 구간</h3>
+    <p>라면은 라인당 생산량이 물리적으로 정해져 있어 수요가 늘어도 설비 없이는 매출이 늘지 않으며, 삼양식품의 최근 3년 실적이 그 제약을 그대로 보여줌.</p>
+    <p>생산능력이 20.89억식에서 24.44억식으로 늘어난 FY25에 가동률은 오히려 86.6%에서 93.6%로 올라갔고, 2026년 상반기에는 96.5%까지 도달함.</p>
+    <p>공장별로 보면 편차가 더 큰데, 2026년 상반기 원주공장 면류 가동률은 101.1%, 익산공장은 118.7%로 표준 가동시간을 초과했고 밀양공장만 86.7%로 여유가 남아 있음.</p>
+    <p>밀양2공장은 봉지면 3개 라인이 24시간 가동 중이고 용기면 라인은 2교대로 올라가는 중이어서, 남은 여유분도 2026년 안에 소진될 가능성이 높음.</p>
+    <p>식당 매출단가는 FY24 877원에서 1H26 993원으로 13.2% 올랐는데, 판가 인상이 아니라 단가가 높은 미국·유럽 비중이 커진 지역 믹스 효과임.</p>
+    <p>식당 매출단가는 면스낵 매출을 면류 생산식수로 나눈 환산값이며, 스낵 매출이 분자에 포함되어 실제 라면 단가보다 높게 나옴. 생산과 판매의 시차는 보정하지 않음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">면류 생산능력 (억식)</td><td class="num">20.89</td><td class="num">24.44</td><td class="num">14.04</td></tr>
+        <tr><td class="rowlab">면류 생산실적 (억식)</td><td class="num">18.09</td><td class="num">22.87</td><td class="num">13.55</td></tr>
+        <tr class="hl"><td class="rowlab">가동률</td><td class="num">86.6%</td><td class="num">93.6%</td><td class="num">96.5%</td></tr>
+        <tr><td class="rowlab">면스낵 매출 (억원)</td><td class="num">15,866</td><td class="num">21,555</td><td class="num">13,449</td></tr>
+        <tr><td class="rowlab">식당 매출단가 (원/식)</td><td class="num">877</td><td class="num">942</td><td class="num">993</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 생산능력·생산실적 · 면류 3개 공장 합산</div>
+
+    <h3><span class="no">2.4.</span>원재료와 환율</h3>
+    <p>원가의 방향을 정하는 것은 밀가루와 팜유 두 가지이며, FY25에 맥분 투입단가는 kg당 742원으로 전년 782원 대비 5.1% 내렸고 정제유는 1,776원으로 15.1% 올랐음.</p>
+    <p>2026년 상반기에는 맥분이 680원으로 8.4% 더 내려 원가율 개선에 기여했으나 정제유는 1,845원으로 3.9% 추가 상승해 방향이 엇갈림.</p>
+    <p>매출의 80% 이상이 외화로 발생하므로 환율은 매출과 원가에 동시에 작용하며, 2Q26 매출총이익률이 48.1%로 전분기 42.4% 대비 5.7%p 개선된 데에는 원화 약세가 함께 들어가 있음.</p>
+    <p>팜유는 사업보고서가 공급 시장의 과점 정도를 높음으로 기재한 품목이어서 가격 협상 여지가 제한적이고, 밀가루는 종속회사 삼양제분(주)에서 조달해 외부 가격 변동을 한 단계 걸러 받음.</p>
+    <p>미국이 2026년 7월 관세를 인상하면서 현지 법인이 사전 재고를 확보했고, 그 물량이 하반기에 순차 출고되는 구조여서 관세는 원가보다 출고 시점에 먼저 영향을 미침.</p>
+  </div>
+
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>사업 모델</h2>
+    <div class="sub-h">3.1 매출 구성 · 3.2 지역별 매출과 이익 · 3.3 고객 구성과 교섭력 · 3.4 경제적 해자</div>
+
+    <h3><span class="no">3.1.</span>매출 구성</h3>
+    <p>FY25 연결 매출 2조 3,518억원 가운데 면스낵이 2조 1,556억원으로 91.7%를 차지해, 사실상 라면 한 품목의 회사임.</p>
+    <p>면스낵 안에서도 수출이 1조 8,239억원으로 84.6%이고 내수는 3,316억원에 그쳐, 국내 라면 시장의 경쟁 구도는 실적에 미치는 영향이 제한적임.</p>
+    <p>소스·조미소재는 매출 규모가 706억원으로 작으나 FY25에 63.9% 늘었고 1H26에도 전사 성장률을 웃돌고 있어, 불닭 브랜드를 면 밖으로 넓히는 통로 역할을 함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>부문</th><th>주요 제품</th><th class="num">FY25 매출</th><th class="num">FY25 비중</th><th class="num">1H26 매출</th><th class="num">1H26 비중</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">면스낵</td><td>봉지면·용기면·스낵</td><td class="num">21,555</td><td class="num">91.7%</td><td class="num">13,449</td><td class="num">90.6%</td></tr>
+        <tr><td class="rowlab">소스·조미소재</td><td>용기소스·벌크소스</td><td class="num">706</td><td class="num">3.0%</td><td class="num">534</td><td class="num">3.6%</td></tr>
+        <tr><td class="rowlab">냉동</td><td>만두·떡갈비·커틀릿</td><td class="num">613</td><td class="num">2.6%</td><td class="num">338</td><td class="num">2.3%</td></tr>
+        <tr><td class="rowlab">뉴트리션</td><td>백색우유·기능성식품</td><td class="num">29</td><td class="num">0.1%</td><td class="num">15</td><td class="num">0.1%</td></tr>
+        <tr><td class="rowlab">기타 제품</td><td>부식·골판지상자</td><td class="num">94</td><td class="num">0.4%</td><td class="num">42</td><td class="num">0.3%</td></tr>
+        <tr><td class="rowlab">매출에누리</td><td>판매장려금 등</td><td class="num">-562</td><td class="num">-2.4%</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td class="rowlab">용역서비스</td><td>물류·후레이크 선별</td><td class="num">948</td><td class="num">4.0%</td><td class="num">403</td><td class="num">2.7%</td></tr>
+        <tr><td class="rowlab">축산·관광</td><td>유기농원유·관광</td><td class="num">52</td><td class="num">0.2%</td><td class="num">22</td><td class="num">0.1%</td></tr>
+        <tr><td class="rowlab">기타</td><td>임대 등</td><td class="num">82</td><td class="num">0.4%</td><td class="num">44</td><td class="num">0.3%</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td>—</td><td class="num">23,518</td><td class="num">100%</td><td class="num">14,847</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 사업부문별 매출 · 억원. 1H26 부문별 금액은 매출에누리를 각 부문에서 차감한 순매출 기준이어서 에누리 행이 따로 표기되지 않음. 반올림으로 세로합 ±1억.</div>
+
+    <h3><span class="no">3.2.</span>지역별 매출과 이익</h3>
+    <p>해외 매출은 미국과 중국 두 곳에 집중되어 있으나 FY25에 유럽이 1,831억원으로 전년 326억원 대비 5.6배가 되면서 세 번째 축이 만들어짐.</p>
+    <p>대한민국 지역 매출 9,041억원에는 판매법인이 없는 국가로 나가는 직수출이 포함되어 있어, 실제 내수는 4,680억원으로 전사의 19.9%임.</p>
+    <p>지역별 영업이익은 매출 비중과 어긋나는데, 1H26 기준 대한민국이 3,196억원인 반면 중국은 8.6억원으로 전년 동기 93.0억원에서 크게 줄었고 유럽은 32.5억원에서 290억원으로 늘었음.</p>
+    <p>중국 법인의 이익이 줄어든 것은 매출이 40% 늘어난 가운데 벌어진 일이며, 2Q26 중국 온라인 광고선전비 118억원 집행이 그 원인의 하나임.</p>
+    <p>지역별 이익은 본사와 법인 사이의 이전가격에 따라 배분되므로 각 법인의 절대 이익보다 전사 합산과 그 추세를 보는 편이 실질에 가까움.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>지역</th><th class="num">FY24 매출</th><th class="num">FY25 매출</th><th class="num">YoY</th><th class="num">1H26 매출</th><th class="num">1H26 YoY</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">대한민국</td><td class="num">8,535</td><td class="num">9,041</td><td class="num">+5.9%</td><td class="num">5,048</td><td class="num">+11.2%</td></tr>
+        <tr><td class="rowlab">미국</td><td class="num">3,829</td><td class="num">6,097</td><td class="num">+59.2%</td><td class="num">3,927</td><td class="num">+45.2%</td></tr>
+        <tr><td class="rowlab">중국</td><td class="num">4,192</td><td class="num">5,973</td><td class="num">+42.5%</td><td class="num">3,577</td><td class="num">+40.0%</td></tr>
+        <tr><td class="rowlab">유럽</td><td class="num">326</td><td class="num">1,831</td><td class="num">+461.2%</td><td class="num">1,905</td><td class="num">+155.3%</td></tr>
+        <tr><td class="rowlab">일본</td><td class="num">263</td><td class="num">339</td><td class="num">+28.9%</td><td class="num">211</td><td class="num">+31.3%</td></tr>
+        <tr><td class="rowlab">인도네시아</td><td class="num">135</td><td class="num">237</td><td class="num">+75.4%</td><td class="num">179</td><td class="num">+55.7%</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td class="num">17,280</td><td class="num">23,518</td><td class="num">+36.1%</td><td class="num">14,847</td><td class="num">+37.2%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 영업부문 주석 · 외부고객 수익 · 억원</div>
+
+    <h3><span class="no">3.3.</span>고객 구성과 교섭력</h3>
+    <p>내수는 대형 유통에 팔고 해외는 자사 판매법인에 넘기는 구조여서, 특정 외부 고객 한 곳에 매출이 몰리는 위험은 크지 않음.</p>
+    <p>교섭력의 방향은 운전자본에서 드러나는데, FY25 매출채권 1,852억원이 매입채무 1,296억원을 웃돌아 배율이 1.43배로 올라감.</p>
+    <p>배율이 1을 넘는 것은 대금을 먼저 내주고 나중에 받는 구조라는 뜻이며, 해외 판매법인을 통해 파는 비중이 커질수록 현지 유통 대금 회수 기간이 채권에 그대로 실리기 때문임.</p>
+    <p>재고자산도 FY24 1,480억원에서 FY25 2,450억원으로 65.5% 늘었는데, 미국 관세 대응 사전 비축과 유럽 신규 진출에 따른 현지 재고 확보가 겹친 결과임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>판매경로</th><th class="num">매출 비중</th><th>주요 매출처</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">면 (내수)</td><td>할인점·편의점</td><td class="num">41.1%</td><td>이마트·홈플러스·롯데마트·BGF리테일·GS리테일 등</td></tr>
+        <tr><td class="rowlab">면 (내수)</td><td>유통 기타</td><td class="num">42.4%</td><td>온라인·기업 거래(B2B) 등</td></tr>
+        <tr><td class="rowlab">면 (내수)</td><td>특약점</td><td class="num">16.5%</td><td>지역 대리점</td></tr>
+        <tr class="hl"><td class="rowlab">해외</td><td>직수출</td><td class="num">93.9%</td><td>해외 판매법인 및 현지 수입상</td></tr>
+        <tr><td class="rowlab">해외</td><td>로컬</td><td class="num">6.1%</td><td>중국·미주 지역 현지 조달</td></tr>
+        <tr><td class="rowlab">소스·조미소재</td><td>일반 소비자(B2C)</td><td class="num">65.4%</td><td>이마트·쿠팡 등</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12) 판매경로 및 판매전략</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출채권</td><td class="num">532</td><td class="num">836</td><td class="num">798</td><td class="num">1,368</td><td class="num">1,852</td></tr>
+        <tr><td class="rowlab">매입채무</td><td class="num">690</td><td class="num">865</td><td class="num">1,065</td><td class="num">1,447</td><td class="num">1,296</td></tr>
+        <tr class="hl"><td class="rowlab">채권/채무 배율 (배)</td><td class="num">0.77</td><td class="num">0.97</td><td class="num">0.75</td><td class="num">0.95</td><td class="num">1.43</td></tr>
+        <tr><td class="rowlab">재고자산</td><td class="num">448</td><td class="num">1,103</td><td class="num">1,422</td><td class="num">1,480</td><td class="num">2,450</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) 연결 재무상태표 · 억원</div>
+
+    <h3><span class="no">3.4.</span>경제적 해자</h3>
+    <p>삼양식품의 경제적 해자는 매운맛 레시피도 아니고 미국 유통 채널도 아님.</p>
+    <p>워런 버핏이 투자한 씨즈캔디라는 회사를 생각해보면 됨. 1972년 인수 당시 1파운드에 1.85달러밖에 하지 않는 저렴하고 단순한 사탕을 만들어 팔던 회사임.</p>
+    <p>미국 내에서 반복적 구매를 만들어내는 브랜드 파워를 갖고 있었고, 위 표처럼 급격한 세후 이익 상승률을 달성한 바탕은 제품의 가격에 있음.</p>
+    <p>파운드당 1.85달러밖에 하지 않았기 때문에 매년 10%씩 가격을 올려도 소비자들의 구매 패턴은 달라지지 않았던 것임.</p>
+    <p>위 그래프는 씨즈캔디에 대한 구글 트렌드 검색 결과임. 매년 할로윈 시즌으로 추정되는 10~11월쯤 검색량이 급증하고 매년 동일한 패턴을 보이고 있음.</p>
+    <p>구글 트렌드는 최근 5년간의 데이터만 보여주고 있으나, 과거 1972년부터 동일한 패턴이지 않았을까 싶음.</p>
+    <p>관건은 삼양식품 또한 씨즈캔디처럼 글로벌 소비자들로부터 반복 매출을 끌어낼 수 있느냐임.</p>
+    <p>불닭볶음면이 미국에 처음 퍼져나갈 당시 미국에서 교환학생을 하고 있었기에, 불닭볶음면은 여느 유행 정도일 뿐이라고 생각했었음. 퍼져나가는 방식이 먹방 등 매운맛 호기심을 자극하는 일회성 도전 콘텐츠 위주였기 때문임.</p>
+    <p>매우 개인적인 경험이지만, 까르보나라 맛을 먹어보면서 생각이 달라지게 됨. 반복매출이 발생 가능한 수준까지 매운맛이 내려왔다고 판단함.</p>
+    <p>이제는 두 번째 관문으로 씨즈캔디처럼 가격을 올릴 수 있느냐임.</p>
+    <p>가격을 올리지 않는 정책을 3년 동안 고수해왔으나, 미국이 2025년 4월 한국산 라면에 10% 관세를 매기고 8월 15%로 올리면서 상황이 달라짐.</p>
+    <p>삼양식품은 그해 10월 미국 공급가를 9% 인상했고, 월마트 소매가는 5개입 기준 6.88달러에서 7.84달러로 14.0% 올라 3년 만의 첫 인상이 됨.</p>
+    <p>인상 이후 미국법인 분기 매출은 2025년 4분기 1,750억원, 2026년 1분기 1,855억원, 2분기 2,036억원으로 늘었음.</p>
+    <p>2분기 증가율 54.3%가 공급가 인상분 9%를 크게 웃돌아 물량 자체가 늘었음을 보여줌.</p>
+  </div>
+
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>재무 추정</h2>
+    <div class="sub-h">최근 5년 연결 실적</div>
+    <p>5년간 매출이 3.7배가 되는 동안 영업이익은 8.0배가 되어, 외형보다 이익이 두 배 빠르게 늘어난 구간이었음. 이익률 상승이 판관비 절감이 아니라 지역 믹스에서 나왔다는 점은, 마케팅 투자를 줄이지 않고도 마진이 올라간 구조라는 뜻임.</p>
+    <p>FCF는 23, 24년 대규모 흑자였으나 공장 증설에 들어가면서 25년은 -1,500억원 규모 적자로 전환함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액</td><td class="num">6,420</td><td class="num">9,090</td><td class="num">11,929</td><td class="num">17,280</td><td class="num">23,518</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">41.6%</td><td class="num">31.2%</td><td class="num">44.9%</td><td class="num">36.1%</td></tr>
+        <tr><td class="rowlab">영업이익</td><td class="num">654</td><td class="num">904</td><td class="num">1,475</td><td class="num">3,446</td><td class="num">5,242</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">10.2%</td><td class="num">9.9%</td><td class="num">12.4%</td><td class="num">19.9%</td><td class="num">22.3%</td></tr>
+        <tr><td class="rowlab">지배주주순이익</td><td class="num">563</td><td class="num">798</td><td class="num">1,263</td><td class="num">2,720</td><td class="num">3,894</td></tr>
+        <tr><td class="rowlab">EPS (원)</td><td class="num">7,481</td><td class="num">10,665</td><td class="num">16,929</td><td class="num">36,468</td><td class="num">52,156</td></tr>
+        <tr><td class="rowlab">ROE</td><td class="num">14.4%</td><td class="num">17.6%</td><td class="num">22.4%</td><td class="num">33.3%</td><td class="num">31.0%</td></tr>
+        <tr><td class="rowlab">주당배당금 (원)</td><td class="num">1,000</td><td class="num">1,400</td><td class="num">2,100</td><td class="num">3,300</td><td class="num">4,800</td></tr>
+        <tr><td class="rowlab">배당성향</td><td class="num">13.2%</td><td class="num">13.0%</td><td class="num">12.4%</td><td class="num">9.0%</td><td class="num">9.2%</td></tr>
+        <tr><td class="rowlab">영업활동현금흐름</td><td class="num">584</td><td class="num">478</td><td class="num">1,681</td><td class="num">3,579</td><td class="num">3,093</td></tr>
+        <tr><td class="rowlab">CAPEX</td><td class="num">1,415</td><td class="num">930</td><td class="num">494</td><td class="num">2,334</td><td class="num">4,614</td></tr>
+        <tr class="hl"><td class="rowlab">FCF</td><td class="num">-831</td><td class="num">-452</td><td class="num">1,187</td><td class="num">1,245</td><td class="num">-1,521</td></tr>
+        <tr><td class="rowlab">부채비율</td><td class="num">90.3%</td><td class="num">103.4%</td><td class="num">102.9%</td><td class="num">92.6%</td><td class="num">72.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) 연결기준 · 순이익·EPS·ROE는 지배주주 기준 · 억원</div>
+  </div>
+
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>밸류에이션</h2>
+    <div class="sub-h">5.1 적용 멀티플 · 5.2 시나리오 분석 · 5.3 DCF 교차검증</div>
+
+    <h3><span class="no">5.1.</span>적용 멀티플</h3>
+    <p>매출의 91.7%가 면스낵이고 그 안에서도 불닭 브랜드 한가지에 기대고 있어 매출 다변화 수준이 낮고, 2027년 1월 가동 예정인 중국 자싱공장이 회사의 첫 해외 생산기지여서, 현지 생산 원가와 품질을 검증한 실적이 아직 없다는 점을 고려하여 Peer PER 하단 13배 수준 적용함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Peer</th><th>사업 영역</th><th class="num">Forward PER</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Nissin Foods Holdings (2897.T)</td><td>일본 · 컵누들 · 미주·중국 현지 생산</td><td class="num">17.7</td></tr>
+        <tr><td class="rowlab">Toyo Suisan (2875.T)</td><td>일본 · Maruchan · 미국 라면 1위</td><td class="num">14.73</td></tr>
+        <tr><td class="rowlab">Tingyi (0322.HK)</td><td>중국 · 캉스푸 라면·음료</td><td class="num">13.92</td></tr>
+        <tr><td class="rowlab">Indofood CBP (ICBP.JK)</td><td>인도네시아 · Indomie · 아프리카·중동 수출</td><td class="num">9.06</td></tr>
+        <tr><td class="rowlab">Peer 평균</td><td>—</td><td class="num">13.85</td></tr>
+        <tr class="hl"><td class="rowlab">적용 PER (단일 브랜드·검증 미완 너프)</td><td>단일 브랜드 의존 + 첫 해외 생산기지 검증 미완 → 평균에서 0.85배 너프</td><td class="num">13</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — stockanalysis.com 조회 2026-08-25 · 시장 컨센서스 기준 Forward PER</div>
+
+    <h3><span class="no">5.2.</span>시나리오 분석</h3>
+    <p>시나리오 간 차이는 가동률·식당 매출단가·비면 매출·OPM 네 개 키팩터에서만 발생하고, 생산능력과 적용 PER은 3 시나리오에 같은 값을 씀.</p>
+    <h4>Base — 중국 자싱공장 2년차 가동률 57%</h4>
+    <p>가동률 85%는 국내가 1H26 수준인 96%를 유지하고 중국 신공장이 2년차에 57%에 머문다고 본 값이며, 식당 매출단가 1,080원은 미주·유럽 비중 상승분을 중국 현지 생산 물량의 낮은 단가가 상당 부분 상쇄한다고 본 결과임.</p>
+    <p>매출 4조 2,490억원은 FY28 추정치를 낸 증권사 두 곳(유안타증권 4조 4,310억원·신한투자증권 4조 4,795억원)을 4.1~5.1% 밑돌고, 목표주가 1,273,571원은 현재가를 17.5% 밑돎.</p>
+    <h4>Bull — 중국 신공장이 밀양2공장 속도로 램프업</h4>
+    <p>가동률 92%는 중국 신공장이 2년차에 70%까지 올라간다는 가정이며, 밀양2공장이 2025년 7월 완공 후 1년 만에 봉지면 라인 전체를 24시간 가동하는 수준에 도달한 전례가 그 근거임.</p>
+    <p>OPM 25.0%는 2Q26 실적 22.9%에 일회성 비용 50억원을 되돌린 23.5%에서 1.5%p 올린 값이고, 중국 현지 생산에 따른 물류비 절감을 반영함.</p>
+    <h4>Best — 미주·유럽 확장 지속에 전 라인 가동</h4>
+    <p>가동률 98%는 국내 공장이 1H26처럼 표준 가동시간을 넘겨 돌면서 중국 신공장도 85% 이상 채워져야 성립하므로, 두 지역의 수요가 동시에 강해야 하는 조건임.</p>
+    <p>식당 매출단가 1,230원은 1H26 대비 23.9% 높은 수준이고, 목표주가 1,935,440원은 증권사 목표주가 범위인 1,750,000원에서 2,000,000원 안에 들어옴.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">총 생산능력 (억식)</td><td class="num">42.8</td><td class="num">42.8</td><td class="num">42.8</td></tr>
+        <tr><td class="rowlab">가동률</td><td class="num">85%</td><td class="num">92%</td><td class="num">98%</td></tr>
+        <tr><td class="rowlab">판매 식수 (억식)</td><td class="num">36.38</td><td class="num">39.38</td><td class="num">41.94</td></tr>
+        <tr><td class="rowlab">식당 매출단가 (원/식)</td><td class="num">1,080</td><td class="num">1,150</td><td class="num">1,230</td></tr>
+        <tr><td class="rowlab">면스낵 매출 (억원)</td><td class="num">39,290</td><td class="num">45,282</td><td class="num">51,591</td></tr>
+        <tr><td class="rowlab">비면 매출 (억원)</td><td class="num">3,200</td><td class="num">3,500</td><td class="num">3,800</td></tr>
+        <tr><td class="rowlab">합계 매출 (억원)</td><td class="num">42,490</td><td class="num">48,782</td><td class="num">55,391</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">23%</td><td class="num">25%</td><td class="num">27%</td></tr>
+        <tr><td class="rowlab">영업이익 (억원)</td><td class="num">9,773</td><td class="num">12,196</td><td class="num">14,956</td></tr>
+        <tr><td class="rowlab">지배주주순이익 (억원)</td><td class="num">7,380</td><td class="num">9,173</td><td class="num">11,215</td></tr>
+        <tr><td class="rowlab">EPS (원)</td><td class="num">97,967</td><td class="num">121,767</td><td class="num">148,880</td></tr>
+        <tr><td class="rowlab">예상 ROE</td><td class="num">23.7%</td><td class="num">28.0%</td><td class="num">32.4%</td></tr>
+        <tr><td class="rowlab">적용 PER (배)</td><td class="num">13</td><td class="num">13</td><td class="num">13</td></tr>
+        <tr class="hl"><td class="rowlab">목표주가 (원)</td><td class="num">1,273,571</td><td class="num">1,582,971</td><td class="num">1,935,440</td></tr>
+        <tr class="hl"><td class="rowlab">현재가 대비 상승률</td><td class="num">-17.5%</td><td class="num">+2.5%</td><td class="num">+25.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>현재가 대비 상승률 갱신</b> — 현재가 1,544,000원(2026-08-28 종가) 기준 재계산. 목표주가·EPS 등 나머지 수치는 별첨 엑셀 그대로이며 현재가 셀만 교체함. <b>출처</b> — 생산능력 사업보고서·DS투자증권(2026-08-18) · 실적 사업보고서(2025.12)·반기보고서(2026.06)</div>
+
+    <h3><span class="no">5.3.</span>DCF 교차검증</h3>
+    <p>현금흐름으로 재면 기대수익률이 8.48~8.64%로 요구수익률 10.0%에 못 미치고, 자본이 ROE 26.5%로 15년 복리 성장한다고 보면 10.5%로 넘어섬.</p>
+    <p>두 계통이 갈리는 지점이 이 회사의 논점이며, 증설에 넣은 자본이 언제까지 26%대 수익률을 낼 것인가 하나로 좁혀짐.</p>
+    <p>기대수익률은 연 현금흐름을 가격으로 나눈 값에 영구성장률을 더해 구함. 현금이 매년 영구성장률만큼 자라며 영원히 나온다고 보면, 가격을 치르고 얻는 연 수익률이 올해 현금수익률과 현금이 자라는 몫으로 정확히 갈리기 때문임.</p>
+    <p>할인율은 계산식에 들어가지 않고 나온 기대수익률이 살 만한지 재는 기준선으로만 쓰며, 요구수익률 10.0%는 지수 장기 기대수익률 8%에 단일 브랜드 의존과 첫 해외 생산기지를 2%p 얹은 값임.</p>
+    <p>연 현금흐름은 지배주주순이익에 감가상각비를 되돌리고 CAPEX와 운전자본 증가를 뺀 값임. 둘 다 주주에게 남지 않고 설비와 재고·채권에 묶이는 돈이어서 함께 차감함.</p>
+    <p>운전자본을 빼는 것이 특히 중요한데, FY25에 매출채권과 재고가 늘면서 묶인 현금이 1,605억원으로 그해 지배주주순이익 3,894억원의 41%에 이르렀음.</p>
+    <p>한 해 현금으로 뭉개지 않고 1~3년은 컨센서스를 그대로 쓰고, 4~6년은 성장률을 직접 정해 영구성장률로 수렴시키며, 7년차부터는 위 공식으로 영구 처리함.</p>
+    <p>간이는 첫해부터 영구 성장으로 두고 3단계는 4~6년 전환구간을 따로 두는 차이여서, 전환구간 성장률을 영구성장률까지 곧바로 떨어뜨리면 두 값이 붙음.</p>
+    <p>두 방식 모두 기간을 무한대로 못박고 성장률이 그 역할을 대신하는데, 기간을 유한하게 잡으면 같은 현금에 매기는 배수가 아래처럼 줄어듦.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>값</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">영구성장률 g</td><td>2.5%</td></tr>
+        <tr><td class="rowlab">판정 기준 할인율 r</td><td>10.0%</td></tr>
+        <tr><td class="rowlab">1~3년 주주 현금흐름 (억원)</td><td>3,200 → 6,030 → 6,950</td></tr>
+        <tr><td class="rowlab">4~6년 성장률</td><td>10.0% → 7.0% → 4.5%</td></tr>
+        <tr><td class="rowlab">6년 현재가치 합계 (억원)</td><td>28,240</td></tr>
+        <tr><td class="rowlab">터미널 현재가치 (억원)</td><td>65,945</td></tr>
+        <tr class="hl"><td class="rowlab">기업가치 (억원)</td><td>94,186 · 적정 주가 1,250,305원 · 현재가 대비 -19.0%</td></tr>
+        <tr><td class="rowlab">기대수익률 · 3단계 정밀</td><td>8.64%</td></tr>
+        <tr class="hl"><td class="rowlab">기대수익률 · 간이</td><td>8.48%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 별첨 엑셀 DCF 교차검증 라이브모델 시트 · 컨센서스 유안타·신한투자증권(2026-08-18) · 기대수익률 = 연 현금흐름 6,950억원 ÷ 시가총액 11조 6,310억원 + 영구성장률 2.5% (간이) · 현재가 1,544,000원(2026-08-28) 기준 재계산</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>현금이 나오는 기간</th><th class="num">배수</th><th class="num">적정 주가 (원)</th><th class="num">영구 대비</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">5년</td><td class="num">3.97</td><td class="num">365,948</td><td class="num">29.7%</td></tr>
+        <tr><td class="rowlab">10년</td><td class="num">6.75</td><td class="num">623,032</td><td class="num">50.6%</td></tr>
+        <tr><td class="rowlab">20년</td><td class="num">10.09</td><td class="num">930,515</td><td class="num">75.6%</td></tr>
+        <tr><td class="rowlab">30년</td><td class="num">11.73</td><td class="num">1,082,267</td><td class="num">88.0%</td></tr>
+        <tr class="hl"><td class="rowlab">영구</td><td class="num">13.33</td><td class="num">1,230,140</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 배수 = [1 − ((1+g)÷(1+r))^N] ÷ (r − g) · 연 현금흐름 6,950억원 · r 10.0% · g 2.5%</div>
+    <p>현재가 1,544,000원은 현금이 영원히 나온다고 본 1,230,140원보다도 25.5% 높아, 어떤 유한 기간으로도 지금 가격이 설명되지 않음.</p>
+    <p>다만 증설기에는 CAPEX와 운전자본 가정 하나에 결과가 크게 움직이므로, 자본이 복리로 굴러가는 쪽에서 한 번 더 봄.</p>
+    <p>삼양식품은 배당성향이 9~11%여서 이익의 90%가 자본에 쌓이고 지배주주 자본이 5년간 3,904억원에서 1조 2,554억원으로 3.2배가 됐으므로, 자본 복리를 축으로 삼는 계산이 실제 모습에 가까움.</p>
+    <p>자본이 ROE로 불어나 N년 뒤 장부가로 회수된다고 보면, 기대수익률은 1에 ROE를 더한 값을 현재 PBR의 N제곱근으로 나눈 뒤 1을 뺀 값임.</p>
+    <p>여기서 ROE와 기간은 따로 고를 수 있는 값이 아님. 자본이 커지면서 ROE가 FY24 39.4%에서 FY28E 26.5%로 이미 내려오는 중이어서, 최근 값을 긴 기간에 그대로 얹을 수 없음.</p>
+    <p>이 계산의 ROE는 기초와 기말 자본의 평균으로 나눈 값이며, 4번 재무 추정과 시나리오 표의 ROE는 기말 자본으로 나눈 값이어서 같은 이익이라도 수치가 다르게 나옴. 증설로 자본이 한 해 30% 넘게 늘어나는 구간이라 두 잣대의 차이가 FY25 6.6%p, 2Q26 6.9%p로 벌어져 있음.</p>
+    <p>실적만 보면 2Q26까지도 38.8%로 유지되고 있으나, FY28E 26.5%는 증설로 늘어난 자본이 분모에 다 반영된 뒤의 값이어서 이 계산에는 뒤쪽 숫자를 씀.</p>
+    <p>현재 PBR 7.60배는 10년을 보면 ROE 34.7%를, 15년이면 25.9%를, 20년이면 21.7%를 그 기간 내내 지켜야 요구수익률 10.0%를 채운다는 뜻임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>보유 기간</th><th class="num">5년</th><th class="num">10년</th><th class="num">15년</th><th class="num">20년</th><th class="num">30년</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">요구되는 ROE</td><td class="num">—</td><td class="num">34.7%</td><td class="num">25.9%</td><td class="num">21.7%</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 필요 ROE = (1 + r) × PBR^(1/N) − 1 · 현재 PBR 7.60배 (시가총액 11조 6,310억원 ÷ 2Q26 지배주주 자본 1조 5,308억원, 2026-08-28 기준) · 요구수익률 10.0%</div>
+    <p>FY28E 추정치 26.5%를 15년간 유지한다고 보면 기대수익률은 10.5%로 요구수익률을 넘고, 요구수익률에 정확히 닿는 데 필요한 기간은 14.5년임.</p>
+    <p>두 계통이 갈리는 이유는 재투자를 어디까지 인정하느냐에 있음. 현금흐름 계통은 6년 뒤부터 영구성장률 2.5%로 눌러 재투자 수익을 사실상 인정하지 않고, ROE 계통은 자본이 26.5%로 계속 불어난다고 봄.</p>
+    <p>상대가치 Base 목표주가 1,273,571원과 현금흐름 DCF 적정 주가 1,250,305원은 현재가를 밑돌고 ROE 계통은 위를 가리키므로, 판단은 재투자 수익률의 지속 기간을 어떻게 보느냐로 넘어감.</p>
+    <div class="filter-note"><b>수치 갱신 안내</b> — 원문 작성(2026-08-25, 종가 1,404,000원) 이후 주가가 2026-08-28 종가 1,544,000원으로 약 +10.0% 오르면서, 이 장의 현재가 의존 수치(PBR·기대수익률·상승률)가 모두 갱신됨. 결론의 방향(상대가치·DCF는 저평가 아님, ROE 복리 계통은 근소하게 요구수익률 상회)은 바뀌지 않았으나 ROE 계통의 우위 폭은 원문 대비 좁혀짐(15년 기대수익률 11.2%→10.5%). 시나리오 가정·목표주가 자체는 손대지 않음.</div>
+  </div>
+
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>지배구조와 자본배치</h2>
+    <div class="sub-h">6.1 주주 구성 · 6.2 이사회 구성 · 6.3 기대수익률 산출</div>
+
+    <h3><span class="no">6.1.</span>주주 구성</h3>
+    <p>최대주주 삼양라운드스퀘어(주)와 특수관계인의 합산 지분율은 44.98%로 경영권이 흔들릴 여지가 크지 않은 수준임. 국민연금공단이 10.69%로 2대 주주이며 2025년 8월 보유목적을 단순투자에서 일반투자로 바꿨고, 자기주식은 단주 2주뿐이어서 유동주식비율은 44.33%임.</p>
+    <p>최대주주 지분에는 주식담보계약이 걸려 있고 2024년 이후 담보 변경·연장 공시가 아홉 차례 반복됐으므로, 담보 조건과 잔액은 계속 확인할 대상임. 2026년 7월 김정수 회장이 20만 주를 특수관계인에게 증여해 전병우 전무의 보유 주식이 216,250주로 늘었으나, 합산 지분율은 변동 없이 세대 간 이전만 진행됨.</p>
+    <p>지분이 안정적이라는 것과 이사회가 독립적이라는 것은 다른 축이므로, 다음 소꼭지의 판정은 지분 구조가 아니라 이사회 구성에 대한 것임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>내용</th><th class="num">지분율</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">최대주주 및 특수관계인</td><td>3,388,417주 합계</td><td class="num">44.98%</td></tr>
+        <tr><td class="rowlab">　삼양라운드스퀘어(주)</td><td>최대주주 본인 · 2,672,949주</td><td class="num">35.48%</td></tr>
+        <tr><td class="rowlab">　김정수</td><td>회장 · 대표이사 · 283,488주</td><td class="num">3.76%</td></tr>
+        <tr><td class="rowlab">　전인장</td><td>기타특수관계인 · 236,000주</td><td class="num">3.13%</td></tr>
+        <tr><td class="rowlab">　전병우·전문경·전하영</td><td>기타특수관계인 3인 · 0.59% + 0.27% + 0.05%</td><td class="num">0.91%</td></tr>
+        <tr><td class="rowlab">　삼양이건장학재단</td><td>재단 · 126,630주</td><td class="num">1.68%</td></tr>
+        <tr><td class="rowlab">국민연금공단</td><td>5% 이상 주주 · 805,319주</td><td class="num">10.69%</td></tr>
+        <tr><td class="rowlab">자기주식</td><td>단주 2주 · 구주권 부분교체분</td><td class="num">0.00%</td></tr>
+        <tr class="hl"><td class="rowlab">유동주식비율</td><td>100% − (최대주주등 + 자기주식 + 국민연금)</td><td class="num">44.33%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 주식소유현황 · 발행주식총수 7,533,015주 기준. 개별 지분율은 공시값을 그대로 옮긴 것이어서 세로합 44.96%와 공시 합계 44.98% 사이에 반올림 차이 0.02%p가 있음.</div>
+
+    <h3><span class="no">6.2.</span>이사회 구성</h3>
+    <p>이사회는 사내이사 4인과 독립이사 5인으로 구성되어 독립이사 비율이 55.6%이며, 감사위원회는 독립이사 4인 전원으로 채워져 있음. 그 안에 삼일회계법인과 한미회계법인을 거친 김인수와 법무법인 대표변호사 정무식이 함께 들어가 있어 회계와 법무 실무가 모두 확보됨.</p>
+    <p>2026년 3월 목승호가 신규 선임되면서 이사회가 8인에서 9인으로 늘고 독립이사 비율도 50.0%에서 55.6%로 올라가, 네 항목 판정은 기준연도 이후에도 그대로 유지됨.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>성명</th><th>구분</th><th>재직</th><th>주요 경력</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">김정수</td><td>사내이사</td><td>5년 9개월</td><td>삼양식품 총괄사장 · 부회장 · 회장 겸 대표이사</td></tr>
+        <tr><td class="rowlab">김동찬</td><td>사내이사</td><td>9년 6개월</td><td>롯데제과 자문역 · 삼양식품 원주공장장 · 생산본부장 · 대표이사</td></tr>
+        <tr><td class="rowlab">전수홍</td><td>사내이사</td><td>1년 1개월</td><td>삼성전자 DS부문 중국법인 CFO · 메모리사업부 경영지원그룹장 · CFO</td></tr>
+        <tr><td class="rowlab">한세혁</td><td>사내이사</td><td>22년 6개월</td><td>삼양식품 글로벌지원본부장 · 구매/SCM본부장 · 구매본부장</td></tr>
+        <tr class="hl"><td class="rowlab">정무식</td><td>독립이사</td><td>5년 3개월</td><td>법무법인 공감파트너스 변호사 · 법무법인 세온 대표변호사 · 감사위원</td></tr>
+        <tr class="hl"><td class="rowlab">김인수</td><td>독립이사</td><td>2년 3개월</td><td>삼일회계법인 · 한미회계법인 파트너 · 前 토스뱅크 사외이사 · 감사위원</td></tr>
+        <tr class="hl"><td class="rowlab">남판우</td><td>독립이사</td><td>2년 3개월</td><td>중부지방국세청 징세송무국장 · 김·장 법률사무소 · 감사위원</td></tr>
+        <tr class="hl"><td class="rowlab">목승호</td><td>독립이사</td><td>3개월</td><td>김·장 법률사무소 · 감사위원</td></tr>
+        <tr><td class="rowlab">강소엽</td><td>독립이사</td><td>5년 3개월</td><td>㈜인컴브로더 이사 · HSG 휴먼솔루션그룹 동기과학연구소 소장</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 임원 현황 · 기준일 2026.06.30</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>판정 기준</th><th>현황</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">사외이사 비율</td><td>과반 미만</td><td>50.0% (이사 8인 중 4인)</td><td>통과</td></tr>
+        <tr><td class="rowlab">사외이사 이력</td><td>직위형 절반 초과</td><td>4인 중 1인이 직위형 (남판우)</td><td>통과</td></tr>
+        <tr><td class="rowlab">평균 재임기간</td><td>1회 임기 3년 미만</td><td>3년 3개월</td><td>통과</td></tr>
+        <tr><td class="rowlab">감사 독립성</td><td>회계·감사 실무 부재</td><td>감사위원회 체제 (정무식)</td><td>통과</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td>—</td><td>—</td><td>경고 0/4</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 5단계 체크리스트 자동 판정 (기준연도 2025) · 판정 기준은 볼트 체크리스트</div>
+
+    <h3><span class="no">6.3.</span>기대수익률 산출</h3>
+    <p>현재가 154만원, 요구 수익률 10%를 기준으로 PBR/ROE에 기반한 기대수익률 산출시 향후 20년간 예상되는 연평균 수익률은 17.5% 수준임.</p>
+    <p>ROE는 가장 최근 분기 기준으로 38.8% 수준이나, 지배주주순이익 규모의 급격한 확대로 인하여 ROE의 분모인 자본의 규모 또한 확대되어 ROE 자체는 다소 둔화될 수 있다는 점 고려하여 30% 수준으로 유지된다고 가정하였음.</p>
+    <p>또한 식음료 특성상 한번 확고한 포지션을 유지하게 되면 반복매출이 발생하고 개당 단가가 1000원도 안하기 때문에 가격 인상에 대한 민감도가 매우 둔하다는 점 고려하여 일반 소비재와 달리 20년 간 ROE를 유지할 수 있을 것으로 기대하고 있음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">ROE (지배주주)</td><td class="num">14.4%</td><td class="num">17.6%</td><td class="num">22.4%</td><td class="num">33.3%</td><td class="num">31.0%</td></tr>
+        <tr><td class="rowlab">지배주주 자본 (억원)</td><td class="num">3,904</td><td class="num">4,530</td><td class="num">5,648</td><td class="num">8,168</td><td class="num">12,554</td></tr>
+        <tr><td class="rowlab">총자산 (억원)</td><td class="num">7,531</td><td class="num">9,249</td><td class="num">11,703</td><td class="num">15,948</td><td class="num">21,965</td></tr>
+        <tr><td class="rowlab">자산회전율 (회)</td><td class="num">0.85</td><td class="num">0.98</td><td class="num">1.02</td><td class="num">1.08</td><td class="num">1.07</td></tr>
+        <tr><td class="rowlab">현금배당총액 (억원)</td><td class="num">75</td><td class="num">104</td><td class="num">157</td><td class="num">246</td><td class="num">360</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) 연결기준 · 억원</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>현황</th><th>시사점</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">평균 ROE (5년)</td><td>23.7% · 범위 14.4~33.3%</td><td>자본 3.2배 증가에도 30%대 유지</td></tr>
+        <tr><td class="rowlab">ROE 추세</td><td>FY24 33.3% → FY25 31.0%</td><td>이익보다 빠른 자본 증가</td></tr>
+        <tr><td class="rowlab">자산회전율</td><td>5년 0.85→1.07회</td><td>증설 설비가 매출로 전환</td></tr>
+        <tr><td class="rowlab">누적 FCF의 행방</td><td>5년 누적 -372억 · CAPEX 9,787억</td><td>이익 전액이 설비로 재투자</td></tr>
+        <tr><td class="rowlab">주주환원</td><td>5년 누적 배당 942억 · 순이익의 10.2%</td><td>사업보고서 기재 배당성향 목표 9~11%</td></tr>
+        <tr><td class="rowlab">순차입금</td><td>2026.06말 -763억 (순현금 전환)</td><td>증설 재원 조달 부담 해소</td></tr>
+        <tr><td class="rowlab">자본배치 분기점</td><td>2027년 증설 종료 후 FCF 순유입 전환</td><td>환원 정책 변경 여부가 재평가 변수</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12) · 반기보고서(2026.06) · 회사 IR 자료(2026-08-19)</div>
+  </div>
+
+  <footer class="report-foot">
+    작성지침 v6.16 적용. 현재가 1,544,000원·시가총액 11조 6,310억원(2026-08-28 종가, KRX). 재무·산업·경쟁 정보는 DART 2025 사업보고서·2026.06 반기보고서 연결 기준. 본 보고서는 정보 제공 목적이며 투자 권유가 아님.<br>
+    최초작성 2026-08-25 · 수치 업데이트 2026-08-28 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 003230</div>
+    <h1>Samyang Foods (003230) Equity Analysis</h1>
+    <p class="lede">FY25 revenue 2.3518tn KRW (+36.1%), OPM 22.3% · 1H26 revenue 1.4847tn KRW (+37.2%), OPM 23.8% · a ramen exporter with 83.8% overseas revenue share (2Q26) · Current price 1,544,000 KRW · Market cap ~11.63tn KRW (2026-08-28)</p>
+    <div class="meta">
+      <span>Original 2026-08-25 (final)</span>
+      <span>Figures updated 2026-08-28 (ref. price 1,544,000 KRW, Aug 28 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Share price</div>
+      <div class="value">1,544,000<span class="unit">KRW</span></div>
+      <div class="sub">52w range 981,000 – 1,665,000</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Market cap</div>
+      <div class="value">11,631<span class="unit">bn KRW</span></div>
+      <div class="sub">7,533,015 shares outstanding</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Trailing P/E</div>
+      <div class="value">29.9<span class="unit">x</span></div>
+      <div class="sub">On FY25 controlling NP of 389.4bn KRW</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Best-case TP (FY28E)</div>
+      <div class="value">1,935,440<span class="unit">KRW</span></div>
+      <div class="sub">+25.4% vs current price</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">THESIS</span><span class="tldr-v">Korea's first instant-noodle maker turned export business on the strength of Buldak Bokkeum-myeon; overseas revenue was 80.1% of FY25 sales and 83.8% in 2Q26. The constraint on growth is capacity, not demand — the Miryang No.2 plant (completed Jul 2025) and China's Jiaxing plant (online Jan 2027) will set the trajectory for the next three years.</span></div>
+    <div class="tldr-row"><span class="tldr-k">VALUATION</span><span class="tldr-v">The relative-value Base target (1,273,571 KRW) and DCF fair value (1,250,305 KRW) both sit below the current price, but the capital-compounding method (26.5% ROE) implies a 10.5% expected return, narrowly above the 10.0% required return — this gap between the two methods is the central judgment call.</span></div>
+    <div class="tldr-row"><span class="tldr-k">RISK</span><span class="tldr-v">91.7% of revenue is noodle-snacks, itself leaning on the single Buldak brand — diversification is low. China's Jiaxing plant is the company's first overseas production base, with no track record yet verifying local cost/quality. The share pledge on the largest shareholder's stake also warrants ongoing monitoring.</span></div>
+  </div>
+
+  <div class="section" id="es1">
+    <h2><span class="num">1</span>Company Overview</h2>
+    <div class="sub-h">Founding & business · earnings snapshot</div>
+    <p>Samyang Foods is a noodle maker that launched Korea's first instant ramen in 1963; the company's character shifted to that of an export business once Buldak Bokkeum-myeon, introduced in 2012, began selling overseas.</p>
+    <p>Of FY25 consolidated revenue of 2.3518tn KRW, overseas sales accounted for 1.8839tn KRW, or 80.1%, and that share rose further to 83.8% in 2Q26.</p>
+    <p>The constraint on growth is not demand but production capacity, so the Miryang No.2 plant completed in July 2025 and the China Jiaxing plant slated to start in January 2027 will determine the company's top-line trajectory over the next three years.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Detail</th><th>Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Ticker/code</td><td>Samyang Foods / 003230 (KOSPI)</td><td class="rowlab">Market cap</td><td>11,631bn KRW (2026-08-28)</td></tr>
+        <tr><td class="rowlab">Founded</td><td>Sep 15, 1961</td><td class="rowlab">Listed</td><td>Jun 1975 (KOSPI)</td></tr>
+        <tr><td class="rowlab">CEO</td><td>Kim Jung-soo (Chairman) · Kim Dong-chan (Vice Chairman)</td><td class="rowlab">Fiscal year-end</td><td>December</td></tr>
+        <tr><td class="rowlab">HQ</td><td>Toegye-ro 159, Jung-gu, Seoul</td><td class="rowlab">Employees</td><td>3,219 (2026-06-30, standalone)</td></tr>
+        <tr><td class="rowlab">Shares outstanding</td><td>7,533,015 (2 treasury shares)</td><td class="rowlab">Share price</td><td>1,544,000 KRW (2026-08-28)</td></tr>
+        <tr><td class="rowlab">FY25 revenue</td><td>2,351.8bn KRW (+36.1%)</td><td class="rowlab">FY25 operating profit</td><td>524.2bn KRW (OPM 22.3%)</td></tr>
+        <tr><td class="rowlab">1H26 revenue</td><td>1,484.7bn KRW (+37.2%)</td><td class="rowlab">1H26 operating profit</td><td>353.3bn KRW (OPM 23.8%)</td></tr>
+        <tr><td class="rowlab">Segments</td><td>Noodle-snack 91.7% · Service 4.0% · Sauce/seasoning 3.0% · Frozen 2.6%</td><td class="rowlab">Group structure</td><td>15 subsidiaries (4 domestic, 11 overseas) · 3 domestic plants · 6 overseas sales subsidiaries</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06) · price/market cap as of 2026-08-28 (Yahoo Finance)</div>
+  </div>
+
+  <div class="section" id="es2">
+    <h2><span class="num">2</span>Industry Analysis</h2>
+    <div class="sub-h">2.1 Export value vs. consolidated revenue · 2.2 Korea's ramen export market & share · 2.3 Capacity as the growth ceiling · 2.4 Raw materials & FX</div>
+
+    <h3><span class="no">2.1.</span>Export Value vs. Consolidated Revenue</h3>
+    <p>It is common practice to read Samyang's growth through Korea Customs' ramen export statistics, but export value and consolidated revenue diverge by a factor of 1.25x because they differ in recognition timing and price basis.</p>
+    <p>The export value captured by Korea Customs is the shipment price cleared through customs, while consolidated revenue is the price at which overseas sales subsidiaries resell to local wholesale/retail — the gap between the two is exactly the resale margin.</p>
+    <p>In FY25, against customs-declared ramen export value of 1,459.2bn KRW, consolidated noodle-snack export revenue was 1,823.9bn KRW; the 364.7bn KRW gap consists of local resale margin plus snack and other exports.</p>
+    <p>Because of this structure, in quarters when overseas subsidiaries build inventory, export value rises first and consolidated revenue follows, while in quarters of inventory drawdown the order reverses.</p>
+    <p>Once the China Jiaxing plant starts operating in January 2027, volume bound for China will no longer pass through Korean customs, breaking that portion of the link between export statistics and consolidated revenue.</p>
+
+    <h3><span class="no">2.2.</span>Korea's Ramen Export Market & Share</h3>
+    <p>Korea's ramen export value grew 2.8x over four years, from 771.9bn KRW in 2021 to 2,164.2bn KRW in 2025, and Samyang's share of this market rose 19.1pp, from 48.3% to 67.4%.</p>
+    <p>This was a period in which the market itself expanded while Samyang simultaneously gained share within it; of the 1,392.3bn KRW increase in export value over four years, Samyang's share was 1,086.5bn KRW, or 78.0%.</p>
+    <p>In 1H26, however, share slipped 1.4pp to 66.0% from 67.4% a year earlier — a result closer to domestic plants already running at their ceiling and unable to absorb all of the increased demand, rather than intensifying competition.</p>
+    <p>With share already at roughly two-thirds, future growth must come from expansion of the market itself and from overseas local production, not from further share gains.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Period</th><th class="num">Korea ramen exports</th><th class="num">Samyang ramen exports</th><th class="num">Samyang share</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">2021</td><td class="num">771.9</td><td class="num">372.7</td><td class="num">48.3%</td></tr>
+        <tr><td class="rowlab">2022</td><td class="num">989.2</td><td class="num">525.8</td><td class="num">53.2%</td></tr>
+        <tr><td class="rowlab">2023</td><td class="num">1,243.5</td><td class="num">732.4</td><td class="num">58.9%</td></tr>
+        <tr><td class="rowlab">2024</td><td class="num">1,704.5</td><td class="num">1,069.3</td><td class="num">62.7%</td></tr>
+        <tr class="hl"><td class="rowlab">2025</td><td class="num">2,164.2</td><td class="num">1,459.2</td><td class="num">67.4%</td></tr>
+        <tr><td class="rowlab">1H26</td><td class="num">1,389.2</td><td class="num">917.5</td><td class="num">66.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — Company IR material (2026-08-19), Korea ramen export trends · Korea Customs Service · bn KRW</div>
+
+    <h3><span class="no">2.3.</span>Capacity as the Growth Ceiling</h3>
+    <p>Ramen output per line is physically fixed, so revenue cannot grow without additional equipment even as demand rises, and Samyang's results over the past three years illustrate this constraint directly.</p>
+    <p>In FY25, even as capacity grew from 2.089bn servings to 2.444bn, the utilization rate rose from 86.6% to 93.6%, and it reached 96.5% in 1H26.</p>
+    <p>The dispersion is larger by plant: in 1H26, noodle-line utilization at the Wonju plant was 101.1% and at the Iksan plant 118.7% — both above standard operating hours — while only the Miryang plant, at 86.7%, still had spare capacity.</p>
+    <p>At the Miryang No.2 plant, three bag-noodle lines are already running 24 hours a day and the cup-noodle lines are ramping to two shifts, so the remaining slack is likely to be used up within 2026.</p>
+    <p>The implied revenue-per-serving rose 13.2%, from 877 KRW in FY24 to 993 KRW in 1H26, but this is a regional-mix effect from a growing share of higher-priced U.S. and European sales, not a price increase.</p>
+    <p>This implied revenue-per-serving is noodle-snack revenue divided by noodle production servings; because snack revenue is included in the numerator, it runs higher than the actual ramen unit price. The timing lag between production and sale is not adjusted for.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Noodle capacity (bn servings)</td><td class="num">2.089</td><td class="num">2.444</td><td class="num">1.404</td></tr>
+        <tr><td class="rowlab">Noodle output (bn servings)</td><td class="num">1.809</td><td class="num">2.287</td><td class="num">1.355</td></tr>
+        <tr class="hl"><td class="rowlab">Utilization</td><td class="num">86.6%</td><td class="num">93.6%</td><td class="num">96.5%</td></tr>
+        <tr><td class="rowlab">Noodle-snack revenue (bn KRW)</td><td class="num">1,586.6</td><td class="num">2,155.5</td><td class="num">1,344.9</td></tr>
+        <tr><td class="rowlab">Implied revenue/serving (KRW)</td><td class="num">877</td><td class="num">942</td><td class="num">993</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06), capacity and output; sum of 3 noodle plants</div>
+
+    <h3><span class="no">2.4.</span>Raw Materials & FX</h3>
+    <p>Two inputs set the direction of cost — wheat flour and palm oil. In FY25 the input price of wheat flour fell 5.1% to 742 KRW/kg from 782 KRW a year earlier, while refined oil rose 15.1% to 1,776 KRW.</p>
+    <p>In 1H26, wheat flour fell a further 8.4% to 680 KRW, helping the cost ratio, but refined oil rose another 3.9% to 1,845 KRW — the two moved in opposite directions.</p>
+    <p>With more than 80% of revenue generated in foreign currency, the exchange rate acts on both revenue and cost simultaneously; won weakness is one factor behind the 5.7pp improvement in 2Q26 gross margin, to 48.1% from 42.4% the prior quarter.</p>
+    <p>Palm oil is an item the business report describes as having a highly oligopolistic supply market, limiting room for price negotiation, while wheat flour is sourced from subsidiary Samyang Milling Co., which filters external price swings by one step.</p>
+    <p>When the U.S. raised tariffs in July 2026, the local subsidiary built pre-emptive inventory, and that volume is being shipped out sequentially in the second half — so the tariff affects shipment timing before it affects cost.</p>
+  </div>
+
+  <div class="section" id="es3">
+    <h2><span class="num">3</span>Business Model</h2>
+    <div class="sub-h">3.1 Revenue mix · 3.2 Revenue & profit by region · 3.3 Customer mix & bargaining power · 3.4 Economic moat</div>
+
+    <h3><span class="no">3.1.</span>Revenue Mix</h3>
+    <p>Of FY25 consolidated revenue of 2,351.8bn KRW, noodle-snacks accounted for 2,155.5bn KRW, or 91.7% — in substance, a single-product ramen company.</p>
+    <p>Within noodle-snacks, exports were 1,823.9bn KRW (84.6%) versus just 331.6bn KRW domestic, so the competitive landscape of Korea's domestic ramen market has limited bearing on results.</p>
+    <p>Sauces and seasoning materials remain small at 70.6bn KRW in revenue, but grew 63.9% in FY25 and continue to outgrow the company-wide rate in 1H26, serving as a channel for extending the Buldak brand beyond noodles.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Segment</th><th>Products</th><th class="num">FY25 rev</th><th class="num">FY25 share</th><th class="num">1H26 rev</th><th class="num">1H26 share</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Noodle-snack</td><td>Bag/cup noodles·snacks</td><td class="num">2,155.5</td><td class="num">91.7%</td><td class="num">1,344.9</td><td class="num">90.6%</td></tr>
+        <tr><td class="rowlab">Sauce/seasoning</td><td>Cup sauces·bulk sauces</td><td class="num">70.6</td><td class="num">3.0%</td><td class="num">53.4</td><td class="num">3.6%</td></tr>
+        <tr><td class="rowlab">Frozen</td><td>Dumplings·rice cakes·cutlets</td><td class="num">61.3</td><td class="num">2.6%</td><td class="num">33.8</td><td class="num">2.3%</td></tr>
+        <tr><td class="rowlab">Nutrition</td><td>White milk·functional foods</td><td class="num">2.9</td><td class="num">0.1%</td><td class="num">1.5</td><td class="num">0.1%</td></tr>
+        <tr><td class="rowlab">Other products</td><td>Side dishes·cardboard boxes</td><td class="num">9.4</td><td class="num">0.4%</td><td class="num">4.2</td><td class="num">0.3%</td></tr>
+        <tr><td class="rowlab">Sales allowances</td><td>Trade incentives, etc.</td><td class="num">-56.2</td><td class="num">-2.4%</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td class="rowlab">Service</td><td>Logistics·flake sorting</td><td class="num">94.8</td><td class="num">4.0%</td><td class="num">40.3</td><td class="num">2.7%</td></tr>
+        <tr><td class="rowlab">Livestock/tourism</td><td>Organic raw milk·tourism</td><td class="num">5.2</td><td class="num">0.2%</td><td class="num">2.2</td><td class="num">0.1%</td></tr>
+        <tr><td class="rowlab">Other</td><td>Rental, etc.</td><td class="num">8.2</td><td class="num">0.4%</td><td class="num">4.4</td><td class="num">0.3%</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td>—</td><td class="num">2,351.8</td><td class="num">100%</td><td class="num">1,484.7</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06), revenue by segment · bn KRW. 1H26 segment figures are net of sales allowances deducted within each segment, so no separate allowance line is shown; columns may sum to within ±0.1bn KRW due to rounding.</div>
+
+    <h3><span class="no">3.2.</span>Revenue & Profit by Region</h3>
+    <p>Overseas revenue is concentrated in the U.S. and China, but in FY25 Europe grew 5.6x to 183.1bn KRW from 32.6bn a year earlier, forming a third pillar.</p>
+    <p>The 904.1bn KRW attributed to the Korea region includes direct exports to countries without a local sales subsidiary, so actual domestic sales are 468.0bn KRW, or 19.9% of the company total.</p>
+    <p>Regional operating profit diverges from revenue share: in 1H26 Korea generated 319.6bn KRW versus just 0.86bn KRW from China (down sharply from 9.30bn a year earlier), while Europe rose from 3.25bn to 29.0bn KRW.</p>
+    <p>The decline in the China subsidiary's profit occurred even as its revenue grew 40%; one cause was 11.8bn KRW in China online advertising spend booked in 2Q26.</p>
+    <p>Because regional profit is allocated by the transfer price between headquarters and each subsidiary, the company-wide total and its trend are a more meaningful read than any single subsidiary's absolute profit.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Region</th><th class="num">FY24 rev</th><th class="num">FY25 rev</th><th class="num">YoY</th><th class="num">1H26 rev</th><th class="num">1H26 YoY</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Korea</td><td class="num">853.5</td><td class="num">904.1</td><td class="num">+5.9%</td><td class="num">504.8</td><td class="num">+11.2%</td></tr>
+        <tr><td class="rowlab">U.S.</td><td class="num">382.9</td><td class="num">609.7</td><td class="num">+59.2%</td><td class="num">392.7</td><td class="num">+45.2%</td></tr>
+        <tr><td class="rowlab">China</td><td class="num">419.2</td><td class="num">597.3</td><td class="num">+42.5%</td><td class="num">357.7</td><td class="num">+40.0%</td></tr>
+        <tr><td class="rowlab">Europe</td><td class="num">32.6</td><td class="num">183.1</td><td class="num">+461.2%</td><td class="num">190.5</td><td class="num">+155.3%</td></tr>
+        <tr><td class="rowlab">Japan</td><td class="num">26.3</td><td class="num">33.9</td><td class="num">+28.9%</td><td class="num">21.1</td><td class="num">+31.3%</td></tr>
+        <tr><td class="rowlab">Indonesia</td><td class="num">13.5</td><td class="num">23.7</td><td class="num">+75.4%</td><td class="num">17.9</td><td class="num">+55.7%</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td class="num">1,728.0</td><td class="num">2,351.8</td><td class="num">+36.1%</td><td class="num">1,484.7</td><td class="num">+37.2%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06), segment note, external customer revenue · bn KRW</div>
+
+    <h3><span class="no">3.3.</span>Customer Mix & Bargaining Power</h3>
+    <p>Domestically the company sells to large retailers, and overseas it sells through its own sales subsidiaries, so the risk of revenue concentration in any single external customer is not large.</p>
+    <p>The direction of bargaining power shows up in working capital: FY25 receivables of 185.2bn KRW exceeded payables of 129.6bn KRW, pushing the ratio up to 1.43x.</p>
+    <p>A ratio above 1 means the company pays out before it collects, because as more sales flow through overseas subsidiaries, local distribution collection periods load directly onto receivables.</p>
+    <p>Inventory also grew 65.5%, from 148.0bn KRW in FY24 to 245.0bn in FY25, reflecting both pre-emptive stockpiling ahead of U.S. tariffs and local inventory build tied to the new European market entry.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Sales route</th><th class="num">Revenue share</th><th>Key customers</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Noodles (domestic)</td><td>Discount stores/CVS</td><td class="num">41.1%</td><td>E-Mart · Homeplus · Lotte Mart · BGF Retail · GS Retail, etc.</td></tr>
+        <tr><td class="rowlab">Noodles (domestic)</td><td>Other distribution</td><td class="num">42.4%</td><td>Online, B2B, etc.</td></tr>
+        <tr><td class="rowlab">Noodles (domestic)</td><td>Franchised dealers</td><td class="num">16.5%</td><td>Regional distributors</td></tr>
+        <tr class="hl"><td class="rowlab">Overseas</td><td>Direct export</td><td class="num">93.9%</td><td>Overseas sales subsidiaries and local importers</td></tr>
+        <tr><td class="rowlab">Overseas</td><td>Local</td><td class="num">6.1%</td><td>Local sourcing in China/Americas</td></tr>
+        <tr><td class="rowlab">Sauce/seasoning</td><td>General consumer (B2C)</td><td class="num">65.4%</td><td>E-Mart · Coupang, etc.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12), sales channels and strategy</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Receivables (bn KRW)</td><td class="num">53.2</td><td class="num">83.6</td><td class="num">79.8</td><td class="num">136.8</td><td class="num">185.2</td></tr>
+        <tr><td class="rowlab">Payables (bn KRW)</td><td class="num">69.0</td><td class="num">86.5</td><td class="num">106.5</td><td class="num">144.7</td><td class="num">129.6</td></tr>
+        <tr class="hl"><td class="rowlab">Receivables/payables ratio (x)</td><td class="num">0.77</td><td class="num">0.97</td><td class="num">0.75</td><td class="num">0.95</td><td class="num">1.43</td></tr>
+        <tr><td class="rowlab">Inventory (bn KRW)</td><td class="num">44.8</td><td class="num">110.3</td><td class="num">142.2</td><td class="num">148.0</td><td class="num">245.0</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2021.12–2025.12), consolidated balance sheet · bn KRW</div>
+
+    <h3><span class="no">3.4.</span>Economic Moat</h3>
+    <p>Samyang's economic moat is neither its spicy-flavor recipe nor its U.S. distribution channel.</p>
+    <p>It helps to think of See's Candies, the company Warren Buffett invested in. At the time of its 1972 acquisition it was a maker of a cheap, simple candy priced at just $1.85 a pound.</p>
+    <p>It had brand power that generated repeat purchases within the U.S., and the basis for the sharp rise in after-tax profit it went on to achieve lay in the product's price.</p>
+    <p>Because it started at only $1.85 a pound, raising the price 10% a year did not change consumers' buying pattern.</p>
+    <p>A Google Trends search for See's Candies shows search volume spiking every year around October–November, presumably the Halloween season, in the same recurring pattern year after year.</p>
+    <p>Google Trends only shows the last five years of data, but the pattern was plausibly the same going back to 1972.</p>
+    <p>The question is whether Samyang, like See's Candies, can draw recurring revenue from consumers globally.</p>
+    <p>When Buldak Bokkeum-myeon first spread in the U.S., I happened to be an exchange student there, and I thought it was just another fad — because the way it spread was mostly through one-off "challenge" content, such as mukbang, that stoked curiosity about spicy heat.</p>
+    <p>This is a very personal experience, but trying the carbonara flavor changed my mind — I judged that the spice level had come down to a point where recurring purchases become possible.</p>
+    <p>The second gate now is whether, like See's Candies, it can raise prices.</p>
+    <p>The company had held to a no-price-increase policy for three years, but the situation changed once the U.S. imposed a 10% tariff on Korean ramen in April 2025 and raised it to 15% in August.</p>
+    <p>Samyang raised its U.S. supply price 9% that October, and the Walmart retail price for a 5-pack rose 14.0%, from $6.88 to $7.84 — its first increase in three years.</p>
+    <p>Following the increase, the U.S. subsidiary's quarterly revenue rose to 175.0bn KRW in 4Q25, 185.5bn in 1Q26, and 203.6bn in 2Q26.</p>
+    <p>The 2Q growth rate of 54.3% far exceeds the 9% supply-price increase, showing that volume itself grew.</p>
+  </div>
+
+  <div class="section" id="es4">
+    <h2><span class="num">4</span>Financial Estimates</h2>
+    <div class="sub-h">Last 5 years, consolidated</div>
+    <p>Over five years revenue grew 3.7x while operating profit grew 8.0x — profit growing twice as fast as the top line. That the margin gain came from regional mix rather than SG&A cuts means margins rose without cutting marketing investment.</p>
+    <p>FCF was strongly positive in FY23 and FY24 but turned to a deficit of roughly -152.1bn KRW in FY25 as the company entered its plant-expansion phase.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue (bn KRW)</td><td class="num">642.0</td><td class="num">909.0</td><td class="num">1,192.9</td><td class="num">1,728.0</td><td class="num">2,351.8</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">41.6%</td><td class="num">31.2%</td><td class="num">44.9%</td><td class="num">36.1%</td></tr>
+        <tr><td class="rowlab">Operating profit (bn KRW)</td><td class="num">65.4</td><td class="num">90.4</td><td class="num">147.5</td><td class="num">344.6</td><td class="num">524.2</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">10.2%</td><td class="num">9.9%</td><td class="num">12.4%</td><td class="num">19.9%</td><td class="num">22.3%</td></tr>
+        <tr><td class="rowlab">Controlling net profit (bn KRW)</td><td class="num">56.3</td><td class="num">79.8</td><td class="num">126.3</td><td class="num">272.0</td><td class="num">389.4</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td class="num">7,481</td><td class="num">10,665</td><td class="num">16,929</td><td class="num">36,468</td><td class="num">52,156</td></tr>
+        <tr><td class="rowlab">ROE</td><td class="num">14.4%</td><td class="num">17.6%</td><td class="num">22.4%</td><td class="num">33.3%</td><td class="num">31.0%</td></tr>
+        <tr><td class="rowlab">DPS (KRW)</td><td class="num">1,000</td><td class="num">1,400</td><td class="num">2,100</td><td class="num">3,300</td><td class="num">4,800</td></tr>
+        <tr><td class="rowlab">Payout ratio</td><td class="num">13.2%</td><td class="num">13.0%</td><td class="num">12.4%</td><td class="num">9.0%</td><td class="num">9.2%</td></tr>
+        <tr><td class="rowlab">Operating cash flow (bn KRW)</td><td class="num">58.4</td><td class="num">47.8</td><td class="num">168.1</td><td class="num">357.9</td><td class="num">309.3</td></tr>
+        <tr><td class="rowlab">CAPEX (bn KRW)</td><td class="num">141.5</td><td class="num">93.0</td><td class="num">49.4</td><td class="num">233.4</td><td class="num">461.4</td></tr>
+        <tr class="hl"><td class="rowlab">FCF (bn KRW)</td><td class="num">-83.1</td><td class="num">-45.2</td><td class="num">118.7</td><td class="num">124.5</td><td class="num">-152.1</td></tr>
+        <tr><td class="rowlab">Debt-to-equity</td><td class="num">90.3%</td><td class="num">103.4%</td><td class="num">102.9%</td><td class="num">92.6%</td><td class="num">72.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2021.12–2025.12), consolidated basis; net profit/EPS/ROE on a controlling-interest basis · bn KRW</div>
+  </div>
+
+  <div class="section" id="es5">
+    <h2><span class="num">5</span>Valuation</h2>
+    <div class="sub-h">5.1 Applied multiple · 5.2 Scenario analysis · 5.3 DCF cross-check</div>
+
+    <h3><span class="no">5.1.</span>Applied Multiple</h3>
+    <p>With 91.7% of revenue in noodle-snacks and that in turn leaning on the single Buldak brand, revenue diversification is low; and because the China Jiaxing plant slated for January 2027 is the company's first overseas production base with no track record yet verifying local production cost and quality, we apply a P/E of 13x, near the low end of the peer range.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Peer</th><th>Business</th><th class="num">Forward P/E</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Nissin Foods Holdings (2897.T)</td><td>Japan · Cup Noodles · local production in Americas/China</td><td class="num">17.7</td></tr>
+        <tr><td class="rowlab">Toyo Suisan (2875.T)</td><td>Japan · Maruchan · #1 in U.S. ramen</td><td class="num">14.73</td></tr>
+        <tr><td class="rowlab">Tingyi (0322.HK)</td><td>China · Master Kong noodles/beverages</td><td class="num">13.92</td></tr>
+        <tr><td class="rowlab">Indofood CBP (ICBP.JK)</td><td>Indonesia · Indomie · Africa/Middle East exports</td><td class="num">9.06</td></tr>
+        <tr><td class="rowlab">Peer average</td><td>—</td><td class="num">13.85</td></tr>
+        <tr class="hl"><td class="rowlab">Applied P/E (single-brand·unverified discount)</td><td>Single-brand dependence + first overseas base unverified → 0.85x discount to average</td><td class="num">13</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — stockanalysis.com, retrieved 2026-08-25 · forward P/E on market consensus</div>
+
+    <h3><span class="no">5.2.</span>Scenario Analysis</h3>
+    <p>Differences across scenarios arise from only four key factors — utilization, implied revenue per serving, non-noodle revenue, and OPM — while production capacity and the applied P/E are held identical across all three scenarios.</p>
+    <h4>Base — China Jiaxing plant at 57% utilization in year 2</h4>
+    <p>The 85% utilization assumes domestic plants hold their 1H26 level of 96% while the new China plant stays at 57% in its second year; the 1,080 KRW implied revenue per serving reflects the view that the lower unit price of China-made local-production volume largely offsets the rising share of the Americas and Europe.</p>
+    <p>Revenue of 4,249.0bn KRW sits 4.1–5.1% below the two brokerages that have published FY28 estimates (Yuanta Securities at 4,431.0bn KRW, Shinhan Investment at 4,479.5bn KRW), and the target price of 1,273,571 KRW is 17.5% below the current price.</p>
+    <h4>Bull — New China plant ramps at the Miryang No.2 pace</h4>
+    <p>The 92% utilization assumes the new China plant ramps to 70% in its second year, grounded in the precedent of the Miryang No.2 plant, which reached full 24-hour operation across its bag-noodle lines within a year of its July 2025 completion.</p>
+    <p>The 25.0% OPM adds 1.5pp to the 23.5% figure obtained by adding back 5.0bn KRW of one-off costs to the 2Q26 result of 22.9%, reflecting logistics-cost savings from local production in China.</p>
+    <h4>Best — Sustained Americas/Europe expansion with every line running</h4>
+    <p>The 98% utilization requires domestic plants to keep running past standard operating hours as in 1H26 while the new China plant also fills to above 85% — a condition requiring simultaneously strong demand in both regions.</p>
+    <p>The 1,230 KRW implied revenue per serving is 23.9% above the 1H26 level, and the resulting target price of 1,935,440 KRW falls within the brokerage target-price range of 1,750,000–2,000,000 KRW.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Total capacity (bn servings)</td><td class="num">4.28</td><td class="num">4.28</td><td class="num">4.28</td></tr>
+        <tr><td class="rowlab">Utilization</td><td class="num">85%</td><td class="num">92%</td><td class="num">98%</td></tr>
+        <tr><td class="rowlab">Servings sold (bn)</td><td class="num">3.638</td><td class="num">3.938</td><td class="num">4.194</td></tr>
+        <tr><td class="rowlab">Implied revenue/serving (KRW)</td><td class="num">1,080</td><td class="num">1,150</td><td class="num">1,230</td></tr>
+        <tr><td class="rowlab">Noodle-snack revenue (bn KRW)</td><td class="num">3,929.0</td><td class="num">4,528.2</td><td class="num">5,159.1</td></tr>
+        <tr><td class="rowlab">Non-noodle revenue (bn KRW)</td><td class="num">320.0</td><td class="num">350.0</td><td class="num">380.0</td></tr>
+        <tr><td class="rowlab">Total revenue (bn KRW)</td><td class="num">4,249.0</td><td class="num">4,878.2</td><td class="num">5,539.1</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">23%</td><td class="num">25%</td><td class="num">27%</td></tr>
+        <tr><td class="rowlab">Operating profit (bn KRW)</td><td class="num">977.3</td><td class="num">1,219.6</td><td class="num">1,495.6</td></tr>
+        <tr><td class="rowlab">Controlling net profit (bn KRW)</td><td class="num">738.0</td><td class="num">917.3</td><td class="num">1,121.5</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td class="num">97,967</td><td class="num">121,767</td><td class="num">148,880</td></tr>
+        <tr><td class="rowlab">Expected ROE</td><td class="num">23.7%</td><td class="num">28.0%</td><td class="num">32.4%</td></tr>
+        <tr><td class="rowlab">Applied P/E (x)</td><td class="num">13</td><td class="num">13</td><td class="num">13</td></tr>
+        <tr class="hl"><td class="rowlab">Target price (KRW)</td><td class="num">1,273,571</td><td class="num">1,582,971</td><td class="num">1,935,440</td></tr>
+        <tr class="hl"><td class="rowlab">Upside vs current price</td><td class="num">-17.5%</td><td class="num">+2.5%</td><td class="num">+25.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Upside recomputed</b> — on the 1,544,000 KRW current price (2026-08-28 close). Target prices, EPS, etc. are as in the attached Excel, with only the current-price cell replaced. <b>Source</b> — capacity per DART business report · DS Investment (2026-08-18); results per DART business report (2025.12)/semiannual report (2026.06)</div>
+
+    <h3><span class="no">5.3.</span>DCF Cross-check</h3>
+    <p>Measured by cash flow, the expected return of 8.48–8.64% falls short of the 10.0% required return; measured by capital compounding at a 26.5% ROE over 15 years, it comes to 10.5% and clears it.</p>
+    <p>The point where the two methods diverge is the crux of this company's investment case, narrowing to a single question: for how long will the capital poured into expansion keep generating returns in the mid-20% range?</p>
+    <p>The expected return is derived as annual cash flow divided by price, plus the perpetual growth rate. If cash is assumed to grow at the perpetual growth rate every year, forever, the annual return earned for the price paid splits exactly into this year's cash yield and the portion attributable to cash growth.</p>
+    <p>The discount rate does not enter the formula itself; it is used only as a benchmark for judging whether the resulting expected return is worth paying for. The 10.0% required return is the index's long-run expected return of 8% plus 2pp for single-brand dependence and the first overseas production base.</p>
+    <p>Annual cash flow is controlling-interest net income with depreciation added back, less CAPEX and the increase in working capital. Both CAPEX and the working-capital increase are money that does not remain with shareholders but gets tied up in equipment and inventory/receivables, so both are deducted.</p>
+    <p>Deducting working capital matters especially here: in FY25, cash tied up by growing receivables and inventory reached 160.5bn KRW, or 41% of that year's controlling-interest net income of 389.4bn KRW.</p>
+    <p>Rather than compressing everything into a single year's cash flow, years 1–3 use consensus as-is, years 4–6 set growth rates directly and converge them toward the perpetual growth rate, and from year 7 onward the formula above treats it as perpetual.</p>
+    <p>The simple version assumes perpetual growth from year one, while the three-stage version adds a separate years-4–6 transition; if the transition-period growth rate is dropped straight to the perpetual rate, the two values converge.</p>
+    <p>Both methods fix the horizon at infinity and let the growth rate stand in for it; if a finite horizon is used instead, the multiple applied to the same cash flow shrinks as shown below.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Perpetual growth rate g</td><td>2.5%</td></tr>
+        <tr><td class="rowlab">Benchmark discount rate r</td><td>10.0%</td></tr>
+        <tr><td class="rowlab">Yr 1–3 owner cash flow (bn KRW)</td><td>320.0 → 603.0 → 695.0</td></tr>
+        <tr><td class="rowlab">Yr 4–6 growth</td><td>10.0% → 7.0% → 4.5%</td></tr>
+        <tr><td class="rowlab">6-yr PV of cash flows (bn KRW)</td><td>2,824.0</td></tr>
+        <tr><td class="rowlab">Terminal PV (bn KRW)</td><td>6,594.5</td></tr>
+        <tr class="hl"><td class="rowlab">Enterprise value (bn KRW)</td><td>9,418.6 · fair value 1,250,305 KRW · -19.0% vs current price</td></tr>
+        <tr><td class="rowlab">Expected return · 3-stage precise</td><td>8.64%</td></tr>
+        <tr class="hl"><td class="rowlab">Expected return · simple</td><td>8.48%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — attached Excel, DCF cross-check live-model sheet · consensus Yuanta·Shinhan Investment (2026-08-18) · expected return (simple) = annual cash flow 695.0bn KRW ÷ market cap 11,631bn KRW + 2.5% perpetual growth · recomputed on the 1,544,000 KRW current price (2026-08-28)</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Cash-flow horizon</th><th class="num">Multiple</th><th class="num">Fair value (KRW)</th><th class="num">% of perpetual</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">5 yrs</td><td class="num">3.97</td><td class="num">365,948</td><td class="num">29.7%</td></tr>
+        <tr><td class="rowlab">10 yrs</td><td class="num">6.75</td><td class="num">623,032</td><td class="num">50.6%</td></tr>
+        <tr><td class="rowlab">20 yrs</td><td class="num">10.09</td><td class="num">930,515</td><td class="num">75.6%</td></tr>
+        <tr><td class="rowlab">30 yrs</td><td class="num">11.73</td><td class="num">1,082,267</td><td class="num">88.0%</td></tr>
+        <tr class="hl"><td class="rowlab">Perpetual</td><td class="num">13.33</td><td class="num">1,230,140</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — multiple = [1 − ((1+g)÷(1+r))^N] ÷ (r − g) · annual cash flow 695.0bn KRW · r 10.0% · g 2.5%</div>
+    <p>At 1,544,000 KRW, the current price is 25.5% above even the 1,230,140 KRW value implied by cash flowing forever — no finite holding period can explain today's price.</p>
+    <p>That said, during an expansion phase the result swings heavily on a single CAPEX/working-capital assumption, so we take a second look from the angle of capital compounding.</p>
+    <p>With Samyang's payout ratio at 9–11%, 90% of profit accumulates as capital, and controlling-interest equity grew 3.2x over five years, from 390.4bn to 1,255.4bn KRW — so a calculation centered on capital compounding is closer to the actual picture.</p>
+    <p>If capital compounds at the ROE and is recovered at book value N years later, the expected return equals (1 + ROE) divided by the Nth root of the current PBR, minus 1.</p>
+    <p>Here ROE and the holding period cannot be chosen independently. As capital grows, ROE is already declining, from 39.4% in FY24 to an estimated 26.5% in FY28E, so the most recent figure cannot simply be extended over a long horizon.</p>
+    <p>The ROE used in this calculation is net income divided by average opening/closing capital, whereas the ROE in the Financial Estimates section (4) and the scenario table divides by closing capital, so the same profit produces different figures. Because capital is growing more than 30% in a single year during this expansion phase, the gap between the two yardsticks has widened to 6.6pp in FY25 and 6.9pp in 2Q26.</p>
+    <p>On results alone, ROE has held at 38.8% through 2Q26, but the FY28E figure of 26.5% is the value after the expansion-driven capital increase is fully reflected in the denominator, so this calculation uses the latter number.</p>
+    <p>A current PBR of 7.60x means meeting the 10.0% required return demands sustaining an ROE of 34.7% throughout a 10-year holding period, 25.9% over 15 years, or 21.7% over 20 years.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Holding period</th><th class="num">5 yrs</th><th class="num">10 yrs</th><th class="num">15 yrs</th><th class="num">20 yrs</th><th class="num">30 yrs</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Required ROE</td><td class="num">—</td><td class="num">34.7%</td><td class="num">25.9%</td><td class="num">21.7%</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — required ROE = (1 + r) × PBR^(1/N) − 1 · current PBR 7.60x (market cap 11,631bn KRW ÷ 2Q26 controlling equity 1,530.8bn KRW, as of 2026-08-28) · required return 10.0%</div>
+    <p>Assuming the FY28E estimate of 26.5% is sustained for 15 years, the expected return comes to 10.5%, clearing the required return, and the exact holding period needed to just meet the required return is 14.5 years.</p>
+    <p>The two methods diverge on how much reinvestment they credit. The cash-flow method caps growth at the 2.5% perpetual rate from year 6 onward, effectively crediting almost no reinvestment return, while the ROE method assumes capital keeps compounding at 26.5%.</p>
+    <p>The relative-value Base target price of 1,273,571 KRW and the cash-flow DCF fair value of 1,250,305 KRW both sit below the current price, while the ROE method points above it — so the judgment call comes down to how long the reinvestment return can be sustained.</p>
+    <div class="filter-note"><b>Note on this update</b> — Since the original was written (2026-08-25, close 1,404,000 KRW), the price has risen about +10.0% to the 2026-08-28 close of 1,544,000 KRW, updating all price-dependent figures in this chapter (PBR, expected returns, upside). The direction of the conclusion is unchanged — relative value and DCF still read as not undervalued, and the ROE-compounding method still narrowly clears the required return — but the ROE method's margin has narrowed versus the original (15-yr expected return 11.2% → 10.5%). Scenario assumptions and target prices themselves are untouched.</div>
+  </div>
+
+  <div class="section" id="es6">
+    <h2><span class="num">6</span>Governance & Capital Allocation</h2>
+    <div class="sub-h">6.1 Ownership · 6.2 Board composition · 6.3 Expected-return derivation</div>
+
+    <h3><span class="no">6.1.</span>Ownership Structure</h3>
+    <p>The largest shareholder, Samyang Roundsquare Co., together with related parties, holds a combined 44.98% stake — a level that leaves little room for management control to be contested. The National Pension Service is the second-largest holder at 10.69% and switched its holding purpose from simple investment to general investment in August 2025; treasury stock is only 2 odd-lot shares, putting free float at 44.33%.</p>
+    <p>The largest shareholder's stake carries a share-pledge agreement, and pledge-change/extension disclosures have recurred nine times since 2024, so the pledge terms and balance warrant ongoing monitoring. In July 2026, Chairman Kim Jung-soo gifted 200,000 shares to a related party, raising Managing Director Jeon Byung-woo's holding to 216,250 shares, but the combined stake was unchanged — only an intergenerational transfer took place.</p>
+    <p>A stable ownership stake and an independent board are two separate axes, so the assessment in the next subsection concerns board composition, not ownership structure.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Detail</th><th class="num">Stake</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Largest shareholder & related parties</td><td>3,388,417 shares combined</td><td class="num">44.98%</td></tr>
+        <tr><td class="rowlab">　Samyang Roundsquare Co.</td><td>Largest shareholder itself · 2,672,949 shares</td><td class="num">35.48%</td></tr>
+        <tr><td class="rowlab">　Kim Jung-soo</td><td>Chairman · CEO · 283,488 shares</td><td class="num">3.76%</td></tr>
+        <tr><td class="rowlab">　Jeon In-jang</td><td>Related party · 236,000 shares</td><td class="num">3.13%</td></tr>
+        <tr><td class="rowlab">　Jeon Byung-woo · Jeon Mun-kyung · Jeon Ha-young</td><td>3 related parties · 0.59% + 0.27% + 0.05%</td><td class="num">0.91%</td></tr>
+        <tr><td class="rowlab">　Samyang Eegun Scholarship Foundation</td><td>Foundation · 126,630 shares</td><td class="num">1.68%</td></tr>
+        <tr><td class="rowlab">National Pension Service</td><td>5%+ shareholder · 805,319 shares</td><td class="num">10.69%</td></tr>
+        <tr><td class="rowlab">Treasury stock</td><td>2 odd-lot shares · partial certificate replacement</td><td class="num">0.00%</td></tr>
+        <tr class="hl"><td class="rowlab">Free float</td><td>100% − (largest shareholder group + treasury + NPS)</td><td class="num">44.33%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), share ownership status · based on 7,533,015 total shares outstanding. Individual stakes are carried over exactly as disclosed, so there is a 0.02pp rounding gap between the column sum of 44.96% and the disclosed total of 44.98%.</div>
+
+    <h3><span class="no">6.2.</span>Board Composition</h3>
+    <p>The board consists of 4 inside directors and 5 independent directors, for a 55.6% independent-director ratio, and the audit committee is filled entirely by 4 independent directors. Among them are Kim In-soo, who came through Samil PwC and Hanmi accounting firms, and Jung Moo-sik, a managing attorney at a law firm — together securing both accounting and legal practice expertise.</p>
+    <p>With Mok Seung-ho newly appointed in March 2026, the board expanded from 8 to 9 members and the independent-director ratio rose from 50.0% to 55.6%, so the four-item assessment holds unchanged beyond the base year.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Name</th><th>Type</th><th>Tenure</th><th>Background</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Kim Jung-soo</td><td>Inside director</td><td>5y 9m</td><td>Samyang Foods CEO · Vice Chairman · Chairman & CEO</td></tr>
+        <tr><td class="rowlab">Kim Dong-chan</td><td>Inside director</td><td>9y 6m</td><td>Lotte Confectionery adviser · Samyang Wonju plant head · Production HQ head · CEO</td></tr>
+        <tr><td class="rowlab">Jeon Su-hong</td><td>Inside director</td><td>1y 1m</td><td>Samsung Electronics DS China CFO · Memory Business Div. management-support head · CFO</td></tr>
+        <tr><td class="rowlab">Han Se-hyeok</td><td>Inside director</td><td>22y 6m</td><td>Samyang Global Support HQ head · Purchasing/SCM HQ head · Purchasing HQ head</td></tr>
+        <tr class="hl"><td class="rowlab">Jung Moo-sik</td><td>Independent director</td><td>5y 3m</td><td>Attorney, Gonggam Partners · Managing attorney, Seon Law · Audit committee</td></tr>
+        <tr class="hl"><td class="rowlab">Kim In-soo</td><td>Independent director</td><td>2y 3m</td><td>Partner, Samil PwC · Hanmi accounting · Former Toss Bank outside director · Audit committee</td></tr>
+        <tr class="hl"><td class="rowlab">Nam Pan-woo</td><td>Independent director</td><td>2y 3m</td><td>Director, Central Regional Tax Office Litigation Bureau · Kim & Chang · Audit committee</td></tr>
+        <tr class="hl"><td class="rowlab">Mok Seung-ho</td><td>Independent director</td><td>3m</td><td>Kim & Chang · Audit committee</td></tr>
+        <tr><td class="rowlab">Kang So-yeop</td><td>Independent director</td><td>5y 3m</td><td>Director, Incombroder Inc. · Head, HSG Human Solutions Group Motivation Science Lab</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), executive status · as of 2026.06.30</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Threshold</th><th>Status</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Outside-director ratio</td><td>Below majority</td><td>50.0% (4 of 8 directors)</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Outside-director background</td><td>Over half ex-officials</td><td>1 of 4 ex-official type (Nam Pan-woo)</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Average tenure</td><td>Under one 3-year term</td><td>3y 3m</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Audit independence</td><td>No accounting/audit expertise</td><td>Audit committee system (Jung Moo-sik)</td><td>Pass</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td>—</td><td>—</td><td>0/4 flags</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — automated 5-stage checklist assessment (base year 2025); assessment criteria per the governing checklist</div>
+
+    <h3><span class="no">6.3.</span>Expected-Return Derivation</h3>
+    <p>Based on a current price of 1.54mn KRW and a 10% required return, the PBR/ROE-based expected-return calculation implies an average annual return of about 17.5% over the next 20 years.</p>
+    <p>ROE stands at about 38.8% on a most-recent-quarter basis, but given that the rapid expansion in controlling-interest net income also expands the capital base in ROE's denominator, meaning ROE itself may moderate somewhat, we assumed it is maintained at around 30%.</p>
+    <p>We also considered that, given the nature of food and beverage products, once a solid position is secured it generates recurring purchases, and because the per-unit price is under 1,000 KRW, sensitivity to price increases is very low — so unlike typical consumer goods, we expect ROE can be sustained over 20 years.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">ROE (controlling)</td><td class="num">14.4%</td><td class="num">17.6%</td><td class="num">22.4%</td><td class="num">33.3%</td><td class="num">31.0%</td></tr>
+        <tr><td class="rowlab">Controlling equity (bn KRW)</td><td class="num">390.4</td><td class="num">453.0</td><td class="num">564.8</td><td class="num">816.8</td><td class="num">1,255.4</td></tr>
+        <tr><td class="rowlab">Total assets (bn KRW)</td><td class="num">753.1</td><td class="num">924.9</td><td class="num">1,170.3</td><td class="num">1,594.8</td><td class="num">2,196.5</td></tr>
+        <tr><td class="rowlab">Asset turnover (x)</td><td class="num">0.85</td><td class="num">0.98</td><td class="num">1.02</td><td class="num">1.08</td><td class="num">1.07</td></tr>
+        <tr><td class="rowlab">Total cash dividends (bn KRW)</td><td class="num">7.5</td><td class="num">10.4</td><td class="num">15.7</td><td class="num">24.6</td><td class="num">36.0</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2021.12–2025.12), consolidated basis · bn KRW</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Status</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Average ROE (5yr)</td><td>23.7% · range 14.4–33.3%</td><td>Held in the 30% range despite 3.2x capital growth</td></tr>
+        <tr><td class="rowlab">ROE trend</td><td>FY24 33.3% → FY25 31.0%</td><td>Capital growing faster than profit</td></tr>
+        <tr><td class="rowlab">Asset turnover</td><td>0.85→1.07x over 5 years</td><td>Expansion capex converting to revenue</td></tr>
+        <tr><td class="rowlab">Where cumulative FCF went</td><td>5-yr cumulative -37.2bn KRW · CAPEX 978.7bn</td><td>Nearly all profit reinvested into facilities</td></tr>
+        <tr><td class="rowlab">Shareholder returns</td><td>5-yr cumulative dividends 94.2bn KRW · 10.2% of net profit</td><td>Business report's stated payout target is 9–11%</td></tr>
+        <tr><td class="rowlab">Net debt</td><td>-76.3bn KRW at end-June 2026 (net cash)</td><td>Expansion funding burden resolved</td></tr>
+        <tr><td class="rowlab">Capital-allocation inflection point</td><td>FCF turns net-positive after expansion ends in 2027</td><td>Whether the payout policy changes is a re-rating variable</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06) · company IR material (2026-08-19)</div>
+  </div>
+
+  <footer class="report-foot">
+    Written per guideline v6.16. Current price 1,544,000 KRW · market cap 11,631bn KRW (Aug 28, 2026 close, KRX). Financial/industry/competitive information is on a consolidated basis from the DART 2025 business report and June 2026 semiannual report. For information only; not investment advice.<br>
+    Original 2026-08-25 · Figures updated 2026-08-28 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>삼양식품(003230) 주가 차트</span><span class="ct-en" hidden>Samyang Foods (003230) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-08-28 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-08-28</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-08-28 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-08-28 (Yahoo Finance daily). Not real-time; for information only.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Overview'],['es2','2 · Industry'],['es3','3 · Business'],['es4','4 · Financials'],['es5','5 · Valuation'],['es6','6 · Governance']],
+    ko: [['ks1','1 · 회사 개요'],['ks2','2 · 산업 분석'],['ks3','3 · 사업 모델'],['ks4','4 · 재무 추정'],['ks5','5 · 밸류에이션'],['ks6','6 · 지배구조']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('samyang-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('samyang-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return sym + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
