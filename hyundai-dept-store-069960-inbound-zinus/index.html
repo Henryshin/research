@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-hyundai-dept-store-069960-inbound-zinus').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyundai Department Store (069960, KOSPI) Equity Analysis — Inbound Boom vs. Zinus Drag</title>
+<meta name="description" content="Equity analysis of Hyundai Department Store (069960): record inbound tourism lifting department-store margins (1H26 segment OP +47.7%), the Zinus U.S. mattress drag (1H26 operating loss 56.8bn KRW), the ownership-ratio asymmetry that splits consolidated and controlling profit, and a three-scenario FY28E valuation. Korean/English. Figures as of August 28, 2026.">
+<meta name="keywords" content="Hyundai Department Store, 현대백화점, 069960, KOSPI, Korean department store, inbound tourism, duty free, Incheon Airport DF2, Zinus, mattress-in-a-box, U.S. tariffs, The Hyundai Seoul, FY28E valuation, PBR discount">
+<link rel="canonical" href="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<!-- social:auto (add_social_meta.py) -->
+<meta property="og:image" content="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/assets/og.png?v=a6feed17">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hyundai Department Store (069960, KOSPI) Equity Analysis — social card">
+<meta name="twitter:image" content="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/assets/og.png?v=a6feed17">
+<meta name="twitter:image:alt" content="Hyundai Department Store (069960, KOSPI) Equity Analysis — social card">
+<!-- /social:auto -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hyundai Department Store (069960, KOSPI) Equity Analysis — Inbound Boom vs. Zinus Drag">
+<meta property="og:description" content="Record inbound tourism lifting department-store margins, the Zinus U.S. mattress drag, the ownership-ratio asymmetry between consolidated and controlling profit, and a three-scenario FY28E valuation for Hyundai Department Store (069960). Korean/English. Figures as of Aug 28, 2026.">
+<meta property="og:url" content="https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hyundai Department Store (069960) Equity Analysis">
+<meta name="twitter:description" content="Inbound tourism lifting department-store margins, the Zinus drag, controlling vs. consolidated profit asymmetry, three-scenario FY28E valuation. KO/EN. Figures as of Aug 28, 2026.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "Hyundai Department Store (069960, KOSPI) Equity Analysis — Inbound Boom vs. Zinus Drag",
+  "description": "Equity analysis of Hyundai Department Store (069960): inbound tourism lifting department-store margins, the Zinus U.S. mattress drag, the ownership-ratio asymmetry between consolidated and controlling profit, and a three-scenario FY28E valuation. Available in Korean and English. Figures as of August 28, 2026.",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "inLanguage": ["en", "ko"],
+  "author": { "@type": "Person", "name": "Henry Shin" },
+  "publisher": { "@type": "Organization", "name": "Henry Shin Research" },
+  "about": [
+    { "@type": "Corporation", "name": "Hyundai Department Store", "tickerSymbol": "KRX:069960" }
+  ],
+  "keywords": "Hyundai Department Store 069960, 현대백화점, inbound tourism, duty free, Zinus, Korean retail",
+  "mainEntityOfPage": "https://henryshin.github.io/research/hyundai-dept-store-069960-inbound-zinus/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:15.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:13.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:13px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:35px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:15px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:14.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:12.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:14.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:12.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:14px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:14px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:16px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:14.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:15px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:15px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:15.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:13.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { color:var(--ink-faint); font-size:13.3px; margin:8px 0 4px; line-height:1.62; }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:13.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:13px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:13px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:13px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:15px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:14px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:22px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:12px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:13.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:22px; }
+    .kpi-card .value .unit { font-size:13px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:19px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:15.5px; }
+    table.tbl { font-size:14px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
+
+/* type-scale:+2px, flat-notes */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 069960</div>
+    <h1>현대백화점(069960) 분석보고서</h1>
+    <p class="lede">FY25 매출 4조 2,303억(+1.0%)·OPM 8.9% · 1H26 백화점 영업이익 2,459억(+47.7%) · 지누스 1H26 영업손실 568억 · 현재가 93,400원 · 시총 2조 141억원 (2026-08-28)</p>
+    <div class="meta">
+      <span>최초작성 2026-08-31 (v1)</span>
+      <span>기준주가 93,400원 (2026-08-28 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">현재가</div>
+      <div class="value">93,400<span class="unit">원</span></div>
+      <div class="sub">52주 69,050 ~ 222,000원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">시가총액</div>
+      <div class="value">2조 141<span class="unit">억원</span></div>
+      <div class="sub">발행주식수 21,564,912주</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">트레일링 PER</div>
+      <div class="value">9.7<span class="unit">배</span></div>
+      <div class="sub">FY25 지배주주순이익 2,077억 기준</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Best TP (FY28E)</div>
+      <div class="value">203,295<span class="unit">원</span></div>
+      <div class="sub">현재가 대비 +117.7%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">이익은 사실상 백화점 한 곳에서 나옴. 1H26 백화점 영업이익은 2,459억원으로 47.7% 늘었는데, 늘어난 매출이 판촉비가 덜 붙는 고마진 장르에서 나온 덕임. 방한 외국인 1,071만명(1H26, +21.3%)이 그 배경이며, 현대의 외국인 매출 비중 8.7%(6월)는 일본 백화점이 2~3년 먼저 지난 곡선의 앞부분임.</span></div>
+    <div class="tldr-row"><span class="tldr-k">밸류에이션</span><span class="tldr-v">글로벌 백화점 peer 평균 19.74배를 한국 유통 디스카운트와 동사 고유 사유로 너프한 7.5배를 3 시나리오에 동일 적용해 목표주가 133,755~203,295원(+43.2%~+117.7%). 상승 여력의 대부분은 이익 성장이 아니라 FY26E 기준 PER 5.4배가 7.5배로 올라서는 리레이팅에서 나옴.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">지누스는 1H26 매출 40.1% 감소·영업손실 568억원으로 인도네시아 가동률이 55.2%까지 내려옴. 인바운드 흐름이 흔들린다면 관광객 수보다 1인당 지출이 먼저이며, 원화 강세는 가격 유인을 먼저 지움. 이사회는 네 항목 중 셋에서 경고가 나옴.</span></div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>회사 개요</h2>
+    <div class="sub-h">설립·사업 구성 · 실적 개요</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>내용</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">종목/코드</td><td>현대백화점 / 069960 (KOSPI)</td><td class="rowlab">시가총액</td><td>2조 141억원 (2026-08-28)</td></tr>
+        <tr><td class="rowlab">설립</td><td>2002년 11월 1일 (분할 설립)</td><td class="rowlab">재상장</td><td>2002-11-25 (KOSPI)</td></tr>
+        <tr><td class="rowlab">대표이사</td><td>정지선 · 정지영</td><td class="rowlab">결산월</td><td>12월</td></tr>
+        <tr><td class="rowlab">본사</td><td>서울 강남구 테헤란로98길 12</td><td class="rowlab">임직원수</td><td>3,139명 (2025-12-31, 백화점 부문)</td></tr>
+        <tr><td class="rowlab">발행주식수</td><td>21,564,912주 (자기주식 232,460주 포함)</td><td class="rowlab">현재가</td><td>93,400원 (2026-08-28)</td></tr>
+        <tr><td class="rowlab">FY25 매출</td><td>4조 2,303억원 (+1.0% YoY)</td><td class="rowlab">FY25 영업이익</td><td>3,779억원 (OPM 8.9%)</td></tr>
+        <tr><td class="rowlab">1H26 매출</td><td>2조 181억원 (-7.4% YoY)</td><td class="rowlab">1H26 영업이익</td><td>1,781억원 (OPM 8.8%)</td></tr>
+        <tr><td class="rowlab">사업 부문</td><td>백화점 57.6% · 면세 24.0% · 지누스(가구 제조) 21.6% · 연결조정 -3.2% (FY25 매출 비중)</td><td class="rowlab">점포 현황</td><td>백화점 13개 · 아울렛 10개 · 면세점 무역센터점 및 인천공항 DF2·DF5·DF7</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12) · 반기보고서(2026.06) · 종가 2026-08-28</div>
+    <p>현대백화점은 백화점과 면세점에 더해 미국 매트리스 기업 지누스를 연결로 안고 있는 유통 사업회사로, FY25 연결 매출은 4조 2,303억원임.</p>
+    <p>매출 구성은 백화점 57.6%와 면세 24.0%가 본업이고, 2022년 인수한 지누스가 21.6%를 차지해 미국 소비와 관세에도 실적이 함께 걸림.</p>
+    <p>FY25 영업이익은 3,779억원으로 전년 대비 33.1% 늘었으나, 1H26에는 백화점이 47.7% 성장하는 동안 지누스가 568억원 영업손실을 내면서 전사 영업이익이 10.7% 감소함.</p>
+  </div>
+
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>산업 분석</h2>
+    <div class="sub-h">2.1 국내 백화점 시장 구조 · 2.2 면세 시장 재편과 인천공항 DF2 · 2.3 방한 외국인과 백화점 소비 · 2.4 일본 백화점의 선행 곡선 · 2.5 미국 관세와 지누스</div>
+
+    <h3><span class="no">2.1.</span>국내 백화점 시장 구조</h3>
+    <p>국내 5대 백화점 65개 점포의 2025년 거래액은 40조 4,400억원으로 전년 대비 3.4% 늘었고, 현대는 12개 점포 9조 1,000억원으로 점유율 22.5%를 차지함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">점포 수</th><th class="num">2025년 거래액 (억원)</th><th class="num">YoY</th><th class="num">점유율</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">롯데</td><td class="num">31</td><td class="num">142,500</td><td class="num">+3.0%</td><td class="num">35.2%</td></tr>
+        <tr><td class="rowlab">신세계</td><td class="num">13</td><td class="num">133,400</td><td class="num">+5.7%</td><td class="num">33.0%</td></tr>
+        <tr class="hl"><td class="rowlab">현대</td><td class="num">12</td><td class="num">91,000</td><td class="num">+4.0%</td><td class="num">22.5%</td></tr>
+        <tr><td class="rowlab">갤러리아·AK 외</td><td class="num">9</td><td class="num">37,500</td><td class="num">—</td><td class="num">9.3%</td></tr>
+        <tr><td class="rowlab">합계</td><td class="num">65</td><td class="num">404,400</td><td class="num">+3.4%</td><td class="num">100.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 어패럴뉴스 2025년 국내 5대 백화점 65개 점포 매출 집계 · 거래액 기준</div>
+    <p>현대는 점포 수가 가장 적고 점유율도 3위이나 점포당 생산성에서는 앞서는데, 같은 집계에서 판교점이 2025년 거래액 2조 291억원으로 17.2% 성장해 전국 성장률 2위를 기록함.</p>
+    <p>신규 출점도 3사 가운데 유일하게 예정돼 있어 2027년 하반기 더현대부산, 2028년 하반기 경산 프리미엄아울렛, 2029년 중 더현대광주 개점을 추진 중임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>신규점</th><th>개점 예정</th><th>영업면적</th><th class="num">예상 투자비</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">더현대부산</td><td>2027년 하반기</td><td>2만 1천평</td><td class="num">9,000억원</td><td>외국인 관광객 수혜 지역 · 김해공항 인접</td></tr>
+        <tr><td class="rowlab">경산 프리미엄아울렛</td><td>2028년 하반기</td><td>설계 중</td><td class="num">4,000억원</td><td>상권 내 최초 프리미엄아울렛</td></tr>
+        <tr><td class="rowlab">더현대광주</td><td>2029년 중</td><td>3만 1천평</td><td class="num">1조 5,000억원</td><td>당사 최대 유통시설</td></tr>
+        <tr><td class="rowlab">신규·기존 투자 계획 합계</td><td>—</td><td>—</td><td class="num">2조 7,310억원</td><td>기지출 8,492억 · 향후 1조 8,818억</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 회사 실적발표(2026-08-05) · 반기보고서(2026.06) 신규사업 등의 내용 및 전망 · 영업면적·투자비는 회사 발표 원문의 예상치 표기</div>
+    <p>다만 신규 출점은 개점 초기 감가상각과 고정비를 먼저 발생시키므로, 2027년 이후 이익 기여가 언제부터 나올지는 점포 안착 속도를 봐야 함.</p>
+
+    <h3><span class="no">2.2.</span>면세 시장 재편과 인천공항 DF2</h3>
+    <p>국내 면세점 매출은 2025년 12조 5,340억원으로 전년 14조 2,249억원 대비 11.9% 줄었고, 2019년 24조 8,000억원의 절반 수준까지 내려옴.</p>
+    <p>시장이 줄어드는 동안 현대디에프는 FY25 영업이익 2억원으로 2018년 진출 이후 처음 흑자를 냈는데, 2025년 8월 동대문점 영업 종료로 적자 매장을 정리한 효과가 큼.</p>
+    <p>2026년 2월 인천공항 재입찰에서는 임차료 부담으로 사업권을 반납한 신라·신세계가 불참했고, 롯데가 DF1을, 현대가 DF2를 가져감.</p>
+    <p>현대는 2026년 4월 DF2를 열어 기존 DF5·DF7과 함께 인천공항에서 전 품목을 취급하는 유일한 사업자가 됐으며, 후발주자가 경쟁 이탈로 외형을 넓힌 사례임.</p>
+    <p>2Q26 면세 부문 매출은 3,104억원으로 5.8% 늘고 영업이익 62억원으로 흑자 전환했는데, DF2 신규 매출이 동대문점 종료분을 상쇄했고, 매입 규모가 커지면서 시내점 적자도 줄었음.</p>
+    <p>다만 앞선 사업자들이 임차료 때문에 반납한 구역이므로, 확대된 면적이 이익으로 이어질지는 새 임차 조건이 결정함.</p>
+    <div class="filter-note"><b>출처</b> — 면세 시장 규모는 관세청 면세점 매출액 통계 · 인천공항 재입찰 결과는 2026년 2월 관세청 특허심사 · 2Q26 부문 실적은 회사 실적발표(2026-08-05)</div>
+
+    <h3><span class="no">2.3.</span>방한 외국인 1,071만명, 백화점으로 들어오는 소비</h3>
+    <p>국내 소비가 정체된 사이 시장을 떠받친 것은 인바운드 수요였음. 2026년 상반기 방한 외국인은 1,071만명으로 전년 동기 883만명 대비 21.3% 늘었고, 반기 기준 역대 최대이며 2019년 동기 대비로도 26.9% 많음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">2019년</th><th class="num">2023년</th><th class="num">2024년</th><th class="num">2025년</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">방한 외래관광객 (만명)</td><td class="num">1,750</td><td class="num">1,103</td><td class="num">1,637</td><td class="num">1,870</td><td class="num">1,071</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">—</td><td class="num">+48.4%</td><td class="num">+14.2%</td><td class="num">+21.3%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 한국관광공사 방한 외래관광객 통계 · 2025년은 2019년 최고치 1,750만명을 넘어선 역대 최대</div>
+    <p>이 수요가 백화점 매출로 넘어온 규모는 3사 상반기 외국인 매출 1조 7,200억원이며, 현대는 5,000억원(추정)으로 전년 연간 실적의 70%를 상반기에 채움.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">2026년 상반기 외국인 매출</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">롯데백화점</td><td class="num">6,400억원</td><td>전년 연간의 87% 수준 · 역대 최대</td></tr>
+        <tr><td class="rowlab">신세계백화점</td><td class="num">5,800억원</td><td>전년 동기 대비 +120% · 역대 최대</td></tr>
+        <tr class="hl"><td class="rowlab">현대백화점</td><td class="num">5,000억원 (추정)</td><td>전년 연간의 70% 이상</td></tr>
+        <tr><td class="rowlab">3사 합계</td><td class="num">1조 7,200억원</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 뉴시스 2026-07-31 · 파이낸셜뉴스 2026-08-18 집계 · 거래액 기준 · 현대는 회사 미공표로 언론 추정치</div>
+    <p>외국인 매출이 이익에 크게 기여하는 이유는 구매 품목이 고마진 장르에 몰려 있기 때문으로, 상반기 명품 매출 증가율은 현대 123%, 롯데 130%, 신세계 129.3%로 세 곳 모두 세 자릿수임.</p>
+    <p>2Q26 현대 백화점 부문에서도 워치·주얼리가 48%, 럭셔리가 25% 늘어 성장을 끌었고, 국내 패션은 7% 늘어 상대적으로 완만함.</p>
+    <p>1H26 백화점 부문 매출은 8.2% 느는 데 그쳤으나 영업이익은 2,459억원으로 47.7% 늘었는데, 늘어난 매출이 판촉비가 덜 붙는 고마진 장르에서 나온 덕임. 영업이익률도 FY25 16.1%에서 1H26 19.3%로 올라옴.</p>
+    <p>점포별로는 외국인 접근성이 높은 곳에 쏠려서, 상반기 외국인 매출 증가율이 더현대 서울 134%, 신세계 센텀시티 230%, 롯데 본점 140%로 상권에 따라 편차가 큼.</p>
+    <p>2.1에서 본 부산 출점이 이 편차와 겹치는데, 상반기 외국인 매출 증가율이 부산에서 롯데 본점 150%·롯데몰 동부산 170%·신세계 센텀시티 230%로 수도권보다 높게 나옴.</p>
+    <p>이 흐름이 흔들린다면 관광객 수보다 1인당 지출이 먼저일 것임. 방한객이 늘어도 객단가가 낮은 개별 관광 위주로 구성이 바뀌면 매출 증가율이 관광객 증가율을 밑돌 수 있고, 원화가 강세로 돌아서면 한국에서 사면 싸다는 가격 유인이 먼저 사라짐.</p>
+
+    <h3><span class="no">2.4.</span>일본 백화점이 2~3년 먼저 지나온 곡선</h3>
+    <p>현대의 외국인 매출 비중은 거래액 기준으로 2026년 3월 6.3%에서 6월 8.7%까지 올랐고, 증가율은 6월 92%·7월 86%로 두 달 연속 80%를 넘김.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">&#39;26.3월</th><th class="num">&#39;26.4월</th><th class="num">&#39;26.5월</th><th class="num">&#39;26.6월</th><th class="num">&#39;26.7월</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">외국인 매출 비중</td><td class="num">6.3%</td><td class="num">8.1%</td><td class="num">7.1%</td><td class="num">8.7%</td><td class="num">8.0% (추정)</td></tr>
+        <tr><td class="rowlab">외국인 매출 증가율 (YoY)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+92%</td><td class="num">+86%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 회사 실적발표(2026-08-05) 외국인 매출 비중 추이 · 거래액 기준 · 7월 비중과 6월 증가율은 교보증권(2026-08-10), 7월 증가율은 대신증권(2026-08-06) 추정</div>
+    <p>같은 곡선을 일본 백화점이 먼저 지났는데, 대신증권은 국내 백화점의 외국인 매출 비중이 이세탄미쓰코시·다카시마야를 2~3년 시차를 두고 따라가는 상황으로 봄.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">2022년 1분기</th><th class="num">2024년 1분기</th><th class="num">2026년 1분기</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">국내 백화점</td><td class="num">1.0%</td><td class="num">4.5%</td><td class="num">9.0%</td></tr>
+        <tr><td class="rowlab">이세탄미쓰코시</td><td class="num">2.0%</td><td class="num">16.5%</td><td class="num">14.0%</td></tr>
+        <tr><td class="rowlab">다카시마야</td><td class="num">2.0%</td><td class="num">15.5%</td><td class="num">10.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 대신증권(2026-08-06) 각사 집계 그림 1 · 눈금 판독에 따른 추정치</div>
+    <p>이세탄미쓰코시는 2024년 1분기 16.5%로 정점을 찍고 14.0%까지 되돌아온 반면, 국내 백화점은 아직 9.0% 구간을 지나는 중임.</p>
+    <p>현대의 6월 비중 8.7%가 일본 백화점의 현재 수준인 14.0%까지 올라오면 외국인 매출은 지금의 1.6배가 되고, 상반기 5,000억원(추정) 기준으로 8,000억원 규모가 됨.</p>
+    <p>다만 일본 사례는 정점을 찍은 뒤 16.5%에서 14.0%로 내려온 이력이기도 하므로, 비중 상승은 무한정 이어지는 추세가 아니라 도달점이 있는 수렴 과정임.</p>
+    <p>시차 가설 자체가 성립하지 않을 수도 있음. 일본은 엔 약세가 장기간 이어졌으나, 한국은 원화가 되돌아오면 같은 곡선을 그리지 않음.</p>
+
+    <h3><span class="no">2.5.</span>미국 관세와 지누스</h3>
+    <p>백화점·면세가 인바운드로 밀려 올라가는 동안 지누스는 반대쪽 외부 변수를 맞아, 1H26 매출 2,871억원으로 40.1% 줄고 영업손실 568억원을 냄.</p>
+    <p>지누스는 2005년 상업화한 압축 포장 매트리스(Mattress-in-a-box)에서 출발해 매트리스·베개·가구를 만들어 온·오프라인 유통채널에 납품하며, 소비자에게 직접 팔지 않고 채널을 거쳐 판매함.</p>
+    <p>생산은 전량 해외법인과 해외 외주공장에서 이뤄지고 판매는 현지창고 인도거래(DO)와 직접수입(DI) 두 방식으로 나뉘며, FY25 매출의 93.5%·1H26 매출의 89.6%가 수출이고 주력 시장은 미국임.</p>
+    <p>매출 감소의 직접 원인은 미국 관세 인상에 대응해 2025년 하반기 판가를 올린 뒤 주요 채널 주문이 빠진 것임. 줄어든 매출은 사업 전반이 아니라 미국 매트리스 한 품목에 몰려 있고, 그만큼 놀게 된 설비의 고정비는 그대로 남음.</p>
+    <p>품목별 매출을 보면 매트리스가 53.0% 줄어드는 동안 가구·소파 등 논매트리스는 6.5% 늘어남.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>품목</th><th class="num">1H25</th><th class="num">1H26</th><th class="num">YoY</th><th class="num">FY25</th><th class="num">FY24</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매트리스</td><td class="num">3,674</td><td class="num">1,728</td><td class="num">-53.0%</td><td class="num">6,892</td><td class="num">6,637</td></tr>
+        <tr><td class="rowlab">논매트리스</td><td class="num">1,067</td><td class="num">1,136</td><td class="num">+6.5%</td><td class="num">2,171</td><td class="num">2,474</td></tr>
+        <tr><td class="rowlab">제품 합계</td><td class="num">4,741</td><td class="num">2,864</td><td class="num">-39.6%</td><td class="num">9,063</td><td class="num">9,111</td></tr>
+        <tr><td class="rowlab">상품 및 기타</td><td class="num">53</td><td class="num">7</td><td class="num">-86.1%</td><td class="num">69</td><td class="num">93</td></tr>
+        <tr class="hl"><td class="rowlab">매출총계</td><td class="num">4,794</td><td class="num">2,871</td><td class="num">-40.1%</td><td class="num">9,132</td><td class="num">9,204</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2025.06)·(2026.06)·사업보고서(2025.12) 가구 제조 부문 매출실적 · 단위 억원</div>
+    <p>빠진 물량이 곧바로 손실로 돌아오는 것은 생산능력이 성장을 전제로 먼저 깔린 탓인데, 인도네시아 매트리스 가동률은 FY24 91.9%에서 1H26 55.2%까지 내려옴.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>품목 · 사업소</th><th class="num">FY24 가동률</th><th class="num">FY25 가동률</th><th class="num">1H26 생산능력 (천개)</th><th class="num">1H26 생산실적 (천개)</th><th class="num">1H26 가동률</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매트리스 · 중국</td><td class="num">93.4%</td><td class="num">92.2%</td><td class="num">367</td><td class="num">333</td><td class="num">90.9%</td></tr>
+        <tr class="hl"><td class="rowlab">매트리스 · 인도네시아</td><td class="num">91.9%</td><td class="num">85.8%</td><td class="num">2,308</td><td class="num">1,275</td><td class="num">55.2%</td></tr>
+        <tr><td class="rowlab">매트리스 · 미국</td><td class="num">65.3%</td><td class="num">71.2%</td><td class="num">—</td><td class="num">—</td><td class="num">운영 중단</td></tr>
+        <tr><td class="rowlab">매트리스 소계</td><td class="num">91.8%</td><td class="num">86.7%</td><td class="num">2,675</td><td class="num">1,608</td><td class="num">60.1%</td></tr>
+        <tr><td class="rowlab">논매트리스 · 중국</td><td class="num">77.1%</td><td class="num">91.8%</td><td class="num">686</td><td class="num">635</td><td class="num">92.6%</td></tr>
+        <tr><td class="rowlab">논매트리스 · 캄보디아</td><td class="num">—</td><td class="num">42.3%</td><td class="num">155</td><td class="num">117</td><td class="num">75.3%</td></tr>
+        <tr><td class="rowlab">논매트리스 소계</td><td class="num">77.1%</td><td class="num">90.5%</td><td class="num">841</td><td class="num">752</td><td class="num">89.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 가구 제조 부문 생산능력 및 생산실적 · 인도네시아 3공장은 2024년 6월, 캄보디아 공장은 2025년 8월 가동 · 미국 공장은 2025년 11월 운영 중단</div>
+    <p>인도네시아 생산능력은 FY25 551.7만개에서 1H26 연율 환산 461.6만개로 16.3% 줄었으나 생산실적은 473.6만개에서 255.0만개로 46.2% 줄어, 설비를 덜어내는 속도가 주문이 빠지는 속도를 따라가지 못함.</p>
+    <p>비어 있는 40%의 고정비는 판매관리비가 아닌 제조원가에 잡히므로 매출총이익률부터 깎이며, 매출이 40% 줄 때 영업이익률은 2.8%에서 -19.8%로 22.6%p 떨어짐.</p>
+    <p>가격도 함께 내려가서 매트리스 수출 단가는 FY24 96.8달러에서 1H26 71.4달러로 26.2% 낮아졌고, 물량과 단가가 같은 방향으로 움직여 매출 감소폭이 커짐.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>품목 · 구분</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매트리스 수출 (USD)</td><td class="num">96.8</td><td class="num">78.3</td><td class="num">71.4</td></tr>
+        <tr><td class="rowlab">매트리스 수출 (원)</td><td class="num">131,979</td><td class="num">111,420</td><td class="num">105,896</td></tr>
+        <tr><td class="rowlab">논매트리스 수출 (USD)</td><td class="num">80.5</td><td class="num">63.0</td><td class="num">75.7</td></tr>
+        <tr><td class="rowlab">논매트리스 수출 (원)</td><td class="num">109,786</td><td class="num">89,553</td><td class="num">112,376</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 주요 제품 등의 가격변동추이 · 매출금액 ÷ 매출수량으로 산출한 도매 평균 단가</div>
+    <p>논매트리스 수출 단가가 FY25 63.0달러에서 1H26 75.7달러로 오른 것은 회사가 밝힌 제품 구성 변화 때문이며, 단가가 높은 품목 위주로 들어오는 신규 주문자상표부착생산(ODM) 수주가 여기에 반영돼 있음.</p>
+    <p>회사는 생산 기지를 옮기는 중이어서 2025년 8월 캄보디아 공장을 돌리기 시작했고 2025년 11월 미국 생산법인을 중단했으며, 미국 공장 관련 유형자산은 매각예정비유동자산으로 분류돼 있음.</p>
+    <p>관세는 두 방향으로 갈리는데, 미국 상호관세 대응 가격 인상이 주문 감소의 직접 원인인 반면 인도네시아산 매트리스 반덤핑 관세는 2025년 2월 국제무역법원 판결로 0.00%가 최종 확정돼 기납부분 환급이 진행 중임.</p>
+    <p>이 환급이 2Q26 관세 환입 140억원으로 이미 손익에 들어왔고 하반기에도 170억원이 반영될 예정이나, 일회성 항목이어서 본업 개선분과는 별개임.</p>
+    <p>지누스 실적이 돌아오는 조건은 아마존 직매입 재고 주수(Weeks of Supply, WOS)가 줄어 주문이 정상화되는 것으로, 회사는 4월부터 월별 매출이 오르고 재고 주수가 내려가는 흐름을 근거로 상반기를 저점으로 봄.</p>
+    <p>반대로 매트리스 물량이 돌아오지 않으면 회복도 없음. 논매트리스가 지금 속도로 늘어도 규모가 매트리스의 3분의 2에 못 미쳐, 매트리스 없이는 가동률이 올라오지 않음.</p>
+  </div>
+
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>사업 모델</h2>
+    <div class="sub-h">3.1 세 부문의 결합 구조 · 3.2 매출 구성 · 3.3 부문별 수익성 · 3.4 고객 구성과 교섭력</div>
+
+    <h3><span class="no">3.1.</span>세 부문이 한 손익계산서에 묶이는 구조</h3>
+    <p>현대백화점의 손익계산서는 소유 지분이 서로 다른 세 부문을 한 줄로 합쳐 놓았기 때문에, 영업이익과 지배주주순이익을 같은 방향으로 읽으면 어긋남.</p>
+    <p>백화점 부문은 본체가 100%이나 대형점을 운영하는 한무쇼핑 지분이 56.05%이고, 면세는 현대디에프 100%, 지누스는 38.57%임.</p>
+    <p>FY25에 이 비대칭이 실제로 나타났는데, 지누스 무형자산 손상 2,056억원이 연결 영업이익 아래에서 순이익을 깎았으나 그 61.43%가 비지배주주 몫으로 되돌아감.</p>
+    <p>그 결과 FY25 연결 순이익은 1,415억원인데 지배주주순이익은 2,077억원으로 연결보다 커지는 역전이 발생함.</p>
+    <p>반대로 지누스가 이익을 내면 그 몫의 61.43%도 비지배로 빠지므로, 지누스는 손실일 때보다 이익일 때 주주에게 덜 기여하는 비대칭 자산임.</p>
+
+    <h3><span class="no">3.2.</span>매출 구성</h3>
+    <p>FY25 매출 4조 2,303억원 가운데 백화점이 2조 4,377억원으로 57.6%를 차지하고, 면세 1조 140억원과 지누스 9,132억원이 뒤를 이음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>부문</th><th class="num">FY24 매출</th><th class="num">FY25 매출</th><th class="num">FY25 비중</th><th class="num">1H26 매출</th><th class="num">1H26 YoY</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">백화점</td><td class="num">24,354</td><td class="num">24,377</td><td class="num">57.6%</td><td class="num">12,763</td><td class="num">+8.2%</td></tr>
+        <tr><td class="rowlab">면세</td><td class="num">9,721</td><td class="num">10,140</td><td class="num">24.0%</td><td class="num">5,241</td><td class="num">-10.7%</td></tr>
+        <tr><td class="rowlab">지누스 (가구 제조)</td><td class="num">9,204</td><td class="num">9,132</td><td class="num">21.6%</td><td class="num">2,871</td><td class="num">-40.1%</td></tr>
+        <tr><td class="rowlab">연결조정</td><td class="num">-1,403</td><td class="num">-1,346</td><td class="num">-3.2%</td><td class="num">-694</td><td class="num">—</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td class="num">41,876</td><td class="num">42,303</td><td class="num">100.0%</td><td class="num">20,181</td><td class="num">-7.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 영업부문 주석 · 억원 반올림</div>
+    <p>1H26 매출이 7.4% 줄어든 것은 지누스의 40.1% 감소가 백화점의 8.2% 증가를 덮었기 때문이고, 본업이 줄어든 탓은 아님.</p>
+    <p>지역별로는 FY25 국내 매출이 3조 3,761억원으로 79.8%이고 해외가 8,542억원인데, 해외 매출은 전액 지누스에서 나옴.</p>
+
+    <h3><span class="no">3.3.</span>부문별 수익성</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>부문</th><th class="num">FY24 영업이익</th><th class="num">FY25 영업이익</th><th class="num">FY25 OPM</th><th class="num">1H26 영업이익</th><th class="num">1H26 OPM</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">백화점</td><td class="num">3,596</td><td class="num">3,934</td><td class="num">16.1%</td><td class="num">2,459</td><td class="num">19.3%</td></tr>
+        <tr><td class="rowlab">면세</td><td class="num">-288</td><td class="num">2</td><td class="num">0.02%</td><td class="num">96</td><td class="num">1.8%</td></tr>
+        <tr><td class="rowlab">지누스 (가구 제조)</td><td class="num">-54</td><td class="num">255</td><td class="num">2.8%</td><td class="num">-568</td><td class="num">-19.8%</td></tr>
+        <tr><td class="rowlab">연결조정</td><td class="num">-413</td><td class="num">-412</td><td class="num">—</td><td class="num">-206</td><td class="num">—</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td class="num">2,840</td><td class="num">3,779</td><td class="num">8.9%</td><td class="num">1,781</td><td class="num">8.8%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 영업부문 주석 · 단위 억원</div>
+    <p>이익은 사실상 백화점 한 곳에서 나오는데, FY25 백화점 영업이익 3,934억원은 전사 3,779억원을 넘어 다른 부문의 마이너스를 메우는 크기임.</p>
+    <p>백화점 OPM은 FY25 16.1%에서 1H26 19.3%로 올랐고, 회사 발표 기준 2Q26 순매출 6,438억원과 영업이익 1,101억원은 모두 분기 기준 최대임.</p>
+    <p>지누스는 FY25에 2.8%로 흑자를 냈다가 1H26에 -19.8%로 돌아섰는데, 매출이 40% 빠지는 동안 고정비는 그대로 남았음.</p>
+
+    <h3><span class="no">3.4.</span>고객 구성과 교섭력</h3>
+    <p>백화점과 면세는 일반 소비자를 상대하므로 고객집중도 위험이 낮으나, 지누스는 미국 대형 유통 채널 몇 곳에 납품해 사정이 다름.</p>
+    <p>다만 지누스의 고객별 매출 비중은 공시되지 않아 고객집중도 표를 숫자로 채우기 어려우며, 회사는 2026년 실적 부진의 원인으로 주요 고객사 주문 감소를 들고 있음.</p>
+    <p>대신 대금을 언제 받고 언제 주는지가 드러나는 채권·채무 배율로 갈음함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출채권 및 기타채권</td><td class="num">7,770</td><td class="num">11,284</td><td class="num">10,907</td><td class="num">10,670</td><td class="num">8,852</td></tr>
+        <tr><td class="rowlab">매입채무 및 기타채무</td><td class="num">6,863</td><td class="num">9,127</td><td class="num">8,340</td><td class="num">8,401</td><td class="num">7,906</td></tr>
+        <tr class="hl"><td class="rowlab">채권/채무 배율 (배)</td><td class="num">1.13</td><td class="num">1.24</td><td class="num">1.31</td><td class="num">1.27</td><td class="num">1.12</td></tr>
+        <tr><td class="rowlab">재고자산</td><td class="num">3,650</td><td class="num">7,066</td><td class="num">6,126</td><td class="num">6,168</td><td class="num">4,561</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) 연결 재무상태표 · 단위 억원</div>
+    <p>채권/채무 배율이 5년 내내 1을 넘는데, 대금을 먼저 받는 백화점만 있었다면 나오기 어려운 숫자이고, 여기에 지누스의 납품 채권이 더해졌음.</p>
+    <p>지누스 편입 전인 FY21 배율 1.13에서 편입 후 FY23 1.31까지 올랐다가 매출 축소와 함께 FY25 1.12로 되돌아옴.</p>
+  </div>
+
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>재무 추정</h2>
+    <div class="sub-h">5개년 실적 추이 · 영업이익과 지배주주순이익의 괴리</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액</td><td class="num">35,724</td><td class="num">50,141</td><td class="num">42,075</td><td class="num">41,876</td><td class="num">42,303</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">+40.4%</td><td class="num">-16.1%</td><td class="num">-0.5%</td><td class="num">+1.0%</td></tr>
+        <tr><td class="rowlab">영업이익</td><td class="num">2,644</td><td class="num">3,209</td><td class="num">3,035</td><td class="num">2,840</td><td class="num">3,779</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">7.4%</td><td class="num">6.4%</td><td class="num">7.2%</td><td class="num">6.8%</td><td class="num">8.9%</td></tr>
+        <tr><td class="rowlab">연결 순이익</td><td class="num">2,334</td><td class="num">1,860</td><td class="num">-398</td><td class="num">-8</td><td class="num">1,415</td></tr>
+        <tr class="hl"><td class="rowlab">지배주주순이익</td><td class="num">1,894</td><td class="num">1,441</td><td class="num">-798</td><td class="num">-359</td><td class="num">2,077</td></tr>
+        <tr><td class="rowlab">EPS (원)</td><td class="num">8,652</td><td class="num">6,593</td><td class="num">-3,650</td><td class="num">-1,645</td><td class="num">9,572</td></tr>
+        <tr><td class="rowlab">ROE</td><td class="num">4.3%</td><td class="num">3.1%</td><td class="num">-1.8%</td><td class="num">-0.8%</td><td class="num">4.6%</td></tr>
+        <tr><td class="rowlab">주당배당금 (원)</td><td class="num">1,100</td><td class="num">1,300</td><td class="num">1,300</td><td class="num">1,400</td><td class="num">2,150</td></tr>
+        <tr><td class="rowlab">배당성향</td><td class="num">12.7%</td><td class="num">19.7%</td><td class="num">—</td><td class="num">—</td><td class="num">22.3%</td></tr>
+        <tr><td class="rowlab">영업활동현금흐름</td><td class="num">5,002</td><td class="num">4,894</td><td class="num">7,578</td><td class="num">7,339</td><td class="num">9,862</td></tr>
+        <tr><td class="rowlab">CAPEX</td><td class="num">2,666</td><td class="num">2,608</td><td class="num">3,695</td><td class="num">4,781</td><td class="num">5,830</td></tr>
+        <tr><td class="rowlab">FCF</td><td class="num">2,336</td><td class="num">2,286</td><td class="num">3,882</td><td class="num">2,558</td><td class="num">4,032</td></tr>
+        <tr><td class="rowlab">부채비율</td><td class="num">71.6%</td><td class="num">89.6%</td><td class="num">86.5%</td><td class="num">79.9%</td><td class="num">78.3%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) 연결기준 · EPS·ROE는 지배주주 기준 · 단위 억원</div>
+    <p>5년 매출은 3조 5,724억원에서 4조 2,303억원으로 18.4% 늘었으나 증가분의 대부분은 2022년 지누스 편입에서 나왔고, 편입 이후로는 4조원 초반에서 정체함.</p>
+    <p>영업이익은 5년 내내 2,644억원에서 3,779억원 사이에 머문 반면 지배주주순이익은 1,894억원에서 -798억원을 거쳐 2,077억원까지 흔들림.</p>
+    <p>흔들림의 원인은 영업이 아니라 지누스 관련 손상과 비지배지분 배분에 있음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">영업이익</td><td class="num">3,035</td><td class="num">2,840</td><td class="num">3,779</td><td class="num">1,781</td><td>본업 이익</td></tr>
+        <tr><td class="rowlab">기타수익</td><td class="num">1,631</td><td class="num">1,120</td><td class="num">1,057</td><td class="num">534</td><td>처분이익 등</td></tr>
+        <tr><td class="rowlab">기타비용</td><td class="num">-3,953</td><td class="num">-3,681</td><td class="num">-3,210</td><td class="num">-410</td><td>손상차손 포함</td></tr>
+        <tr><td class="rowlab">관계기업손익</td><td class="num">259</td><td class="num">254</td><td class="num">48</td><td class="num">34</td><td>지분법</td></tr>
+        <tr><td class="rowlab">금융손익</td><td class="num">-555</td><td class="num">-473</td><td class="num">-441</td><td class="num">-168</td><td>금융수익 − 금융비용</td></tr>
+        <tr><td class="rowlab">법인세비용</td><td class="num">-814</td><td class="num">-69</td><td class="num">182</td><td class="num">-513</td><td>FY25는 환입</td></tr>
+        <tr><td class="rowlab">연결 순이익</td><td class="num">-398</td><td class="num">-8</td><td class="num">1,415</td><td class="num">1,257</td><td>—</td></tr>
+        <tr><td class="rowlab">비지배지분 귀속</td><td class="num">400</td><td class="num">352</td><td class="num">-661</td><td class="num">-112</td><td>지배 = 연결 − 비지배</td></tr>
+        <tr class="hl"><td class="rowlab">지배주주순이익</td><td class="num">-798</td><td class="num">-359</td><td class="num">2,077</td><td class="num">1,370</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2025.12)·반기보고서(2026.06) 손익계산서 · 억원 반올림</div>
+    <p>FY23부터 3년간 기타비용이 매년 3,000억원을 넘었는데, 지누스 영업권과 브랜드가치 손상을 매년 다시 인식했기 때문임.</p>
+    <p>1H26에는 기타비용이 410억원으로 줄면서 영업이익이 10.7% 감소했음에도 지배주주순이익은 1,370억원으로 21.2% 늘어남.</p>
+    <p>영업이익과 지배주주순이익이 반대로 움직인 이 반기에 3.1의 지분율 비대칭이 숫자로 나타남.</p>
+  </div>
+
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>밸류에이션</h2>
+    <div class="sub-h">5.1 중·단기 트레이딩 가치 · 5.2 장기 보유 가치</div>
+
+    <h3><span class="no">5.1.</span>중·단기 트레이딩 가치</h3>
+    <p>글로벌 백화점 peer 3사 평균 19.74배에서 한국 유통 디스카운트 50.3%와 동사 고유 사유 23.5%를 차례로 너프한 7.5배를 세 가지 시나리오에 동일 적용함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Peer</th><th>사업 영역</th><th class="num">Forward PER</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">이세탄미쓰코시 (3099.T)</td><td>백화점</td><td class="num">18.95배</td></tr>
+        <tr><td class="rowlab">다카시마야 (8233.T)</td><td>백화점 · 상업개발</td><td class="num">16.92배</td></tr>
+        <tr><td class="rowlab">J.프론트리테일링 (3086.T)</td><td>백화점 · 파르코</td><td class="num">23.35배</td></tr>
+        <tr><td class="rowlab">글로벌 peer 평균</td><td>—</td><td class="num">19.74배</td></tr>
+        <tr class="hl"><td class="rowlab">너프 적용 사유 + 적용 PER</td><td>한국 유통 디스카운트 50.3%(국내 3사 평균 9.81배) · 지누스 변동성·비지배지분·거버넌스 경고 23.5%</td><td class="num">7.5배</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — stockanalysis.com 조회 2026-08-21~23 · 차기 회계연도 컨센서스 기준</div>
+    <p>peer 3사 중 이세탄미쓰코시와 다카시마야는 2.4에서 외국인 매출 비중의 선행 사례로 인용한 회사임. 세 곳이 16.92~23.35배에 거래되는 동안 동사에 7.5배를 적용하므로, 상승 여력의 대부분은 이 배수 차이에서 나옴.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>공통 가정</th><th class="num">값</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">유통주식수 (주)</td><td class="num">21,332,452</td><td>자기주식 232,460주 제외</td></tr>
+        <tr><td class="rowlab">현재가 (원)</td><td class="num">93,400</td><td>2026-08-28 종가</td></tr>
+        <tr><td class="rowlab">적용 PER (배)</td><td class="num">7.5</td><td>3 시나리오 동일</td></tr>
+        <tr><td class="rowlab">법인세율</td><td class="num">26.4%</td><td>—</td></tr>
+        <tr><td class="rowlab">영업외손익 (억원)</td><td class="num">-200</td><td>3 시나리오 공통</td></tr>
+        <tr><td class="rowlab">백화점 점포 거래액 대비 순매출률</td><td class="num">26.79%</td><td>FY25 실측</td></tr>
+        <tr><td class="rowlab">면세 총매출 대비 순매출률</td><td class="num">53.00%</td><td>FY25 실측</td></tr>
+        <tr><td class="rowlab">백화점·면세 지배 귀속률</td><td class="num">88.0%</td><td>한무쇼핑 56.05% 반영</td></tr>
+        <tr><td class="rowlab">지누스 지배 귀속률</td><td class="num">38.57%</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 시나리오 라이브모델 공통 가정 · 사업보고서(2025.12)·반기보고서(2026.06) 실측</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">① 백화점 부문</td><td class="num"></td><td class="num"></td><td class="num"></td><td>시장 거래액 × 점유율 × 순매출률 × OPM</td></tr>
+        <tr><td class="rowlab">① 국내 5대 백화점 거래액 (조원)</td><td class="num">49.0</td><td class="num">52.0</td><td class="num">55.0</td><td>2025년 40.44조 (65개 점포 집계)</td></tr>
+        <tr><td class="rowlab">② 현대백화점 점유율</td><td class="num">23.0%</td><td class="num">23.8%</td><td class="num">24.5%</td><td>2025년 22.5% (12개점 9.10조)</td></tr>
+        <tr><td class="rowlab">③ 점포 거래액 (억원)</td><td class="num">112,700</td><td class="num">123,760</td><td class="num">134,750</td><td>자동 계산</td></tr>
+        <tr><td class="rowlab">④ 백화점 매출 (억원)</td><td class="num">30,192</td><td class="num">33,155</td><td class="num">36,100</td><td>순매출률 26.79% (FY25 실측)</td></tr>
+        <tr><td class="rowlab">⑤ 백화점 OPM</td><td class="num">20.0%</td><td class="num">21.5%</td><td class="num">23.0%</td><td>FY25 16.1% · 1H26 19.3%</td></tr>
+        <tr><td class="rowlab">⑥ 백화점 영업이익 (억원)</td><td class="num">6,038</td><td class="num">7,128</td><td class="num">8,303</td><td>부문 결산</td></tr>
+        <tr class="hl"><td class="rowlab">② 면세 부문</td><td class="num"></td><td class="num"></td><td class="num"></td><td>시장 × 점유율 × 순매출률 × OPM</td></tr>
+        <tr><td class="rowlab">① 국내 면세 시장 (조원)</td><td class="num">13.0</td><td class="num">14.5</td><td class="num">16.5</td><td>2025년 12.53조 (관세청)</td></tr>
+        <tr><td class="rowlab">② 현대 면세 점유율</td><td class="num">15.5%</td><td class="num">16.5%</td><td class="num">17.5%</td><td>2025년 15.3% · DF2 낙찰 반영</td></tr>
+        <tr><td class="rowlab">③ 면세 총매출 (억원)</td><td class="num">20,150</td><td class="num">23,925</td><td class="num">28,875</td><td>자동 계산</td></tr>
+        <tr><td class="rowlab">④ 면세 매출 (억원)</td><td class="num">10,680</td><td class="num">12,680</td><td class="num">15,304</td><td>순매출률 53.00% (FY25 실측)</td></tr>
+        <tr><td class="rowlab">⑤ 면세 OPM</td><td class="num">3.0%</td><td class="num">4.5%</td><td class="num">6.0%</td><td>FY25 0.02% · 1H26 1.8%</td></tr>
+        <tr><td class="rowlab">⑥ 면세 영업이익 (억원)</td><td class="num">320</td><td class="num">571</td><td class="num">918</td><td>부문 결산</td></tr>
+        <tr class="hl"><td class="rowlab">③ 지누스 부문</td><td class="num"></td><td class="num"></td><td class="num"></td><td>매출 직접 입력 × OPM · 지분 38.57%</td></tr>
+        <tr><td class="rowlab">① 지누스 매출 (억원)</td><td class="num">7,500</td><td class="num">8,500</td><td class="num">10,000</td><td>FY25 9,132억 · 1H26 2,871억 (-40.1%)</td></tr>
+        <tr><td class="rowlab">② 지누스 OPM</td><td class="num">3.5%</td><td class="num">5.0%</td><td class="num">7.0%</td><td>FY25 2.8% · 1H26 -19.8%</td></tr>
+        <tr><td class="rowlab">③ 지누스 영업이익 (억원)</td><td class="num">263</td><td class="num">425</td><td class="num">700</td><td>부문 결산</td></tr>
+        <tr class="hl"><td class="rowlab">④ 연결조정</td><td class="num"></td><td class="num"></td><td class="num"></td><td>직접 입력 · 3 시나리오 공통</td></tr>
+        <tr><td class="rowlab">① 매출 (억원)</td><td class="num">-1,400</td><td class="num">-1,400</td><td class="num">-1,400</td><td>FY25 -1,346억</td></tr>
+        <tr><td class="rowlab">② 영업이익 (억원)</td><td class="num">-400</td><td class="num">-400</td><td class="num">-400</td><td>FY25 -412억</td></tr>
+        <tr class="hl"><td class="rowlab">▶ 종합</td><td class="num"></td><td class="num"></td><td class="num"></td><td>부문 합산 → 부문별 귀속률 → EPS → 목표주가</td></tr>
+        <tr><td class="rowlab">합계 매출 (억원)</td><td class="num">46,972</td><td class="num">52,936</td><td class="num">60,003</td><td>4개 부문 합산</td></tr>
+        <tr><td class="rowlab">합계 영업이익 (억원)</td><td class="num">6,221</td><td class="num">7,724</td><td class="num">9,521</td><td>4개 부문 합산</td></tr>
+        <tr><td class="rowlab">Blended OPM</td><td class="num">13.2%</td><td class="num">14.6%</td><td class="num">15.9%</td><td>합계 영업이익 ÷ 합계 매출 · 참고 지표</td></tr>
+        <tr><td class="rowlab">백화점·면세·조정 세후 (억원)</td><td class="num">4,239</td><td class="num">5,225</td><td class="num">6,345</td><td>영업외손익 반영 후 세후</td></tr>
+        <tr><td class="rowlab">지누스 세후 (억원)</td><td class="num">193</td><td class="num">313</td><td class="num">515</td><td>지누스 영업이익 세후</td></tr>
+        <tr><td class="rowlab">▸ 지배주주순이익 (억원)</td><td class="num">3,804</td><td class="num">4,719</td><td class="num">5,782</td><td>귀속률 88.0% · 38.57%</td></tr>
+        <tr><td class="rowlab">▸ EPS (원)</td><td class="num">17,834</td><td class="num">22,119</td><td class="num">27,106</td><td>자동 계산</td></tr>
+        <tr><td class="rowlab">예상 ROE (기말자본 기준)</td><td class="num">7.0%</td><td class="num">8.6%</td><td class="num">10.4%</td><td>FY27E 기말자본에 FY28E 유보분(78%)을 더한 자본 기준 · 5.2는 평균자본 기준</td></tr>
+        <tr><td class="rowlab">적용 PER (배)</td><td class="num">7.5</td><td class="num">7.5</td><td class="num">7.5</td><td>3 시나리오 동일</td></tr>
+        <tr class="hl"><td class="rowlab">▸ 목표주가 (원)</td><td class="num">133,755</td><td class="num">165,893</td><td class="num">203,295</td><td>EPS 반올림 후 PER 적용</td></tr>
+        <tr class="hl"><td class="rowlab">현재가 대비 상승률</td><td class="num">+43.2%</td><td class="num">+77.6%</td><td class="num">+117.7%</td><td>2026-08-28 종가 93,400원</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 시장 어패럴뉴스·관세청 · 실적 사업보고서(2025.12)·반기보고서(2026.06)</div>
+    <p>Base 지배주주순이익 3,804억원은 FY26E 추정치 3,663억원 대비 2년간 3.9% 증가에 그침. 목표주가가 43.2% 웃도는 힘은 이익 성장보다 FY26E 기준 PER 5.4배가 7.5배로 올라서는 리레이팅에서 나옴.</p>
+    <p>Bull은 지누스가 편입 첫해 OPM으로 돌아오고 외국인 매출 비중이 일본 백화점 수준으로 수렴하는 조합이며, Best는 여기에 신규 출점과 중국 단체관광 정상화가 겹치는 경우라고 판단함.</p>
+    <p>세 시나리오를 가르는 키팩터는 지누스가 아니라 백화점 OPM임.</p>
+    <p>백화점 거래액과 점유율을 Base에 고정한 채 백화점 OPM만 20.0%에서 23.0%로 3.0%p 올리면 백화점 영업이익이 906억원 늘어남. 같은 조건에서 지누스 OPM만 3.5%에서 7.0%로 두 배 올려도 지누스 영업이익 증가는 262억원에 그침.</p>
+    <p>게다가 지누스 이익의 61.43%가 비지배로 빠져 주주 몫으로는 101억원만 남음. 지누스에서 볼 것은 이익 규모보다 이미 반영된 손실이 멈추느냐임.</p>
+    <p>이 관점에서는 Base만으로도 유의미한 시세차익 시현이 가능할 것으로 판단함.</p>
+
+    <h3><span class="no">5.2.</span>장기 보유 가치</h3>
+    <p>현재가는 지배주주 자본의 0.43배여서 수익의 원천이 자본수익성보다 장부가 할인 쪽임. 자본을 복리로 불려 오래 들고 가는 종목이라기보다, 할인이 닫히는 동안 보유하는 종목임.</p>
+    <p>그 할인을 5년에 걸쳐 회수한다고 보면 기대수익률 밴드는 26.7~31.0%로, 요구수익률 10.0%를 크게 넘어섬.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>공통 가정</th><th class="num">값</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">현재 시가총액 (억원)</td><td class="num">20,142</td><td>93,400원 × 21,564,912주</td></tr>
+        <tr><td class="rowlab">발행주식수 (주)</td><td class="num">21,564,912</td><td>자기주식 232,460주 소각 전</td></tr>
+        <tr><td class="rowlab">현재가 (원)</td><td class="num">93,400</td><td>2026-08-28 종가</td></tr>
+        <tr><td class="rowlab">요구수익률 r</td><td class="num">10.0%</td><td>지수 8% + 거버넌스·지누스 2%p</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) · 종가 2026-08-28</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">지배주주순이익 (억원)</th><th class="num">평균 자본 (억원)</th><th class="num">ROE (기말 기준)</th><th class="num">ROE (평균 기준)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">FY24</td><td class="num">-359</td><td class="num">44,315</td><td class="num">-0.8%</td><td class="num">-0.8%</td></tr>
+        <tr><td class="rowlab">FY25</td><td class="num">2,077</td><td class="num">44,725</td><td class="num">4.6%</td><td class="num">4.6%</td></tr>
+        <tr><td class="rowlab">2Q26 (TTM)</td><td class="num">2,317</td><td class="num">45,520</td><td class="num">5.0%</td><td class="num">5.1%</td></tr>
+        <tr><td class="rowlab">FY26E</td><td class="num">3,663</td><td class="num">46,924</td><td class="num">7.6%</td><td class="num">7.8%</td></tr>
+        <tr><td class="rowlab">FY27E</td><td class="num">3,734</td><td class="num">49,808</td><td class="num">7.3%</td><td class="num">7.5%</td></tr>
+        <tr><td class="rowlab">FY28E Base</td><td class="num">3,804</td><td class="num">52,748</td><td class="num">7.0%</td><td class="num">7.2%</td></tr>
+        <tr><td class="rowlab">FY28E Bull</td><td class="num">4,719</td><td class="num">53,105</td><td class="num">8.6%</td><td class="num">8.9%</td></tr>
+        <tr><td class="rowlab">FY28E Best</td><td class="num">5,782</td><td class="num">53,520</td><td class="num">10.4%</td><td class="num">10.8%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — FY24~25 연간 · 2Q26 분기(TTM) · FY26E~28E 추정(자체 추정, 유보율 78%로 추정 연도 자본 산정) · FY21~FY23은 별첨 라이브모델 시트</div>
+    <p>FY21~FY23은 지누스 손상이 반영된 구간이라 ROE가 4.3%에서 -1.8%까지 내려갔고, 5년 평균은 1.9%임. 추정 구간이 7%대로 오르는 것도 이익 급증보다 영업권 잔액이 169억원까지 줄어 손상이 사라진 덕임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th class="num">Base</th><th class="num">Bull</th><th class="num">Best</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">연결 자본총계 (억원)</td><td class="num">63,657</td><td class="num">63,657</td><td class="num">63,657</td><td>반기보고서(2026.06)</td></tr>
+        <tr><td class="rowlab">− 비지배지분 (억원)</td><td class="num">17,157</td><td class="num">17,157</td><td class="num">17,157</td><td>자본총계의 27.0%</td></tr>
+        <tr><td class="rowlab">지배주주 자본 (억원)</td><td class="num">46,500</td><td class="num">46,500</td><td class="num">46,500</td><td>—</td></tr>
+        <tr><td class="rowlab">현재 PBR (배)</td><td class="num">0.43</td><td class="num">0.43</td><td class="num">0.43</td><td>시총 20,142억 ÷ 지배주주 자본</td></tr>
+        <tr><td class="rowlab">ROE (평균자본 기준)</td><td class="num">7.2%</td><td class="num">8.9%</td><td class="num">10.8%</td><td>FY28E · 시나리오 키팩터</td></tr>
+        <tr><td class="rowlab">기간 N (년)</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>3 시나리오 공통</td></tr>
+        <tr class="hl"><td class="rowlab">기대수익률</td><td class="num">26.7%</td><td class="num">28.7%</td><td class="num">31.0%</td><td>현재 PBR에 매입해 예상 ROE를 N년 유지했을 때</td></tr>
+        <tr><td class="rowlab">적정 PBR (배)</td><td class="num">0.88</td><td class="num">0.95</td><td class="num">1.04</td><td>요구수익률 조건에서의 적정 PBR</td></tr>
+        <tr class="hl"><td class="rowlab">적정 주가 (원)</td><td class="num">189,649</td><td class="num">204,930</td><td class="num">223,619</td><td>요구수익률 조건에서의 적정 주가</td></tr>
+        <tr><td class="rowlab">현재가 대비</td><td class="num">+103.1%</td><td class="num">+119.4%</td><td class="num">+139.4%</td><td>현재가 93,400원</td></tr>
+        <tr><td class="rowlab">요구수익률 충족 기간 (년)</td><td class="num">32.6</td><td class="num">82.2</td><td class="num">—</td><td>PBR 1배 미만이라 이 기간을 넘겨 보유하면 요구수익률 하회</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — ROE×PBR 라이브모델 · 지배주주 자본은 반기보고서(2026.06) 연결</div>
+    <p>기간을 5년으로 둔 것은 두 가지 이유임. PBR이 1배 미만이면 할인 회수분이 보유 기간으로 나뉘어 오래 들수록 연 환산 수익률이 떨어지므로 기간을 길게 잡을수록 결과가 나빠짐. 같은 PBR에 N을 15년으로 두면 기대수익률이 13.4%까지 내려앉음.</p>
+    <p>또한 2027년 더현대부산부터 2029년 더현대광주까지 신규 출점 3개점의 이익 기여와 인바운드 비중의 일본 수렴이 확인되는 구간이 대체로 5년 안이어서, 그보다 긴 기간은 근거 없이 ROE를 연장하는 셈이 됨.</p>
+    <p>충족 기간은 장부가 할인만으로 요구수익률을 채울 수 있는 최대 보유기간임. Base 32.6년·Bull 82.2년이며, Best는 예상 ROE 10.8%가 요구수익률 10.0%를 넘어서 기간 제약이 성립하지 않음.</p>
+    <p>두 방식은 같은 방향이나 서로를 보강하지는 않음. 장기 189,649~223,619원이 단기 133,755~203,295원보다 높고 Base 기준 41.8% 차이가 남.</p>
+    <p>두 값이 갈리는 까닭은 FY28E 이후의 재투자를 인정하느냐임. 5.1은 FY28E 한 시점의 이익에 배수를 곱한 스냅샷이라 그 뒤 자본이 다시 굴러 내는 수익이 들어오지 않는 반면, 5.2는 같은 ROE로 자본이 5년 내내 불어난다고 봄.</p>
+    <p>그 2년치 재투자분이 41.8% 차이의 대부분임.</p>
+  </div>
+
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>지배구조 및 주주환원</h2>
+    <div class="sub-h">6.1 주주 구성 · 6.2 이사회 구성 · 6.3 주주환원</div>
+
+    <h3><span class="no">6.1.</span>주주 구성</h3>
+    <p>최대주주 합산 43.83%는 자기주식 소각과 장내매수로 2025년 37.31%에서 오른 값이고, 정지선 회장이 지에프홀딩스 33.7%를 쥔 지주회사 경유 구조임.</p>
+    <p>유동주식비율은 40.96%이며, 지분이 안정적이라는 것과 이사회가 독립적이라는 것은 별개임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>내용</th><th class="num">지분율</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">최대주주 및 특수관계인</td><td>9,452,890주 합계</td><td class="num">43.83%</td></tr>
+        <tr><td class="rowlab">　현대지에프홀딩스</td><td>최대주주 본인 · 지주회사 (에이앤아이 4.68% + 정지선 1.92% 별도)</td><td class="num">37.24%</td></tr>
+        <tr><td class="rowlab">국민연금공단</td><td>5% 이상 주주 · 3,046,492주</td><td class="num">14.13%</td></tr>
+        <tr><td class="rowlab">자기주식</td><td>232,460주 · 1H26 중 1,063,901주 소각</td><td class="num">1.08%</td></tr>
+        <tr class="hl"><td class="rowlab">유동주식비율</td><td>100% − (최대주주등 + 자기주식 + 국민연금)</td><td class="num">40.96%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) · 발행주식총수 21,564,912주 · 세로합 43.84%와 공시 43.83% 사이 반올림 차이 0.01%p</div>
+
+    <h3><span class="no">6.2.</span>이사회 구성</h3>
+    <p>이사회는 사내이사 3인·독립이사 5인으로 비율이 62.5%이고, 감사위원회는 김용균 위원장과 최자영·정연승 3인 전원이 독립이사임.</p>
+    <p>기준연도 2025년 9인 기준으로 사외이사 5인 중 4인이 직위형이고, 평균 재임 2년 7개월이 1회 임기에 못 미치며, 감사위원회에 회계·감사 실무 경력자가 없어 네 항목 중 셋에서 경고가 나옴.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>성명</th><th>구분</th><th>재직</th><th>주요 경력</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">정지선</td><td>사내이사</td><td>23년 8개월</td><td>현대백화점 회장 · 대표이사</td></tr>
+        <tr><td class="rowlab">정지영</td><td>사내이사</td><td>3년 4개월</td><td>현대백화점 사장 · 대표이사 · 前 울산점장</td></tr>
+        <tr><td class="rowlab">장호진</td><td>사내이사</td><td>6년</td><td>현대지에프홀딩스 · 前 현대백화점 사장</td></tr>
+        <tr><td class="rowlab">채규하</td><td>독립이사</td><td>3년 4개월</td><td>前 공정거래위원회 상임위원 · 아모레퍼시픽홀딩스 겸직</td></tr>
+        <tr><td class="rowlab">윤석화</td><td>독립이사</td><td>2년 4개월</td><td>서울대 경영대 교수 · 케이씨씨 겸직</td></tr>
+        <tr><td class="rowlab">김용균</td><td>독립이사</td><td>1년 4개월</td><td>前 국세청 개인납세국장 · 감사위원장</td></tr>
+        <tr><td class="rowlab">최자영</td><td>독립이사</td><td>4개월</td><td>숭실대 경영대 교수 · 감사위원</td></tr>
+        <tr><td class="rowlab">정연승</td><td>독립이사</td><td>4개월</td><td>단국대 경영대학원장 · 감사위원</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 임원 현황 · 기준일 2026.06.30</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>판정 기준</th><th>현황</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">사외이사 비율</td><td>과반 미만</td><td>55.6% (이사 9인 중 5인)</td><td>통과</td></tr>
+        <tr><td class="rowlab">사외이사 이력</td><td>직위형 절반 초과</td><td>5인 중 4인이 직위형</td><td>경고</td></tr>
+        <tr><td class="rowlab">평균 재임기간</td><td>1회 임기 3년 미만</td><td>2년 7개월, 중도퇴임 1건</td><td>경고</td></tr>
+        <tr><td class="rowlab">감사 독립성</td><td>회계·감사 실무 부재</td><td>2025년 감사위원회 3인 전원 회계·감사 실무 부재</td><td>경고</td></tr>
+        <tr class="hl"><td class="rowlab">합계</td><td>—</td><td>—</td><td>경고 3/4</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 5단계 체크리스트 자동 판정 (기준연도 2025 · 이사회 9인)</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>현황</th><th>시사점</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">이사 구성</td><td>사내이사 3인 · 독립이사 5인 (독립 62.5%)</td><td>형식 요건 충족, 이력 구성은 경고</td></tr>
+        <tr><td class="rowlab">사내이사 재직 연수</td><td>정지선 23년 8개월 · 장호진 6년 · 정지영 3년 4개월</td><td>오너 경영 장기 재직</td></tr>
+        <tr><td class="rowlab">회계 전문성 보유 인원</td><td>감사위원 3인 중 0인</td><td>회계·감사 실무 부재</td></tr>
+        <tr><td class="rowlab">감사기구 형태</td><td>감사위원회 3인 전원 독립이사</td><td>형식 독립, 실무 전문성 미비</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 반기보고서(2026.06) 임원 현황 · 기준일 2026.06.30</div>
+
+    <h3><span class="no">6.3.</span>주주환원</h3>
+    <p>2025년 2월 배당정책이 2027년 배당금총액 500억원을 목표로 두고 FY25 464억원은 그 92.8%임. 적자였던 FY23·FY24에도 주당배당금을 유지·상향했고, 자기주식은 되파지 않고 소각으로 이어져 왔음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>현황</th><th>시사점</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">배당정책</td><td>2027년 배당금총액 500억 목표 · FY24 결산~FY27 중간</td><td>실적 변동과 무관한 목표 설정</td></tr>
+        <tr><td class="rowlab">배당총액</td><td>FY25 464억 · 5년 누적 1,579억</td><td>누적 순이익의 37.1%</td></tr>
+        <tr><td class="rowlab">배당성향</td><td>12.7% → 22.3% · 산출 가능 3개년 평균 18.2%</td><td>FY23·FY24는 적자로 산출 불가</td></tr>
+        <tr><td class="rowlab">주당배당금</td><td>1,100원 → 2,150원 · 5년 +95.5%</td><td>적자 연도에도 유지·상향</td></tr>
+        <tr><td class="rowlab">중간배당</td><td>2026년 10월 주당 500원 · 총액 107억</td><td>소각으로 대상 주식수 21,332,452주로 감소</td></tr>
+        <tr><td class="rowlab">자기주식</td><td>보유 1.08% · 소각 누계 1,837,529주</td><td>발행 누계의 7.85% · 처분이 아닌 소각</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>출처</b> — 사업보고서(2021.12~2025.12) · 반기보고서(2026.06) 배당정책·자기주식 현황 · 회사 실적발표(2026-08-05)</div>
+  </div>
+
+  <footer class="report-foot">
+    작성지침 v6.16 적용. 현재가 93,400원 · 시가총액 2조 141억원 (2026-08-28 종가, KRX). 재무·산업·경쟁 정보는 DART 2025 사업보고서와 2026년 6월 반기보고서 연결 기준. 정보 제공용이며 투자 자문이 아님.<br>
+    최초작성 2026-08-31 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 069960</div>
+    <h1>Hyundai Department Store (069960) Equity Analysis</h1>
+    <p class="lede">FY25 revenue 4,230.3bn KRW (+1.0%), OPM 8.9% · 1H26 department-store operating profit 245.9bn KRW (+47.7%) · Zinus 1H26 operating loss 56.8bn KRW · Current price 93,400 KRW · Market cap 2,014.1bn KRW (2026-08-28)</p>
+    <div class="meta">
+      <span>Original 2026-08-31 (v1)</span>
+      <span>Reference price 93,400 KRW (Aug 28, 2026 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Share price</div>
+      <div class="value">93,400<span class="unit">KRW</span></div>
+      <div class="sub">52w range 69,050 – 222,000</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Market cap</div>
+      <div class="value">2,014<span class="unit">bn KRW</span></div>
+      <div class="sub">21,564,912 shares outstanding</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Trailing P/E</div>
+      <div class="value">9.7<span class="unit">x</span></div>
+      <div class="sub">On FY25 controlling NP of 207.7bn KRW</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Best-case TP (FY28E)</div>
+      <div class="value">203,295<span class="unit">KRW</span></div>
+      <div class="sub">+117.7% vs current price</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">THESIS</span><span class="tldr-v">In substance the profit comes from one place — the department stores. 1H26 segment operating profit rose 47.7% to 245.9bn KRW because the incremental revenue came from high-margin genres that carry less promotional cost. Record inbound tourism (10.71mn visitors in 1H26, +21.3%) is the driver, and Hyundai's 8.7% foreign-customer sales share (June) sits at the front of a curve Japanese department stores traversed two to three years earlier.</span></div>
+    <div class="tldr-row"><span class="tldr-k">VALUATION</span><span class="tldr-v">A 7.5x multiple — the 19.74x global department-store peer average marked down for the Korean retail discount and company-specific factors — is applied identically across three scenarios, giving target prices of 133,755–203,295 KRW (+43.2% to +117.7%). Most of that upside comes not from earnings growth but from a re-rating of the FY26E-based 5.4x P/E to 7.5x.</span></div>
+    <div class="tldr-row"><span class="tldr-k">RISK</span><span class="tldr-v">Zinus revenue fell 40.1% in 1H26 with a 56.8bn KRW operating loss, and Indonesian mattress utilization dropped to 55.2%. If the inbound flow wobbles, spend per visitor will move before visitor counts do, and a stronger won erases the price incentive first. The board draws warnings on three of four checklist items.</span></div>
+  </div>
+
+  <div class="section" id="es1">
+    <h2><span class="num">1</span>Company Overview</h2>
+    <div class="sub-h">Founding & business mix · earnings snapshot</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Detail</th><th>Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Ticker/code</td><td>Hyundai Department Store / 069960 (KOSPI)</td><td class="rowlab">Market cap</td><td>2,014.1bn KRW (2026-08-28)</td></tr>
+        <tr><td class="rowlab">Established</td><td>Nov 1, 2002 (by spin-off)</td><td class="rowlab">Relisted</td><td>2002-11-25 (KOSPI)</td></tr>
+        <tr><td class="rowlab">CEO</td><td>Chung Ji-sun · Chung Ji-young</td><td class="rowlab">Fiscal year-end</td><td>December</td></tr>
+        <tr><td class="rowlab">HQ</td><td>12, Teheran-ro 98-gil, Gangnam-gu, Seoul</td><td class="rowlab">Employees</td><td>3,139 (2025-12-31, department-store segment)</td></tr>
+        <tr><td class="rowlab">Shares outstanding</td><td>21,564,912 (incl. 232,460 treasury shares)</td><td class="rowlab">Share price</td><td>93,400 KRW (2026-08-28)</td></tr>
+        <tr><td class="rowlab">FY25 revenue</td><td>4,230.3bn KRW (+1.0% YoY)</td><td class="rowlab">FY25 operating profit</td><td>377.9bn KRW (OPM 8.9%)</td></tr>
+        <tr><td class="rowlab">1H26 revenue</td><td>2,018.1bn KRW (-7.4% YoY)</td><td class="rowlab">1H26 operating profit</td><td>178.1bn KRW (OPM 8.8%)</td></tr>
+        <tr><td class="rowlab">Segments</td><td>Department store 57.6% · Duty free 24.0% · Zinus (furniture mfg.) 21.6% · Consolidation adj. -3.2% (FY25 revenue mix)</td><td class="rowlab">Store network</td><td>13 department stores · 10 outlets · duty-free at the Trade Center store and Incheon Airport DF2·DF5·DF7</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — DART business report (2025.12) · semiannual report (2026.06) · closing price 2026-08-28</div>
+    <p>Hyundai Department Store is a retail operating company that, on top of its department stores and duty-free business, consolidates the U.S. mattress maker Zinus; FY25 consolidated revenue was 4,230.3bn KRW.</p>
+    <p>The revenue mix has department stores at 57.6% and duty free at 24.0% as the core business, with Zinus — acquired in 2022 — accounting for 21.6%, so results are also tied to U.S. consumption and tariffs.</p>
+    <p>FY25 operating profit rose 33.1% year on year to 377.9bn KRW, but in 1H26 company-wide operating profit fell 10.7% as Zinus posted a 56.8bn KRW operating loss while the department stores grew 47.7%.</p>
+  </div>
+
+  <div class="section" id="es2">
+    <h2><span class="num">2</span>Industry Analysis</h2>
+    <div class="sub-h">2.1 Korea's department-store market · 2.2 Duty-free reshuffle and Incheon DF2 · 2.3 Inbound visitors and department-store spending · 2.4 Japan's leading curve · 2.5 U.S. tariffs and Zinus</div>
+
+    <h3><span class="no">2.1.</span>The Structure of Korea's Department-Store Market</h3>
+    <p>Gross merchandise value at the 65 stores of Korea's five largest department-store chains reached 40.44tn KRW in 2025, up 3.4% year on year, with Hyundai taking a 22.5% share on 9.1tn KRW across 12 stores.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Chain</th><th class="num">Stores</th><th class="num">2025 GMV (bn KRW)</th><th class="num">YoY</th><th class="num">Share</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Lotte</td><td class="num">31</td><td class="num">14,250</td><td class="num">+3.0%</td><td class="num">35.2%</td></tr>
+        <tr><td class="rowlab">Shinsegae</td><td class="num">13</td><td class="num">13,340</td><td class="num">+5.7%</td><td class="num">33.0%</td></tr>
+        <tr class="hl"><td class="rowlab">Hyundai</td><td class="num">12</td><td class="num">9,100</td><td class="num">+4.0%</td><td class="num">22.5%</td></tr>
+        <tr><td class="rowlab">Galleria · AK, others</td><td class="num">9</td><td class="num">3,750</td><td class="num">—</td><td class="num">9.3%</td></tr>
+        <tr><td class="rowlab">Total</td><td class="num">65</td><td class="num">40,440</td><td class="num">+3.4%</td><td class="num">100.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — Apparel News tally of 2025 sales at the 65 stores of Korea's five largest department-store chains · GMV basis</div>
+    <p>Hyundai has the fewest stores and ranks third by share, but leads on productivity per store: in the same tally, the Pangyo store's 2025 GMV of 2,029.1bn KRW grew 17.2%, the second-fastest growth rate nationwide.</p>
+    <p>It is also the only one of the three chains with new stores in the pipeline, currently pursuing The Hyundai Busan in 2H27, the Gyeongsan Premium Outlet in 2H28, and The Hyundai Gwangju during 2029.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>New store</th><th>Scheduled opening</th><th>Sales floor area</th><th class="num">Estimated capex</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">The Hyundai Busan</td><td>2H 2027</td><td>21,000 pyeong</td><td class="num">900bn KRW</td><td>Region benefiting from foreign visitors · adjacent to Gimhae Airport</td></tr>
+        <tr><td class="rowlab">Gyeongsan Premium Outlet</td><td>2H 2028</td><td>In design</td><td class="num">400bn KRW</td><td>First premium outlet in its catchment area</td></tr>
+        <tr><td class="rowlab">The Hyundai Gwangju</td><td>During 2029</td><td>31,000 pyeong</td><td class="num">1,500bn KRW</td><td>The company's largest retail facility</td></tr>
+        <tr><td class="rowlab">Total new + existing investment plan</td><td>—</td><td>—</td><td class="num">2,731.0bn KRW</td><td>849.2bn already spent · 1,881.8bn to come</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — company earnings release (2026-08-05) · semiannual report (2026.06), new business outlook · floor area and capex are the company's own stated estimates</div>
+    <p>That said, new stores incur depreciation and fixed costs before anything else, so when profit contribution begins after 2027 depends on how quickly each store establishes itself.</p>
+
+    <h3><span class="no">2.2.</span>The Duty-Free Reshuffle and Incheon Airport DF2</h3>
+    <p>Korea's duty-free sales fell 11.9% to 12.534tn KRW in 2025 from 14.2249tn a year earlier, down to roughly half the 24.8tn KRW recorded in 2019.</p>
+    <p>While the market shrank, Hyundai DF posted FY25 operating profit of 0.2bn KRW — its first profit since entering the business in 2018 — largely on the effect of clearing a loss-making store when the Dongdaemun outlet closed in August 2025.</p>
+    <p>At the February 2026 Incheon Airport re-tender, Shilla and Shinsegae — which had returned their concessions under rent pressure — did not participate; Lotte took DF1 and Hyundai took DF2.</p>
+    <p>Hyundai opened DF2 in April 2026 and, together with its existing DF5 and DF7, became the only operator handling every product category at Incheon Airport — a case of a late entrant widening its footprint through rivals' exit.</p>
+    <p>2Q26 duty-free revenue rose 5.8% to 310.4bn KRW with operating profit of 6.2bn KRW, a swing into the black: new DF2 revenue offset the closed Dongdaemun store, and the larger purchasing scale also narrowed downtown-store losses.</p>
+    <p>Still, these are zones the previous operators returned because of rent, so whether the expanded floor space converts into profit is determined by the new lease terms.</p>
+    <div class="filter-note"><b>Source</b> — duty-free market size from Korea Customs Service duty-free sales statistics · Incheon Airport re-tender outcome from the February 2026 Korea Customs Service licence review · 2Q26 segment results from the company earnings release (2026-08-05)</div>
+
+    <h3><span class="no">2.3.</span>10.71 Million Inbound Visitors, and the Spending That Reaches Department Stores</h3>
+    <p>What held the market up while domestic consumption stagnated was inbound demand. Foreign visitors to Korea numbered 10.71mn in 1H26, up 21.3% from 8.83mn a year earlier — a record for any half-year, and 26.9% above the same period of 2019.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">2019</th><th class="num">2023</th><th class="num">2024</th><th class="num">2025</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Inbound visitors (mn)</td><td class="num">17.50</td><td class="num">11.03</td><td class="num">16.37</td><td class="num">18.70</td><td class="num">10.71</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">—</td><td class="num">+48.4%</td><td class="num">+14.2%</td><td class="num">+21.3%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — Korea Tourism Organization inbound visitor statistics · 2025 was an all-time record, surpassing the previous 17.50mn peak set in 2019</div>
+    <p>The portion of that demand carried through to department-store sales was 1,720bn KRW of foreign-customer revenue across the three chains in the first half, of which Hyundai accounted for 500bn KRW (estimated) — filling more than 70% of its prior-year full-year figure in six months.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Chain</th><th class="num">1H26 foreign-customer sales</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Lotte Department Store</td><td class="num">640bn KRW</td><td>~87% of the prior full year · all-time high</td></tr>
+        <tr><td class="rowlab">Shinsegae Department Store</td><td class="num">580bn KRW</td><td>+120% YoY · all-time high</td></tr>
+        <tr class="hl"><td class="rowlab">Hyundai Department Store</td><td class="num">500bn KRW (est.)</td><td>Over 70% of the prior full year</td></tr>
+        <tr><td class="rowlab">Three-chain total</td><td class="num">1,720bn KRW</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — Newsis 2026-07-31 · Financial News 2026-08-18 tallies · GMV basis · Hyundai's figure is a press estimate, as the company does not disclose it</div>
+    <p>Foreign-customer revenue contributes disproportionately to profit because purchases cluster in high-margin genres: first-half luxury sales growth was 123% at Hyundai, 130% at Lotte and 129.3% at Shinsegae — triple digits at all three.</p>
+    <p>Within Hyundai's 2Q26 department-store segment, watches and jewellery grew 48% and luxury 25%, driving the growth, while domestic fashion rose 7%, a comparatively modest pace.</p>
+    <p>1H26 department-store revenue grew only 8.2%, yet operating profit rose 47.7% to 245.9bn KRW, because the incremental revenue came from high-margin genres carrying less promotional cost. The operating margin likewise rose from 16.1% in FY25 to 19.3% in 1H26.</p>
+    <p>By store, the flow concentrates where foreign access is easiest: first-half foreign-customer sales growth was 134% at The Hyundai Seoul, 230% at Shinsegae Centum City and 140% at Lotte's main store — a wide spread by catchment.</p>
+    <p>The Busan opening discussed in 2.1 overlaps with that spread: first-half foreign-customer sales growth in Busan came in at 150% for Lotte's main store, 170% for Lotte Mall East Busan and 230% for Shinsegae Centum City, higher than in the capital region.</p>
+    <p>If this flow falters, spend per visitor will move before visitor counts do. Even with more arrivals, a shift in the mix toward lower-ticket independent travel could leave revenue growth below visitor growth, and if the won turns strong, the "it's cheaper to buy in Korea" price incentive disappears first.</p>
+
+    <h3><span class="no">2.4.</span>The Curve Japanese Department Stores Traversed Two to Three Years Earlier</h3>
+    <p>Hyundai's foreign-customer share of sales rose on a GMV basis from 6.3% in March 2026 to 8.7% in June, and the growth rate exceeded 80% for two consecutive months — 92% in June and 86% in July.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">Mar '26</th><th class="num">Apr '26</th><th class="num">May '26</th><th class="num">Jun '26</th><th class="num">Jul '26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Foreign-customer share of sales</td><td class="num">6.3%</td><td class="num">8.1%</td><td class="num">7.1%</td><td class="num">8.7%</td><td class="num">8.0% (est.)</td></tr>
+        <tr><td class="rowlab">Foreign-customer sales growth (YoY)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+92%</td><td class="num">+86%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — company earnings release (2026-08-05), foreign-customer sales share trend · GMV basis · the July share and June growth rate are Kyobo Securities estimates (2026-08-10), the July growth rate a Daishin Securities estimate (2026-08-06)</div>
+    <p>Japanese department stores passed through the same curve first; Daishin Securities reads Korean department stores' foreign-customer sales share as trailing Isetan Mitsukoshi and Takashimaya with a two-to-three-year lag.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">1Q 2022</th><th class="num">1Q 2024</th><th class="num">1Q 2026</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Korean department stores</td><td class="num">1.0%</td><td class="num">4.5%</td><td class="num">9.0%</td></tr>
+        <tr><td class="rowlab">Isetan Mitsukoshi</td><td class="num">2.0%</td><td class="num">16.5%</td><td class="num">14.0%</td></tr>
+        <tr><td class="rowlab">Takashimaya</td><td class="num">2.0%</td><td class="num">15.5%</td><td class="num">10.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — Daishin Securities (2026-08-06), Figure 1 compiling each company's data · figures estimated by reading the chart's gridlines</div>
+    <p>Isetan Mitsukoshi peaked at 16.5% in 1Q 2024 and has since retraced to 14.0%, whereas Korean department stores are still passing through the 9.0% zone.</p>
+    <p>If Hyundai's 8.7% June share rises to the 14.0% that Japanese department stores currently sit at, foreign-customer revenue becomes 1.6x today's level — roughly 800bn KRW against the first half's estimated 500bn KRW.</p>
+    <p>That said, the Japanese case is also a record of peaking and then falling back from 16.5% to 14.0%, so a rising share is not an indefinite trend but a convergence process with an end point.</p>
+    <p>The lag hypothesis itself may not hold. Japan had a prolonged period of yen weakness, whereas Korea will not trace the same curve if the won retraces.</p>
+
+    <h3><span class="no">2.5.</span>U.S. Tariffs and Zinus</h3>
+    <p>While department stores and duty free were being pushed up by inbound demand, Zinus met the opposite external variable: 1H26 revenue fell 40.1% to 287.1bn KRW with an operating loss of 56.8bn KRW.</p>
+    <p>Zinus began with the compressed-packaging mattress (mattress-in-a-box) it commercialized in 2005 and makes mattresses, pillows and furniture that it supplies to online and offline distribution channels; it does not sell directly to consumers but through those channels.</p>
+    <p>All production takes place at overseas subsidiaries and overseas contract plants, while sales are split between local-warehouse delivered-order (DO) and direct-import (DI) transactions; exports were 93.5% of FY25 revenue and 89.6% of 1H26 revenue, with the U.S. the principal market.</p>
+    <p>The direct cause of the revenue decline was that major channels pulled orders after the company raised prices in 2H25 in response to higher U.S. tariffs. The lost revenue is concentrated in a single item — U.S. mattresses — rather than the business as a whole, and the fixed costs of the idled capacity remain in place.</p>
+    <p>By product, mattresses fell 53.0% while non-mattress items such as furniture and sofas grew 6.5%.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Product</th><th class="num">1H25</th><th class="num">1H26</th><th class="num">YoY</th><th class="num">FY25</th><th class="num">FY24</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Mattresses</td><td class="num">367.4</td><td class="num">172.8</td><td class="num">-53.0%</td><td class="num">689.2</td><td class="num">663.7</td></tr>
+        <tr><td class="rowlab">Non-mattress</td><td class="num">106.7</td><td class="num">113.6</td><td class="num">+6.5%</td><td class="num">217.1</td><td class="num">247.4</td></tr>
+        <tr><td class="rowlab">Products subtotal</td><td class="num">474.1</td><td class="num">286.4</td><td class="num">-39.6%</td><td class="num">906.3</td><td class="num">911.1</td></tr>
+        <tr><td class="rowlab">Merchandise & other</td><td class="num">5.3</td><td class="num">0.7</td><td class="num">-86.1%</td><td class="num">6.9</td><td class="num">9.3</td></tr>
+        <tr class="hl"><td class="rowlab">Total revenue</td><td class="num">479.4</td><td class="num">287.1</td><td class="num">-40.1%</td><td class="num">913.2</td><td class="num">920.4</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual reports (2025.06)·(2026.06) · business report (2025.12), furniture-manufacturing segment sales · bn KRW</div>
+    <p>Lost volume converts straight into losses because capacity was laid down in advance on the assumption of growth: Indonesian mattress utilization fell from 91.9% in FY24 to 55.2% in 1H26.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Product · site</th><th class="num">FY24 util.</th><th class="num">FY25 util.</th><th class="num">1H26 capacity (k units)</th><th class="num">1H26 output (k units)</th><th class="num">1H26 util.</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Mattresses · China</td><td class="num">93.4%</td><td class="num">92.2%</td><td class="num">367</td><td class="num">333</td><td class="num">90.9%</td></tr>
+        <tr class="hl"><td class="rowlab">Mattresses · Indonesia</td><td class="num">91.9%</td><td class="num">85.8%</td><td class="num">2,308</td><td class="num">1,275</td><td class="num">55.2%</td></tr>
+        <tr><td class="rowlab">Mattresses · U.S.</td><td class="num">65.3%</td><td class="num">71.2%</td><td class="num">—</td><td class="num">—</td><td class="num">Suspended</td></tr>
+        <tr><td class="rowlab">Mattresses subtotal</td><td class="num">91.8%</td><td class="num">86.7%</td><td class="num">2,675</td><td class="num">1,608</td><td class="num">60.1%</td></tr>
+        <tr><td class="rowlab">Non-mattress · China</td><td class="num">77.1%</td><td class="num">91.8%</td><td class="num">686</td><td class="num">635</td><td class="num">92.6%</td></tr>
+        <tr><td class="rowlab">Non-mattress · Cambodia</td><td class="num">—</td><td class="num">42.3%</td><td class="num">155</td><td class="num">117</td><td class="num">75.3%</td></tr>
+        <tr><td class="rowlab">Non-mattress subtotal</td><td class="num">77.1%</td><td class="num">90.5%</td><td class="num">841</td><td class="num">752</td><td class="num">89.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), furniture-manufacturing segment capacity and output · the third Indonesian plant started up in June 2024 and the Cambodian plant in August 2025; the U.S. plant was suspended in November 2025</div>
+    <p>Indonesian capacity fell 16.3%, from 5.517mn units in FY25 to an annualized 4.616mn in 1H26, but output fell 46.2%, from 4.736mn to 2.550mn — the pace of removing capacity is not keeping up with the pace at which orders are disappearing.</p>
+    <p>The fixed costs behind the idle 40% land in cost of goods sold rather than SG&amp;A, so gross margin is cut first; with revenue down 40%, the operating margin fell 22.6pp, from 2.8% to -19.8%.</p>
+    <p>Price came down alongside volume: the mattress export unit price fell 26.2%, from USD 96.8 in FY24 to USD 71.4 in 1H26, and with volume and price moving in the same direction the revenue decline widened.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Product · basis</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Mattress exports (USD)</td><td class="num">96.8</td><td class="num">78.3</td><td class="num">71.4</td></tr>
+        <tr><td class="rowlab">Mattress exports (KRW)</td><td class="num">131,979</td><td class="num">111,420</td><td class="num">105,896</td></tr>
+        <tr><td class="rowlab">Non-mattress exports (USD)</td><td class="num">80.5</td><td class="num">63.0</td><td class="num">75.7</td></tr>
+        <tr><td class="rowlab">Non-mattress exports (KRW)</td><td class="num">109,786</td><td class="num">89,553</td><td class="num">112,376</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), price-trend disclosure for principal products · wholesale average unit price computed as sales value ÷ sales volume</div>
+    <p>The non-mattress export unit price rose from USD 63.0 in FY25 to USD 75.7 in 1H26 because of the product-mix change the company has described; new ODM (original design manufacturing) orders, which skew toward higher-priced items, are reflected here.</p>
+    <p>The company is in the middle of relocating its production base: it began operating the Cambodian plant in August 2025 and suspended its U.S. production subsidiary in November 2025, with the U.S. plant's tangible assets classified as non-current assets held for sale.</p>
+    <p>Tariffs cut both ways: the price increase taken in response to U.S. reciprocal tariffs is the direct cause of the order decline, while the anti-dumping duty on Indonesian-made mattresses was finally set at 0.00% by a February 2025 Court of International Trade ruling, with refunds of amounts already paid now in progress.</p>
+    <p>That refund has already entered the P&amp;L as a 14.0bn KRW tariff reversal in 2Q26, with a further 17.0bn KRW to be recognized in the second half, but it is a one-off item and separate from any improvement in the underlying business.</p>
+    <p>The condition for Zinus results to recover is that Amazon's direct-purchase weeks of supply (WOS) falls and orders normalize; the company sees the first half as the trough, citing monthly revenue rising and weeks of supply falling since April.</p>
+    <p>Conversely, if mattress volume does not return, neither does the recovery. Even if non-mattress grows at its current pace, its scale is under two-thirds of mattresses, so utilization will not rise without them.</p>
+  </div>
+
+  <div class="section" id="es3">
+    <h2><span class="num">3</span>Business Model</h2>
+    <div class="sub-h">3.1 Three segments in one income statement · 3.2 Revenue mix · 3.3 Segment profitability · 3.4 Customer mix & bargaining power</div>
+
+    <h3><span class="no">3.1.</span>Three Segments Bound Into One Income Statement</h3>
+    <p>Because Hyundai Department Store's income statement adds three segments with different ownership stakes into a single line, reading operating profit and controlling net profit as moving in the same direction produces a mismatch.</p>
+    <p>In the department-store segment the parent holds 100%, but its stake in Hanmu Shopping, which operates the large-format stores, is 56.05%; duty free (Hyundai DF) is 100% owned and Zinus 38.57%.</p>
+    <p>This asymmetry showed up in FY25: a 205.6bn KRW impairment of Zinus intangible assets cut net profit below the consolidated operating-profit line, but 61.43% of that flowed back to non-controlling interests.</p>
+    <p>The result was an inversion in which FY25 consolidated net profit was 141.5bn KRW while controlling net profit was 207.7bn KRW — larger than the consolidated figure.</p>
+    <p>Conversely, when Zinus earns a profit, 61.43% of that share also leaks out to non-controlling interests, making Zinus an asymmetric asset that contributes less to shareholders in profit than it costs them in loss.</p>
+
+    <h3><span class="no">3.2.</span>Revenue Mix</h3>
+    <p>Of FY25 revenue of 4,230.3bn KRW, department stores accounted for 2,437.7bn KRW, or 57.6%, followed by duty free at 1,014.0bn KRW and Zinus at 913.2bn KRW.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Segment</th><th class="num">FY24 rev</th><th class="num">FY25 rev</th><th class="num">FY25 share</th><th class="num">1H26 rev</th><th class="num">1H26 YoY</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Department store</td><td class="num">2,435.4</td><td class="num">2,437.7</td><td class="num">57.6%</td><td class="num">1,276.3</td><td class="num">+8.2%</td></tr>
+        <tr><td class="rowlab">Duty free</td><td class="num">972.1</td><td class="num">1,014.0</td><td class="num">24.0%</td><td class="num">524.1</td><td class="num">-10.7%</td></tr>
+        <tr><td class="rowlab">Zinus (furniture mfg.)</td><td class="num">920.4</td><td class="num">913.2</td><td class="num">21.6%</td><td class="num">287.1</td><td class="num">-40.1%</td></tr>
+        <tr><td class="rowlab">Consolidation adjustment</td><td class="num">-140.3</td><td class="num">-134.6</td><td class="num">-3.2%</td><td class="num">-69.4</td><td class="num">—</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td class="num">4,187.6</td><td class="num">4,230.3</td><td class="num">100.0%</td><td class="num">2,018.1</td><td class="num">-7.4%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business report (2025.12) · semiannual report (2026.06), operating-segment note · bn KRW, rounded</div>
+    <p>The 7.4% decline in 1H26 revenue is because Zinus's 40.1% drop buried the department stores' 8.2% increase; it is not a shrinkage of the core business.</p>
+    <p>By region, FY25 domestic revenue was 3,376.1bn KRW, or 79.8%, with 854.2bn KRW overseas — and all of the overseas revenue comes from Zinus.</p>
+
+    <h3><span class="no">3.3.</span>Segment Profitability</h3>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Segment</th><th class="num">FY24 OP</th><th class="num">FY25 OP</th><th class="num">FY25 OPM</th><th class="num">1H26 OP</th><th class="num">1H26 OPM</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Department store</td><td class="num">359.6</td><td class="num">393.4</td><td class="num">16.1%</td><td class="num">245.9</td><td class="num">19.3%</td></tr>
+        <tr><td class="rowlab">Duty free</td><td class="num">-28.8</td><td class="num">0.2</td><td class="num">0.02%</td><td class="num">9.6</td><td class="num">1.8%</td></tr>
+        <tr><td class="rowlab">Zinus (furniture mfg.)</td><td class="num">-5.4</td><td class="num">25.5</td><td class="num">2.8%</td><td class="num">-56.8</td><td class="num">-19.8%</td></tr>
+        <tr><td class="rowlab">Consolidation adjustment</td><td class="num">-41.3</td><td class="num">-41.2</td><td class="num">—</td><td class="num">-20.6</td><td class="num">—</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td class="num">284.0</td><td class="num">377.9</td><td class="num">8.9%</td><td class="num">178.1</td><td class="num">8.8%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business report (2025.12) · semiannual report (2026.06), operating-segment note · bn KRW</div>
+    <p>In substance the profit comes from one place: FY25 department-store operating profit of 393.4bn KRW exceeds the company-wide 377.9bn KRW, large enough to fill in the other segments' negatives.</p>
+    <p>The department-store OPM rose from 16.1% in FY25 to 19.3% in 1H26, and on the company's own reporting, 2Q26 net revenue of 643.8bn KRW and operating profit of 110.1bn KRW were both quarterly records.</p>
+    <p>Zinus swung from a 2.8% profit margin in FY25 to -19.8% in 1H26; while revenue fell 40%, the fixed costs stayed where they were.</p>
+
+    <h3><span class="no">3.4.</span>Customer Mix & Bargaining Power</h3>
+    <p>Department stores and duty free serve general consumers, so customer-concentration risk is low; Zinus, which supplies a handful of large U.S. distribution channels, is a different case.</p>
+    <p>Zinus does not disclose revenue by customer, however, making it hard to populate a customer-concentration table with figures; the company cites reduced orders from major customers as the cause of the 2026 shortfall.</p>
+    <p>In its place we substitute the receivables-to-payables ratio, which reveals when the company collects and when it pays.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Trade & other receivables</td><td class="num">777.0</td><td class="num">1,128.4</td><td class="num">1,090.7</td><td class="num">1,067.0</td><td class="num">885.2</td></tr>
+        <tr><td class="rowlab">Trade & other payables</td><td class="num">686.3</td><td class="num">912.7</td><td class="num">834.0</td><td class="num">840.1</td><td class="num">790.6</td></tr>
+        <tr class="hl"><td class="rowlab">Receivables/payables (x)</td><td class="num">1.13</td><td class="num">1.24</td><td class="num">1.31</td><td class="num">1.27</td><td class="num">1.12</td></tr>
+        <tr><td class="rowlab">Inventories</td><td class="num">365.0</td><td class="num">706.6</td><td class="num">612.6</td><td class="num">616.8</td><td class="num">456.1</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business reports (2021.12–2025.12), consolidated balance sheet · bn KRW</div>
+    <p>The receivables/payables ratio exceeds 1 in all five years — a figure hard to produce from department stores alone, which collect first — and on top of that sit Zinus's supply receivables.</p>
+    <p>The ratio rose from 1.13 in FY21, before Zinus was consolidated, to 1.31 in FY23 after consolidation, then came back to 1.12 in FY25 as revenue contracted.</p>
+  </div>
+
+  <div class="section" id="es4">
+    <h2><span class="num">4</span>Financial Estimates</h2>
+    <div class="sub-h">Five-year track record · the gap between operating profit and controlling net profit</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY21</th><th class="num">FY22</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue</td><td class="num">3,572.4</td><td class="num">5,014.1</td><td class="num">4,207.5</td><td class="num">4,187.6</td><td class="num">4,230.3</td></tr>
+        <tr><td class="rowlab">YoY</td><td class="num">—</td><td class="num">+40.4%</td><td class="num">-16.1%</td><td class="num">-0.5%</td><td class="num">+1.0%</td></tr>
+        <tr><td class="rowlab">Operating profit</td><td class="num">264.4</td><td class="num">320.9</td><td class="num">303.5</td><td class="num">284.0</td><td class="num">377.9</td></tr>
+        <tr><td class="rowlab">OPM</td><td class="num">7.4%</td><td class="num">6.4%</td><td class="num">7.2%</td><td class="num">6.8%</td><td class="num">8.9%</td></tr>
+        <tr><td class="rowlab">Consolidated net profit</td><td class="num">233.4</td><td class="num">186.0</td><td class="num">-39.8</td><td class="num">-0.8</td><td class="num">141.5</td></tr>
+        <tr class="hl"><td class="rowlab">Controlling net profit</td><td class="num">189.4</td><td class="num">144.1</td><td class="num">-79.8</td><td class="num">-35.9</td><td class="num">207.7</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td class="num">8,652</td><td class="num">6,593</td><td class="num">-3,650</td><td class="num">-1,645</td><td class="num">9,572</td></tr>
+        <tr><td class="rowlab">ROE</td><td class="num">4.3%</td><td class="num">3.1%</td><td class="num">-1.8%</td><td class="num">-0.8%</td><td class="num">4.6%</td></tr>
+        <tr><td class="rowlab">DPS (KRW)</td><td class="num">1,100</td><td class="num">1,300</td><td class="num">1,300</td><td class="num">1,400</td><td class="num">2,150</td></tr>
+        <tr><td class="rowlab">Payout ratio</td><td class="num">12.7%</td><td class="num">19.7%</td><td class="num">—</td><td class="num">—</td><td class="num">22.3%</td></tr>
+        <tr><td class="rowlab">Operating cash flow</td><td class="num">500.2</td><td class="num">489.4</td><td class="num">757.8</td><td class="num">733.9</td><td class="num">986.2</td></tr>
+        <tr><td class="rowlab">CAPEX</td><td class="num">266.6</td><td class="num">260.8</td><td class="num">369.5</td><td class="num">478.1</td><td class="num">583.0</td></tr>
+        <tr><td class="rowlab">FCF</td><td class="num">233.6</td><td class="num">228.6</td><td class="num">388.2</td><td class="num">255.8</td><td class="num">403.2</td></tr>
+        <tr><td class="rowlab">Debt-to-equity</td><td class="num">71.6%</td><td class="num">89.6%</td><td class="num">86.5%</td><td class="num">79.9%</td><td class="num">78.3%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business reports (2021.12–2025.12), consolidated basis · EPS and ROE on a controlling-interest basis · bn KRW</div>
+    <p>Five-year revenue grew 18.4%, from 3,572.4bn KRW to 4,230.3bn KRW, but most of the increase came from consolidating Zinus in 2022, and since then it has stalled in the low 4tn KRW range.</p>
+    <p>Operating profit stayed between 264.4bn and 377.9bn KRW across all five years, while controlling net profit swung from 189.4bn KRW through -79.8bn to 207.7bn.</p>
+    <p>The cause of that swing is not operations but Zinus-related impairments and the allocation to non-controlling interests.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">1H26</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Operating profit</td><td class="num">303.5</td><td class="num">284.0</td><td class="num">377.9</td><td class="num">178.1</td><td>Core operating earnings</td></tr>
+        <tr><td class="rowlab">Other income</td><td class="num">163.1</td><td class="num">112.0</td><td class="num">105.7</td><td class="num">53.4</td><td>Disposal gains, etc.</td></tr>
+        <tr><td class="rowlab">Other expenses</td><td class="num">-395.3</td><td class="num">-368.1</td><td class="num">-321.0</td><td class="num">-41.0</td><td>Includes impairment losses</td></tr>
+        <tr><td class="rowlab">Equity-method income</td><td class="num">25.9</td><td class="num">25.4</td><td class="num">4.8</td><td class="num">3.4</td><td>Equity method</td></tr>
+        <tr><td class="rowlab">Net financial income</td><td class="num">-55.5</td><td class="num">-47.3</td><td class="num">-44.1</td><td class="num">-16.8</td><td>Financial income − financial expense</td></tr>
+        <tr><td class="rowlab">Income tax</td><td class="num">-81.4</td><td class="num">-6.9</td><td class="num">18.2</td><td class="num">-51.3</td><td>FY25 was a reversal</td></tr>
+        <tr><td class="rowlab">Consolidated net profit</td><td class="num">-39.8</td><td class="num">-0.8</td><td class="num">141.5</td><td class="num">125.7</td><td>—</td></tr>
+        <tr><td class="rowlab">Attributable to non-controlling</td><td class="num">40.0</td><td class="num">35.2</td><td class="num">-66.1</td><td class="num">-11.2</td><td>Controlling = consolidated − non-controlling</td></tr>
+        <tr class="hl"><td class="rowlab">Controlling net profit</td><td class="num">-79.8</td><td class="num">-35.9</td><td class="num">207.7</td><td class="num">137.0</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business report (2025.12) · semiannual report (2026.06), income statement · bn KRW, rounded</div>
+    <p>Other expenses exceeded 300bn KRW every year for the three years from FY23, because impairment of Zinus goodwill and brand value was re-recognized each year.</p>
+    <p>In 1H26 other expenses fell to 41.0bn KRW, so even though operating profit declined 10.7%, controlling net profit rose 21.2% to 137.0bn KRW.</p>
+    <p>In this half-year — where operating profit and controlling net profit moved in opposite directions — the ownership-ratio asymmetry described in 3.1 shows up in the numbers.</p>
+  </div>
+
+  <div class="section" id="es5">
+    <h2><span class="num">5</span>Valuation</h2>
+    <div class="sub-h">5.1 Medium/short-term trading value · 5.2 Long-term holding value</div>
+
+    <h3><span class="no">5.1.</span>Medium/Short-Term Trading Value</h3>
+    <p>Starting from the 19.74x average of three global department-store peers, we apply a 50.3% Korean retail discount and a further 23.5% company-specific markdown to arrive at 7.5x, applied identically across three scenarios.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Peer</th><th>Business</th><th class="num">Forward P/E</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Isetan Mitsukoshi (3099.T)</td><td>Department stores</td><td class="num">18.95x</td></tr>
+        <tr><td class="rowlab">Takashimaya (8233.T)</td><td>Department stores · commercial development</td><td class="num">16.92x</td></tr>
+        <tr><td class="rowlab">J. Front Retailing (3086.T)</td><td>Department stores · Parco</td><td class="num">23.35x</td></tr>
+        <tr><td class="rowlab">Global peer average</td><td>—</td><td class="num">19.74x</td></tr>
+        <tr class="hl"><td class="rowlab">Markdown rationale + applied P/E</td><td>Korean retail discount 50.3% (three domestic peers average 9.81x) · Zinus volatility, non-controlling interests and governance warnings 23.5%</td><td class="num">7.5x</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — stockanalysis.com, retrieved 2026-08-21 to 08-23 · next-fiscal-year consensus basis</div>
+    <p>Two of the three peers, Isetan Mitsukoshi and Takashimaya, are the same companies cited in 2.4 as the leading case for foreign-customer sales share. While those three trade at 16.92–23.35x, we apply 7.5x to Hyundai, so most of the upside comes from that multiple gap.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Common assumption</th><th class="num">Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Shares in circulation</td><td class="num">21,332,452</td><td>Excludes 232,460 treasury shares</td></tr>
+        <tr><td class="rowlab">Current price (KRW)</td><td class="num">93,400</td><td>2026-08-28 close</td></tr>
+        <tr><td class="rowlab">Applied P/E (x)</td><td class="num">7.5</td><td>Identical across the three scenarios</td></tr>
+        <tr><td class="rowlab">Tax rate</td><td class="num">26.4%</td><td>—</td></tr>
+        <tr><td class="rowlab">Non-operating income (bn KRW)</td><td class="num">-20.0</td><td>Common to the three scenarios</td></tr>
+        <tr><td class="rowlab">Department store: net revenue as % of store GMV</td><td class="num">26.79%</td><td>FY25 actual</td></tr>
+        <tr><td class="rowlab">Duty free: net revenue as % of gross sales</td><td class="num">53.00%</td><td>FY25 actual</td></tr>
+        <tr><td class="rowlab">Department store & duty free: controlling attribution</td><td class="num">88.0%</td><td>Reflects the 56.05% Hanmu Shopping stake</td></tr>
+        <tr><td class="rowlab">Zinus: controlling attribution</td><td class="num">38.57%</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — common assumptions of the scenario live model · measured from the business report (2025.12) and semiannual report (2026.06)</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">Base FY28E</th><th class="num">Bull FY28E</th><th class="num">Best FY28E</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">① Department-store segment</td><td class="num"></td><td class="num"></td><td class="num"></td><td>Market GMV × share × net-revenue rate × OPM</td></tr>
+        <tr><td class="rowlab">① Top-5 department-store GMV (tn KRW)</td><td class="num">49.0</td><td class="num">52.0</td><td class="num">55.0</td><td>2025: 40.44tn (65-store tally)</td></tr>
+        <tr><td class="rowlab">② Hyundai share</td><td class="num">23.0%</td><td class="num">23.8%</td><td class="num">24.5%</td><td>2025: 22.5% (12 stores, 9.10tn)</td></tr>
+        <tr><td class="rowlab">③ Store GMV (bn KRW)</td><td class="num">11,270</td><td class="num">12,376</td><td class="num">13,475</td><td>Calculated</td></tr>
+        <tr><td class="rowlab">④ Department-store revenue (bn KRW)</td><td class="num">3,019.2</td><td class="num">3,315.5</td><td class="num">3,610.0</td><td>Net-revenue rate 26.79% (FY25 actual)</td></tr>
+        <tr><td class="rowlab">⑤ Department-store OPM</td><td class="num">20.0%</td><td class="num">21.5%</td><td class="num">23.0%</td><td>FY25 16.1% · 1H26 19.3%</td></tr>
+        <tr><td class="rowlab">⑥ Department-store OP (bn KRW)</td><td class="num">603.8</td><td class="num">712.8</td><td class="num">830.3</td><td>Segment total</td></tr>
+        <tr class="hl"><td class="rowlab">② Duty-free segment</td><td class="num"></td><td class="num"></td><td class="num"></td><td>Market × share × net-revenue rate × OPM</td></tr>
+        <tr><td class="rowlab">① Korean duty-free market (tn KRW)</td><td class="num">13.0</td><td class="num">14.5</td><td class="num">16.5</td><td>2025: 12.53tn (Korea Customs Service)</td></tr>
+        <tr><td class="rowlab">② Hyundai duty-free share</td><td class="num">15.5%</td><td class="num">16.5%</td><td class="num">17.5%</td><td>2025: 15.3% · reflects the DF2 award</td></tr>
+        <tr><td class="rowlab">③ Duty-free gross sales (bn KRW)</td><td class="num">2,015.0</td><td class="num">2,392.5</td><td class="num">2,887.5</td><td>Calculated</td></tr>
+        <tr><td class="rowlab">④ Duty-free revenue (bn KRW)</td><td class="num">1,068.0</td><td class="num">1,268.0</td><td class="num">1,530.4</td><td>Net-revenue rate 53.00% (FY25 actual)</td></tr>
+        <tr><td class="rowlab">⑤ Duty-free OPM</td><td class="num">3.0%</td><td class="num">4.5%</td><td class="num">6.0%</td><td>FY25 0.02% · 1H26 1.8%</td></tr>
+        <tr><td class="rowlab">⑥ Duty-free OP (bn KRW)</td><td class="num">32.0</td><td class="num">57.1</td><td class="num">91.8</td><td>Segment total</td></tr>
+        <tr class="hl"><td class="rowlab">③ Zinus segment</td><td class="num"></td><td class="num"></td><td class="num"></td><td>Revenue entered directly × OPM · 38.57% stake</td></tr>
+        <tr><td class="rowlab">① Zinus revenue (bn KRW)</td><td class="num">750.0</td><td class="num">850.0</td><td class="num">1,000.0</td><td>FY25 913.2bn · 1H26 287.1bn (-40.1%)</td></tr>
+        <tr><td class="rowlab">② Zinus OPM</td><td class="num">3.5%</td><td class="num">5.0%</td><td class="num">7.0%</td><td>FY25 2.8% · 1H26 -19.8%</td></tr>
+        <tr><td class="rowlab">③ Zinus OP (bn KRW)</td><td class="num">26.3</td><td class="num">42.5</td><td class="num">70.0</td><td>Segment total</td></tr>
+        <tr class="hl"><td class="rowlab">④ Consolidation adjustment</td><td class="num"></td><td class="num"></td><td class="num"></td><td>Entered directly · common to the three scenarios</td></tr>
+        <tr><td class="rowlab">① Revenue (bn KRW)</td><td class="num">-140.0</td><td class="num">-140.0</td><td class="num">-140.0</td><td>FY25 -134.6bn</td></tr>
+        <tr><td class="rowlab">② Operating profit (bn KRW)</td><td class="num">-40.0</td><td class="num">-40.0</td><td class="num">-40.0</td><td>FY25 -41.2bn</td></tr>
+        <tr class="hl"><td class="rowlab">▶ Consolidated</td><td class="num"></td><td class="num"></td><td class="num"></td><td>Sum segments → apply attribution → EPS → target price</td></tr>
+        <tr><td class="rowlab">Total revenue (bn KRW)</td><td class="num">4,697.2</td><td class="num">5,293.6</td><td class="num">6,000.3</td><td>Sum of four segments</td></tr>
+        <tr><td class="rowlab">Total operating profit (bn KRW)</td><td class="num">622.1</td><td class="num">772.4</td><td class="num">952.1</td><td>Sum of four segments</td></tr>
+        <tr><td class="rowlab">Blended OPM</td><td class="num">13.2%</td><td class="num">14.6%</td><td class="num">15.9%</td><td>Total OP ÷ total revenue · reference metric</td></tr>
+        <tr><td class="rowlab">Dept. store + duty free + adj., after tax (bn KRW)</td><td class="num">423.9</td><td class="num">522.5</td><td class="num">634.5</td><td>After non-operating income, after tax</td></tr>
+        <tr><td class="rowlab">Zinus after tax (bn KRW)</td><td class="num">19.3</td><td class="num">31.3</td><td class="num">51.5</td><td>Zinus operating profit after tax</td></tr>
+        <tr><td class="rowlab">▸ Controlling net profit (bn KRW)</td><td class="num">380.4</td><td class="num">471.9</td><td class="num">578.2</td><td>Attribution 88.0% · 38.57%</td></tr>
+        <tr><td class="rowlab">▸ EPS (KRW)</td><td class="num">17,834</td><td class="num">22,119</td><td class="num">27,106</td><td>Calculated</td></tr>
+        <tr><td class="rowlab">Expected ROE (closing-capital basis)</td><td class="num">7.0%</td><td class="num">8.6%</td><td class="num">10.4%</td><td>On FY27E closing capital plus FY28E retained earnings (78%) · 5.2 uses average capital</td></tr>
+        <tr><td class="rowlab">Applied P/E (x)</td><td class="num">7.5</td><td class="num">7.5</td><td class="num">7.5</td><td>Identical across the three scenarios</td></tr>
+        <tr class="hl"><td class="rowlab">▸ Target price (KRW)</td><td class="num">133,755</td><td class="num">165,893</td><td class="num">203,295</td><td>P/E applied to rounded EPS</td></tr>
+        <tr class="hl"><td class="rowlab">Upside vs current price</td><td class="num">+43.2%</td><td class="num">+77.6%</td><td class="num">+117.7%</td><td>Against the 2026-08-28 close of 93,400 KRW</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — market data from Apparel News and the Korea Customs Service · results from the business report (2025.12) and semiannual report (2026.06)</div>
+    <p>Base controlling net profit of 380.4bn KRW is only 3.9% above the FY26E estimate of 366.3bn KRW over two years. The force pushing the target price 43.2% higher comes less from earnings growth than from the re-rating of the FY26E-based 5.4x P/E to 7.5x.</p>
+    <p>Bull is the combination in which Zinus returns to the OPM of its first year in the group and the foreign-customer sales share converges toward the Japanese department-store level; Best, in our judgment, is that plus new store openings and the normalization of Chinese group tourism.</p>
+    <p>The key factor separating the three scenarios is not Zinus but the department-store OPM.</p>
+    <p>Holding department-store GMV and share at Base and raising only the department-store OPM by 3.0pp, from 20.0% to 23.0%, adds 90.6bn KRW to department-store operating profit. Under the same conditions, doubling only the Zinus OPM from 3.5% to 7.0% adds just 26.2bn KRW to Zinus operating profit.</p>
+    <p>On top of that, 61.43% of Zinus profit leaks to non-controlling interests, leaving only 10.1bn KRW for shareholders. What matters at Zinus is not the size of the profit but whether the losses already recognized stop.</p>
+    <p>On this view, Base alone is judged sufficient to realize a meaningful trading gain.</p>
+
+    <h3><span class="no">5.2.</span>Long-Term Holding Value</h3>
+    <p>The current price is 0.43x controlling shareholders' equity, so the source of return is the discount to book value rather than returns on capital. This is less a stock to compound capital in and hold for a long time than one to hold while the discount closes.</p>
+    <p>Assuming that discount is recovered over five years, the expected-return band is 26.7–31.0%, well above the 10.0% required return.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Common assumption</th><th class="num">Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Current market cap (bn KRW)</td><td class="num">2,014.2</td><td>93,400 KRW × 21,564,912 shares</td></tr>
+        <tr><td class="rowlab">Shares outstanding</td><td class="num">21,564,912</td><td>Before cancellation of 232,460 treasury shares</td></tr>
+        <tr><td class="rowlab">Current price (KRW)</td><td class="num">93,400</td><td>2026-08-28 close</td></tr>
+        <tr><td class="rowlab">Required return r</td><td class="num">10.0%</td><td>8% index + 2pp for governance and Zinus</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06) · closing price 2026-08-28</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Period</th><th class="num">Controlling net profit (bn KRW)</th><th class="num">Average equity (bn KRW)</th><th class="num">ROE (closing basis)</th><th class="num">ROE (average basis)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">FY24</td><td class="num">-35.9</td><td class="num">4,431.5</td><td class="num">-0.8%</td><td class="num">-0.8%</td></tr>
+        <tr><td class="rowlab">FY25</td><td class="num">207.7</td><td class="num">4,472.5</td><td class="num">4.6%</td><td class="num">4.6%</td></tr>
+        <tr><td class="rowlab">2Q26 (TTM)</td><td class="num">231.7</td><td class="num">4,552.0</td><td class="num">5.0%</td><td class="num">5.1%</td></tr>
+        <tr><td class="rowlab">FY26E</td><td class="num">366.3</td><td class="num">4,692.4</td><td class="num">7.6%</td><td class="num">7.8%</td></tr>
+        <tr><td class="rowlab">FY27E</td><td class="num">373.4</td><td class="num">4,980.8</td><td class="num">7.3%</td><td class="num">7.5%</td></tr>
+        <tr><td class="rowlab">FY28E Base</td><td class="num">380.4</td><td class="num">5,274.8</td><td class="num">7.0%</td><td class="num">7.2%</td></tr>
+        <tr><td class="rowlab">FY28E Bull</td><td class="num">471.9</td><td class="num">5,310.5</td><td class="num">8.6%</td><td class="num">8.9%</td></tr>
+        <tr><td class="rowlab">FY28E Best</td><td class="num">578.2</td><td class="num">5,352.0</td><td class="num">10.4%</td><td class="num">10.8%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — FY24–25 annual · 2Q26 quarterly (TTM) · FY26E–28E our own estimates, with capital for estimate years derived using a 78% retention ratio · FY21–FY23 are in the attached live-model sheet</div>
+    <p>FY21–FY23 is the stretch in which Zinus impairments were recognized, taking ROE from 4.3% down to -1.8%, for a five-year average of 1.9%. The rise into the 7% range in the estimate period likewise owes less to a jump in profit than to the goodwill balance falling to 16.9bn KRW, so impairments disappear.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th class="num">Base</th><th class="num">Bull</th><th class="num">Best</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Total consolidated equity (bn KRW)</td><td class="num">6,365.7</td><td class="num">6,365.7</td><td class="num">6,365.7</td><td>Semiannual report (2026.06)</td></tr>
+        <tr><td class="rowlab">− Non-controlling interests (bn KRW)</td><td class="num">1,715.7</td><td class="num">1,715.7</td><td class="num">1,715.7</td><td>27.0% of total equity</td></tr>
+        <tr><td class="rowlab">Controlling equity (bn KRW)</td><td class="num">4,650.0</td><td class="num">4,650.0</td><td class="num">4,650.0</td><td>—</td></tr>
+        <tr><td class="rowlab">Current PBR (x)</td><td class="num">0.43</td><td class="num">0.43</td><td class="num">0.43</td><td>Market cap 2,014.2bn ÷ controlling equity</td></tr>
+        <tr><td class="rowlab">ROE (average-capital basis)</td><td class="num">7.2%</td><td class="num">8.9%</td><td class="num">10.8%</td><td>FY28E · the scenario key factor</td></tr>
+        <tr><td class="rowlab">Holding period N (years)</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>Common to the three scenarios</td></tr>
+        <tr class="hl"><td class="rowlab">Expected return</td><td class="num">26.7%</td><td class="num">28.7%</td><td class="num">31.0%</td><td>Buying at the current PBR and sustaining the expected ROE for N years</td></tr>
+        <tr><td class="rowlab">Fair PBR (x)</td><td class="num">0.88</td><td class="num">0.95</td><td class="num">1.04</td><td>Fair PBR under the required-return condition</td></tr>
+        <tr class="hl"><td class="rowlab">Fair price (KRW)</td><td class="num">189,649</td><td class="num">204,930</td><td class="num">223,619</td><td>Fair price under the required-return condition</td></tr>
+        <tr><td class="rowlab">Vs current price</td><td class="num">+103.1%</td><td class="num">+119.4%</td><td class="num">+139.4%</td><td>Current price 93,400 KRW</td></tr>
+        <tr><td class="rowlab">Required-return satisfaction period (years)</td><td class="num">32.6</td><td class="num">82.2</td><td class="num">—</td><td>With PBR below 1x, holding beyond this period falls short of the required return</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — ROE × PBR live model · controlling equity from the consolidated semiannual report (2026.06)</div>
+    <p>The period is set at five years for two reasons. When PBR is below 1x, the recovered discount is divided across the holding period, so the annualized return falls the longer the position is held — the longer the horizon, the worse the outcome. At the same PBR, setting N to 15 years drops the expected return to 13.4%.</p>
+    <p>In addition, the window in which the profit contribution of the three new stores — from The Hyundai Busan in 2027 to The Hyundai Gwangju in 2029 — and the convergence of the inbound share toward Japan can be verified falls largely within five years; anything longer amounts to extending ROE without grounds.</p>
+    <p>The satisfaction period is the maximum holding period over which the discount to book alone can meet the required return: 32.6 years in Base and 82.2 years in Bull, while in Best the expected ROE of 10.8% exceeds the 10.0% required return, so no period constraint applies.</p>
+    <p>The two methods point the same way but do not reinforce each other. The long-term 189,649–223,619 KRW sits above the short-term 133,755–203,295 KRW, a 41.8% gap on the Base case.</p>
+    <p>The two diverge over whether reinvestment beyond FY28E is recognized. Section 5.1 is a snapshot that multiplies earnings at a single FY28E point by a multiple, so the returns that capital subsequently generates are not included, whereas 5.2 assumes capital compounds at the same ROE for all five years.</p>
+    <p>That two years' worth of reinvestment accounts for most of the 41.8% gap.</p>
+  </div>
+
+  <div class="section" id="es6">
+    <h2><span class="num">6</span>Governance &amp; Shareholder Returns</h2>
+    <div class="sub-h">6.1 Ownership · 6.2 Board composition · 6.3 Shareholder returns</div>
+
+    <h3><span class="no">6.1.</span>Ownership Structure</h3>
+    <p>The largest shareholder group's combined 43.83% is up from 37.31% in 2025 through treasury-share cancellation and open-market purchases, in a structure routed through a holding company in which Chairman Chung Ji-sun holds 33.7% of Hyundai GF Holdings.</p>
+    <p>Free float is 40.96%; a stable ownership stake and an independent board are two separate matters.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Detail</th><th class="num">Stake</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="rowlab">Largest shareholder & related parties</td><td>9,452,890 shares combined</td><td class="num">43.83%</td></tr>
+        <tr><td class="rowlab">　Hyundai GF Holdings</td><td>Largest shareholder itself · holding company (A&amp;I 4.68% and Chung Ji-sun 1.92% held separately)</td><td class="num">37.24%</td></tr>
+        <tr><td class="rowlab">National Pension Service</td><td>5%+ shareholder · 3,046,492 shares</td><td class="num">14.13%</td></tr>
+        <tr><td class="rowlab">Treasury stock</td><td>232,460 shares · 1,063,901 shares cancelled during 1H26</td><td class="num">1.08%</td></tr>
+        <tr class="hl"><td class="rowlab">Free float</td><td>100% − (largest shareholder group + treasury + NPS)</td><td class="num">40.96%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06) · based on 21,564,912 total shares outstanding · a 0.01pp rounding gap exists between the column sum of 43.84% and the disclosed 43.83%</div>
+
+    <h3><span class="no">6.2.</span>Board Composition</h3>
+    <p>The board consists of 3 inside directors and 5 independent directors, a 62.5% ratio, and the audit committee — chair Kim Yong-kyun with Choi Ja-young and Chung Yeon-seung — is composed entirely of independent directors.</p>
+    <p>On the 2025 base year with 9 directors, 4 of the 5 outside directors are the ex-official type, average tenure of 2 years 7 months falls short of a single term, and the audit committee has no member with hands-on accounting or audit experience — producing warnings on three of the four items.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Name</th><th>Type</th><th>Tenure</th><th>Background</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Chung Ji-sun</td><td>Inside director</td><td>23y 8m</td><td>Chairman &amp; CEO, Hyundai Department Store</td></tr>
+        <tr><td class="rowlab">Chung Ji-young</td><td>Inside director</td><td>3y 4m</td><td>President &amp; CEO · former head of the Ulsan store</td></tr>
+        <tr><td class="rowlab">Jang Ho-jin</td><td>Inside director</td><td>6y</td><td>Hyundai GF Holdings · former President, Hyundai Department Store</td></tr>
+        <tr><td class="rowlab">Chae Kyu-ha</td><td>Independent director</td><td>3y 4m</td><td>Former standing commissioner, Fair Trade Commission · concurrently Amorepacific Holdings</td></tr>
+        <tr><td class="rowlab">Yoon Seok-hwa</td><td>Independent director</td><td>2y 4m</td><td>Professor, Seoul National University Business School · concurrently KCC</td></tr>
+        <tr><td class="rowlab">Kim Yong-kyun</td><td>Independent director</td><td>1y 4m</td><td>Former director-general, Individual Taxation Bureau, National Tax Service · audit committee chair</td></tr>
+        <tr><td class="rowlab">Choi Ja-young</td><td>Independent director</td><td>4m</td><td>Professor, Soongsil University Business School · audit committee</td></tr>
+        <tr><td class="rowlab">Chung Yeon-seung</td><td>Independent director</td><td>4m</td><td>Dean, Dankook University Graduate School of Business · audit committee</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), executive status · as of 2026.06.30</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Threshold</th><th>Status</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Outside-director ratio</td><td>Below majority</td><td>55.6% (5 of 9 directors)</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Outside-director background</td><td>Over half ex-officials</td><td>4 of 5 are the ex-official type</td><td>Warning</td></tr>
+        <tr><td class="rowlab">Average tenure</td><td>Under one 3-year term</td><td>2y 7m, with one mid-term resignation</td><td>Warning</td></tr>
+        <tr><td class="rowlab">Audit independence</td><td>No accounting/audit expertise</td><td>All 3 members of the 2025 audit committee lack hands-on accounting/audit experience</td><td>Warning</td></tr>
+        <tr class="hl"><td class="rowlab">Total</td><td>—</td><td>—</td><td>3/4 warnings</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — automated 5-stage checklist assessment (base year 2025 · 9-member board)</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Status</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Board composition</td><td>3 inside · 5 independent (62.5% independent)</td><td>Formal requirement met; background mix draws a warning</td></tr>
+        <tr><td class="rowlab">Inside-director tenure</td><td>Chung Ji-sun 23y 8m · Jang Ho-jin 6y · Chung Ji-young 3y 4m</td><td>Long-tenured owner management</td></tr>
+        <tr><td class="rowlab">Members with accounting expertise</td><td>0 of 3 audit committee members</td><td>No hands-on accounting/audit experience</td></tr>
+        <tr><td class="rowlab">Audit body form</td><td>3-member audit committee, all independent</td><td>Formally independent, but lacking practical expertise</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — semiannual report (2026.06), executive status · as of 2026.06.30</div>
+
+    <h3><span class="no">6.3.</span>Shareholder Returns</h3>
+    <p>The dividend policy adopted in February 2025 targets total dividends of 50.0bn KRW in 2027, and FY25's 46.4bn KRW is 92.8% of that. The company maintained or raised the dividend per share even in the loss-making FY23 and FY24, and treasury shares have been cancelled rather than resold.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Status</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Dividend policy</td><td>50.0bn KRW total-dividend target for 2027 · covering the FY24 year-end through the FY27 interim</td><td>A target set independently of earnings volatility</td></tr>
+        <tr><td class="rowlab">Total dividends</td><td>FY25 46.4bn KRW · 157.9bn KRW cumulative over five years</td><td>37.1% of cumulative net profit</td></tr>
+        <tr><td class="rowlab">Payout ratio</td><td>12.7% → 22.3% · 18.2% average over the three calculable years</td><td>Not calculable for FY23 and FY24 due to losses</td></tr>
+        <tr><td class="rowlab">Dividend per share</td><td>1,100 → 2,150 KRW · +95.5% over five years</td><td>Maintained or raised even in loss-making years</td></tr>
+        <tr><td class="rowlab">Interim dividend</td><td>500 KRW per share in October 2026 · 10.7bn KRW in total</td><td>Cancellation reduced the eligible share count to 21,332,452</td></tr>
+        <tr><td class="rowlab">Treasury stock</td><td>1.08% held · 1,837,529 shares cancelled cumulatively</td><td>7.85% of cumulative shares issued · cancelled, not disposed of</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="filter-note"><b>Source</b> — business reports (2021.12–2025.12) · semiannual report (2026.06), dividend policy and treasury-share status · company earnings release (2026-08-05)</div>
+  </div>
+
+  <footer class="report-foot">
+    Written per guideline v6.16. Current price 93,400 KRW · market cap 2,014.1bn KRW (Aug 28, 2026 close, KRX). Financial, industry and competitive information is on a consolidated basis from the DART 2025 business report and the June 2026 semiannual report. For information only; not investment advice.<br>
+    Original 2026-08-31 · <a href="../">Henry Shin Research</a>
+  </footer>
+
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>현대백화점(069960) 주가 차트</span><span class="ct-en" hidden>Hyundai Department Store (069960) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-08-31 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-08-31</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-08-31 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 밸류에이션이 사용한 2026-08-28 종가 93,400원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-08-31 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the 93,400 KRW close of 2026-08-28 used throughout the valuation.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Overview'],['es2','2 · Industry'],['es3','3 · Business'],['es4','4 · Financials'],['es5','5 · Valuation'],['es6','6 · Governance']],
+    ko: [['ks1','1 · 회사 개요'],['ks2','2 · 산업 분석'],['ks3','3 · 사업 모델'],['ks4','4 · 재무 추정'],['ks5','5 · 밸류에이션'],['ks6','6 · 지배구조']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('hyundai-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('hyundai-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return sym + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
