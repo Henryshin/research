@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-silicon2-257720-kbeauty-europe-share').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SILICON2 (257720, KOSDAQ) Equity Analysis — K-Beauty's Export Rails and the European Share Question</title>
+<meta name="description" content="Equity analysis of SILICON2 (257720): the K-beauty export wholesaler behind one in six Korean cosmetics items shipped to Europe, whether that European surge is end demand or hub stocking, the CVC Capital placement and Douglas, and a four-scenario FY28E valuation. Korean and English. Figures as of August 27, 2026.">
+<meta name="keywords" content="SILICON2, 실리콘투, 257720, KOSDAQ, K-beauty, Korean cosmetics export, cosmetics distribution, COSRX, Douglas, CVC Capital, Ulta Beauty, YesAsia, European market share, equity research, Korea small cap">
+<link rel="canonical" href="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<!-- social:auto (add_social_meta.py) -->
+<meta property="og:image" content="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/assets/og.png?v=f4796c5e">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SILICON2 (257720) Equity Analysis — social card">
+<meta name="twitter:image" content="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/assets/og.png?v=f4796c5e">
+<meta name="twitter:image:alt" content="SILICON2 (257720) Equity Analysis — social card">
+<!-- /social:auto -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="SILICON2 (257720) Equity Analysis">
+<meta property="og:description" content="Equity analysis of SILICON2 (257720): the K-beauty export wholesaler behind one in six Korean cosmetics items shipped to Europe, whether that European surge is end demand or hub stocking, the CVC Capital placement and Douglas, and a four-scenario FY28E valuation. Korean and English. Figures as of August 27, 2026.">
+<meta property="og:url" content="https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SILICON2 (257720) Equity Analysis">
+<meta name="twitter:description" content="Equity analysis of SILICON2 (257720): the K-beauty export wholesaler behind one in six Korean cosmetics items shipped to Europe, whether that European surge is end demand or hub stocking, the CVC Capital placement and Douglas, and a four-scenario FY28E valuation. Korean and English. Figures as of August 27, 2026.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "SILICON2 (257720, KOSDAQ) Equity Analysis — K-Beauty's Export Rails and the European Share Question",
+  "description": "Equity analysis of SILICON2 (257720): the K-beauty export wholesaler behind one in six Korean cosmetics items shipped to Europe, whether that European surge is end demand or hub stocking, the CVC Capital placement and Douglas, and a four-scenario FY28E valuation. Korean and English. Figures as of August 27, 2026.",
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-03",
+  "inLanguage": ["en", "ko"],
+  "author": { "@type": "Person", "name": "Henry Shin" },
+  "publisher": { "@type": "Organization", "name": "Henry Shin Research" },
+  "about": [
+    { "@type": "Corporation", "name": "SILICON2", "tickerSymbol": "KRX:257720" }
+  ],
+  "keywords": "SILICON2 257720, 실리콘투, K-beauty export, cosmetics distribution, European market share, Korean small cap",
+  "mainEntityOfPage": "https://henryshin.github.io/research/silicon2-257720-kbeauty-europe-share/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:15.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:13.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:13px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:35px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:15px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:14.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:12.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:14.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:12.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:14px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:14px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:16px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:14.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:15px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:15px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:15.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:13.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { color:var(--ink-faint); font-size:13.3px; margin:8px 0 4px; line-height:1.62; }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:13.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:13px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:13px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:13px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:15px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:14px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:22px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:12px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:13.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:22px; }
+    .kpi-card .value .unit { font-size:13px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:19px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:15.5px; }
+    table.tbl { font-size:14px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
+
+/* type-scale:+2px, flat-notes */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSDAQ 257720</div>
+    <h1>실리콘투(257720) 분석보고서</h1>
+    <p class="lede">FY25 매출 1조 1,163억(+61.4%)·영업이익률 18.4% · 1H26 유럽 매출 비중 42.5% · 유럽 점유율 16.5% · 현재가 49,150원 · 시총 3조 2,231억원 (2026-08-27)</p>
+    <div class="meta">
+      <span>최초작성 2026-09-01 (v5)</span>
+      <span>기준주가 49,150원 (2026-08-27 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">현재가</div>
+      <div class="value">49,150<span class="unit">원</span></div>
+      <div class="sub">52주 29,850 ~ 56,100원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">시가총액</div>
+      <div class="value">3조 2,231<span class="unit">억원</span></div>
+      <div class="sub">발행주식수 65,576,252주</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">선행 PER</div>
+      <div class="value">11.4<span class="unit">배</span></div>
+      <div class="sub">뷰티 유통 peer 4사 평균 9.4배</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Base TP (FY28E)</div>
+      <div class="value">42,244<span class="unit">원</span></div>
+      <div class="sub">현재가 대비 -14.1% · Best 71,609원 +45.7%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">브랜드를 갖지 않고 K-뷰티 수출 총량에 실적이 연동되는 유통사임. 유럽에서 한국 화장품 6장 중 1장이 이 회사를 거쳐 나가며 점유율은 2024년 9.1%에서 2025년 16.1%로 1년 만에 7.0%p 올랐음. 해자는 175개국 인허가 축적분과 물류 자산에 있고 브랜드 관계와 가격에는 없음.</span></div>
+    <div class="tldr-row"><span class="tldr-k">밸류에이션</span><span class="tldr-v">뷰티 전문 유통 peer 4사 평균 9.4배를 4 시나리오에 공통 적용해 목표주가 31,857~71,609원. 현재가는 Base 42,244원을 14.1% 웃돎. 장기로는 PBR 4.68배를 ROE 21.9%로 회수하는 데 15.0년이 걸려 요구수익률 연 10%가 나오는 것은 15년 보유뿐임.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">유럽 증가분이 최종 소비인지 허브 국가 초도 물량인지 미확인 — 서유럽 본류 비중이 1Q26 27.4%에서 2Q26 20.5%로 6.9%p 내려감. 재고자산 회전일수는 회사 자체 기준 상단의 1.5배인 133일이며, FY25 순이익 1,686억원에 대해 영업활동현금흐름은 11억원에 그침.</span></div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>회사 개요</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>내용</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">종목/코드</td><td>실리콘투 / 257720 (KOSDAQ)</td><td>시가총액</td><td>3조 2,231억원 (2026-08-27)</td></tr>
+        <tr><td class="rowlab">설립</td><td>2002년 1월 19일</td><td>상장</td><td>2021년 9월 (KOSDAQ)</td></tr>
+        <tr><td class="rowlab">대표이사</td><td>김성운 (창업자 · 이사회 의장)</td><td>결산월</td><td>12월</td></tr>
+        <tr><td class="rowlab">본사</td><td>경기 성남시 분당구 판교역로 231</td><td>임직원수</td><td>367명 (2026-06-30, 별도)</td></tr>
+        <tr><td class="rowlab">발행주식수</td><td>65,576,252주 (자기주식 123,200주)</td><td>현재가</td><td>49,150원 (2026-08-27)</td></tr>
+        <tr><td class="rowlab">FY25 매출</td><td>1조 1,163억원 (전년 대비 +61.4%)</td><td>FY25 영업이익</td><td>2,054억원 (영업이익률 18.4%)</td></tr>
+        <tr><td class="rowlab">1H26 매출</td><td>7,492억원 (전년 동기 대비 +46.6%)</td><td>1H26 영업이익</td><td>1,475억원 (영업이익률 19.7%)</td></tr>
+        <tr><td class="rowlab">사업 부문</td><td>CA 93.4%, PA 3.9%, 풀필먼트 2.8%</td><td>연결 범위</td><td>종속회사 16사 (2026-06-30)</td></tr>
+        <tr><td class="rowlab">물류 거점</td><td>광주, 미국, 폴란드, 두바이, 멕시코</td><td>취급 상품</td><td>22,000 SKU (2025년)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12) · 반기보고서(2026.06) · 종가 2026-08-27</p>
+    <p>실리콘투는 2002년 반도체 유통사로 출발했으나 2012년 반도체 사업에서 철수하고 주력을 K-뷰티 유통으로 옮겼으며, 화장품을 직접 만들지 않고 브랜드사의 상품을 사들여 175개국에 되파는 수출 도매상임.</p>
+    <p>FY25 연결 매출 1조 1,163억원 중 수출이 1조 811억원으로 96.9%를 차지하며, 2023년까지 최대 시장이던 북미를 2025년에 유럽이 앞질러 1H26 유럽 비중은 42.5%임.</p>
+    <p>2026년 8월에 글로벌 사모펀드 CVC캐피탈로부터 3,000억원 규모 제3자배정 증자를 유치했고, 같은 달 27일에 기존 재무적 투자자의 6.72% 지분이 블록딜로 전량 처분되면서 오버행 물량이 정리됨.</p>
+  </div>
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>산업 분석</h2>
+    <div class="sub-h">2.1 화장품 유통업의 역할 · 2.2 국가별 수출 성장률 · 2.3 유럽 시장과 실리콘투의 점유율 · 2.4 유럽 성장에 남은 검증</div>
+    <h3>2.1 화장품 유통업의 역할</h3>
+    <p>K-뷰티 브랜드 대부분은 해외 매대에 스스로 물건을 올릴 수 없으며, 국가별 인허가와 통관 서류, 현지 창고와 영업 인력을 갖추는 고정비를 인디 브랜드 한 곳이 감당하기 어렵기 때문임.</p>
+    <p>이 고정비를 분산하고 외주화하는 역할을 수행하는 것이 실리콘투이며, FY25 매출총이익률 31.1%를 일으키며 마진을 확보하고 있음.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1.png" alt=" K-뷰티 브랜드에서 해외 매대까지, 실리콘투가 맡는 구간" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;그림 1&gt; K-뷰티 브랜드에서 해외 매대까지, 실리콘투가 맡는 구간</p>
+    <p>실리콘투는 중개 수수료를 받는 대리인이 아니라 상품을 먼저 사서 자기 재고로 들고 가는 원매인이며, 그 재고가 2026년 6월 말 4,510억원까지 쌓였음.</p>
+    <p>재고를 국내 창고와 해상 운송분, 해외 거점 창고 세 곳에 나눠 두기 때문에 특정 국가에서 수요가 튀어도 가장 가까운 창고에서 즉시 출고할 수 있음.</p>
+    <p>반대로 팔리지 않으면 재고 위험은 브랜드를 떠나 실리콘투에 남으므로, 수요가 꺾일 때 손실이 먼저 잡히는 쪽도 이 회사임.</p>
+    <h3>2.2 국가별 수출 성장률</h3>
+    <p>한국 화장품 수출은 2025년 94.2억달러에 그쳤다가 2026년 들어 성장률이 다시 올라갔고, 그 내용은 중화권 이탈과 미국·유럽 확대임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>권역</th><th>2025년 수출액</th><th>2025년 증가율</th><th>2026년 1~7월</th><th>2026년 7월</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">전체</td><td>94.2</td><td class="hl">+10%</td><td class="hl">+27.6%</td><td class="hl">+36.0%</td></tr>
+        <tr><td class="rowlab">미국</td><td>17.5</td><td class="hl">+13%</td><td class="hl">+38.7%</td><td class="hl">+42.6%</td></tr>
+        <tr><td class="rowlab">유럽</td><td>17.1</td><td class="hl">+44%</td><td class="hl">+65.6%</td><td class="hl">+74.6%</td></tr>
+        <tr><td class="rowlab">중국</td><td>—</td><td>—</td><td class="no">-2.4%</td><td class="hl">+18.9%</td></tr>
+        <tr><td class="rowlab">중화권 제외</td><td>—</td><td class="hl">+21%</td><td class="hl">+37.1%</td><td class="hl">+43.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 2025년 Trass(교보증권) · 2026년 관세청·TRASS(BNK투자증권) · 수출액 억달러 · 전년 대비</p>
+    <p>읽어야 할 것은 두 가지로, 하나는 중국만 역성장해 중화권 제외 증가율이 전체를 계속 웃돈다는 것이고 다른 하나는 유럽 증가율이 미국의 1.7배라는 것임.</p>
+    <p>2026년 7월에는 미국 한 나라의 수출액 2.39억달러가 중화권 전체 1.98억달러를 처음으로 넘어섰고, 중화권 밖 비중은 1월 72%에서 7월 82%로 올라감.</p>
+    <p>실리콘투는 브랜드를 소유하지 않으므로 특정 브랜드의 흥망보다 이 수출 총량에 실적이 연동되며, 그 점이 브랜드사 대비 실적 변동성이 낮은 이유임.</p>
+    <h3>2.3 유럽 시장과 실리콘투의 점유율</h3>
+    <p>유럽향 한국 화장품 수출은 2025년 17.1억달러로 전년 대비 44% 늘어 미국향 17.5억달러에 근접했고, 2026년 7월 누계로 16.1억달러를 기록해 이미 전년 연간 수준에 도달함.</p>
+    <p>유럽 화장품 시장 규모 자체는 1,240억달러로 북미 1,400억달러에 이은 2위이며, K-뷰티 침투율은 유럽 1.38%, 미국 1.25%로 양쪽 모두 초기 단계임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>유럽</th><th>북미</th><th>산출 근거</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">지역 화장품 시장 규모 (억달러)</td><td>1,240</td><td>1,400</td><td>유로모니터 기준 연간 소매 시장</td></tr>
+        <tr><td class="rowlab">2025년 한국 화장품 수출액 (억달러)</td><td>17.1</td><td>17.5</td><td>유럽은 대륙 기준, 북미는 미국향</td></tr>
+        <tr><td class="rowlab">수출액 증가율 (2025년)</td><td class="hl">+44%</td><td class="hl">+13%</td><td>전년 대비</td></tr>
+        <tr><td class="rowlab">K-뷰티 침투율</td><td>1.38%</td><td>1.25%</td><td>수출액 ÷ 지역 시장 규모</td></tr>
+        <tr><td class="rowlab">원화 환산 수출액 (억원)</td><td>23,940</td><td>24,500</td><td>1,400원/달러 환산</td></tr>
+        <tr><td class="rowlab">실리콘투 2025년 매출 (억원)</td><td>3,861</td><td>2,331</td><td>유럽은 EU+영국, 북미는 미국+캐나다</td></tr>
+        <tr><td class="rowlab">실리콘투 점유율</td><td>16.1%</td><td>9.5%</td><td>실리콘투 매출 ÷ 원화 환산 수출액</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — Trass·유로모니터(교보증권 2026-08-18) · 실리콘투 매출은 사업보고서(2025.12) 지역별 매출</p>
+    <p>유럽에서 한국 화장품 6장 중 1장이 실리콘투를 거쳐 나가는 반면 북미에서는 10장 중 1장에 그침.</p>
+    <h3>2.4 유럽 성장에 남은 검증</h3>
+    <p>유럽 수출 증가분의 대부분이 최종 소비가 아니라 허브 국가로 들어간 초도 물량일 가능성이 남아 있으며, 2Q26 허브 4개국 수출이 124% 늘 때 서유럽 4개국은 40% 증가에 그침.</p>
+    <p>서유럽 본류 비중이 1Q26 27.4%에서 2Q26 20.5%로 6.9%p 내려간 것은 재분배 거점에 쌓인 물량이 아직 최종 수요로 확인되지 않았다는 뜻임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>유럽 전체</th><th>서유럽 4국</th><th>허브 4국</th><th>서유럽 본류 비중</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">1Q26</td><td class="hl">+76%</td><td class="hl">+41%</td><td class="hl">+95%</td><td>27.4%</td></tr>
+        <tr><td class="rowlab">2Q26</td><td class="hl">+99%</td><td class="hl">+40%</td><td class="hl">+124%</td><td>20.5%</td></tr>
+        <tr><td class="rowlab">변화</td><td>가속</td><td>정체</td><td>가속</td><td>-6.9%p</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 관세청·TRASS(BNK투자증권 2026-08-21) · 허브 4국은 폴란드·영국·네덜란드·벨기에</p>
+    <p>실리콘투의 유럽 물류 거점이 폴란드 브로츠와프에 있어 이 회사의 유럽 매출은 허브 4개국 통계에 잡히며, 통관 시점과 소비 시점의 간격이 길다는 점에서 같은 검증 과제를 안고 있음.</p>
+    <p>2026년 8월 초 폴란드 수출이 10.5%, 프랑스가 14.2% 감소한 것이 일시적 조정인지 재고 소화 지연의 신호인지는 3분기 실적으로 판가름 남.</p>
+  </div>
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>사업 모델</h2>
+    <div class="sub-h">3.1 매출 구성 · 3.2 지역별 매출 · 3.3 고객 집중도 · 3.4 손익 구조 · 3.5 경쟁 구도 · 3.6 경제적 해자</div>
+    <h3>3.1 매출 구성</h3>
+    <p>1H26 매출의 94.3%가 기업 고객 대상 도매인 CA(Corporate Account)에서 나오며, 개인 고객 역직구인 PA(Personal Account)와 판매·배송 대행인 풀필먼트는 합쳐도 5.7%에 그침.</p>
+    <p>2023년 15.5%였던 풀필먼트 비중이 1H26 1.6%까지 줄어든 것은 대행 수수료보다 상품을 직접 사서 되파는 도매가 규모를 키우기에 유리했기 때문임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>매출 유형</th><th>2023</th><th>2024</th><th>2025</th><th>1H26</th><th>FY25 비중</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">CA (기업 고객 도매)</td><td>2,720</td><td>6,074</td><td>10,425</td><td>7,067</td><td>93.4%</td></tr>
+        <tr><td class="rowlab">PA (개인 고객 역직구)</td><td>175</td><td>264</td><td>430</td><td>304</td><td>3.9%</td></tr>
+        <tr><td class="rowlab">풀필먼트 (운영·배송 대행)</td><td>532</td><td>565</td><td>308</td><td>120</td><td>2.8%</td></tr>
+        <tr><td class="rowlab">기타 (광고 등)</td><td>1</td><td>12</td><td>0</td><td>1</td><td>0.0%</td></tr>
+        <tr><td class="rowlab">합계</td><td>3,429</td><td>6,915</td><td>11,163</td><td>7,492</td><td>100.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 매출실적 · 연결 기준 · 억원</p>
+    <h3>3.2 지역별 매출</h3>
+    <p>유럽 매출은 2024년 1,520억원에서 2025년 3,861억원으로 154.0% 늘며 최대 시장이 됐고, 같은 기간 북미는 2,215억원에서 2,331억원으로 5.2% 증가에 머묾.</p>
+    <p>북미 정체는 2025년 미국향 관세 부과를 앞둔 선적 시점 왜곡과 아마존 중심 온라인 채널의 성장 둔화가 겹친 결과이며, 1H26 들어 Ulta·Target 등 오프라인 리테일러 발주가 붙으면서 60.9% 증가로 돌아섬.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>지역</th><th>2024</th><th>2025</th><th>2025년 증가율</th><th>1H26</th><th>1H26 증가율</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">유럽 (EU+영국)</td><td>1,520</td><td>3,861</td><td class="hl">+154.0%</td><td>3,181</td><td class="hl">+77.9%</td></tr>
+        <tr><td class="rowlab">북미 (미국+캐나다)</td><td>2,215</td><td>2,331</td><td class="hl">+5.2%</td><td>1,515</td><td class="hl">+60.9%</td></tr>
+        <tr><td class="rowlab">기타 지역</td><td>3,180</td><td>4,971</td><td class="hl">+56.3%</td><td>2,796</td><td class="hl">+17.5%</td></tr>
+        <tr><td class="rowlab">합계</td><td>6,915</td><td>11,163</td><td class="hl">+61.4%</td><td>7,492</td><td class="hl">+46.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 부문별 정보 지역별 매출 · 연결 · 억원</p>
+    <p>기타 지역 증가율이 1H26 들어 17.5%로 낮아진 것은 중동 매출이 이란발 지정학 위험으로 역성장한 탓이며, 2Q26 중동 매출은 260억원으로 전년 동기 대비 7.1% 감소함.</p>
+    <h3>3.3 고객 집중도</h3>
+    <p>상위 3개 거래처가 전체 매출에서 차지하는 비중은 2023년 15.90%에서 1H26 8.94%로 낮아졌고, 연결 매출의 10% 이상을 차지하는 외부 고객은 존재하지 않음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>2023</th><th>2024</th><th>2025</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">최대 거래처 A사</td><td>9.90%</td><td>9.84%</td><td>6.13%</td><td>4.08%</td></tr>
+        <tr><td class="rowlab">거래처 B사</td><td>4.53%</td><td>4.30%</td><td>4.44%</td><td>2.63%</td></tr>
+        <tr><td class="rowlab">거래처 C사</td><td>1.47%</td><td>4.05%</td><td>4.17%</td><td>2.23%</td></tr>
+        <tr><td class="rowlab">상위 3사 합계</td><td>15.90%</td><td>18.19%</td><td>14.74%</td><td>8.94%</td></tr>
+        <tr><td class="rowlab">그 밖의 CA 거래처</td><td>63.43%</td><td>69.64%</td><td>78.65%</td><td>85.39%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 매출실적 CA 부문 · 전체 매출 대비 비중</p>
+    <p>고객이 흩어질수록 개별 거래처 이탈의 타격은 줄지만, 동시에 어느 한 고객과도 장기 계약으로 묶여 있지 않다는 뜻이므로 실적의 하방을 받쳐 주는 계약은 없음.</p>
+    <h3>3.4 손익 구조</h3>
+    <p>이 회사의 매출원가는 상품매입액에서 재고 증가분을 뺀 순수 상품 매입원가이며, 운반비와 급여, 감가상각비는 전액 판매비와관리비에 들어가므로 매출총이익률은 사입가와 판매가의 차이를 그대로 나타냄.</p>
+    <p>매출총이익률은 FY24 33.7%에서 FY25 31.1%로 2.6%p 낮아진 뒤 1H26에도 31.1%를 유지했으나, 연간 수치는 분기 편차를 가림.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>2Q25</th><th>3Q25</th><th>4Q25</th><th>1Q26</th><th>2Q26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액 (억원)</td><td>2,653</td><td>2,994</td><td>3,060</td><td>3,466</td><td>4,026</td></tr>
+        <tr><td class="rowlab">매출총이익률</td><td>32.9%</td><td>31.6%</td><td>28.5%</td><td>30.0%</td><td>32.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 분기·반기·사업보고서 연결 손익계산서 · 분기값은 누적 차감</p>
+    <p>FY24 33.7%에서 FY25 31.1%로 내려간 2.6%p는 두 겹임. 1~3분기 누계가 이미 32.0%로 1.7%p 낮았고 이것이 하락분의 63%이며, 4Q25 28.5%가 나머지 1.0%p를 얹음.</p>
+    <p>4분기가 낮은 것은 행사 시즌 할인이 걸리는 구간이기 때문이며, 4Q24도 32.4%로 3Q24 34.6% 대비 2.2%p 낮았음.</p>
+    <p>2Q26 32.0%는 4Q25 의 급락분을 되돌린 값이지 FY24 수준으로 복귀한 것이 아니며, 5사의 FY28 매출총이익률 추정도 30.0~31.9%로 33.7% 회귀를 보지 않음.</p>
+    <p>정리하면 4Q25 의 급락은 되돌아왔으나 FY24 대비 1.7%p 의 레벨 하락은 남았고, 컨센서스는 그 레벨이 유지되는 쪽을 봄.</p>
+    <p>분기 등락의 주된 원인은 환율이고, 2Q26 개선분의 상당 부분이 고환율 환경에서 나왔다는 것이 유안타증권과 NH투자증권의 공통된 해석이며, 매출의 96.9%가 수출인 반면 매입은 원화로 이뤄져 원화가 약해지면 원화 환산 판매가만 올라가기 때문임.</p>
+    <p>같은 두 곳이 3분기에는 환율이 빠르게 내려 같은 요인이 반대로 걸릴 수 있다는 단서를 함께 달았음.</p>
+    <p>뒤집어 보면 판매가를 회사가 스스로 정하지 못한다는 뜻이므로, 마진이 훼손되지 않았다는 것과 가격 결정력이 있다는 것은 다른 이야기임.</p>
+    <p>판관비율이 FY24 13.8%에서 1H26 11.4%로 2.4%p 내려간 것은 매출이 두 배 가까이 늘 때 급여와 지급수수료가 그만큼 늘지 않은 영업 레버리지 때문임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>FY24</th><th>FY25</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액</td><td>6,915</td><td>11,163</td><td>5,110</td><td>7,492</td></tr>
+        <tr><td class="rowlab">매출총이익</td><td>2,329</td><td>3,468</td><td>1,650</td><td>2,329</td></tr>
+        <tr><td class="rowlab">매출총이익률</td><td>33.7%</td><td>31.1%</td><td>32.3%</td><td>31.1%</td></tr>
+        <tr><td class="rowlab">판매비와관리비</td><td>953</td><td>1,414</td><td>651</td><td>854</td></tr>
+        <tr><td class="rowlab">판관비율</td><td>13.8%</td><td>12.7%</td><td>12.7%</td><td>11.4%</td></tr>
+        <tr><td class="rowlab">▸ 운반비</td><td>158</td><td>278</td><td>135</td><td>223</td></tr>
+        <tr><td class="rowlab">▸ 운반비율</td><td>2.3%</td><td>2.5%</td><td>2.6%</td><td>3.0%</td></tr>
+        <tr><td class="rowlab">▸ 감가상각비</td><td>57</td><td>88</td><td>38</td><td>74</td></tr>
+        <tr><td class="rowlab">영업이익</td><td>1,376</td><td>2,054</td><td>999</td><td>1,475</td></tr>
+        <tr><td class="rowlab">영업이익률</td><td>19.9%</td><td>18.4%</td><td>19.6%</td><td>19.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 판매비와 관리비 주석 · 연결 · 억원</p>
+    <p>다만 운반비율이 2.3%에서 3.0%로 오르는 동안 감가상각비가 두 배 가까이 늘어, 물류 자산을 늘려 잡은 비용이 아직 회수 단계에 들어서지 않았음.</p>
+    <h3>3.5 경쟁 구도</h3>
+    <p>이 회사를 두고 시장이 걸어 온 우려는 두 가지이며, 하나는 중소형 무역 벤더가 늘어나 경쟁이 심해진다는 것이고 다른 하나는 큰 브랜드가 직접 유통으로 돌아선다는 것임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>대상</th><th>근거 자료</th><th>위협 성격</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">동종 벤더 (상장)</td><td>예스아시아홀딩스 (2209.HK)</td><td>KB증권 peer 그룹</td><td>선행 PER 5.1배 · 아시아 역직구</td></tr>
+        <tr><td class="rowlab">동종 벤더 (비상장)</td><td>중소형 무역 벤더 다수</td><td>하나증권</td><td>규모 미확인 · 회사가 인수 검토</td></tr>
+        <tr><td class="rowlab">전방 자체 소싱</td><td>얼타뷰티 · 더글라스 · 샐리뷰티</td><td>KB증권 peer 그룹</td><td>직접 소싱 시 벤더 단계 제거</td></tr>
+        <tr><td class="rowlab">고객의 직진출</td><td>취급 브랜드</td><td>코스알엑스 전례</td><td>규모 도달 시 현지 법인 설립</td></tr>
+        <tr><td class="rowlab">온라인 유통</td><td>아이허브</td><td>NH투자증권 NDR</td><td>현재는 고객 · 북미 매출의 20%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — KB증권(2026-08-28) peer 그룹 · NH투자증권(2026-08-24) NDR 후기 · 하나증권(2026-08-20)</p>
+    <p>중소형 벤더의 수와 규모는 공시로 확인되지 않으므로 경쟁자가 없다고 볼 근거도 없으며, 오히려 CVC 증자 대금의 용처에 유통·벤더사 인수가 포함돼 있다는 점은 인수할 만한 상대가 존재한다는 회사 자체의 인정임.</p>
+    <p>경쟁 강도를 볼 수 있는 지표는 점유율의 추이 하나이며, 경쟁자가 늘어나는 동안 점유율이 올라갔다면 그만큼은 모방에 견뎠다는 뜻임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>유럽</th><th>북미</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">2024년 점유율</td><td>9.1%</td><td>10.2%</td></tr>
+        <tr><td class="rowlab">2025년 점유율</td><td>16.1%</td><td>9.5%</td></tr>
+        <tr><td class="rowlab">1H26 점유율</td><td>16.5%</td><td>산출 불가</td></tr>
+        <tr><td class="rowlab">1H26 실리콘투 매출 증가율</td><td class="hl">+77.9%</td><td class="hl">+60.9%</td></tr>
+        <tr><td class="rowlab">2026년 한국 화장품 수출 증가율</td><td class="hl">+65.6%</td><td class="hl">+38.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 매출 사업보고서·반기보고서 · 수출 Trass·관세청 · 1H26 유럽은 1~7월의 6/7 환산</p>
+    <p>유럽 점유율은 2024년 9.1%에서 2025년 16.1%로 1년 만에 7.0%p 오른 뒤 1H26 16.5%로 유지됨.</p>
+    <p>북미는 2024년 10.2%에서 2025년 9.5%로 0.7%p 내렸고, 2025년 하락은 관세를 앞둔 선적 왜곡과 온라인 채널 둔화가 겹친 구간임.</p>
+    <p>북미 1H26 점유율은 미국향 수출 절대액이 공표되지 않아 산출하지 못했으나, 매출 증가율 60.9%가 수출 증가율 38.7%를 22.2%p 웃돌아 방향은 상승임. 다만 매출은 1~6월, 수출은 1~7월 기준이라 기간이 어긋남.</p>
+    <p>경쟁자를 특정하지 못한 것과 경쟁자가 없는 것은 다르므로 비상장 벤더 항목은 확인 못 함으로 남기되, 두 권역 모두 점유율이 상승 방향이라는 사실은 지금까지 경쟁 진입이 점유율을 깎지 못했다는 증거로 씀.</p>
+    <h3>3.6 경제적 해자</h3>
+    <p>브랜드도 제조 설비도 없는 유통사에서 해자를 찾으려면 채워야 할 조건이 네 개 있고, 실리콘투는 그중 셋을 채웠으나 마지막 하나는 채우지 못했음.</p>
+    <p>첫째는 상품을 모을 수 있는가이며, 2025년 기준 상품 단위(SKU, Stock Keeping Unit) 22,000개를 운영하고 국내 인디 브랜드에 지분 투자까지 하면서 소싱 폭을 넓혀 왔으므로 충족으로 봄.</p>
+    <p>다만 그 투자가 전부 회수되는 것은 아니며, 2025년에 취득한 기명식 사모사채 75억원이 피투자사의 기업회생 신청으로 전액 평가손실 처리됐고, 같은 해 금융자산평가손실은 78억원임.</p>
+    <p>둘째는 규제를 감당할 수 있는가이며, 175개국의 인허가와 라벨링, 통관 서류를 자체 인력으로 처리하는 축적분이 신규 진입자가 단기간에 복제하기 어려운 부분이라 충족으로 봄.</p>
+    <p>셋째는 고객을 붙들 수 있는가이며, 3.5의 점유율 추이가 유럽에서 1년 만에 7.0%p 오른 뒤 1H26 까지 유지된 것을 근거로 충족으로 봄.</p>
+    <p>넷째는 브랜드가 커진 뒤에도 대체되지 않는가이며, 이 조건은 채우지 못했다고 판단함.</p>
+    <p>브랜드가 일정 규모를 넘기면 현지 법인을 직접 세우는 편이 마진에 유리해지므로, 취급 브랜드의 이탈은 상시 위험임.</p>
+    <p>코스알엑스는 2024년 취급 순위 3위에서 협업 중단 뒤 2025년 9위까지 밀렸고, 2025년 3분기 재개 이후 매 분기 한 계단씩 올라 2Q26 6위를 회복함.</p>
+    <p>이탈 사유는 공시에 없으나 브랜드가 직접 유통으로 돌아섰을 때 실리콘투가 깔아 둔 국가별 판매망을 대체하지 못했다는 뜻이며, 이탈이 곧 매출 소멸은 아니라는 점을 보여준 사례임.</p>
+    <p>준거로 삼을 만한 사례는 브랜드사인 달바글로벌이며, 2Q26 달바글로벌 매출이 45.6% 늘 때 실리콘투는 51.8% 늘어 유통사가 브랜드보다 빠르게 성장했고, 브랜드 묶음 전체에 걸쳐 있어 어느 한 곳의 부진을 다른 곳이 메운 덕임.</p>
+    <p>다만 같은 분기 달바글로벌 영업이익률이 25.3%로 실리콘투 20.6%를 상회하며, 브랜드를 갖지 못한 대가가 4.7%p의 이익률 차이로 나타남.</p>
+    <p>네 조건과 별개로 가격 결정력은 없다고 봄. 3.4에서 본 분기 매출총이익률의 등락을 판가 정책이 아닌 환율이 만들었고, 매출의 94.3%가 기업 고객 도매여서 표면 단가보다 물량 조건이 실질을 정하므로 외부에서 인상 여력을 판정할 근거 자체가 잡히지 않음.</p>
+    <p>종합하면 해자는 규제 대응 축적분과 물류 자산에 있고 브랜드 관계와 가격에는 없으므로, 취급 브랜드 묶음이 계속 갈아입혀지는 한 유지되나 특정 메가 브랜드에 기대는 순간 무너짐.</p>
+  </div>
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>재무 추정</h2>
+    <div class="sub-h">4.1 최근 5년 결산 실적 · 4.2 운전자본과 현금흐름</div>
+    <h3>4.1 최근 5년 결산 실적</h3>
+    <p>매출은 2021년 1,310억원에서 2025년 1조 1,163억원으로 4년간 8.5배가 됐고, 영업이익률은 6.7%에서 18.4%로 11.7%p 올라감.</p>
+    <p>이익률 상승의 대부분은 2023~2024년에 일어났으며, 매출이 두 배씩 늘던 그 2년 동안 고정비가 그대로여서 영업 레버리지가 크게 작동함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">매출액</td><td>1,310</td><td>1,653</td><td>3,429</td><td>6,915</td><td>11,163</td></tr>
+        <tr><td class="rowlab">매출 증가율</td><td>—</td><td class="hl">+26.2%</td><td class="hl">+107.5%</td><td class="hl">+101.7%</td><td class="hl">+61.4%</td></tr>
+        <tr><td class="rowlab">영업이익</td><td>88</td><td>142</td><td>478</td><td>1,376</td><td>2,054</td></tr>
+        <tr><td class="rowlab">영업이익률</td><td>6.7%</td><td>8.6%</td><td>13.9%</td><td>19.9%</td><td>18.4%</td></tr>
+        <tr><td class="rowlab">당기순이익</td><td>83</td><td>112</td><td>380</td><td>1,207</td><td>1,686</td></tr>
+        <tr><td class="rowlab">주당순이익 (원)</td><td>149</td><td>186</td><td>631</td><td>1,990</td><td>2,756</td></tr>
+        <tr><td class="rowlab">자산총계</td><td>974</td><td>1,292</td><td>2,153</td><td>4,578</td><td>7,094</td></tr>
+        <tr><td class="rowlab">자본총계</td><td>863</td><td>964</td><td>1,350</td><td>2,616</td><td>4,574</td></tr>
+        <tr><td class="rowlab">부채비율</td><td>12.9%</td><td>34.1%</td><td>59.5%</td><td>75.0%</td><td>55.1%</td></tr>
+        <tr><td class="rowlab">자기자본이익률 (평균자본)</td><td>—</td><td>12.2%</td><td>32.9%</td><td>60.9%</td><td>46.9%</td></tr>
+        <tr><td class="rowlab">배당성향</td><td>—</td><td>—</td><td>—</td><td>—</td><td>11.9%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2021.12~2025.12) 요약재무정보 · 한국채택국제회계기준 연결 · 억원</p>
+    <p>2025년에 영업이익률이 19.9%에서 18.4%로 1.5%p 내려간 것은 매출총이익률이 2.6%p 빠졌기 때문이며, 판관비율이 13.8%에서 12.7%로 1.1%p 내려가 그중 절반 가까이를 되받음.</p>
+    <p>자기자본이익률이 2024년 60.9%에서 2025년 46.9%로 낮아지는 동안 순이익은 1,207억원에서 1,686억원으로 늘었고, 자본이 2,616억원에서 4,574억원으로 74.8% 불어나며 분모가 커졌음.</p>
+    <h3>4.2 운전자본과 현금흐름</h3>
+    <p>이익이 현금으로 들어오지 않고 있으며, FY25 당기순이익 1,686억원에 대해 영업활동현금흐름은 11억원에 그침.</p>
+    <p>원인은 전적으로 재고이며, 재고자산이 2024년 말 1,459억원에서 2026년 6월 말 4,510억원으로 3.1배가 되는 동안 그만큼의 현금이 창고에 묶임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>FY23</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">재고자산</td><td>785</td><td>1,459</td><td>3,001</td><td>4,510</td></tr>
+        <tr><td class="rowlab">매출채권</td><td>—</td><td>—</td><td>961</td><td>1,187</td></tr>
+        <tr><td class="rowlab">매입채무</td><td>—</td><td>—</td><td>56</td><td>614</td></tr>
+        <tr><td class="rowlab">재고자산 회전일수 (일)</td><td>—</td><td>—</td><td>106</td><td>133</td></tr>
+        <tr><td class="rowlab">재고자산 평가충당금 비율</td><td>—</td><td>—</td><td>0.62%</td><td>0.32%</td></tr>
+        <tr><td class="rowlab">매출채권 ÷ 매입채무 (배)</td><td>—</td><td>—</td><td>17.2</td><td>1.9</td></tr>
+        <tr><td class="rowlab">영업활동현금흐름</td><td class="no">-185</td><td>601</td><td>11</td><td>135</td></tr>
+        <tr><td class="rowlab">유형자산 취득</td><td>183</td><td>758</td><td>69</td><td>321</td></tr>
+        <tr><td class="rowlab">잉여현금흐름</td><td class="no">-368</td><td class="no">-157</td><td class="no">-58</td><td class="no">-186</td></tr>
+        <tr><td class="rowlab">현금및현금성자산</td><td>172</td><td>860</td><td>773</td><td>823</td></tr>
+        <tr><td class="rowlab">총차입금</td><td>—</td><td>—</td><td>416</td><td>682</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 연결 재무상태표·현금흐름표 · 억원</p>
+    <p>재고자산 회전일수가 106일에서 133일로 27일 늘어난 것은 지정학 위험과 판가 인상을 앞두고 상반기에 상품을 미리 사들인 결과라는 것이 회사 설명이며, 3분기에 그 물량이 소진되는지가 확인 대상임.</p>
+    <p>판정 기준은 회사가 사업보고서에 직접 적어 둔 것이 있어 그것을 씀. 재고 회전율을 60~90일 기준으로 운영한다고 밝혔으므로 133일은 자체 기준 상단의 1.5배임.</p>
+    <p>다만 재고의 질이 나빠진 흔적은 아직 없으며, 재고자산 평가충당금 비율이 2025년 말 0.62%에서 2026년 6월 말 0.32%로 오히려 내려갔고 1H26에는 4억원이 환입됨.</p>
+    <p>매출채권이 매입채무의 1.9배로 여전히 대금을 먼저 주고 나중에 받는 쪽이나, 매입채무가 반년 만에 56억원에서 614억원으로 늘며 배율이 17.2배에서 급격히 좁혀졌고 이것이 협상력 변화인지 결제 시점 변화인지는 3분기에 유지되는지로 갈림.</p>
+    <p>잉여현금은 FY23부터 네 기간 모두 적자이며, FY23~FY25 3년간 순이익 3,273억원을 내는 동안 그 누계는 -583억원임.</p>
+    <p>성장에 들어간 돈을 번 현금 대신 외부 조달로 메워 왔다는 뜻이나, 순현금 상태를 유지하고 있어 유동성 문제는 아니고 조달 방식의 문제임.</p>
+    <p>다만 2026년 6월 말 현금및현금성자산 823억원과 단기기타금융자산 492억원이 총차입금 682억원을 웃돌아 순현금 633억원 상태임.</p>
+    <p>순현금 상태에서 받은 2026년 10월 예정 증자 3,000억원의 목적은 자금 확보보다 유럽 리테일 접점 확보에 있음.</p>
+    <p>상환전환우선주 6,666,666주를 주당 45,000원에 발행해 CVC캐피탈이 전량 인수하며, 발행가는 공시 시점 주가 42,599원보다 5.6% 높고 CVC 측 2인이 10월 1일 임시주주총회에서 기타비상무이사로 선임될 예정임.</p>
+    <p>자금 용처는 유럽에 한정되지 않고 재고 매입과 물류센터 구축, 브라질 법인과 일본 물류 인프라, 그리고 유통·벤더사 인수까지 걸쳐 있음.</p>
+    <p>상환전환우선주로 자본을 받는 것은 2025년 2월에 이어 두 번째이며, 앞선 1,489억원은 2026년 4월 보통주로 전환된 뒤 8월 블록딜로 시장에 풀렸음.</p>
+    <p>상환권 행사 조건과 기한, 전환비율 조정 조항, 우선배당률은 이번 발행의 주요사항보고서에서 확인해야 하며 반기보고서 기준일 이후 공시라 이 보고서가 쓴 자료의 범위 밖임.</p>
+  </div>
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>밸류에이션</h2>
+    <div class="sub-h">5.1 중·단기 트레이딩 가치 · 5.2 장기 보유 가치</div>
+    <h3>5.1 중·단기 트레이딩 가치</h3>
+    <p>뷰티 전문 유통 4사의 12개월 선행 주가수익비율(PER) 평균 9.4배를 4 시나리오에 공통으로 적용함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>비교 대상</th><th>사업 영역</th><th>선행 PER</th><th>EPS 3년 성장률</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">얼타뷰티</td><td>미국 뷰티 전문 리테일</td><td>17.6배</td><td>13.3%</td></tr>
+        <tr><td class="rowlab">샐리뷰티홀딩스</td><td>미국 뷰티 용품 유통</td><td>7.6배</td><td>11.9%</td></tr>
+        <tr><td class="rowlab">더글라스</td><td>유럽 뷰티 전문 리테일</td><td>7.2배</td><td>89.7%</td></tr>
+        <tr><td class="rowlab">예스아시아홀딩스</td><td>아시아 뷰티 역직구</td><td>5.1배</td><td>84.5%</td></tr>
+        <tr><td class="rowlab">peer 4사 평균</td><td>위 4사 산술평균</td><td>9.4배</td><td>49.9%</td></tr>
+        <tr><td class="rowlab">실리콘투</td><td>K-뷰티 수출 도매</td><td>11.4배</td><td>102.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — Bloomberg 컨센서스(KB증권 2026-08-28) · 12개월 선행 PER · EPS 는 3년 연평균</p>
+    <p>비교 대상을 뷰티 전문 유통으로 좁힌 것은 실리콘투의 매출이 화장품 한 품목에서 나오기 때문이며, 취급 품목이 다른 종합 이커머스를 섞으면 품목 구성의 차이가 배수에 그대로 들어옴.</p>
+    <p>peer 평균에서 더 깎거나 얹지 않은 것은 두 방향이 상쇄된다고 봤기 때문이며, 실리콘투의 3년 주당순이익 성장률 102.0%가 peer 평균 49.9%의 두 배인 반면 재고를 자기 계정으로 안고 브랜드 직진출 위험을 지는 것은 할인 요인임.</p>
+    <p>이 중 얼타뷰티와 더글라스, 샐리뷰티는 3.5에서 전방 자체 소싱 주체로 함께 적은 회사들이며, 배수의 비교 대상이자 동시에 벤더 단계를 지울 수 있는 쪽이라는 이중 위치를 감안하고 읽어야 함.</p>
+    <p>적용 PER 은 peer 4사 평균 9.4배를 그대로 쓰며, 실리콘투가 현재 받고 있는 11.4배는 그보다 21% 높음.</p>
+    <p>FY28E 주당순이익(EPS)을 사용하였으며, 대륙별 수출 시장 규모와 실리콘투의 점유율, 영업이익률을 시나리오 변수로 사용함.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>Bear FY28E</th><th>Base FY28E</th><th>Bull FY28E</th><th>Best FY28E</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">유럽향 수출 (억달러)</td><td>42</td><td>42</td><td>48</td><td>54</td><td>2025년 17.1 · 이후 연 22/30/38%</td></tr>
+        <tr><td class="rowlab">실리콘투 유럽 점유율</td><td>13.0%</td><td>16.0%</td><td>17.5%</td><td>19.0%</td><td>2025년 16.1% · 1H26 16.5%</td></tr>
+        <tr><td class="rowlab">미국향 수출 (억달러)</td><td>32</td><td>32</td><td>36</td><td>40</td><td>2025년 17.5 · 이후 연 15/22/28%</td></tr>
+        <tr><td class="rowlab">실리콘투 북미 점유율</td><td>8.0%</td><td>9.5%</td><td>11.0%</td><td>12.5%</td><td>2025년 9.5%</td></tr>
+        <tr><td class="rowlab">기타 지역 매출 (억원)</td><td>8,500</td><td>8,500</td><td>10,000</td><td>11,500</td><td>2025년 4,971</td></tr>
+        <tr><td class="rowlab">매출액 (억원)</td><td>19,728</td><td>22,164</td><td>27,304</td><td>32,864</td><td>부문 합산</td></tr>
+        <tr><td class="rowlab">영업이익률</td><td>15.0%</td><td>18.0%</td><td>19.5%</td><td>21.0%</td><td>2025년 18.4% · 1H26 19.7%</td></tr>
+        <tr><td class="rowlab">영업이익 (억원)</td><td>2,959</td><td>3,990</td><td>5,324</td><td>6,901</td><td>매출×영업이익률</td></tr>
+        <tr><td class="rowlab">지배주주순이익 (억원)</td><td>2,448</td><td>3,247</td><td>4,281</td><td>5,504</td><td>영업외손익 +200억 · 세율 22.5%</td></tr>
+        <tr><td class="rowlab">주당순이익 (원)</td><td>3,389</td><td>4,494</td><td>5,926</td><td>7,618</td><td>희석 주식수 72,242,918주</td></tr>
+        <tr><td class="rowlab">예상 ROE (기말자본)</td><td>15.5%</td><td>19.5%</td><td>24.2%</td><td>29.1%</td><td>기말자본 기준</td></tr>
+        <tr><td class="rowlab">적용 PER (배)</td><td>9.4</td><td>9.4</td><td>9.4</td><td>9.4</td><td>4 시나리오 동일</td></tr>
+        <tr><td class="rowlab">목표주가 (원)</td><td>31,857</td><td>42,244</td><td>55,704</td><td>71,609</td><td>EPS × PER</td></tr>
+        <tr><td class="rowlab">현재가 대비</td><td class="no">-35.2%</td><td class="no">-14.1%</td><td class="hl">+13.3%</td><td class="hl">+45.7%</td><td>2026-08-27 종가 49,150원</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 키팩터는 config.yaml · 산출은 별첨 엑셀 라이브모델 시트에서 자동 계산</p>
+    <p>Base 지배주주순이익 3,247억원은 NH투자증권의 2028년 추정 3,280억원과 사실상 같으므로, Base는 독자적 전망이 아닌 컨센서스를 옮겨 놓은 값임.</p>
+    <div class="sub-h">Bear 경쟁 벤더가 들어와 점유율이 밀리는 경우</div>
+    <p>수출 시장 규모는 Base와 같게 두고 점유율과 영업이익률만 내렸으며, 유럽 13.0%는 2024년 9.1%에서 1년 만에 7.0%p 오른 것의 절반이 반납되는 수준임.</p>
+    <p>영업이익률 15.0%는 매출총이익률이 컨센서스 하단 30.0%를 밑도는 29.0%로 내려가고 판관비율이 FY24 수준인 14.0%로 되돌아가는 조합이며, NH투자증권이 하방 위험으로 든 가격경쟁 심화와 운반비 상승이 함께 실현되는 경우임.</p>
+    <div class="sub-h">Base 수출 성장률이 한 단계 낮아지고 점유율은 지키는 경우</div>
+    <p>유럽 수출이 2026년 65% 급증한 뒤 2027~2028년에 20%대로 내려앉는다고 본 것은 허브 국가에 쌓인 초도 물량을 한 번은 소화하는 기간이 온다고 보기 때문임.</p>
+    <p>이 시나리오는 서유럽 본류 비중이 2Q26 수준에서 더 내려가지 않는다는 전제 위에 서 있으며, 폴란드 수출 감소가 3분기까지 이어지면 점유율 유지 가정부터 무너짐.</p>
+    <div class="sub-h">Bull 유럽 대형 리테일러와의 직거래가 성사되는 경우</div>
+    <p>CVC캐피탈이 최대주주로 있는 더글라스는 유럽 전역에 2,000여 개 매장을 두고 연매출 6조원을 내는 뷰티 전문 유통사이며, 여기에 직접 납품이 열리면 점유율 17.5%는 무리한 가정이 아님.</p>
+    <p>신규 리테일러 협업이 바로 매출로 이어지지 않으므로, 더글라스 거래가 2027년 안에 매출로 잡히지 않거나 북미 발주가 기존 온라인 중심에 머물러 Ulta·Target 오프라인 물량이 붙지 않으면 점유율 상승분이 나오지 않아 Base 로 내려앉음.</p>
+    <div class="sub-h">Best 유럽 침투율이 4%를 넘는 경우</div>
+    <p>유럽 수출 54억달러는 시장 규모가 1,240억달러에서 늘지 않는다고 봐도 침투율 4.35%에 해당하며, 2025년 1.38%의 3.2배이나 절대 수준은 여전히 5% 아래임.</p>
+    <p>영업이익률 21.0%는 리셀러 물량이 줄고 물류 자동화 투자가 회수 단계에 들어간다는 전제인데, 운반비율이 1H26 3.0%에서 더 오르거나 재고 회전이 133일에서 개선되지 않으면 마진 개선분이 상쇄됨.</p>
+    <h3>5.2 장기 보유 가치</h3>
+    <p>현재가 49,150원은 2026년 6월 말 자본 6,889억원 대비 주가순자산비율(PBR) 4.68배이며, 이 배수를 정당화하려면 자기자본이익률(ROE)이 오래 유지돼야 함.</p>
+    <p>주당순자산은 10,505원임. 아래 계산은 요구수익률 연 10.0%와 적용 ROE 21.9%를 4 시나리오에 공통으로 두고 보유 기간만 3·5·10·15년으로 달리한 것임. ROE는 추정 마지막 시점인 FY28F의 평균자본 기준값을 그대로 썼음. 사업이 얼마나 잘되느냐는 이 값에 묶여 있으므로, 이 표가 묻는 것은 같은 사업을 얼마나 오래 들고 있어야 하느냐임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>시장이 매긴 값</th><th>값</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">현재가 (원)</td><td>49,150</td></tr>
+        <tr><td class="rowlab">주당순자산 BPS (원)</td><td>10,505</td></tr>
+        <tr><td class="rowlab">주가순자산비율 PBR (배)</td><td>4.68</td></tr>
+        <tr><td class="rowlab">요구수익률 r</td><td>10.0%</td></tr>
+        <tr><td class="rowlab">적용 ROE (평균자본)</td><td>21.9%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 자본은 반기보고서(2026.06) 지배기업 소유주 귀속 · ROE 는 FY28F 컨센서스 도출치</p>
+    <p>ROE가 60.9%에서 최근 4개 분기 37.4%로 내려오는 동안 순이익은 오히려 늘었고, 하락은 분모에서 나왔음. FY25 자본 증가 1,958억원의 대부분이 순이익 1,686억원의 유보였고, 2026년 4월 상환전환주 1,489억원이 부채에서 자본으로 옮겨오며 한 번 더 얹혔음.</p>
+    <p>컨센서스도 같은 방향임. KB·NH·신영·유안타·하나 5사 평균 ROE는 2026년 43.0%에서 2028년 31.6%로 2년간 11.4%p 더 내려가는 것으로 잡혀 있음. 위 표는 순이익만 3사 추정 평균에서 받고 자본은 유보율 88.1%로 굴려 10월 증자 3,000억원까지 분모에 넣었음. 그렇게 나온 FY28F 21.9%가 5사 평균보다 낮음.</p>
+    <p>같은 기간 투하자본이익률은 NH투자증권(2026-08-24) 추정으로 39.1~39.9%에서 움직이지 않음. 이 대비에서 ROE 하락의 성격이 갈림.</p>
+    <p>사업이 자본 한 단위로 벌어들이는 몫은 그대로인데 자기자본만 빠르게 늘고 있다는 뜻이므로, 하락의 원인은 수익성 훼손이 아닌 자본 과잉임.</p>
+    <p>10월 증자 3,000억원이 들어오면 분모가 한 번 더 커지고, 배당성향이 11.9%에 그쳐 번 돈의 88%가 자본에 쌓이므로 ROE는 계속 눌림.</p>
+    <p>다만 4.2에서 본 대로 번 돈이 아직 현금으로 남지 않아 지금 돌려줄 여유 자금이 쌓인 상태는 아니며, 증자 대금도 재고와 물류, 인수에 배정돼 있음. 환원으로 ROE를 되돌리는 것은 순현금이 실제로 불어난 뒤에야 가능하므로, 아래 계산의 결과는 사업의 한계인 동시에 6.3에서 다루는 환원 시점의 문제임.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>Bear</th><th>Base</th><th>Bull</th><th>Best</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">보유 기간 N (년)</td><td>3</td><td>5</td><td>10</td><td>15</td><td>적용 ROE 는 4 시나리오 동일</td></tr>
+        <tr><td class="rowlab">기대수익률 (연)</td><td class="no">-27.1%</td><td class="no">-10.5%</td><td class="hl">+4.5%</td><td class="hl">+10.0%</td><td>(1+ROE) ÷ PBR^(1/N) − 1</td></tr>
+        <tr><td class="rowlab">요구수익률 충족 기간 (년)</td><td>15.01</td><td>15.01</td><td>15.01</td><td>15.01</td><td>ln(PBR) ÷ ln((1+ROE)÷(1+r))</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — ROE 21.9% 가 그 기간 내내 유지된다는 가정 · 2026-08-27 종가 49,150원 기준</p>
+    <p>PBR 4.68배를 ROE 21.9%로 회수하는 데 15.01년이 걸리므로 요구수익률 연 10.0%가 나오는 것은 15년을 드는 Best뿐임. 3년이면 연 -27.1%, 5년이면 -10.5%, 10년이면 +4.5%에 그침. 충족 기간에는 보유 기간이 들어가지 않음. 지금 가격과 적용 ROE, 요구수익률 셋이 정해지면 하나로 결정되므로 네 열에 같은 값이 찍힘. 보유 기간은 그 값에 대어 읽는 것임.</p>
+    <p>지금 값에서 연 10%를 얻으려면 보유 기간별로 필요한 ROE가 정해짐. 10년을 든다면 28.4%를, 20년을 든다면 18.8%를 그 기간 내내 유지해야 함. 15년에 필요한 21.9%가 표의 적용 ROE와 같은 값이어서 Best 열의 기대수익률이 요구수익률과 겹침.</p>
+    <p>표는 ROE 21.9%가 보유 기간 내내 유지된다고 가정함. 분모가 다른 기관 추정 31.6%에서 출발해 매년 2.0%p씩 낮아져 10년째 13.6%가 된다고 잡아도 기하평균은 22.5%로 표의 값과 0.6%p 차이에 그침. 이때도 10년 보유 기대수익률은 연 5.0%, 충족 기간은 14.4년이어서 결론은 바뀌지 않음.</p>
+    <p>두 표는 열 이름이 같아도 그 이름의 뜻이 다름 — 5.1의 Bear~Best는 사업 시나리오이고 위 표의 Bear~Best는 보유 기간 3·5·10·15년임. 그럼에도 하방에서는 두 방식이 같은 곳을 가리킴. EPS×PER 방식이 Bear -35.2%·Base -14.1%로 현재가를 밑도는 것과 마찬가지로 ROE×PBR 방식도 3년·5년 보유에서 연 -27.1%·-10.5%로 원금을 밑돎.</p>
+    <p>재투자를 인정하는 길이가 달라 상방에서 두 값이 벌어짐. EPS×PER 방식은 FY28E 한 시점의 이익에 9.4배를 붙이고 끝내지만 ROE×PBR 방식은 그 뒤로 쌓이는 자본까지 지금 지불한 4.68배로 회수해야 함. 그 회수에 15.0년이 걸림.</p>
+    <p>정리하면 현재가는 Base 가정을 이미 넘어서 있고, 이를 정당화하려면 유럽 대형 리테일러 직거래와 북미 오프라인 확대가 매출로 확인되거나 쌓이는 자본이 환원으로 돌아 ROE 하락을 멈춰 세워야 함.</p>
+  </div>
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>지배구조 및 주주환원</h2>
+    <div class="sub-h">6.1 주주 구성 · 6.2 이사회 구성 · 6.3 주주환원</div>
+    <h3>6.1 주주 구성</h3>
+    <p>창업자 김성운 대표가 28.81%를 직접 보유하고 배우자와 임원을 포함해 본인 포함 15인 합산이 43.40%여서 경영권은 안정적임.</p>
+    <p>2026년 8월 27일 재무적 투자자 유한회사 실크투자목적회사가 보유하던 6.72%가 블록딜로 전량 처분되면서, 2025년 2월 상환전환주 발행 이후 주가를 눌러 온 오버행 물량이 정리됨.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>구분</th><th>내용</th><th>지분율</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">최대주주 및 특수관계인</td><td>김성운 외 14인 · 28,456,839주</td><td>43.40%</td></tr>
+        <tr><td class="rowlab">유한회사 실크투자목적회사</td><td>2026-08-27 블록딜로 전량 처분 (기존 6.72%)</td><td>0%</td></tr>
+        <tr><td class="rowlab">자기주식</td><td>2026년 2월 신탁 취득 123,200주 · 미소각</td><td>0.19%</td></tr>
+        <tr><td class="rowlab">유동주식비율</td><td>100% − (최대주주 및 특수관계인 + 자기주식)</td><td>56.41%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 반기보고서(2026.06) 주식 소유현황 · 블록딜 반영 · 발행주식 65,576,252주</p>
+    <p>유동주식비율 56.41%는 코스닥 중형주로서 낮지 않은 수준이나, 2026년 10월 예정된 CVC캐피탈 대상 제3자배정 신주 6,666,666주가 발행되면 최대주주 측 지분율은 39.39%로 4.01%p 희석됨.</p>
+    <h3>6.2 이사회 구성</h3>
+    <p>이사회는 2026년 6월 30일 기준 사내이사 3인과 독립이사 3인의 6인 체제이며, 2026년 3월 정기주주총회에서 공인회계사인 류재영 독립이사가 선임되고 기타비상무이사 2인이 4월에 사임하면서 구성이 바뀜.</p>
+    <p>감사위원회도 같은 시기에 독립이사 3인 전원으로 재편돼 사내이사가 감사기구에서 빠졌고, ESG위원회와 내부거래위원회가 신설됨.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>성명</th><th>구분</th><th>재직</th><th>주요 경력</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">김성운</td><td>사내이사</td><td>24년 5개월</td><td>창업자 · 대표이사 겸 이사회 의장 · 기륭전자</td></tr>
+        <tr><td class="rowlab">손인호</td><td>사내이사</td><td>9년 11개월</td><td>최고재무책임자 · 스톤브릿지캐피탈 CFO · 미국공인회계사</td></tr>
+        <tr><td class="rowlab">최진호</td><td>사내이사</td><td>14년 4개월</td><td>영업총괄 · 동운인터내셔널</td></tr>
+        <tr><td class="rowlab">이세훈</td><td>독립이사</td><td>4년 3개월</td><td>감사위원장 · 에이블씨앤씨 대표이사 · LG생활건강 해외사업 총괄</td></tr>
+        <tr><td class="rowlab">이택순</td><td>독립이사</td><td>4년 3개월</td><td>감사위원 · 경찰청장 · 대한건설협회 고문</td></tr>
+        <tr><td class="rowlab">류재영</td><td>독립이사</td><td>4개월</td><td>감사위원 · 김·장 법률사무소 공인회계사</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 반기보고서(2026.06) 임원 현황 · 재직 기간은 2026-06-30 기준</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>판정 기준</th><th>현황</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">사외이사 비율</td><td>50% 미만인 경우</td><td>50.0% (6인 중 3인)</td><td>통과</td></tr>
+        <tr><td class="rowlab">사외이사 이력</td><td>전관 등 쭉정이가 사외이사의 절반을 넘는 경우 (정확히 절반이면 부분 경고)</td><td>3인 중 1인 직위형</td><td>통과</td></tr>
+        <tr><td class="rowlab">평균 재임기간</td><td>1회 임기 3년 대비 평균 재임기간이 하회하는 경우 (신규 선임 1인 제외 후 3년 이상이면 통과)</td><td>2년 11개월 · 신규 1인 제외 4년 3개월</td><td>통과</td></tr>
+        <tr><td class="rowlab">감사 독립성</td><td>감사기구에 회계·재무·감사 실무 경력자가 없는 경우</td><td>공인회계사 1인</td><td>통과</td></tr>
+        <tr><td class="rowlab">합계</td><td></td><td></td><td>통과</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 5단계 체크리스트 · 반기보고서(2026.06) 기준일 2026-06-30 · 부분 경고 0</p>
+    <p>2025년 기준 대비 사외이사 비율은 경고에서 통과로, 사외이사 이력은 부분 경고에서 통과로 바뀜. 네 항목 모두 통과임. 평균 재임기간 2년 11개월은 1회 임기 3년을 밑도나, 재임 4개월인 류재영 이사 1인을 빼면 나머지 2인의 평균이 4년 3개월임. 중도퇴임도 없어 신규 선임 희석 예외가 적용됨. 사외이사를 한 명 늘려 판정이 나빠지는 것을 막는 예외이며 3년을 채웠다는 뜻은 아님.</p>
+    <p>이택순 독립이사의 경력이 경찰청장과 협회 고문으로 화장품 유통업의 의사결정을 감독할 실무 경험과 직접 이어지지 않으나, 직위형 1인은 3인 중 절반을 넘지 않아 판정은 통과임.</p>
+    <p>경영진이 무엇으로 보상받는지는 보수의 구성에서 드러나며, 실리콘투는 현금 대신 주가로 보상해 왔음.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>항목</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">등기이사 인원 (명)</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td class="rowlab">보수 총액</td><td>240.1</td><td>127.4</td><td>9.9</td></tr>
+        <tr><td class="rowlab">▸ 급여·상여</td><td>24.4</td><td>34.5</td><td>9.9</td></tr>
+        <tr><td class="rowlab">▸ 주식매수선택권 행사이익</td><td>215.7</td><td>93.0</td><td>0</td></tr>
+        <tr><td class="rowlab">행사이익 비중</td><td>89.8%</td><td>73.0%</td><td>0%</td></tr>
+        <tr><td class="rowlab">총 주주 수익률 (TSR)</td><td class="hl">+317.6%</td><td class="hl">+15.6%</td><td class="no">-21.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서·반기보고서 이사 보수·성과 연동 표 · 등기이사 · 억원 · TSR 공시값</p>
+    <p>FY24 보수 240억원 중 215억원이 주식매수선택권 행사이익이며, 주가가 317.6% 오른 해에 보상이 집중됐다는 점에서 경영진 이익과 주주 수익률의 방향이 같음.</p>
+    <p>다만 그 해 보수 총액 240억원은 영업이익 1,376억원의 17.4%에 해당하며, 행사이익을 뺀 현금성 보수는 24.4억원으로 1.8%임. FY25는 각각 127.4억원(6.2%)과 34.5억원(1.7%)임.</p>
+    <p>FY25 행사이익 93.0억원은 2019년 부여분을 2025년 1월에 사내이사 1인이 행사한 것이라 그해 성과와 직접 연결되지는 않음.</p>
+    <p>2026년 6월 말 기준 등기이사의 미행사 주식매수선택권은 없으나, 직원 4인에게 부여된 150,000주가 남아 있음. 행사가 45,261원, 행사기간 2027년 9월부터이며 발행주식수의 0.23%임.</p>
+    <p>창업자 김성운 대표가 지분 28.81%를 직접 들고 있어 보수와 별개로 주가에 걸린 몫이 가장 큼.</p>
+    <h3>6.3 주주환원</h3>
+    <p>환원 정책은 이제 막 시작한 단계이며, 상장 이후 5년 중 배당을 한 해는 2025년 한 번뿐임.</p>
+    <p>2025년 결산 배당은 주당 306원 총 200억원으로 배당성향 11.9%, 시가배당률 0.8% 수준이고, 회사는 목표 배당성향이나 밴드를 공표하지 않음.</p>
+    <p>자기주식은 2025년에 기취득분 201,446주를 이익소각해 발행주식수를 줄인 이력이 있으나, 2026년 2월 신탁으로 사들인 123,200주는 소각 결정 없이 보유 중이어서 아직 환원으로 확정되지 않음.</p>
+    <p>배당보다 재고와 해외 물류 거점에 자금을 쓰는 선택은 지금의 성장 속도에서는 합리적이나, 5년 누적 배당이 같은 기간 순이익의 5.8%에 그친다는 사실은 그대로 남음.</p>
+    <p>CVC캐피탈 증자 대금 3,000억원이 재고와 물류, 해외 법인, 벤더사 인수로 나가는 만큼 환원 확대는 그 투자가 매출로 확인된 뒤에 논의될 사안임.</p>
+    <p>다만 5.2에서 본 것처럼 투하자본이익률이 39.1~39.9%를 유지하는데 ROE만 내려가므로, 장기 보유 가치를 끌어내리는 것은 사업의 수익성이 아닌 자본이 쌓이는 속도임.</p>
+    <p>순차입금이 2025년 -780억원에서 2028년 -5,280억원까지 순현금으로 불어난다는 것이 NH투자증권 추정이나 신영증권 -5,735억원, 유안타증권 -1,502억원, KB증권 +1,630억원으로 편차가 커, 환원 여력이 언제 생기는지부터 기관마다 갈림.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>현황</th><th>시사점</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">배당성향</td><td>5년 중 1회 · 2025년 11.9%</td><td>목표 밴드 미공표</td></tr>
+        <tr><td class="rowlab">배당총액</td><td>5년 누적 200억 · 순이익 대비 5.8%</td><td>이익 대비 환원 비중 낮음</td></tr>
+        <tr><td class="rowlab">자기주식 소각</td><td>2025년 201,446주 이익소각</td><td>발행주식수 감소 효과 확정</td></tr>
+        <tr><td class="rowlab">자기주식 보유</td><td>2026년 2월 취득 123,200주 · 미소각</td><td>처분 시 유통 물량 재공급</td></tr>
+        <tr><td class="rowlab">순현금</td><td>6월 말 633억원 · 증자 3,000억 예정</td><td>재고·물류 투자 우선</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 사업보고서(2025.12)·반기보고서(2026.06) 배당에 관한 사항·자기주식</p>
+    <div class="sub-h">확인해야 할 지표</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>지표</th><th>현재값</th><th>판단 기준 (임계값)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">중화권 제외 수출 증가율</td><td>7월 +43.0%</td><td>3개월 연속 +10% 미만</td></tr>
+        <tr><td class="rowlab">유럽 점유율</td><td>16.5% (1H26)</td><td>반기 기준 14.0% 미만</td></tr>
+        <tr><td class="rowlab">서유럽 본류 비중</td><td>20.5% (2Q26)</td><td>2개 분기 연속 20.0% 미만</td></tr>
+        <tr><td class="rowlab">매출총이익률</td><td>30.5% (4개 분기 이동평균)</td><td>4개 분기 이동평균 29.0% 미만</td></tr>
+        <tr><td class="rowlab">재고자산 회전일수</td><td>133일 (1H26)</td><td>회사 기준 90일 대비 초과폭 확대 또는 평가충당금 1.0% 초과</td></tr>
+        <tr><td class="rowlab">취급 브랜드 순위</td><td>코스알엑스 6위 (2Q26)</td><td>상위 5개 중 2개 이상이 2개 분기 연속 10위 밖</td></tr>
+        <tr><td class="rowlab">자본 조달·배분</td><td>순현금 633억</td><td>상환전환우선주·전환사채 추가 발행 또는 본업과 무관한 금융자산 취득</td></tr>
+        <tr><td class="rowlab">더글라스 매출 인식</td><td>0원 (협업 준비)</td><td>2027년 내 인식 없으면 Bull 전제 소멸</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">출처 — 관세청·TRASS · 분기 재무제표 · 공시 · 회전일수 기준은 회사 공표 60~90일</p>
+    <p>매출총이익률만 이동평균으로 둔 것은 4분기가 행사 시즌 할인으로 늘 눌리기 때문이며, 분기값으로 보면 정상 변동이 매번 기준에 걸림.</p>
+  </div>
+</article>
+
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSDAQ 257720</div>
+    <h1>SILICON2 (257720) Equity Analysis</h1>
+    <p class="lede">FY25 revenue 1,116.3bn KRW (+61.4%) · OPM 18.4% · Europe 42.5% of 1H26 revenue · 16.5% European share · 49,150 KRW · market cap 3,223.1bn KRW (2026-08-27)</p>
+    <div class="meta">
+      <span>Original 2026-09-01 (v5)</span>
+      <span>Reference price 49,150 KRW (Aug 27, 2026 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Share price</div>
+      <div class="value">49,150<span class="unit">KRW</span></div>
+      <div class="sub">52-week 29,850 ~ 56,100 KRW</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Market cap</div>
+      <div class="value">3,223.1<span class="unit">bn KRW</span></div>
+      <div class="sub">65,576,252 shares outstanding</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Forward PER</div>
+      <div class="value">11.4<span class="unit">x</span></div>
+      <div class="sub">Beauty-distribution peer average 9.4x</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Base TP (FY28E)</div>
+      <div class="value">42,244<span class="unit">KRW</span></div>
+      <div class="sub">-14.1% vs. current · Best 71,609 KRW +45.7%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">Thesis</span><span class="tldr-v">A distributor that owns no brands and whose results track the total volume of K-beauty exports. One in six Korean cosmetics items shipped to Europe goes out through this company, and its share there rose 7.0pp in a single year, from 9.1% in 2024 to 16.1% in 2025. The moat lies in accumulated registrations across 175 countries and in logistics assets — not in brand relationships or price.</span></div>
+    <div class="tldr-row"><span class="tldr-k">Valuation</span><span class="tldr-v">The 9.4x average of four specialist beauty distributors is applied across all four scenarios, giving target prices of 31,857-71,609 KRW. The current price sits 14.1% above the Base case of 42,244 KRW. On a long-term view, recovering a PBR of 4.68x at an ROE of 21.9% takes 15.0 years, so only a 15-year hold delivers the required 10% a year.</span></div>
+    <div class="tldr-row"><span class="tldr-k">Risks</span><span class="tldr-v">Whether the European increase is end demand or initial stocking into hub countries is unverified — Western Europe's share of the mainstream fell 6.9pp, from 27.4% in 1Q26 to 20.5% in 2Q26. Inventory days of 133 are 1.5 times the top of the company's own range, and against FY25 net profit of 168.6bn KRW, operating cash flow was only 1.1bn KRW.</span></div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>Company Overview</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Detail</th><th>Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Name / Code</td><td>SILICON2 / 257720 (KOSDAQ)</td><td>Market cap</td><td>3,223.1bn KRW (2026-08-27)</td></tr>
+        <tr><td class="rowlab">Founded</td><td>January 19, 2002</td><td>Listed</td><td>September 2021 (KOSDAQ)</td></tr>
+        <tr><td class="rowlab">CEO</td><td>Kim Sung-woon (founder, board chair)</td><td>Fiscal year-end</td><td>December</td></tr>
+        <tr><td class="rowlab">Head office</td><td>231 Pangyoyeok-ro, Bundang-gu, Seongnam</td><td>Employees</td><td>367 (2026-06-30, parent)</td></tr>
+        <tr><td class="rowlab">Shares outstanding</td><td>65,576,252 (treasury 123,200)</td><td>Share price</td><td>49,150 KRW (2026-08-27)</td></tr>
+        <tr><td class="rowlab">FY25 revenue</td><td>1,116.3bn KRW (+61.4% YoY)</td><td>FY25 operating profit</td><td>205.4bn KRW (OPM 18.4%)</td></tr>
+        <tr><td class="rowlab">1H26 revenue</td><td>749.2bn KRW (+46.6% YoY)</td><td>1H26 operating profit</td><td>147.5bn KRW (OPM 19.7%)</td></tr>
+        <tr><td class="rowlab">Segments</td><td>CA 93.4%, PA 3.9%, fulfillment 2.8%</td><td>Consolidation</td><td>16 subsidiaries (2026-06-30)</td></tr>
+        <tr><td class="rowlab">Logistics hubs</td><td>Gwangju, US, Poland, Dubai, Mexico</td><td>SKUs handled</td><td>22,000 (2025)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025) · Semi-annual report (Jun 2026) · Close of 2026-08-27</p>
+    <p>SILICON2 began in 2002 as a semiconductor distributor, exited that business in 2012 and shifted its focus to K-beauty distribution; it makes no cosmetics of its own but buys brand-owners' products and resells them into 175 countries as an export wholesaler.</p>
+    <p>Of FY25 consolidated revenue of 1,116.3bn KRW, exports accounted for 1,081.1bn KRW, or 96.9%; Europe overtook North America — the largest market through 2023 — in 2025, and Europe's share reached 42.5% in 1H26.</p>
+    <p>In August 2026 the company raised 300.0bn KRW through a third-party allotment from the global private equity firm CVC Capital, and on the 27th of the same month an existing financial investor's 6.72% stake was sold in full via block deal, clearing the overhang.</p>
+  </div>
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>Industry Analysis</h2>
+    <div class="sub-h">2.1 What a cosmetics distributor does · 2.2 Export growth by country · 2.3 The European market and SILICON2's share · 2.4 What still needs verifying in Europe</div>
+    <h3>2.1 What a cosmetics distributor does</h3>
+    <p>Most K-beauty brands cannot put their own products on overseas shelves, because a single indie brand cannot carry the fixed cost of country-by-country registrations, customs documentation, local warehousing and sales staff.</p>
+    <p>SILICON2 is what spreads and outsources that fixed cost, and it takes its margin there — an FY25 gross margin of 31.1%.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1.png" alt=" From K-beauty brand to the overseas shelf: the stretch SILICON2 covers" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;Figure 1&gt; From K-beauty brand to the overseas shelf: the stretch SILICON2 covers</p>
+    <p>SILICON2 is not an agent earning a brokerage fee but a principal that buys the goods first and carries them as its own inventory, and that inventory had built up to 451.0bn KRW by the end of June 2026.</p>
+    <p>Because inventory is split across three places — domestic warehouses, goods in ocean transit, and overseas hub warehouses — a demand spike in any one country can be shipped immediately from the nearest warehouse.</p>
+    <p>Conversely, if the goods do not sell, the inventory risk stays with SILICON2 rather than the brand, so this is also the company where losses land first when demand turns.</p>
+    <h3>2.2 Export growth by country</h3>
+    <p>Korean cosmetics exports stalled at USD 9.42bn in 2025, then reaccelerated into 2026; the substance of it is an exit from Greater China alongside expansion in the US and Europe.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Region</th><th>2025 exports</th><th>2025 growth</th><th>2026 Jan-Jul</th><th>July 2026</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Total</td><td>9.42</td><td class="hl">+10%</td><td class="hl">+27.6%</td><td class="hl">+36.0%</td></tr>
+        <tr><td class="rowlab">United States</td><td>1.75</td><td class="hl">+13%</td><td class="hl">+38.7%</td><td class="hl">+42.6%</td></tr>
+        <tr><td class="rowlab">Europe</td><td>1.71</td><td class="hl">+44%</td><td class="hl">+65.6%</td><td class="hl">+74.6%</td></tr>
+        <tr><td class="rowlab">China</td><td>—</td><td>—</td><td class="no">-2.4%</td><td class="hl">+18.9%</td></tr>
+        <tr><td class="rowlab">Ex-Greater China</td><td>—</td><td class="hl">+21%</td><td class="hl">+37.1%</td><td class="hl">+43.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — 2025 Trass (Kyobo Securities) · 2026 Korea Customs Service·TRASS (BNK Investment Securities) · exports in USD bn · YoY</p>
+    <p>Two things are worth reading here: only China is contracting, so the ex-Greater China growth rate keeps running ahead of the total; and Europe's growth rate is 1.7 times that of the US.</p>
+    <p>In July 2026 US exports alone, at USD 239m, exceeded all of Greater China at USD 198m for the first time, and the share outside Greater China rose from 72% in January to 82% in July.</p>
+    <p>Because SILICON2 owns no brands, its results track this export total rather than the rise and fall of any single brand, and that is why its earnings are less volatile than a brand owner's.</p>
+    <h3>2.3 The European market and SILICON2's share</h3>
+    <p>Korean cosmetics exports to Europe reached USD 1.71bn in 2025, up 44% year on year and close to the USD 1.75bn shipped to the US; the January-July 2026 cumulative figure of USD 1.61bn has already matched the prior full year.</p>
+    <p>Europe's cosmetics market is itself USD 124bn, second only to North America's USD 140bn, and K-beauty penetration stands at 1.38% in Europe and 1.25% in the US — both still early.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Europe</th><th>North America</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Regional cosmetics market (USD bn)</td><td>124.0</td><td>140.0</td><td>Euromonitor annual retail market</td></tr>
+        <tr><td class="rowlab">2025 Korean cosmetics exports (USD bn)</td><td>1.71</td><td>1.75</td><td>Europe is continental; North America is US-bound</td></tr>
+        <tr><td class="rowlab">Export growth (2025)</td><td class="hl">+44%</td><td class="hl">+13%</td><td>YoY</td></tr>
+        <tr><td class="rowlab">K-beauty penetration</td><td>1.38%</td><td>1.25%</td><td>Exports ÷ regional market</td></tr>
+        <tr><td class="rowlab">Exports in KRW (bn)</td><td>2,394</td><td>2,450</td><td>At 1,400 KRW/USD</td></tr>
+        <tr><td class="rowlab">SILICON2 revenue (KRW bn)</td><td>386.1</td><td>233.1</td><td>FY25 segment revenue</td></tr>
+        <tr><td class="rowlab">SILICON2 share of Korean exports</td><td>16.1%</td><td>9.5%</td><td>Revenue ÷ exports in KRW</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Trass·Euromonitor (Kyobo Securities 2026-08-18) · SILICON2 revenue from the annual report (Dec 2025) regional breakdown</p>
+    <p>In Europe one in six Korean cosmetics items goes out through SILICON2, against only one in ten in North America.</p>
+    <h3>2.4 What still needs verifying in Europe</h3>
+    <p>Most of the increase in European exports may be initial stocking into hub countries rather than final consumption: in 2Q26 exports to the four hub countries rose 124% while the four Western European countries grew only 40%.</p>
+    <p>Western Europe's share of the mainstream falling 6.9pp, from 27.4% in 1Q26 to 20.5% in 2Q26, means the volume piling up at redistribution points has not yet been confirmed as end demand.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Period</th><th>Europe total</th><th>Western Europe 4</th><th>Hub 4</th><th>Western Europe share</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">1Q26</td><td class="hl">+76%</td><td class="hl">+41%</td><td class="hl">+95%</td><td>27.4%</td></tr>
+        <tr><td class="rowlab">2Q26</td><td class="hl">+99%</td><td class="hl">+40%</td><td class="hl">+124%</td><td>20.5%</td></tr>
+        <tr><td class="rowlab">Change</td><td>Accelerating</td><td>Flat</td><td>Accelerating</td><td>-6.9%p</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Korea Customs Service·TRASS (BNK Investment Securities 2026-08-21) · Hub 4 = Poland, UK, Netherlands, Belgium</p>
+    <p>SILICON2's European logistics base is in Wroclaw, Poland, so its European revenue is captured in the hub-country statistics, and it carries the same verification problem given the long gap between customs clearance and consumption.</p>
+    <p>Whether the 10.5% fall in Polish exports and 14.2% fall in French exports in early August 2026 was a temporary adjustment or a sign of slower inventory absorption will be settled by third-quarter results.</p>
+  </div>
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>Business Model</h2>
+    <div class="sub-h">3.1 Revenue mix · 3.2 Revenue by region · 3.3 Customer concentration · 3.4 Profit structure · 3.5 Competitive landscape · 3.6 Economic moat</div>
+    <h3>3.1 Revenue mix</h3>
+    <p>94.3% of 1H26 revenue came from CA (Corporate Account), the wholesale business serving corporate customers; PA (Personal Account), the cross-border retail channel, and fulfillment, the sales-and-delivery agency business, together account for only 5.7%.</p>
+    <p>Fulfillment shrank from 15.5% of revenue in 2023 to 1.6% in 1H26 because buying goods outright and reselling them scaled better than earning agency fees.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Revenue type</th><th>2023</th><th>2024</th><th>2025</th><th>1H26</th><th>FY25 share</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">CA (corporate wholesale)</td><td>272.0</td><td>607.4</td><td>1,042.5</td><td>706.7</td><td>93.4%</td></tr>
+        <tr><td class="rowlab">PA (personal cross-border)</td><td>17.5</td><td>26.4</td><td>43.0</td><td>30.4</td><td>3.9%</td></tr>
+        <tr><td class="rowlab">Fulfillment (operations·delivery)</td><td>53.2</td><td>56.5</td><td>30.8</td><td>12.0</td><td>2.8%</td></tr>
+        <tr><td class="rowlab">Other (advertising etc.)</td><td>0.1</td><td>1.2</td><td>0.0</td><td>0.1</td><td>0.0%</td></tr>
+        <tr><td class="rowlab">Total</td><td>342.9</td><td>691.5</td><td>1,116.3</td><td>749.2</td><td>100.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) revenue detail · consolidated · KRW bn</p>
+    <h3>3.2 Revenue by region</h3>
+    <p>European revenue grew 154.0%, from 152.0bn KRW in 2024 to 386.1bn KRW in 2025, making it the largest market, while North America rose only 5.2% over the same period, from 221.5bn KRW to 233.1bn KRW.</p>
+    <p>The North American plateau was the combined effect of shipment timing distorted ahead of 2025 US tariffs and slowing growth in Amazon-centred online channels; it turned back to 60.9% growth in 1H26 as orders from offline retailers such as Ulta and Target came through.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Region</th><th>2024</th><th>2025</th><th>2025 growth</th><th>1H26</th><th>1H26 growth</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Europe (EU+UK)</td><td>152.0</td><td>386.1</td><td class="hl">+154.0%</td><td>318.1</td><td class="hl">+77.9%</td></tr>
+        <tr><td class="rowlab">North America (US+Canada)</td><td>221.5</td><td>233.1</td><td class="hl">+5.2%</td><td>151.5</td><td class="hl">+60.9%</td></tr>
+        <tr><td class="rowlab">Other regions</td><td>318.0</td><td>497.1</td><td class="hl">+56.3%</td><td>279.6</td><td class="hl">+17.5%</td></tr>
+        <tr><td class="rowlab">Total</td><td>691.5</td><td>1,116.3</td><td class="hl">+61.4%</td><td>749.2</td><td class="hl">+46.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) segment information, revenue by region · consolidated · KRW bn</p>
+    <p>Growth in other regions slowed to 17.5% in 1H26 because Middle East revenue contracted on Iran-related geopolitical risk; 2Q26 Middle East revenue was 26.0bn KRW, down 7.1% year on year.</p>
+    <h3>3.3 Customer concentration</h3>
+    <p>The top three counterparties' share of total revenue fell from 15.90% in 2023 to 8.94% in 1H26, and no single external customer accounts for 10% or more of consolidated revenue.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>2023</th><th>2024</th><th>2025</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Largest customer A</td><td>9.90%</td><td>9.84%</td><td>6.13%</td><td>4.08%</td></tr>
+        <tr><td class="rowlab">Customer B</td><td>4.53%</td><td>4.30%</td><td>4.44%</td><td>2.63%</td></tr>
+        <tr><td class="rowlab">Customer C</td><td>1.47%</td><td>4.05%</td><td>4.17%</td><td>2.23%</td></tr>
+        <tr><td class="rowlab">Top three combined</td><td>15.90%</td><td>18.19%</td><td>14.74%</td><td>8.94%</td></tr>
+        <tr><td class="rowlab">All other CA customers</td><td>63.43%</td><td>69.64%</td><td>78.65%</td><td>85.39%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) revenue detail, CA segment · as a share of total revenue</p>
+    <p>The more dispersed the customer base, the smaller the damage from losing any one account; at the same time it means the company is not tied to any customer by long-term contract, so nothing contractual underpins the downside of its earnings.</p>
+    <h3>3.4 Profit structure</h3>
+    <p>Cost of goods sold here is the pure purchase cost of merchandise net of the increase in inventory; freight, wages and depreciation all sit in SG&amp;A, so the gross margin shows the gap between buying price and selling price directly.</p>
+    <p>Gross margin fell 2.6pp from 33.7% in FY24 to 31.1% in FY25 and held at 31.1% in 1H26, but the annual figure hides the quarterly spread.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>2Q25</th><th>3Q25</th><th>4Q25</th><th>1Q26</th><th>2Q26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue (KRW bn)</td><td>265.3</td><td>299.4</td><td>306.0</td><td>346.6</td><td>402.6</td></tr>
+        <tr><td class="rowlab">Gross margin</td><td>32.9%</td><td>31.6%</td><td>28.5%</td><td>30.0%</td><td>32.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Quarterly·semi-annual·annual report consolidated income statement · quarterly figures derived by subtracting cumulatives</p>
+    <p>The 2.6pp decline from 33.7% in FY24 to 31.1% in FY25 has two layers: the first three quarters were already 1.7pp lower at a cumulative 32.0%, which is 63% of the fall, and 4Q25 at 28.5% added the remaining 1.0pp.</p>
+    <p>The fourth quarter runs low because it is the promotional-discount window; 4Q24 was likewise 32.4%, 2.2pp below 3Q24's 34.6%.</p>
+    <p>2Q26's 32.0% recovers the sharp 4Q25 drop rather than returning to the FY24 level, and the five brokers' FY28 gross-margin estimates of 30.0-31.9% do not envisage a return to 33.7% either.</p>
+    <p>In short, the 4Q25 plunge has reversed but a 1.7pp step-down against FY24 remains, and consensus expects that level to hold.</p>
+    <p>Yuanta Securities and NH Investment &amp; Securities both read the main driver of quarterly swings as the exchange rate, with much of the 2Q26 improvement coming from a weak won: 96.9% of revenue is exported while purchases are made in won, so a weaker won lifts only the won-translated selling price.</p>
+    <p>The same two houses attached the caveat that a rapid fall in the exchange rate during the third quarter could make the same factor work in reverse.</p>
+    <p>Turned around, this means the company does not set its own selling price, so an intact margin and pricing power are two different statements.</p>
+    <p>The SG&amp;A ratio fell 2.4pp from 13.8% in FY24 to 11.4% in 1H26 through operating leverage: revenue nearly doubled while wages and service fees did not rise in proportion.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>FY24</th><th>FY25</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue</td><td>691.5</td><td>1,116.3</td><td>511.0</td><td>749.2</td></tr>
+        <tr><td class="rowlab">Gross profit</td><td>232.9</td><td>346.8</td><td>165.0</td><td>232.9</td></tr>
+        <tr><td class="rowlab">Gross margin</td><td>33.7%</td><td>31.1%</td><td>32.3%</td><td>31.1%</td></tr>
+        <tr><td class="rowlab">SG&amp;A</td><td>95.3</td><td>141.4</td><td>65.1</td><td>85.4</td></tr>
+        <tr><td class="rowlab">SG&amp;A ratio</td><td>13.8%</td><td>12.7%</td><td>12.7%</td><td>11.4%</td></tr>
+        <tr><td class="rowlab">▸ Freight</td><td>15.8</td><td>27.8</td><td>13.5</td><td>22.3</td></tr>
+        <tr><td class="rowlab">▸ Freight ratio</td><td>2.3%</td><td>2.5%</td><td>2.6%</td><td>3.0%</td></tr>
+        <tr><td class="rowlab">▸ Depreciation</td><td>5.7</td><td>8.8</td><td>3.8</td><td>7.4</td></tr>
+        <tr><td class="rowlab">Operating profit</td><td>137.6</td><td>205.4</td><td>99.9</td><td>147.5</td></tr>
+        <tr><td class="rowlab">Operating margin</td><td>19.9%</td><td>18.4%</td><td>19.6%</td><td>19.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) SG&amp;A note · consolidated · KRW bn</p>
+    <p>That said, while the freight ratio rose from 2.3% to 3.0%, depreciation nearly doubled, so the cost of building out logistics assets has not yet entered its payback phase.</p>
+    <h3>3.5 Competitive landscape</h3>
+    <p>The market has raised two concerns about this company: that competition intensifies as small and mid-sized trading vendors multiply, and that large brands turn to distributing directly.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Who</th><th>Source</th><th>Nature of the threat</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Listed peer vendor</td><td>YesAsia Holdings (2209.HK)</td><td>KB Securities peer group</td><td>Forward PER 5.1x · Asian cross-border retail</td></tr>
+        <tr><td class="rowlab">Unlisted peer vendors</td><td>Numerous small and mid-sized traders</td><td>Hana Securities</td><td>Scale unconfirmed · company reviewing acquisitions</td></tr>
+        <tr><td class="rowlab">Downstream in-house sourcing</td><td>Ulta Beauty · Douglas · Sally Beauty</td><td>KB Securities peer group</td><td>Direct sourcing removes the vendor layer</td></tr>
+        <tr><td class="rowlab">Customer going direct</td><td>Brands carried</td><td>The COSRX precedent</td><td>Own local entity once scale is reached</td></tr>
+        <tr><td class="rowlab">Online distribution</td><td>iHerb</td><td>NH Investment &amp; Securities NDR</td><td>Currently a customer · 20% of North American revenue</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — KB Securities (2026-08-28) peer group · NH Investment &amp; Securities (2026-08-24) NDR note · Hana Securities (2026-08-20)</p>
+    <p>The number and size of small and mid-sized vendors cannot be confirmed from filings, so there is no basis for saying competitors do not exist; if anything, the fact that the use of proceeds from the CVC placement includes acquiring distributors and vendors is the company's own admission that acquirable counterparties are out there.</p>
+    <p>The one indicator that shows competitive intensity is the trend in market share: if share rose while competitors were multiplying, that much withstood imitation.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Europe</th><th>North America</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">2024 share</td><td>9.1%</td><td>10.2%</td></tr>
+        <tr><td class="rowlab">2025 share</td><td>16.1%</td><td>9.5%</td></tr>
+        <tr><td class="rowlab">1H26 share</td><td>16.5%</td><td>Not calculable</td></tr>
+        <tr><td class="rowlab">1H26 SILICON2 revenue growth</td><td class="hl">+77.9%</td><td class="hl">+60.9%</td></tr>
+        <tr><td class="rowlab">2026 Korean cosmetics export growth</td><td class="hl">+65.6%</td><td class="hl">+38.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Revenue from annual·semi-annual reports · exports from Trass·Korea Customs Service · 1H26 Europe scaled 6/7 from Jan-Jul</p>
+    <p>European share rose 7.0pp in a single year, from 9.1% in 2024 to 16.1% in 2025, then held at 16.5% in 1H26.</p>
+    <p>North America fell 0.7pp, from 10.2% in 2024 to 9.5% in 2025; that 2025 decline was the window in which shipment distortion ahead of tariffs and an online-channel slowdown overlapped.</p>
+    <p>The 1H26 North American share could not be calculated because absolute US-bound export figures are not published, but revenue growth of 60.9% exceeded export growth of 38.7% by 22.2pp, so the direction is up. The periods differ, however: revenue covers January-June and exports January-July.</p>
+    <p>Failing to identify competitors is not the same as there being none, so the unlisted-vendor line stays marked unconfirmed; but the fact that share is rising in both regions is used as evidence that competitive entry has not yet eroded share.</p>
+    <h3>3.6 Economic moat</h3>
+    <p>Finding a moat in a distributor with neither brands nor manufacturing requires four conditions to be met; SILICON2 meets three of them and fails the last.</p>
+    <p>The first is whether it can aggregate products: it runs 22,000 SKUs (Stock Keeping Units) as of 2025 and has widened its sourcing reach by taking equity stakes in domestic indie brands, so this is treated as met.</p>
+    <p>Not all of that investment is recovered, however: 7.5bn KRW of registered private bonds acquired in 2025 was written down in full when the investee filed for rehabilitation, and financial-asset valuation losses that year came to 7.8bn KRW.</p>
+    <p>The second is whether it can carry the regulatory burden: handling registrations, labelling and customs documentation for 175 countries with in-house staff is an accumulation a new entrant cannot replicate quickly, so this is treated as met.</p>
+    <p>The third is whether it can hold on to customers: the share trend in 3.5 — up 7.0pp in Europe in one year and held through 1H26 — is the basis for treating this as met.</p>
+    <p>The fourth is whether it remains irreplaceable once a brand grows large, and this condition is judged unmet.</p>
+    <p>Once a brand passes a certain scale, setting up its own local entity improves its margin, so the departure of brands it carries is a standing risk.</p>
+    <p>COSRX slipped from third in the ranking of brands carried in 2024 to ninth in 2025 after the partnership was suspended, then climbed one place each quarter after resuming in the third quarter of 2025 to recover sixth place in 2Q26.</p>
+    <p>The reason for the departure is not in the filings, but it means that when the brand turned to distributing directly it could not replace the country-by-country sales network SILICON2 had laid down — a case showing that departure does not immediately mean lost revenue.</p>
+    <p>A useful reference case is the brand owner d'Alba Global: in 2Q26 d'Alba's revenue grew 45.6% while SILICON2's grew 51.8%, so the distributor grew faster than the brand, helped by exposure across the whole basket of brands, where weakness at one is offset by another.</p>
+    <p>In the same quarter, though, d'Alba's operating margin of 25.3% exceeded SILICON2's 20.6%, and the price of owning no brand shows up as that 4.7pp margin gap.</p>
+    <p>Separately from the four conditions, pricing power is judged absent. The swings in quarterly gross margin seen in 3.4 were produced by the exchange rate rather than by pricing policy, and with 94.3% of revenue in corporate wholesale, volume terms rather than headline unit price determine the substance, so there is no basis from outside to judge the scope for price increases.</p>
+    <p>Taken together, the moat lies in accumulated regulatory capability and logistics assets, not in brand relationships or price; it holds as long as the basket of brands keeps being refreshed, and breaks the moment the company leans on one mega brand.</p>
+  </div>
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>Financial Estimates</h2>
+    <div class="sub-h">4.1 Five-year results · 4.2 Working capital and cash flow</div>
+    <h3>4.1 Five-year results</h3>
+    <p>Revenue grew 8.5-fold in four years, from 131.0bn KRW in 2021 to 1,116.3bn KRW in 2025, and the operating margin rose 11.7pp from 6.7% to 18.4%.</p>
+    <p>Most of the margin expansion happened in 2023-2024: over those two years, when revenue was roughly doubling each year, fixed costs stayed put and operating leverage worked hard.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Revenue</td><td>131.0</td><td>165.3</td><td>342.9</td><td>691.5</td><td>1,116.3</td></tr>
+        <tr><td class="rowlab">Revenue growth</td><td>—</td><td class="hl">+26.2%</td><td class="hl">+107.5%</td><td class="hl">+101.7%</td><td class="hl">+61.4%</td></tr>
+        <tr><td class="rowlab">Operating profit</td><td>8.8</td><td>14.2</td><td>47.8</td><td>137.6</td><td>205.4</td></tr>
+        <tr><td class="rowlab">Operating margin</td><td>6.7%</td><td>8.6%</td><td>13.9%</td><td>19.9%</td><td>18.4%</td></tr>
+        <tr><td class="rowlab">Net profit</td><td>8.3</td><td>11.2</td><td>38.0</td><td>120.7</td><td>168.6</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td>149</td><td>186</td><td>631</td><td>1,990</td><td>2,756</td></tr>
+        <tr><td class="rowlab">Total assets</td><td>97.4</td><td>129.2</td><td>215.3</td><td>457.8</td><td>709.4</td></tr>
+        <tr><td class="rowlab">Total equity</td><td>86.3</td><td>96.4</td><td>135.0</td><td>261.6</td><td>457.4</td></tr>
+        <tr><td class="rowlab">Debt ratio</td><td>12.9%</td><td>34.1%</td><td>59.5%</td><td>75.0%</td><td>55.1%</td></tr>
+        <tr><td class="rowlab">ROE (average equity)</td><td>—</td><td>12.2%</td><td>32.9%</td><td>60.9%</td><td>46.9%</td></tr>
+        <tr><td class="rowlab">Dividend payout ratio</td><td>—</td><td>—</td><td>—</td><td>—</td><td>11.9%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual reports (Dec 2021-Dec 2025) summary financials · K-IFRS consolidated · KRW bn</p>
+    <p>The 1.5pp fall in operating margin from 19.9% to 18.4% in 2025 came from the 2.6pp drop in gross margin, of which nearly half was recovered as the SG&amp;A ratio fell 1.1pp from 13.8% to 12.7%.</p>
+    <p>While ROE declined from 60.9% in 2024 to 46.9% in 2025, net profit actually rose from 120.7bn KRW to 168.6bn KRW; equity swelled 74.8% from 261.6bn KRW to 457.4bn KRW, enlarging the denominator.</p>
+    <h3>4.2 Working capital and cash flow</h3>
+    <p>Profit is not converting into cash: against FY25 net profit of 168.6bn KRW, operating cash flow was only 1.1bn KRW.</p>
+    <p>The cause is entirely inventory: inventories rose 3.1-fold, from 145.9bn KRW at end-2024 to 451.0bn KRW at end-June 2026, tying up that much cash in warehouses.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>FY23</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Inventories</td><td>78.5</td><td>145.9</td><td>300.1</td><td>451.0</td></tr>
+        <tr><td class="rowlab">Trade receivables</td><td>—</td><td>—</td><td>96.1</td><td>118.7</td></tr>
+        <tr><td class="rowlab">Trade payables</td><td>—</td><td>—</td><td>5.6</td><td>61.4</td></tr>
+        <tr><td class="rowlab">Inventory days</td><td>—</td><td>—</td><td>106</td><td>133</td></tr>
+        <tr><td class="rowlab">Inventory valuation allowance ratio</td><td>—</td><td>—</td><td>0.62%</td><td>0.32%</td></tr>
+        <tr><td class="rowlab">Receivables ÷ payables (x)</td><td>—</td><td>—</td><td>17.2</td><td>1.9</td></tr>
+        <tr><td class="rowlab">Operating cash flow</td><td class="no">-18.5</td><td>60.1</td><td>1.1</td><td>13.5</td></tr>
+        <tr><td class="rowlab">Purchases of PP&amp;E</td><td>18.3</td><td>75.8</td><td>6.9</td><td>32.1</td></tr>
+        <tr><td class="rowlab">Free cash flow</td><td class="no">-36.8</td><td class="no">-15.7</td><td class="no">-5.8</td><td class="no">-18.6</td></tr>
+        <tr><td class="rowlab">Cash and cash equivalents</td><td>17.2</td><td>86.0</td><td>77.3</td><td>82.3</td></tr>
+        <tr><td class="rowlab">Total borrowings</td><td>—</td><td>—</td><td>41.6</td><td>68.2</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) consolidated balance sheet·cash flow statement · KRW bn</p>
+    <p>The company explains the 27-day rise in inventory days, from 106 to 133, as the result of buying goods ahead in the first half against geopolitical risk and impending price increases; whether that volume clears in the third quarter is the thing to check.</p>
+    <p>There is a threshold the company itself wrote into its annual report, so that is the one used: it states that it runs inventory turnover on a 60-90 day basis, which makes 133 days 1.5 times the top of its own range.</p>
+    <p>There is no sign yet that inventory quality has deteriorated: the inventory valuation allowance ratio actually fell from 0.62% at end-2025 to 0.32% at end-June 2026, and 0.4bn KRW was reversed in 1H26.</p>
+    <p>Receivables remain 1.9 times payables, so the company still pays before it collects; but payables grew from 5.6bn KRW to 61.4bn KRW in half a year, sharply narrowing the ratio from 17.2 times, and whether that reflects a change in bargaining power or in settlement timing depends on whether it holds in the third quarter.</p>
+    <p>Free cash flow has been negative in all four periods since FY23; over the three years FY23-FY25, while generating 327.3bn KRW of net profit, the cumulative figure was negative 58.3bn KRW.</p>
+    <p>That means the money spent on growth has been covered by external funding rather than by cash earned; but with the company in a net cash position it is a question of funding method, not liquidity.</p>
+    <p>At end-June 2026, cash and cash equivalents of 82.3bn KRW plus short-term other financial assets of 49.2bn KRW exceeded total borrowings of 68.2bn KRW, leaving a net cash position of 63.3bn KRW.</p>
+    <p>The purpose of the 300.0bn KRW placement scheduled for October 2026, taken while already in net cash, lies less in securing funds than in securing a European retail foothold.</p>
+    <p>6,666,666 redeemable convertible preferred shares are to be issued at 45,000 KRW each and taken up in full by CVC Capital; the issue price is 5.6% above the 42,599 KRW share price at the time of disclosure, and two CVC representatives are to be appointed as non-executive directors at an extraordinary general meeting on October 1.</p>
+    <p>The use of proceeds is not confined to Europe: it spans inventory purchases and logistics-centre construction, a Brazilian entity and Japanese logistics infrastructure, and the acquisition of distributors and vendors.</p>
+    <p>This is the second time equity has been raised through redeemable convertible preferred shares, after February 2025; the earlier 148.9bn KRW was converted into common stock in April 2026 and released to the market via block deal in August.</p>
+    <p>The redemption terms and deadline, the conversion-ratio adjustment clauses and the preferred dividend rate must be checked in the material-event report for this issuance, which post-dates the semi-annual reporting date and therefore falls outside the material used in this report.</p>
+  </div>
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>Valuation</h2>
+    <div class="sub-h">5.1 Near- and medium-term trading value · 5.2 Long-term holding value</div>
+    <h3>5.1 Near- and medium-term trading value</h3>
+    <p>The 12-month forward price-to-earnings ratio (PER) of four specialist beauty distributors averages 9.4x, and that multiple is applied uniformly across the four scenarios.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Comparable</th><th>Business</th><th>Forward PER</th><th>3-year EPS growth</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Ulta Beauty</td><td>US specialist beauty retail</td><td>17.6x</td><td>13.3%</td></tr>
+        <tr><td class="rowlab">Sally Beauty Holdings</td><td>US beauty-supply distribution</td><td>7.6x</td><td>11.9%</td></tr>
+        <tr><td class="rowlab">Douglas</td><td>European specialist beauty retail</td><td>7.2x</td><td>89.7%</td></tr>
+        <tr><td class="rowlab">YesAsia Holdings</td><td>Asian cross-border beauty retail</td><td>5.1x</td><td>84.5%</td></tr>
+        <tr><td class="rowlab">Peer average (4 companies)</td><td>Arithmetic mean of the four above</td><td>9.4x</td><td>49.9%</td></tr>
+        <tr><td class="rowlab">SILICON2</td><td>K-beauty export wholesale</td><td>11.4x</td><td>102.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Bloomberg consensus (KB Securities 2026-08-28) · 12-month forward PER · EPS is the three-year average</p>
+    <p>Comparables were narrowed to specialist beauty distribution because SILICON2's revenue comes from a single product category; mixing in general e-commerce would carry differences in product mix straight into the multiple.</p>
+    <p>Nothing was added to or taken off the peer average because the two directions offset: SILICON2's three-year EPS growth of 102.0% is double the peer average of 49.9%, while carrying inventory on its own account and bearing the risk of brands going direct are discount factors.</p>
+    <p>Among these, Ulta Beauty, Douglas and Sally Beauty are the same companies listed in 3.5 as parties that could source in-house, and the dual position — a benchmark for the multiple and, at the same time, a party able to erase the vendor layer — should be kept in mind when reading it.</p>
+    <p>The applied PER is the peer average of 9.4x as it stands, and the 11.4x SILICON2 currently trades at is 21% above that.</p>
+    <p>FY28E earnings per share (EPS) is used, with export market size by continent, SILICON2's market share and the operating margin as the scenario variables.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Bear FY28E</th><th>Base FY28E</th><th>Bull FY28E</th><th>Best FY28E</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Europe-bound exports (USD bn)</td><td>4.2</td><td>4.2</td><td>4.8</td><td>5.4</td><td>1.71 in 2025 · then 22/30/38% p.a.</td></tr>
+        <tr><td class="rowlab">SILICON2 European share</td><td>13.0%</td><td>16.0%</td><td>17.5%</td><td>19.0%</td><td>16.1% in 2025 · 16.5% in 1H26</td></tr>
+        <tr><td class="rowlab">US-bound exports (USD bn)</td><td>3.2</td><td>3.2</td><td>3.6</td><td>4.0</td><td>1.75 in 2025 · then 15/22/28% p.a.</td></tr>
+        <tr><td class="rowlab">SILICON2 North American share</td><td>8.0%</td><td>9.5%</td><td>11.0%</td><td>12.5%</td><td>9.5% in 2025</td></tr>
+        <tr><td class="rowlab">Other-region revenue (KRW bn)</td><td>850.0</td><td>850.0</td><td>1,000.0</td><td>1,150.0</td><td>497.1 in 2025</td></tr>
+        <tr><td class="rowlab">Revenue (KRW bn)</td><td>1,972.8</td><td>2,216.4</td><td>2,730.4</td><td>3,286.4</td><td>Sum of segments</td></tr>
+        <tr><td class="rowlab">Operating margin</td><td>15.0%</td><td>18.0%</td><td>19.5%</td><td>21.0%</td><td>18.4% in 2025 · 19.7% in 1H26</td></tr>
+        <tr><td class="rowlab">Operating profit (KRW bn)</td><td>295.9</td><td>399.0</td><td>532.4</td><td>690.1</td><td>Revenue × operating margin</td></tr>
+        <tr><td class="rowlab">Net profit (KRW bn)</td><td>244.8</td><td>324.7</td><td>428.1</td><td>550.4</td><td>Non-operating +20.0bn · tax 22.5%</td></tr>
+        <tr><td class="rowlab">EPS (KRW)</td><td>3,389</td><td>4,494</td><td>5,926</td><td>7,618</td><td>Diluted shares 72,242,918</td></tr>
+        <tr><td class="rowlab">Implied ROE (closing equity)</td><td>15.5%</td><td>19.5%</td><td>24.2%</td><td>29.1%</td><td>On closing equity</td></tr>
+        <tr><td class="rowlab">Applied PER (x)</td><td>9.4</td><td>9.4</td><td>9.4</td><td>9.4</td><td>Same across the four scenarios</td></tr>
+        <tr><td class="rowlab">Target price (KRW)</td><td>31,857</td><td>42,244</td><td>55,704</td><td>71,609</td><td>EPS × PER</td></tr>
+        <tr><td class="rowlab">Vs. current price</td><td class="no">-35.2%</td><td class="no">-14.1%</td><td class="hl">+13.3%</td><td class="hl">+45.7%</td><td>Against the 49,150 KRW close of 2026-08-27</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Key factors from config.yaml · outputs computed automatically in the live-model sheet of the attached workbook</p>
+    <p>Base net profit of 324.7bn KRW is effectively identical to NH Investment &amp; Securities' 2028 estimate of 328.0bn KRW, so Base is not an independent forecast but consensus transcribed.</p>
+    <div class="sub-h">Bear — competing vendors enter and share is pushed back</div>
+    <p>Export market size is held at the Base level and only share and operating margin are lowered; Europe at 13.0% is the level at which half of the 7.0pp gained in one year from 9.1% in 2024 is given back.</p>
+    <p>An operating margin of 15.0% is the combination of a gross margin falling to 29.0%, below the 30.0% bottom of consensus, and an SG&amp;A ratio returning to the FY24 level of 14.0% — the case in which the intensifying price competition and rising freight costs NH Investment &amp; Securities cited as downside risks materialise together.</p>
+    <div class="sub-h">Base — export growth steps down a notch while share is held</div>
+    <p>European exports are assumed to surge 65% in 2026 and then settle into the 20s in 2027-2028, on the view that a period of digesting the initial volume built up in hub countries has to come at some point.</p>
+    <p>This scenario rests on the premise that Western Europe's share of the mainstream does not fall below the 2Q26 level; if the decline in Polish exports continues into the third quarter, the assumption of holding share is the first thing to break.</p>
+    <div class="sub-h">Bull — direct dealing with a large European retailer is agreed</div>
+    <p>Douglas, majority-owned by CVC Capital, is a specialist beauty distributor with some 2,000 stores across Europe and annual revenue of 6trn KRW; if direct supply opens there, a 17.5% share is not an unreasonable assumption.</p>
+    <p>Since new retailer partnerships do not translate into revenue immediately, if the Douglas relationship is not booked as revenue within 2027, or if North American orders stay centred on the existing online channels and Ulta and Target offline volumes do not attach, the share gain does not materialise and the case settles back to Base.</p>
+    <div class="sub-h">Best — European penetration passes 4%</div>
+    <p>European exports of USD 5.4bn correspond to 4.35% penetration even assuming the market does not grow beyond USD 124bn — 3.2 times the 1.38% of 2025, though still below 5% in absolute terms.</p>
+    <p>An operating margin of 21.0% presumes that reseller volumes shrink and logistics-automation investment enters its payback phase; if the freight ratio rises further from 3.0% in 1H26, or inventory turnover does not improve from 133 days, the margin gain is offset.</p>
+    <h3>5.2 Long-term holding value</h3>
+    <p>At 49,150 KRW the shares trade at a price-to-book ratio (PBR) of 4.68x against equity of 688.9bn KRW at end-June 2026, and justifying that multiple requires the return on equity (ROE) to be sustained for a long time.</p>
+    <p>Book value per share is 10,505 KRW. The calculation below holds the required return at 10.0% a year and the applied ROE at 21.9% across all four scenarios, varying only the holding period at 3, 5, 10 and 15 years. The ROE used is the average-equity figure for FY28F, the final estimate point, taken as it stands. How well the business performs is not reflected in this figure; only the holding period changes.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>What the market has priced</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Share price (KRW)</td><td>49,150</td></tr>
+        <tr><td class="rowlab">Book value per share, BPS (KRW)</td><td>10,505</td></tr>
+        <tr><td class="rowlab">Price-to-book, PBR (x)</td><td>4.68</td></tr>
+        <tr><td class="rowlab">Required return r</td><td>10.0%</td></tr>
+        <tr><td class="rowlab">Applied ROE (average equity)</td><td>21.9%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Equity from the semi-annual report (Jun 2026), attributable to owners of the parent · ROE derived from FY28F consensus</p>
+    <p>While ROE came down from 60.9% to 37.4% over the last four quarters, net profit actually rose; the decline came from the denominator. Most of the 195.8bn KRW increase in FY25 equity was the retention of 168.6bn KRW of net profit, and in April 2026 the 148.9bn KRW of redeemable convertible preferred shares moved from liabilities into equity, adding to it once more.</p>
+    <p>Consensus points the same way. The five-house average ROE — KB, NH, Shinyoung, Yuanta and Hana — is set to fall a further 11.4pp over two years, from 43.0% in 2026 to 31.6% in 2028. The table above takes net profit from the three-house average estimate and rolls equity forward at a retention ratio of 88.1%, putting the 300.0bn KRW October placement into the denominator as well; the result is therefore lower than the consensus figure.</p>
+    <p>Over the same period, return on invested capital does not move, at 39.1-39.9% on NH Investment &amp; Securities' estimates (2026-08-24). That contrast is what separates the nature of the ROE decline.</p>
+    <p>It means the return the business earns on a unit of capital is unchanged while equity alone is growing quickly, so the cause of the decline is excess capital rather than impaired profitability.</p>
+    <p>When the 300.0bn KRW October placement arrives the denominator grows once more, and with a dividend payout ratio of only 11.9%, 88% of what is earned accumulates in equity, so ROE stays under pressure.</p>
+    <p>As seen in 4.2, however, what has been earned has not yet stayed as cash, so there is no pool of surplus funds to return at present, and the placement proceeds are earmarked for inventory, logistics and acquisitions. Reversing the ROE decline through shareholder returns only becomes possible once net cash actually builds, so the results below should be read as the value implied by the business as it stands.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>Bear</th><th>Base</th><th>Bull</th><th>Best</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Holding period N (years)</td><td>3</td><td>5</td><td>10</td><td>15</td><td>Applied ROE is the same in all four</td></tr>
+        <tr><td class="rowlab">Expected return (p.a.)</td><td class="no">-27.1%</td><td class="no">-10.5%</td><td class="hl">+4.5%</td><td class="hl">+10.0%</td><td>(1+ROE) ÷ PBR^(1/N) − 1</td></tr>
+        <tr><td class="rowlab">Years to meet the required return</td><td>15.01</td><td>15.01</td><td>15.01</td><td>15.01</td><td>ln(PBR) ÷ ln((1+ROE)÷(1+r))</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Assumes ROE of 21.9% is sustained throughout the period · against the 49,150 KRW close of 2026-08-27</p>
+    <p>Recovering a PBR of 4.68x at an ROE of 21.9% takes 15.01 years, so the only case that delivers the required 10.0% a year is Best, with a 15-year hold. Three years gives -27.1% a year, five years -10.5%, and ten years only +4.5%. The holding period does not enter the payback calculation; once today's price, the applied ROE and the required return are fixed, that figure is fixed too, and the holding period only determines where on the way there one stands.</p>
+    <p>To earn 10% a year from today's price, the ROE required is set by the holding period: a ten-year hold needs 28.4% and a twenty-year hold 18.8%, sustained throughout. The 21.9% required over fifteen years is the same as the applied ROE in the table, which is why the expected return in the Best column coincides with the required return.</p>
+    <p>The table assumes ROE of 21.9% holds for the whole period. Even taking the denominator to start from the 31.6% estimated elsewhere and fall 2.0pp a year to 13.6% in year ten, the geometric mean is 22.5% — only 0.6pp from the table's figure. On that path the ten-year expected return is 5.0% a year and the payback period 14.4 years, so the conclusion does not change.</p>
+    <p>The two tables use the same column names for different things — Bear to Best in 5.1 are business scenarios, while in the table above they are holding periods of 3, 5, 10 and 15 years. Even so, on the downside the two methods point to the same place. Just as the EPS×PER approach falls below the current price at -35.2% in Bear and -14.1% in Base, the ROE×PBR approach returns a negative expected return at three and five years.</p>
+    <p>The two diverge on the upside because they allow different lengths of reinvestment. The EPS×PER approach attaches 9.4x to earnings at the single point of FY28E and stops there, whereas the ROE×PBR approach must also recover the equity accumulating thereafter at the 4.68x paid today. That recovery takes 15.0 years.</p>
+    <p>In sum, the current price already sits above the Base assumption, and justifying it requires either direct dealing with a large European retailer and North American offline expansion to show up as revenue, or the accumulating equity to be turned into shareholder returns so that the ROE decline is halted.</p>
+  </div>
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>Governance and Shareholder Returns</h2>
+    <div class="sub-h">6.1 Shareholder structure · 6.2 Board composition · 6.3 Shareholder returns</div>
+    <h3>6.1 Shareholder structure</h3>
+    <p>Founder and CEO Kim Sung-woon directly holds 28.81%, and the 15 holders including him — his spouse and executives among them — hold 43.40% combined, so control is stable.</p>
+    <p>On August 27, 2026 the 6.72% held by the financial investor Silk Investment Purpose Co., Ltd. was sold in full via block deal, clearing the overhang that had weighed on the share price since the redeemable convertible preferred issue of February 2025.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Category</th><th>Detail</th><th>Stake</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Largest shareholder and related parties</td><td>Kim Sung-woon and 14 others · 28,456,839 shares</td><td>43.40%</td></tr>
+        <tr><td class="rowlab">Silk Investment Purpose Co., Ltd.</td><td>Sold in full via block deal on 2026-08-27 (previously 6.72%)</td><td>0%</td></tr>
+        <tr><td class="rowlab">Treasury shares</td><td>123,200 shares acquired in trust, February 2026 · not cancelled</td><td>0.19%</td></tr>
+        <tr><td class="rowlab">Free float</td><td>100% − (largest shareholder and related parties + treasury)</td><td>56.41%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Semi-annual report (Jun 2026) shareholding status · block deal reflected · 65,576,252 shares outstanding</p>
+    <p>A free float of 56.41% is not low for a mid-cap KOSDAQ name, but once the 6,666,666 new shares allotted to CVC Capital are issued as scheduled in October 2026, the largest shareholder group's stake dilutes 4.01pp to 39.39%.</p>
+    <h3>6.2 Board composition</h3>
+    <p>As of June 30, 2026 the board is six members — three executive directors and three independent directors; the composition changed when Ryu Jae-young, a certified public accountant, was appointed as an independent director at the March 2026 annual general meeting and two non-executive directors resigned in April.</p>
+    <p>The audit committee was reconstituted at the same time with all three independent directors, removing executive directors from the audit body, and an ESG committee and an internal-transactions committee were newly established.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Name</th><th>Type</th><th>Tenure</th><th>Background</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Kim Sung-woon</td><td>Executive director</td><td>24 yrs 5 mths</td><td>Founder · CEO and board chair · Kirungelectronics</td></tr>
+        <tr><td class="rowlab">Son In-ho</td><td>Executive director</td><td>9 yrs 11 mths</td><td>CFO · former CFO at Stonebridge Capital · US CPA</td></tr>
+        <tr><td class="rowlab">Choi Jin-ho</td><td>Executive director</td><td>14 yrs 4 mths</td><td>Head of sales · Dongwoon International</td></tr>
+        <tr><td class="rowlab">Lee Se-hoon</td><td>Independent director</td><td>4 yrs 3 mths</td><td>Audit committee chair · CEO of Able C&amp;C · head of overseas business at LG H&amp;H</td></tr>
+        <tr><td class="rowlab">Lee Taek-soon</td><td>Independent director</td><td>4 yrs 3 mths</td><td>Audit committee · Commissioner General of the Korean National Police · adviser to the Construction Association of Korea</td></tr>
+        <tr><td class="rowlab">Ryu Jae-young</td><td>Independent director</td><td>4 mths</td><td>Audit committee · CPA at Kim &amp; Chang</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Semi-annual report (Jun 2026) officer disclosures · tenure as of 2026-06-30</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Trigger</th><th>Status</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Independent-director ratio</td><td>Below 50%</td><td>50.0% (3 of 6)</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Independent-director background</td><td>More than half of independent directors are figurehead appointments (exactly half is a partial warning)</td><td>1 of 3 is a title-based appointment</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Average tenure</td><td>Average tenure below the three-year single term (pass if three years or more once one new appointee is excluded)</td><td>2 yrs 11 mths · 4 yrs 3 mths excluding the one new appointee</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Audit independence</td><td>No one on the audit body with accounting, finance or audit experience</td><td>One CPA</td><td>Pass</td></tr>
+        <tr><td class="rowlab">Total</td><td></td><td></td><td>Pass</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Five-stage checklist · semi-annual report (Jun 2026), reference date 2026-06-30 · partial warnings 0</p>
+    <p>Against the 2025 basis, the independent-director ratio moved from warning to pass and independent-director background from partial warning to pass. All four items pass. Average tenure of 2 years 11 months falls short of the three-year single term, but excluding Ryu Jae-young, in office four months, the remaining two average 4 years 3 months. There is no history of early resignation, so the short average reflects a new appointment rather than turnover.</p>
+    <p>Independent director Lee Taek-soon's background as Commissioner General of the Korean National Police and an association adviser does not connect directly to the hands-on experience needed to oversee decisions in cosmetics distribution; but one title-based appointment out of three does not exceed half, so the item passes.</p>
+    <p>What management is rewarded for shows up in the composition of pay, and SILICON2 has paid in share price rather than cash.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Item</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Registered directors (persons)</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td class="rowlab">Total remuneration</td><td>24.01</td><td>12.74</td><td>0.99</td></tr>
+        <tr><td class="rowlab">▸ Salary and bonus</td><td>2.44</td><td>3.45</td><td>0.99</td></tr>
+        <tr><td class="rowlab">▸ Gains on stock-option exercise</td><td>21.57</td><td>9.30</td><td>0</td></tr>
+        <tr><td class="rowlab">Share of exercise gains</td><td>89.8%</td><td>73.0%</td><td>0%</td></tr>
+        <tr><td class="rowlab">Total shareholder return (TSR)</td><td class="hl">+317.6%</td><td class="hl">+15.6%</td><td class="no">-21.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual·semi-annual report director remuneration and performance-linkage tables · registered directors · KRW bn · TSR as disclosed</p>
+    <p>Of the 24.01bn KRW paid in FY24, 21.57bn KRW was gains on stock-option exercise, and the fact that pay was concentrated in a year when the share price rose 317.6% means management's interest and shareholder returns point the same way.</p>
+    <p>That said, total remuneration of 24.01bn KRW that year equalled 17.4% of operating profit of 137.6bn KRW, while cash pay excluding exercise gains was 2.44bn KRW, or 1.8%. For FY25 the figures are 12.74bn KRW (6.2%) and 3.45bn KRW (1.7%).</p>
+    <p>The 9.30bn KRW of FY25 exercise gains came from a 2019 grant exercised by one executive director in January 2025, so it is not directly linked to that year's performance.</p>
+    <p>As of end-June 2026 registered directors hold no unexercised stock options, but 150,000 shares granted to four employees remain outstanding, at an exercise price of 45,261 KRW, exercisable from September 2027, equal to 0.23% of shares outstanding.</p>
+    <p>Founder and CEO Kim Sung-woon directly holds a 28.81% stake, so quite apart from remuneration his exposure to the share price is the largest.</p>
+    <h3>6.3 Shareholder returns</h3>
+    <p>The return policy is only just beginning: in five years since listing, dividends have been paid in one year, 2025.</p>
+    <p>The 2025 year-end dividend was 306 KRW per share, 20.0bn KRW in total, a payout ratio of 11.9% and a dividend yield of about 0.8%; the company publishes neither a target payout ratio nor a band.</p>
+    <p>On treasury shares, 201,446 previously acquired shares were cancelled against earnings in 2025, reducing shares outstanding; but the 123,200 shares bought through a trust in February 2026 are still held with no cancellation decision, so they are not yet confirmed as a return.</p>
+    <p>Choosing to spend on inventory and overseas logistics rather than dividends is reasonable at the current growth rate, but the fact remains that five years of cumulative dividends amount to 5.8% of net profit over the same period.</p>
+    <p>With the 300.0bn KRW of CVC Capital proceeds going to inventory, logistics, overseas entities and vendor acquisitions, any expansion of shareholder returns is a matter to be discussed after that investment shows up as revenue.</p>
+    <p>As seen in 5.2, however, return on invested capital holds at 39.1-39.9% while only ROE declines, so what drags on long-term holding value is the speed at which capital accumulates, not the profitability of the business.</p>
+    <p>NH Investment &amp; Securities estimates net debt swelling from -78.0bn KRW in 2025 to -528.0bn KRW of net cash by 2028, but the spread across houses is wide — Shinyoung at -573.5bn KRW, Yuanta at -150.2bn KRW and KB at +163.0bn KRW — so even when the capacity for returns appears is a matter on which the houses divide.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Check item</th><th>Status</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Payout ratio</td><td>1 year in 5 · 11.9% in 2025</td><td>No target band published</td></tr>
+        <tr><td class="rowlab">Total dividends</td><td>20.0bn KRW over 5 years · 5.8% of net profit</td><td>Low returns relative to earnings</td></tr>
+        <tr><td class="rowlab">Treasury share cancellation</td><td>201,446 shares cancelled against earnings in 2025</td><td>Confirmed reduction in shares outstanding</td></tr>
+        <tr><td class="rowlab">Treasury shares held</td><td>123,200 shares acquired February 2026 · not cancelled</td><td>Would re-supply float if disposed of</td></tr>
+        <tr><td class="rowlab">Net cash</td><td>63.3bn KRW at end-June · 300.0bn KRW placement pending</td><td>Inventory and logistics investment first</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Annual report (Dec 2025)·semi-annual report (Jun 2026) dividend disclosures·treasury shares</p>
+    <div class="sub-h">Indicators to watch</div>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Indicator</th><th>Current</th><th>Threshold</th></tr></thead>
+      <tbody>
+        <tr><td class="rowlab">Ex-Greater China export growth</td><td>+43.0% in July</td><td>Below +10% for three consecutive months</td></tr>
+        <tr><td class="rowlab">European share</td><td>16.5% (1H26)</td><td>Below 14.0% on a half-year basis</td></tr>
+        <tr><td class="rowlab">Western Europe share of the mainstream</td><td>20.5% (2Q26)</td><td>Below 20.0% for two consecutive quarters</td></tr>
+        <tr><td class="rowlab">Gross margin</td><td>30.5% (four-quarter moving average)</td><td>Four-quarter moving average below 29.0%</td></tr>
+        <tr><td class="rowlab">Inventory days</td><td>133 days (1H26)</td><td>Widening excess over the company's 90-day standard, or valuation allowance above 1.0%</td></tr>
+        <tr><td class="rowlab">Ranking of brands carried</td><td>COSRX 6th (2Q26)</td><td>Two or more of the top five outside the top 10 for two consecutive quarters</td></tr>
+        <tr><td class="rowlab">Capital raising and allocation</td><td>Net cash 63.3bn KRW</td><td>Further issuance of preferred shares or convertible bonds, or acquisition of financial assets unrelated to the core business</td></tr>
+        <tr><td class="rowlab">Douglas revenue recognition</td><td>Zero (partnership in preparation)</td><td>If not recognised within 2027, the Bull premise lapses</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="filter-note">Source — Korea Customs Service·TRASS · quarterly financial statements · disclosures · the turnover-day standard is the company's published 60-90 days</p>
+    <p>Gross margin alone is set on a moving average because the fourth quarter is always depressed by promotional discounting; on a single-quarter basis, normal variation would trip the threshold every time.</p>
+  </div>
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>실리콘투(257720) 주가 차트</span><span class="ct-en" hidden>SILICON2 (257720) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-08-31 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-08-31</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-09-03 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 밸류에이션이 사용한 2026-08-27 종가 49,150원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-09-03 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the 49,150 KRW close of 2026-08-27 used throughout the valuation.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p><b>기준일</b> — 최초작성 2026-09-01. 본문의 모든 수치는 2026-08-27 종가 및 그 시점까지 공시된 자료 기준이며, 이후의 주가·실적·공시 변동은 반영돼 있지 않습니다.</p>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p><b>As of</b> — Originally written September 1, 2026. All figures in this report are based on the August 27, 2026 close and on disclosures available as of that date; subsequent changes in price, earnings, or filings are not reflected.</p>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Overview'],['es2','2 · Industry'],['es3','3 · Business'],['es4','4 · Financials'],['es5','5 · Valuation'],['es6','6 · Governance']],
+    ko: [['ks1','1 · 회사 개요'],['ks2','2 · 산업 분석'],['ks3','3 · 사업 모델'],['ks4','4 · 재무 추정'],['ks5','5 · 밸류에이션'],['ks6','6 · 지배구조']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('hyundai-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('hyundai-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return sym + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
