@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-apr-278470-medicube-brand-moat').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APR (278470, KOSPI) Equity Analysis — Is the medicube Brand a Moat, and Is 23x Book Justified?</title>
+<meta name="description" content="Equity analysis of APR (278470): the K-beauty brand behind medicube, whether brand attention that outlives promotional calendars amounts to an economic moat, and what a 23.5x price-to-book demands of a 64% ROE. Four scenarios on FY28E earnings at an 18.4x peer multiple, plus an ROE x PBR holding-period model.">
+<meta name="keywords" content="APR, 에이피알, 278470, KOSPI, medicube, 메디큐브, K-beauty, Korean cosmetics, beauty device, Amazon beauty, Google Trends brand, Cosmax ODM, economic moat, ROE PBR valuation, equity research">
+<link rel="canonical" href="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<!-- social:auto (add_social_meta.py) -->
+<meta property="og:image" content="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/assets/og.png?v=46b503df">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="APR (278470) Equity Analysis — social card">
+<meta name="twitter:image" content="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/assets/og.png?v=46b503df">
+<meta name="twitter:image:alt" content="APR (278470) Equity Analysis — social card">
+<!-- /social:auto -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="APR (278470) Equity Analysis">
+<meta property="og:description" content="Equity analysis of APR (278470): the K-beauty brand behind medicube, whether brand attention that outlives promotional calendars amounts to an economic moat, and what a 23.5x price-to-book demands of a 64% ROE. Four scenarios on FY28E earnings at an 18.4x peer multiple, plus an ROE x PBR holding-period model.">
+<meta property="og:url" content="https://henryshin.github.io/research/apr-278470-medicube-brand-moat/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APR (278470) Equity Analysis">
+<meta name="twitter:description" content="Equity analysis of APR (278470): the K-beauty brand behind medicube, whether brand attention that outlives promotional calendars amounts to an economic moat, and what a 23.5x price-to-book demands of a 64% ROE. Four scenarios on FY28E earnings at an 18.4x peer multiple, plus an ROE x PBR holding-period model.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "APR (278470, KOSPI) Equity Analysis — Is the medicube Brand a Moat, and Is 23x Book Justified?",
+  "description": "Equity analysis of APR (278470): the K-beauty brand behind medicube, whether brand attention that outlives promotional calendars amounts to an economic moat, and what a 23.5x price-to-book demands of a 64% ROE. Four scenarios on FY28E earnings at an 18.4x peer multiple, plus an ROE x PBR holding-period model.",
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "inLanguage": [
+    "en",
+    "ko"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Henry Shin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Henry Shin Research"
+  },
+  "about": [
+    {
+      "@type": "Corporation",
+      "name": "APR",
+      "tickerSymbol": "KRX:278470"
+    }
+  ],
+  "keywords": "APR 278470, 에이피알, medicube, K-beauty brand, beauty device, ROE PBR valuation",
+  "mainEntityOfPage": "https://henryshin.github.io/research/apr-278470-medicube-brand-moat/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:15.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:13.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:13px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:35px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:15px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:14.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:12.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:14.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:12.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:14px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:14px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:16px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:14.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:15px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:15px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:15.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:13.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { color:var(--ink-faint); font-size:13.3px; margin:8px 0 4px; line-height:1.62; }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:13.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:13px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:13px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:13px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:15px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:14px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:22px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:12px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:13.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:22px; }
+    .kpi-card .value .unit { font-size:13px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:19px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:15.5px; }
+    table.tbl { font-size:14px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
+
+/* type-scale:+2px, flat-notes */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 278470</div>
+    <h1>에이피알(278470) 분석보고서</h1>
+    <p class="lede">FY25 매출 1조 5,273억(+111.3%)·영업이익률 23.9% · 1H26 수출 비중 90.5% · 화장품 80.9% · 현재가 406,000원 · 시총 15조 1,999억원 (2026-09-03)</p>
+    <div class="meta">
+      <span>최초작성 2026-09-02 (v15)</span>
+      <span>기준주가 406,000원 (2026-09-03 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">현재가</div>
+      <div class="value">406,000<span class="unit">원</span></div>
+      <div class="sub">52주 204,000 ~ 475,000원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">시가총액</div>
+      <div class="value">15조 1,999<span class="unit">억원</span></div>
+      <div class="sub">발행주식수 37,438,155주</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">주가순자산비율</div>
+      <div class="value">23.46<span class="unit">배</span></div>
+      <div class="sub">BPS 17,309원 · FY28F ROE 64.3%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Base TP (FY28E)</div>
+      <div class="value">461,178<span class="unit">원</span></div>
+      <div class="sub">현재가 대비 +13.6% · Bear 316,554원 -22.0%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">투자논지</span><span class="tldr-v">공장을 갖지 않고 브랜드만 소유한 화장품사임. 화장품 전량을 코스맥스·노디너리에 위탁하므로 해자 후보는 브랜드 하나뿐이고, 그 브랜드가 판촉 일정과 무관하게 관심을 붙들어 두는지가 논지의 전부임. 1H26 수출 비중 90.5%·북미 47.6%로 국내 매출은 이미 9.4%까지 내려감.</span></div>
+    <div class="tldr-row"><span class="tldr-k">밸류에이션</span><span class="tldr-v">브랜드 peer 3사 평균 18.4배를 4 시나리오에 공통 적용해 목표주가 316,554~851,239원. 현재가는 Base 461,178원을 13.6% 밑돎. 장기로는 PBR 23.46배를 FY28F ROE 64.3%로 회수하는 데 7.9년이 걸리며, 5년 보유는 연 -12.6%, 10년 보유는 연 +19.8%임.</span></div>
+    <div class="tldr-row"><span class="tldr-k">리스크</span><span class="tldr-v">미국 내 medicube 구글 검색 지수가 2026년 4~6월 정점 뒤 하락 전환함. 광고선전비 비중은 1H25 16.7%에서 1H26 21.1%로 올라 성장을 비용으로 사고 있고, 재고자산은 6개월 만에 2.2배가 돼 회전율이 2.6회에서 2.2회로 떨어짐. 최대 고객 비중도 1.9%에서 11.8%로 올라감.</span></div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>회사 개요</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>내용</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">종목/코드</td><td>에이피알 / 278470 (KOSPI)</td><td>시가총액</td><td>15조 1,999억원 (2026-09-03)</td></tr>
+      <tr><td class="rowlab">설립</td><td>2014년 10월 10일</td><td>상장</td><td>2024년 2월 27일 (KOSPI)</td></tr>
+      <tr><td class="rowlab">대표이사</td><td>김병훈 (창업자)</td><td>결산월</td><td>12월</td></tr>
+      <tr><td class="rowlab">본사</td><td>서울 송파구 롯데월드타워</td><td>임직원수</td><td>751명 (2026-06-30)</td></tr>
+      <tr><td class="rowlab">발행주식수</td><td>37,438,155주 (자기주식 0주)</td><td>현재가</td><td>406,000원 (2026-09-03)</td></tr>
+      <tr><td class="rowlab">FY25 매출</td><td>1조 5,273억원 (전년 대비 +111.3%)</td><td>FY25 영업이익</td><td>3,655억원 (OPM 23.9%)</td></tr>
+      <tr><td class="rowlab">1H26 매출</td><td>1조 3,609억원 (전년 동기 +129.2%)</td><td>1H26 영업이익</td><td>3,428억원 (OPM 25.2%)</td></tr>
+      <tr><td class="rowlab">사업 부문</td><td>화장품·뷰티 80.9% · 디바이스 18.0% (1H26)</td><td>연결 범위</td><td>종속회사 15사 (2026-06-30)</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) 연결 기준 · 종가 2026-09-03</p>
+    <p>에이피알은 화장품과 홈 뷰티 디바이스 브랜드사임. 2014년 10월에 설립해 2024년 2월 유가증권시장에 상장했고, 메디큐브·에이프릴스킨·포맨트를 직접 기획해 국내외 온·오프라인 채널에 넘김. 화장품은 코스맥스·노디너리 등에 완제품 위탁 생산을 맡기며 자체 제조는 홈 뷰티 디바이스뿐임.</p>
+    <p>1H26 매출 1조 3,609억원 가운데 수출이 1조 2,323억원으로 90.5%를 차지함. 회사가 제시한 2026년 연간 가이던스는 매출 3조원에 영업이익률 24~26%임.</p>
+  </div>
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>산업 분석</h2>
+    <h3>2.1 제조와 브랜드의 분업</h3>
+    <p>K-뷰티 브랜드사는 공장을 갖지 않음. 제품 기획과 마케팅, 가격 결정만 맡고 제조는 ODM(제조자 개발생산) 업체에 넘김. 에이피알도 화장품 전량을 코스맥스·노디너리·엔코스 등에 완제품으로 발주하며 1H26 연결 매입액은 4,296억원임.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1_밸류체인.png" alt="&lt;그림 1&gt; 사업 구조" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;그림 1&gt; 사업 구조</p>
+    <p>매출원가는 매출의 21.8%에 불과하나 광고선전비 21.1%와 판매수수료 18.1%가 영업비용의 대부분을 차지함. 회사의 수익은 브랜드 인지도와 매대 확보 능력에서 나오며, 그 힘이 얼마나 오래 가는지를 확인해야 함.</p>
+    <h3>2.2 지역별 수출 성장률과 시장 침투율</h3>
+    <p>한국 화장품 수출은 2025년 10%, 2026년 7월 누계로는 27.6% 증가한 68억달러를 기록해 높은 성장률을 시현하고 있음.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>지역</th><th>2025년 증가율</th><th>2025년 비중</th><th>2026년 누계 증가율</th><th>2026년 누계 비중</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">전체</td><td class="hl">+10%</td><td>100.0%</td><td class="hl">+27.6%</td><td>100.0%</td></tr>
+      <tr><td class="rowlab">미국</td><td class="hl">+13%</td><td>18.6%</td><td class="hl">+39%</td><td>19.8%</td></tr>
+      <tr><td class="rowlab">유럽</td><td class="hl">+44%</td><td>18.2%</td><td class="hl">+65%</td><td>23.6%</td></tr>
+      <tr><td class="rowlab">중국</td><td>—</td><td>—</td><td class="no">-2.4%</td><td>—</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">관세청·Trass 집계 (교보증권 2026-08-18) · 증가율 일부는 BNK투자증권(2026-08-21)</p>
+    <p>2025년에는 미국 18.6%와 유럽 18.2%로 미국이 앞섰으나 2026년 누계에는 유럽 23.6%, 미국 19.8%로 순서가 바뀌었음. 화장품 수출의 최대 시장이 중국에서 미국으로, 또 미국에서 유럽으로 바뀌고 있는 추세임.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>북미</th><th>유럽</th><th>산출 근거</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">지역 화장품 소매 시장 (억달러)</td><td>1,400</td><td>1,240</td><td>유로모니터 기준 연간 소매 시장</td></tr>
+      <tr><td class="rowlab">2025년 한국 화장품 수출액 (억달러)</td><td>17.5</td><td>17.1</td><td>북미는 미국향, 유럽은 대륙 기준</td></tr>
+      <tr><td class="rowlab">K-뷰티 침투율</td><td>1.25%</td><td>1.38%</td><td>수출액 ÷ 지역 시장 규모</td></tr>
+      <tr><td class="rowlab">에이피알 2025년 매출 (억원)</td><td>6,088</td><td>1,125</td><td>회사 실적발표 지역별 매출</td></tr>
+      <tr><td class="rowlab">에이피알 점유율 (2025년)</td><td>0.31%</td><td>0.065%</td><td>매출 ÷ 원화 환산 시장 (1,400원/달러)</td></tr>
+      <tr><td class="rowlab">에이피알 점유율 (2026년 추정)</td><td>0.77%</td><td>0.30%</td><td>교보증권 2026년 추정 매출 기준</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">유로모니터·Trass (교보증권 2026-08-18) · 2026년 점유율은 교보증권 추정 매출 기준</p>
+    <p>K-뷰티 침투율은 북미 1.25%, 유럽 1.38%에 머물러 있음. 그 안에서 에이피알 몫은 각각 0.31%와 0.065% 비중을 차지하고 있음. 아직 침투율은 낮아 성장 가능성이 있기는 하나 2026년 기준 전체 수출의 90% 이상이 인디 브랜드에서 나올 만큼 경쟁자 수도 빠르게 늘고 있음.</p>
+  </div>
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>사업 분석</h2>
+    <h3>3.1 매출 구성</h3>
+    <p>뷰티 디바이스 비중이 2024년 43.3%에서 1H26 18.0%로 내려앉았음. 같은 기간 화장품이 80.9%까지 올라오면서 회사의 정체성이 디바이스 제조사에서 화장품 브랜드사로 옮겨 감.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>사업 부문</th><th>2024</th><th>2025</th><th>1H26</th><th>1H26 비중</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">화장품·뷰티</td><td>3,385</td><td>10,771</td><td>11,008</td><td>80.9%</td></tr>
+      <tr><td class="rowlab">뷰티 디바이스</td><td>3,126</td><td>4,070</td><td>2,446</td><td>18.0%</td></tr>
+      <tr><td class="rowlab">기타 (널디·포토그레이)</td><td>716</td><td>432</td><td>154</td><td>1.1%</td></tr>
+      <tr><td class="rowlab">합계</td><td>7,228</td><td>15,273</td><td>13,609</td><td>100.0%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) 주요 제품 및 서비스 · 연결 기준 · 억원</p>
+    <p>디바이스 매출 자체가 줄어든 것은 아님. 2025년 4,070억원으로 전년 대비 30.2% 늘었으나 화장품이 같은 기간 218.2% 늘면서 비중이 뒤집힘.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>지역</th><th>2025</th><th>2025 비중</th><th>1H26</th><th>1H26 비중</th><th>전년 동기 대비</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">북미</td><td>6,088</td><td>39.9%</td><td>6,479</td><td>47.6%</td><td class="hl">+260.5%</td></tr>
+      <tr><td class="rowlab">아시아</td><td>4,239</td><td>27.8%</td><td>2,569</td><td>18.9%</td><td class="hl">+39.8%</td></tr>
+      <tr><td class="rowlab">유럽</td><td>1,125</td><td>7.4%</td><td>2,289</td><td>16.8%</td><td class="hl">+362.4%</td></tr>
+      <tr><td class="rowlab">한국</td><td>2,991</td><td>19.6%</td><td>1,286</td><td>9.4%</td><td class="no">-14.3%</td></tr>
+      <tr><td class="rowlab">기타</td><td>795</td><td>5.2%</td><td>986</td><td>7.2%</td><td class="hl">+235.4%</td></tr>
+      <tr><td class="rowlab">합계</td><td>15,238</td><td>100.0%</td><td>13,609</td><td>100.0%</td><td class="hl">+129.2%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">회사 실적발표 기준 지역별 매출 (교보증권 2026-08-18 도표 70) · 억원</p>
+    <h3>3.2 유통채널 분석</h3>
+    <p>온라인 비중은 2024년 75.8%에서 1H26 61.4%로 내려왔음. 온라인 매출이 감소한 것이 아니라 얼타·타깃·월마트 등 미국 오프라인 매대가 새로 붙으며 분모가 커진 영향으로 봐야함.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>2024</th><th>2025</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">온라인 비중</td><td>75.8%</td><td>66.6%</td><td>65.4%</td><td>61.4%</td></tr>
+      <tr><td class="rowlab">오프라인 비중</td><td>24.2%</td><td>33.4%</td><td>34.6%</td><td>38.6%</td></tr>
+      <tr><td class="rowlab">매출 10% 초과 고객 수</td><td>없음</td><td>1곳</td><td>1곳</td><td>1곳</td></tr>
+      <tr><td class="rowlab">해당 고객 매출 (억원)</td><td>137</td><td>1,557</td><td>685</td><td>1,603</td></tr>
+      <tr><td class="rowlab">해당 고객 비중</td><td>1.9%</td><td>10.2%</td><td>11.5%</td><td>11.8%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) 주요 고객 공시 · 2024년은 10% 미만</p>
+    <h3>3.3 비용 구성과 이익률</h3>
+    <p>매출총이익률이 2024년 75.2%에서 1H26 78.2%로 3.0%p 올랐음. 같은 기간 판매관리비율은 58.2%에서 53.9%로 4.3%p 내려왔고 영업이익률은 17.0%에서 25.2%로 8.2%p 개선됨.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>FY24</th><th>FY25</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">매출액 (억원)</td><td>7,228</td><td>15,273</td><td>5,938</td><td>13,609</td></tr>
+      <tr><td class="rowlab">매출총이익률</td><td>75.2%</td><td>76.6%</td><td>75.9%</td><td>78.2%</td></tr>
+      <tr><td class="rowlab">광고선전비 비중</td><td>19.6%</td><td>17.5%</td><td>16.7%</td><td>21.1%</td></tr>
+      <tr><td class="rowlab">판매수수료 비중</td><td>13.0%</td><td>16.5%</td><td>14.0%</td><td>18.1%</td></tr>
+      <tr><td class="rowlab">운반비 비중</td><td>8.2%</td><td>7.4%</td><td>8.3%</td><td>7.0%</td></tr>
+      <tr><td class="rowlab">그 밖의 판매관리비 비중</td><td>17.4%</td><td>11.3%</td><td>13.5%</td><td>7.7%</td></tr>
+      <tr><td class="rowlab">판매관리비율</td><td>58.2%</td><td>52.7%</td><td>52.5%</td><td>53.9%</td></tr>
+      <tr><td class="rowlab">기타영업손익 비중</td><td>—</td><td>—</td><td class="no">-0.4%</td><td class="hl">+0.9%</td></tr>
+      <tr><td class="rowlab">영업이익률</td><td>17.0%</td><td>23.9%</td><td>23.1%</td><td>25.2%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) 판매비와 관리비 주석 · 연결 기준</p>
+    <p>광고선전비 비중이 1H25 16.7%에서 1H26 21.1%로 4.4%p 올랐음. 판매수수료도 14.0%에서 18.1%로 4.1%p 올라 매출을 두 배 이상 늘리는 동안 수요를 만드는 비용이 함께 늘었음. 운반비 비중은 8.3%에서 7.0%로 오히려 내려왔음.</p>
+    <p>영업이익률 2.1%p 개선은 매출총이익률 2.3%p 상승과 기타영업손익 1.3%p 개선이 판매관리비율 1.4%p 상승을 넘어선 데서 나왔음. 판매관리비 안에서는 그 밖의 항목이 5.8%p, 운반비가 1.3%p 줄어 광고·수수료 증가분을 상당 부분 상쇄했음.</p>
+    <h3>3.4 경제적 해자</h3>
+    <p>이 회사에는 공장이 없음. 화장품 전량을 코스맥스·노디너리 같은 외부 제조사에 맡기므로 처방과 설비에서 나오는 진입장벽은 애초에 후보가 아니고 자체 생산은 매출의 18.0%인 디바이스에만 해당함. 남는 후보는 브랜드 하나이며, 브랜드가 해자인지는 관심이 얼마나 오래 붙어 있는지로 확인해야 함.</p>
+    <p>구글 트렌드에서 미국 내 영문 브랜드명 medicube의 검색 지수는 2026년 4월~6월 최고치를 기록한 뒤 하락 전환함. 다만, 미국 아마존 상위 100위 안에 든 에이피알 제품 수는 1Q26 최대 9개에서 2Q26 16개로 늘었고 프라임데이가 끝난 7월에도 14개 이상을 유지하고 있음. 품목도 기초 화장품에서 모공패드·멀티밤 스틱·바디필링류로 넓어져 단일 히어로 제품 하나에 걸린 구조가 아님.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig2_구글트렌드_미국.png" alt="&lt;그림 2&gt; 구글 트렌드 — 미국 내 medicube 검색 지수 (2023.1~2026.9)" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;그림 2&gt; 구글 트렌드 — 미국 내 medicube 검색 지수 (2023.1~2026.9)</p>
+    <p>다만 유럽 지역은 미국과 달리 시장 초도 진입 국면에 속하여 지속 우상향하는 추세를 보이고 있음.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig3_구글트렌드_유럽1.png" alt="&lt;그림 3&gt; 구글 트렌드 — 유럽 medicube 검색 지수" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;그림 3&gt; 구글 트렌드 — 유럽 medicube 검색 지수</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig4_구글트렌드_유럽2.png" alt="&lt;그림 4&gt; 구글 트렌드 — 유럽 medicube 검색 지수 (계속)" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;그림 4&gt; 구글 트렌드 — 유럽 medicube 검색 지수 (계속)</p>
+  </div>
+  <div class="section" id="ks4">
+    <h2><span class="num">4</span>재무 추정</h2>
+    <h3>4.1 최근 5년 결산 실적</h3>
+    <p>매출은 2021년 2,591억원에서 2025년 1조 5,273억원으로 4년 만에 5.9배가 됐음. 같은 기간 영업이익률은 5.5%에서 23.9%로 18.4%p 올라감.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">매출액</td><td>2,591</td><td>3,977</td><td>5,238</td><td>7,228</td><td>15,273</td></tr>
+      <tr><td class="rowlab">매출 증가율</td><td>—</td><td class="hl">+53.5%</td><td class="hl">+31.7%</td><td class="hl">+38.0%</td><td class="hl">+111.3%</td></tr>
+      <tr><td class="rowlab">영업이익</td><td>143</td><td>392</td><td>1,042</td><td>1,227</td><td>3,655</td></tr>
+      <tr><td class="rowlab">영업이익률</td><td>5.5%</td><td>9.9%</td><td>19.9%</td><td>17.0%</td><td>23.9%</td></tr>
+      <tr><td class="rowlab">지배주주순이익</td><td>114</td><td>290</td><td>815</td><td>1,076</td><td>2,897</td></tr>
+      <tr><td class="rowlab">주당순이익 (원)</td><td>328</td><td>816</td><td>2,249</td><td>2,875</td><td>7,765</td></tr>
+      <tr><td class="rowlab">자기자본이익률 (평균자본)</td><td>19.4%</td><td>35.1%</td><td>55.0%</td><td>41.4%</td><td>75.3%</td></tr>
+      <tr><td class="rowlab">배당성향</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>65.8%</td></tr>
+      <tr><td class="rowlab">지배주주자본</td><td>660</td><td>993</td><td>1,969</td><td>3,235</td><td>4,458</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2021.12~2025.12) 요약연결재무정보 · 억원</p>
+    <p>2024년에 영업이익률이 19.9%에서 17.0%로 한 번 내려갔음. 상장 첫해에 광고선전비 비중을 19.6%까지 끌어올린 탓이며 2025년에 17.5%로 낮추면서 회복됨.</p>
+    <h3>4.2 운전자본과 현금흐름</h3>
+    <p>1H26 영업활동현금흐름은 864억원임. 같은 기간 순이익 2,588억원의 33.4%에 그쳤고 차이를 만든 것은 운전자본에서 빠져나간 2,171억원임.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>FY23</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">재고자산</td><td>565</td><td>1,097</td><td>1,655</td><td>3,699</td></tr>
+      <tr><td class="rowlab">매출채권및기타채권</td><td>230</td><td>479</td><td>911</td><td>1,916</td></tr>
+      <tr><td class="rowlab">매입채무및기타채무</td><td>386</td><td>684</td><td>1,431</td><td>2,474</td></tr>
+      <tr><td class="rowlab">재고자산회전율 (회)</td><td>—</td><td>2.2</td><td>2.6</td><td>2.2</td></tr>
+      <tr><td class="rowlab">영업활동현금흐름</td><td>1,078</td><td>791</td><td>3,410</td><td>864</td></tr>
+      <tr><td class="rowlab">유형자산 취득</td><td>97</td><td>450</td><td>154</td><td>168</td></tr>
+      <tr><td class="rowlab">현금및현금성자산</td><td>1,253</td><td>904</td><td>1,544</td><td>945</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) · 회전율은 연환산 매출원가 기준 · 억원</p>
+    <p>재고자산이 6개월 만에 1,655억원에서 3,699억원으로 2.2배가 됐음. 미국·유럽 행사 물량과 현지 안전재고를 미리 쌓은 데 따른 것이며 회전율은 2.6회에서 2.2회로 떨어짐. 매입채무도 1,431억원에서 2,474억원으로 함께 늘어 재고 증가분의 절반을 위탁 제조사 신용으로 감당했음.</p>
+    <p>2026년 6월 말 기준 차입금이 없고 1H26 유형자산 취득은 168억원에 그쳤음. 성장에 드는 자금이 설비보다 재고와 마케팅으로 흘러감.</p>
+  </div>
+  <div class="section" id="ks5">
+    <h2><span class="num">5</span>밸류에이션</h2>
+    <h3>5.1 중·단기 트레이딩 가치</h3>
+    <p>브랜드 비교기업 3사의 2027년 예상 주가수익비율(PER) 산술평균은 18.4배임. 아모레퍼시픽 20.3배와 LG생활건강 18.9배가 위에 있고 달바글로벌이 15.9배로 아래에 있음.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>비교 대상</th><th>사업 영역</th><th>예상 PER</th><th>기준</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">아모레퍼시픽</td><td>국내 화장품 브랜드</td><td>20.3배</td><td>2027년 예상</td></tr>
+      <tr><td class="rowlab">LG생활건강</td><td>국내 화장품 브랜드</td><td>18.9배</td><td>2027년 예상</td></tr>
+      <tr><td class="rowlab">달바글로벌</td><td>K-뷰티 브랜드</td><td>15.9배</td><td>2027년 예상</td></tr>
+      <tr><td class="rowlab">브랜드 peer 평균</td><td>위 3사 산술평균</td><td>18.4배</td><td>2027년 예상</td></tr>
+      <tr><td class="rowlab">적용 PER</td><td>peer 평균 그대로 · 할인·할증 없음</td><td>18.4배</td><td>4 시나리오 동일</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Bloomberg·BNK투자증권 추정 (2026-08-20 종가 기준)</p>
+    <p>적용 배수는 18.4배이며 4 시나리오에 공통으로 씀. 적용 연도도 FY28E로 통일하고 시나리오 차이는 북미·유럽 점유율과 아시아·한국 매출, 영업이익률에서만 냄. peer 배수가 2027년 기준이라 1년치 이익 성장분은 배수에 반영되지 않음.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>Bear FY28E</th><th>Base FY28E</th><th>Bull FY28E</th><th>Best FY28E</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">북미 점유율</td><td>1.10%</td><td>1.40%</td><td>1.75%</td><td>2.20%</td></tr>
+      <tr><td class="rowlab">유럽 점유율</td><td>0.50%</td><td>0.70%</td><td>0.95%</td><td>1.25%</td></tr>
+      <tr><td class="rowlab">아시아·기타 매출 (억원)</td><td>9,000</td><td>11,000</td><td>13,500</td><td>16,500</td></tr>
+      <tr><td class="rowlab">한국 매출 (억원)</td><td>2,200</td><td>2,500</td><td>2,800</td><td>3,100</td></tr>
+      <tr><td class="rowlab">매출액 (억원)</td><td>41,440</td><td>53,092</td><td>67,092</td><td>84,420</td></tr>
+      <tr><td class="rowlab">영업이익률</td><td>20.0%</td><td>23.0%</td><td>25.0%</td><td>27.0%</td></tr>
+      <tr><td class="rowlab">영업이익 (억원)</td><td>8,288</td><td>12,211</td><td>16,773</td><td>22,793</td></tr>
+      <tr><td class="rowlab">지배주주순이익 (억원)</td><td>6,441</td><td>9,383</td><td>12,805</td><td>17,320</td></tr>
+      <tr><td class="rowlab">EPS (원)</td><td>17,204</td><td>25,064</td><td>34,202</td><td>46,263</td></tr>
+      <tr><td class="rowlab">적용 PER (배)</td><td>18.4</td><td>18.4</td><td>18.4</td><td>18.4</td></tr>
+      <tr><td class="rowlab">목표주가 (원)</td><td>316,554</td><td>461,178</td><td>629,317</td><td>851,239</td></tr>
+      <tr><td class="rowlab">현재가 대비</td><td class="no">-22.0%</td><td class="hl">+13.6%</td><td class="hl">+55.0%</td><td class="hl">+109.7%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">출처 — 시장 규모는 유로모니터 · 환율 1,400원/달러 · 법인세율 25.0% · 영업외손익 +300억 · 종가 2026-09-03</p>
+    <h3 class="scn">Bear 아마존 순위가 밀리고 판촉비가 늘어나는 경우</h3>
+    <p>시장 규모는 Base와 같게 두고 점유율과 영업이익률만 내렸음. 북미 1.10%는 2026년 0.77%에서 오르기는 하되 상승 폭이 절반으로 꺾이는 수준이며, 아마존 상위 100위 제품 수가 다시 한 자릿수로 내려가는 경우에 해당함.</p>
+    <p>영업이익률 20.0%는 광고선전비 비중이 1H26 21.1%에서 더 오르고 오프라인 리테일러 수수료가 함께 붙는 조합임. 이 경우 목표주가는 현재가를 22.0% 밑돎.</p>
+    <h3 class="scn">Base 북미가 자리를 잡고 유럽이 초기 확장을 마치는 경우</h3>
+    <p>북미 점유율 1.40%는 2026년 0.77%에서 2년 만에 1.8배가 되는 수준임. 아마존 순위를 지키는 데 얼타·타깃·월마트 매대가 더해지면 도달할 수 있음.</p>
+    <p>영업이익률 23.0%는 1H26 실적치보다 낮게 잡았음. 오프라인 비중이 올라가면 리테일러 수수료와 판촉 부담이 함께 커지기 때문이며, 미국 오프라인 매대가 초도 입점 이후 재발주로 이어지지 않으면 점유율 확대가 2027년에 멈춤.</p>
+    <h3 class="scn">Bull 유럽 오프라인이 미국의 전례를 따라가는 경우</h3>
+    <p>유럽 점유율 0.95%는 2026년 0.30%에서 2년간 0.65%p 오르는 수준임. 미국이 2025~2026년 한 해에 0.46%p 올린 속도를 유럽에서 2년에 걸쳐 재현하는 값이며 영국 부츠를 비롯한 대형 리테일러 입점이 2027년에 매출로 잡히는 것이 전제임.</p>
+    <p>유럽 매출이 최종 소비가 아닌 초도 물량 적재에 기대고 있었다면 2027년 재발주가 끊김. 그 경우 점유율 상승분이 나오지 않아 Base로 내려앉음.</p>
+    <h3 class="scn">Best 서구권 메인스트림 매대를 확보하는 경우</h3>
+    <p>북미 2.20%와 유럽 1.25%는 두 지역 합산 매출 6조 4,820억원에 해당함. 인디 브랜드를 넘어 글로벌 브랜드사의 초입에 서게 됨.</p>
+    <p>영업이익률 27.0%는 광고선전비 비중이 20%를 넘지 않는 선에서 통제되고 항공 운송이 해상으로 정상화된다는 두 전제 위에 서 있음. 광고선전비 비중이 1H26 21.1%에서 더 올라가면 이 가정은 성립하지 않음.</p>
+    <h3>5.2 장기 보유 가치</h3>
+    <p>현재가 406,000원은 2026년 6월 말 지배주주자본 6,480억원 대비 주가순자산비율(PBR) 23.46배임.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>FY21</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>3Q25(TTM)</th><th>4Q25(TTM)</th><th>1Q26(TTM)</th><th>2Q26(TTM)</th><th>FY26E</th><th>FY27F</th><th>FY28F</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">ROE (평균자본 기준)</td><td>19.4%</td><td>35.1%</td><td>55.0%</td><td>41.4%</td><td>75.3%</td><td>59.0%</td><td>72.9%</td><td>75.0%</td><td>74.9%</td><td>81.9%</td><td>78.4%</td><td>64.3%</td></tr>
+      <tr><td class="rowlab">ROE (기말자본 기준)</td><td>17.3%</td><td>29.2%</td><td>41.4%</td><td>33.3%</td><td>65.0%</td><td>67.2%</td><td>65.0%</td><td>70.5%</td><td>66.7%</td><td>73.3%</td><td>61.3%</td><td>52.1%</td></tr>
+      <tr><td class="rowlab">지배주주순이익 (억원)</td><td>114</td><td>290</td><td>815</td><td>1,076</td><td>2,897</td><td>2,343</td><td>2,897</td><td>3,570</td><td>4,322</td><td>6,005</td><td>8,895</td><td>12,143</td></tr>
+      <tr><td class="rowlab">기말 자본 (억원)</td><td>660</td><td>993</td><td>1,969</td><td>3,235</td><td>4,458</td><td>3,487</td><td>4,458</td><td>5,066</td><td>6,480</td><td>8,193</td><td>14,505</td><td>23,294</td></tr>
+      <tr><td class="rowlab">추정 기관 수 (개)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>3</td><td>3</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">출처 — 사업보고서·분기보고서 연결 재무제표(비지배지분 0) · 분기는 누적 차감으로 TTM 산출 · 추정은 신한·교보·BNK 3사 평균</p>
+    <p>적용 ROE 64.3%는 추이 표의 FY28F 평균자본 값을 그대로 받아 네 시나리오가 공유함. 남는 변수는 보유 기간 하나뿐이라 3년에서 15년까지 벌렸음.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>항목</th><th>Bear</th><th>Base</th><th>Bull</th><th>Best</th><th>비고</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">주당순자산 BPS (원)</td><td>17,309</td><td>17,309</td><td>17,309</td><td>17,309</td><td>직전 결산일 기준</td></tr>
+      <tr><td class="rowlab">주가순자산비율 PBR (배)</td><td>23.46</td><td>23.46</td><td>23.46</td><td>23.46</td><td>현재가 ÷ BPS</td></tr>
+      <tr><td class="rowlab">보유 기간 N (년)</td><td>3</td><td>5</td><td>10</td><td>15</td><td>시나리오 키팩터</td></tr>
+      <tr><td class="rowlab">기대수익률 (연)</td><td class="no">-42.6%</td><td class="no">-12.6%</td><td class="hl">+19.8%</td><td class="hl">+33.1%</td><td>(1+ROE)÷PBR^(1/N)−1</td></tr>
+      <tr><td class="rowlab">요구수익률 충족 기간 (년)</td><td>7.9</td><td>7.9</td><td>7.9</td><td>7.9</td><td>ln(PBR)÷ln((1+ROE)÷(1+r))</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">출처 — 반기보고서(2026.06) 연결 재무상태표 · 적용 ROE 64.3%(FY28F 평균자본) · 요구수익률 연 10.0% · 종가 2026-09-03</p>
+    <p>기대수익률은 3년 보유 연 -42.6%에서 15년 보유 연 +33.1% 사이에 놓임. 5년은 연 -12.6%이고 10년은 연 19.8%이며 요구수익률 10.0%를 채우는 손익분기 보유 기간은 7.9년임.</p>
+  </div>
+  <div class="section" id="ks6">
+    <h2><span class="num">6</span>지배구조 및 주주환원</h2>
+    <h3>6.1 주주 구성</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>구분</th><th>내용</th><th>지분율</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">최대주주 및 특수관계인</td><td>김병훈 외 5인 합계 13,035,760주</td><td>34.81%</td></tr>
+      <tr><td class="rowlab">국민연금</td><td>연금·기금</td><td>9.00%</td></tr>
+      <tr><td class="rowlab">Fidelity Management &amp; Research</td><td>2026-06-09 대량보유 보고 기준</td><td>5.01%</td></tr>
+      <tr><td class="rowlab">자기주식</td><td>2025년 8월 613,400주 전량 소각</td><td>0.00%</td></tr>
+      <tr><td class="rowlab">유동주식비율</td><td>100% − (최대주주 및 특수관계인 + 자기주식 + 국민연금)</td><td>56.19%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">반기보고서(2026.06) 주주에 관한 사항 · 발행주식 37,438,155주 기준</p>
+    <p>창업자 김병훈 대표가 31.93%를 직접 보유함. 임원 5인이 나눠 가진 2.88%를 더하면 최대주주 측 합산 지분율이 34.81%여서 경영권은 안정적임. 유동주식비율 56.19%는 시가총액 15조원대 종목으로서 낮지 않은 수준임. 미행사 주식매수선택권이 남아 있지 않아 1H26 희석주당순이익이 기본주당순이익과 같음.</p>
+    <h3>6.2 이사회 구성</h3>
+    <p>이사회는 2026년 6월 30일 기준 사내이사 2인과 독립이사 3인의 5인 체제임. 독립이사 김형이가 의장을 맡아 대표이사와 의장이 분리돼 있음. 감사위원회는 독립이사 3인 전원으로 꾸려졌고 그중 2인이 공인회계사, 1인이 세무 전문가임.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>성명</th><th>구분</th><th>재직</th><th>주요 경력</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">김병훈</td><td>사내이사</td><td>11년 8개월</td><td>대표이사 · 창업자</td></tr>
+      <tr><td class="rowlab">신재하</td><td>사내이사</td><td>10년 0개월</td><td>최고재무책임자 · 투명경영위원 · 헤드랜드캐피탈</td></tr>
+      <tr><td class="rowlab">김형이</td><td>독립이사</td><td>3년 0개월</td><td>이사회 의장 · 감사위원장 · 대주회계법인 공인회계사</td></tr>
+      <tr><td class="rowlab">노유리</td><td>독립이사</td><td>3년 0개월</td><td>보상위원장 · 감사위원 · 삼덕회계법인 공인회계사</td></tr>
+      <tr><td class="rowlab">오주동</td><td>독립이사</td><td>2년 3개월</td><td>감사위원 · 세무법인다승 파트너</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">반기보고서(2026.06) 임원 현황 · 재직 기간은 2026-06-30 기준</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>판정 기준</th><th>현황</th><th>판정</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">사외이사 비율</td><td>50% 미만이면 경고</td><td>60.0% (이사 5인 중 3인)</td><td>통과</td></tr>
+      <tr><td class="rowlab">사외이사 이력</td><td>쭉정이가 절반 초과면 경고, 정확히 절반이면 부분 경고. 기관의 장을 지낸 이력은 그 분야 실무와 구분함</td><td>3인 중 0인이 직위형</td><td>통과</td></tr>
+      <tr><td class="rowlab">평균 재임기간</td><td>상장 후 1회 임기 미경과 — 평균 재임 기간 대신 상장 이후 중도퇴임으로 판정 (상장 후 3년 예외)</td><td>2년 9개월 · 중도퇴임 0건</td><td>통과</td></tr>
+      <tr><td class="rowlab">감사 독립성</td><td>감사기구에 회계·재무·감사 실무 경력자가 없으면 경고</td><td>감사위원회 체제 (김형이)</td><td>통과</td></tr>
+      <tr><td class="rowlab">합계</td><td></td><td></td><td>경고 0/4</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">5단계 체크리스트 자동 판정 · 기준일 2026-06-30 · 반기보고서(2026.06) 임원 현황</p>
+    <p>평균 재임기간은 2026년 6월 30일 기준 2년 9개월로 1회 임기 3년에 못 미침. 2024년 2월 상장 이후 아직 3년이 지나지 않아 재임 기간이 3년에 이를 방법이 없고 판정 기준도 이 구간에서는 상장 이후 중도퇴임으로 갈음함. 상장 후 중도퇴임이 없어 통과로 판정됨.</p>
+    <h3>6.3 주주환원</h3>
+    <p>2024~2026년 3개년 동안 매년 연결 조정 당기순이익의 25% 이상을 현금배당 또는 자기주식 소각으로 돌려주겠다고 공표했음. 실제 집행은 그 하한을 크게 넘김.</p>
+    <p>2025 회계연도 배당은 중간배당 1,343억원과 결산배당 562억원을 합해 1,905억원임. 같은 해 지배주주순이익 2,897억원 대비 배당성향은 65.8%임. 자기주식은 2024년 600억원, 2025년 300억원을 신탁으로 사들여 각각 2025년 1월과 8월에 전량 소각했음. 두 차례 소각으로 발행주식수가 1,497,735주 줄었음.</p>
+    <p>2026년 7월 16일 이사회는 936억원 규모 중간배당을 결의했음. 회사가 사업보고서에 밝힌 상장 이후 누적 주주환원 규모는 2,800억원을 넘고 여기에 이번 중간배당을 더하면 3,700억원대에 이름.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>점검 항목</th><th>현황</th><th>시사점</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">배당 정책</td><td>2024~2026년 조정 순이익의 25% 이상</td><td>목표 하한 공표</td></tr>
+      <tr><td class="rowlab">배당성향</td><td>2025년 65.8% · 5년 평균 13.2%</td><td>배당 개시 2년차</td></tr>
+      <tr><td class="rowlab">배당총액</td><td>2025 회계연도 1,905억원</td><td>순이익 2,897억원 대비 65.8%</td></tr>
+      <tr><td class="rowlab">자기주식</td><td>2024~2025년 900억원 취득 후 전량 소각</td><td>발행주식수 1,497,735주 감소</td></tr>
+      <tr><td class="rowlab">자기주식 보유</td><td>2026년 6월 말 0주</td><td>재처분에 따른 물량 재공급 없음</td></tr>
+      <tr><td class="rowlab">차입금</td><td>2026년 6월 말 무차입</td><td>환원 여력 유지</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">사업보고서(2025.12)·반기보고서(2026.06) 배당에 관한 사항·주식의 총수</p>
+  </div>
+</article>
+
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Equity Analysis · KOSPI 278470</div>
+    <h1>APR (278470) Equity Analysis</h1>
+    <p class="lede">FY25 revenue KRW 1.5273tn (+111.3%) · operating margin 23.9% · 1H26 export share 90.5% · cosmetics 80.9% · price KRW 406,000 · market cap KRW 15.20tn (3 Sep 2026)</p>
+    <div class="meta">
+      <span>Originally written 2 Sep 2026 (v15)</span>
+      <span>Reference price KRW 406,000 (3 Sep 2026 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Price</div>
+      <div class="value">406,000<span class="unit">KRW</span></div>
+      <div class="sub">52-week 204,000 – 475,000</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Market cap</div>
+      <div class="value">15.20<span class="unit">tn KRW</span></div>
+      <div class="sub">37,438,155 shares outstanding</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Price-to-book</div>
+      <div class="value">23.46<span class="unit">x</span></div>
+      <div class="sub">BPS KRW 17,309 · FY28F ROE 64.3%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Base TP (FY28E)</div>
+      <div class="value">461,178<span class="unit">KRW</span></div>
+      <div class="sub">+13.6% vs. price · Bear 316,554 −22.0%</div>
+    </div>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-row"><span class="tldr-k">Thesis</span><span class="tldr-v">A cosmetics company that owns no factory, only brands. All cosmetics are outsourced to Cosmax and Nordinary, so the brand is the single remaining moat candidate, and the entire thesis is whether that brand holds attention independently of the promotional calendar. In 1H26 exports were 90.5% of revenue and North America 47.6%, while Korea has already fallen to 9.4%.</span></div>
+    <div class="tldr-row"><span class="tldr-k">Valuation</span><span class="tldr-v">An 18.4x average of three brand comparables is applied in common across four scenarios, giving target prices of KRW 316,554–851,239. The current price sits 13.6% below Base at KRW 461,178. On the long view, recovering a 23.46x price-to-book at a 64.3% FY28F ROE takes 7.9 years; a five-year hold returns −12.6% a year and a ten-year hold +19.8%.</span></div>
+    <div class="tldr-row"><span class="tldr-k">Risks</span><span class="tldr-v">The medicube Google search index inside the United States peaked between April and June 2026 and turned down. The advertising ratio rose from 16.7% in 1H25 to 21.1% in 1H26, meaning growth is being bought with cost; inventory grew 2.2-fold in six months and turnover fell from 2.6x to 2.2x. Concentration in the largest customer also rose from 1.9% to 11.8%.</span></div>
+  </div>
+
+  <div class="section" id="es1">
+    <h2><span class="num">1</span>Company Overview</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>Detail</th><th>Item</th><th>Detail</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Name / code</td><td>APR Corp. / 278470 (KOSPI)</td><td>Market cap</td><td>KRW 15.20tn (3 Sep 2026)</td></tr>
+      <tr><td class="rowlab">Founded</td><td>10 October 2014</td><td>Listed</td><td>27 February 2024 (KOSPI)</td></tr>
+      <tr><td class="rowlab">CEO</td><td>Kim Byung-hoon (founder)</td><td>Fiscal year end</td><td>December</td></tr>
+      <tr><td class="rowlab">Head office</td><td>Lotte World Tower, Songpa-gu, Seoul</td><td>Employees</td><td>751 (30 Jun 2026)</td></tr>
+      <tr><td class="rowlab">Shares outstanding</td><td>37,438,155 (0 treasury shares)</td><td>Price</td><td>KRW 406,000 (3 Sep 2026)</td></tr>
+      <tr><td class="rowlab">FY25 revenue</td><td>KRW 1.5273tn (+111.3% YoY)</td><td>FY25 operating profit</td><td>KRW 365.5bn (OPM 23.9%)</td></tr>
+      <tr><td class="rowlab">1H26 revenue</td><td>KRW 1.3609tn (+129.2% YoY)</td><td>1H26 operating profit</td><td>KRW 342.8bn (OPM 25.2%)</td></tr>
+      <tr><td class="rowlab">Segments</td><td>Cosmetics 80.9% · devices 18.0% (1H26)</td><td>Consolidation</td><td>15 subsidiaries (30 Jun 2026)</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — annual report (Dec 2025) and interim report (Jun 2026), consolidated · close of 3 Sep 2026</p>
+    <p>APR is a brand company selling cosmetics and home beauty devices. Founded in October 2014, it listed on the KOSPI in February 2024, and it develops medicube, APRILSKIN and FORMENT in house before handing them to online and offline channels at home and abroad. All cosmetics are outsourced as finished goods to contract manufacturers such as Cosmax and Nordinary; the only thing it makes itself is the home beauty device.</p>
+    <p>Of 1H26 revenue of KRW 1.3609tn, exports accounted for KRW 1.2323tn, or 90.5%. The company's own guidance for 2026 is KRW 3tn of revenue at a 24–26% operating margin.</p>
+  </div>
+  <div class="section" id="es2">
+    <h2><span class="num">2</span>Industry</h2>
+    <h3>2.1 The Division Between Manufacturing and Brand</h3>
+    <p>K-beauty brand companies do not own factories. They handle product planning, marketing and pricing, and hand manufacturing to ODM firms. APR likewise orders all of its cosmetics as finished goods from Cosmax, Nordinary, Encos and others, with 1H26 consolidated purchases of KRW 429.6bn.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1_밸류체인.png" alt="&lt;Figure 1&gt; Business structure" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;Figure 1&gt; Business structure</p>
+    <p>Cost of goods sold is only 21.8% of revenue, while advertising at 21.1% and sales commissions at 18.1% take up most of operating expenses. The company's profit comes from brand awareness and the ability to secure shelf space, and what has to be checked is how long that force lasts.</p>
+    <h3>2.2 Export Growth by Region and Market Penetration</h3>
+    <p>Korean cosmetics exports rose 10% in 2025 and 27.6% in the January–July 2026 cumulative period to USD 6.8bn, a high growth rate.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Region</th><th>2025 growth</th><th>2025 share</th><th>2026 YTD growth</th><th>2026 YTD share</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Total</td><td class="hl">+10%</td><td>100.0%</td><td class="hl">+27.6%</td><td>100.0%</td></tr>
+      <tr><td class="rowlab">United States</td><td class="hl">+13%</td><td>18.6%</td><td class="hl">+39%</td><td>19.8%</td></tr>
+      <tr><td class="rowlab">Europe</td><td class="hl">+44%</td><td>18.2%</td><td class="hl">+65%</td><td>23.6%</td></tr>
+      <tr><td class="rowlab">China</td><td>—</td><td>—</td><td class="no">-2.4%</td><td>—</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — Korea Customs Service and Trass (Kyobo Securities, 18 Aug 2026) · some growth rates from BNK Investment Securities (21 Aug 2026)</p>
+    <p>In 2025 the United States led at 18.6% against Europe at 18.2%, but in the 2026 cumulative figures the order reversed, with Europe at 23.6% and the United States at 19.8%. The largest market for cosmetics exports is shifting from China to the United States, and from the United States to Europe.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>North America</th><th>Europe</th><th>Basis</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Regional cosmetics retail market (USD bn)</td><td>140.0</td><td>124.0</td><td>annual retail market per Euromonitor</td></tr>
+      <tr><td class="rowlab">2025 Korean cosmetics exports (USD bn)</td><td>1.75</td><td>1.71</td><td>North America is US-bound; Europe is continental</td></tr>
+      <tr><td class="rowlab">K-beauty penetration</td><td>1.25%</td><td>1.38%</td><td>exports ÷ regional market size</td></tr>
+      <tr><td class="rowlab">APR 2025 revenue (KRW 0.1bn)</td><td>6,088</td><td>1,125</td><td>regional revenue from company results</td></tr>
+      <tr><td class="rowlab">APR share (2025)</td><td>0.31%</td><td>0.065%</td><td>revenue ÷ market converted at KRW 1,400/USD</td></tr>
+      <tr><td class="rowlab">APR share (2026 est.)</td><td>0.77%</td><td>0.30%</td><td>on Kyobo Securities' 2026 revenue estimate</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — Euromonitor and Trass (Kyobo Securities, 18 Aug 2026) · 2026 share is on Kyobo's estimated revenue</p>
+    <p>K-beauty penetration remains at 1.25% in North America and 1.38% in Europe. Within that, APR's share is 0.31% and 0.065% respectively. Penetration is still low and leaves room to grow, but competitors are multiplying quickly — as of 2026 more than 90% of exports come from indie brands.</p>
+  </div>
+  <div class="section" id="es3">
+    <h2><span class="num">3</span>Business Analysis</h2>
+    <h3>3.1 Revenue Mix</h3>
+    <p>The beauty device share fell from 43.3% in 2024 to 18.0% in 1H26. Over the same period cosmetics climbed to 80.9%, and the company's identity moved from device maker to cosmetics brand.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Segment</th><th>2024</th><th>2025</th><th>1H26</th><th>1H26 share</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Cosmetics &amp;amp; beauty</td><td>3,385</td><td>10,771</td><td>11,008</td><td>80.9%</td></tr>
+      <tr><td class="rowlab">Beauty devices</td><td>3,126</td><td>4,070</td><td>2,446</td><td>18.0%</td></tr>
+      <tr><td class="rowlab">Other (NERDY, Photogray)</td><td>716</td><td>432</td><td>154</td><td>1.1%</td></tr>
+      <tr><td class="rowlab">Total</td><td>7,228</td><td>15,273</td><td>13,609</td><td>100.0%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — products and services sections of the annual report (Dec 2025) and interim report (Jun 2026) · consolidated · KRW 0.1bn</p>
+    <p>Device revenue itself did not shrink. It grew 30.2% year on year to KRW 407.0bn in 2025, but cosmetics grew 218.2% over the same period and the weighting flipped.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Region</th><th>2025</th><th>2025 share</th><th>1H26</th><th>1H26 share</th><th>YoY</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">North America</td><td>6,088</td><td>39.9%</td><td>6,479</td><td>47.6%</td><td class="hl">+260.5%</td></tr>
+      <tr><td class="rowlab">Asia</td><td>4,239</td><td>27.8%</td><td>2,569</td><td>18.9%</td><td class="hl">+39.8%</td></tr>
+      <tr><td class="rowlab">Europe</td><td>1,125</td><td>7.4%</td><td>2,289</td><td>16.8%</td><td class="hl">+362.4%</td></tr>
+      <tr><td class="rowlab">Korea</td><td>2,991</td><td>19.6%</td><td>1,286</td><td>9.4%</td><td class="no">-14.3%</td></tr>
+      <tr><td class="rowlab">Other</td><td>795</td><td>5.2%</td><td>986</td><td>7.2%</td><td class="hl">+235.4%</td></tr>
+      <tr><td class="rowlab">Total</td><td>15,238</td><td>100.0%</td><td>13,609</td><td>100.0%</td><td class="hl">+129.2%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — regional revenue as presented by the company (Kyobo Securities, 18 Aug 2026, exhibit 70) · KRW 0.1bn</p>
+    <h3>3.2 Distribution Channels</h3>
+    <p>The online share came down from 75.8% in 2024 to 61.4% in 1H26. Online revenue did not fall; the denominator grew as new US offline shelf space at Ulta, Target and Walmart was added.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>2024</th><th>2025</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Online share</td><td>75.8%</td><td>66.6%</td><td>65.4%</td><td>61.4%</td></tr>
+      <tr><td class="rowlab">Offline share</td><td>24.2%</td><td>33.4%</td><td>34.6%</td><td>38.6%</td></tr>
+      <tr><td class="rowlab">Customers above 10% of revenue</td><td>none</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td class="rowlab">Revenue from that customer (KRW 0.1bn)</td><td>137</td><td>1,557</td><td>685</td><td>1,603</td></tr>
+      <tr><td class="rowlab">That customer's share</td><td>1.9%</td><td>10.2%</td><td>11.5%</td><td>11.8%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — major-customer disclosures in the annual report (Dec 2025) and interim report (Jun 2026) · below 10% in 2024</p>
+    <h3>3.3 Cost Structure and Margins</h3>
+    <p>Gross margin rose 3.0pp from 75.2% in 2024 to 78.2% in 1H26. Over the same period the SG&amp;A ratio fell 4.3pp from 58.2% to 53.9%, and the operating margin improved 8.2pp from 17.0% to 25.2%.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>FY24</th><th>FY25</th><th>1H25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Revenue (KRW 0.1bn)</td><td>7,228</td><td>15,273</td><td>5,938</td><td>13,609</td></tr>
+      <tr><td class="rowlab">Gross margin</td><td>75.2%</td><td>76.6%</td><td>75.9%</td><td>78.2%</td></tr>
+      <tr><td class="rowlab">Advertising as % of revenue</td><td>19.6%</td><td>17.5%</td><td>16.7%</td><td>21.1%</td></tr>
+      <tr><td class="rowlab">Sales commissions as % of revenue</td><td>13.0%</td><td>16.5%</td><td>14.0%</td><td>18.1%</td></tr>
+      <tr><td class="rowlab">Freight as % of revenue</td><td>8.2%</td><td>7.4%</td><td>8.3%</td><td>7.0%</td></tr>
+      <tr><td class="rowlab">Other SG&amp;amp;A as % of revenue</td><td>17.4%</td><td>11.3%</td><td>13.5%</td><td>7.7%</td></tr>
+      <tr><td class="rowlab">SG&amp;amp;A ratio</td><td>58.2%</td><td>52.7%</td><td>52.5%</td><td>53.9%</td></tr>
+      <tr><td class="rowlab">Other operating income as % of revenue</td><td>—</td><td>—</td><td class="no">-0.4%</td><td class="hl">+0.9%</td></tr>
+      <tr><td class="rowlab">Operating margin</td><td>17.0%</td><td>23.9%</td><td>23.1%</td><td>25.2%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — SG&amp;amp;A notes to the annual report (Dec 2025) and interim report (Jun 2026) · consolidated</p>
+    <p>The advertising ratio rose 4.4pp from 16.7% in 1H25 to 21.1% in 1H26. Sales commissions also rose 4.1pp from 14.0% to 18.1%, so while revenue more than doubled the cost of manufacturing demand rose with it. The freight ratio, by contrast, came down from 8.3% to 7.0%.</p>
+    <p>The 2.1pp improvement in operating margin came from a 2.3pp rise in gross margin and a 1.3pp improvement in other operating income outweighing a 1.4pp rise in the SG&amp;A ratio. Within SG&amp;A, other items fell 5.8pp and freight 1.3pp, offsetting much of the increase in advertising and commissions.</p>
+    <h3>3.4 Economic Moat</h3>
+    <p>This company has no factory. All cosmetics are entrusted to outside manufacturers such as Cosmax and Nordinary, so barriers to entry arising from formulation and plant were never a candidate, and in-house production applies only to devices, 18.0% of revenue. The one remaining candidate is the brand, and whether a brand is a moat has to be checked by how long attention stays attached to it.</p>
+    <p>On Google Trends the search index for the English brand name medicube inside the United States peaked between April and June 2026 and then turned down. That said, the number of APR products inside the US Amazon top 100 rose from a maximum of nine in 1Q26 to sixteen in 2Q26, and stayed at fourteen or more in July after Prime Day ended. The range also widened from basic skincare to pore pads, multi-balm sticks and body peeling, so the structure does not hang on a single hero product.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig2_구글트렌드_미국.png" alt="&lt;Figure 2&gt; Google Trends — medicube search index in the United States (Jan 2023 – Sep 2026)" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;Figure 2&gt; Google Trends — medicube search index in the United States (Jan 2023 – Sep 2026)</p>
+    <p>Europe, unlike the United States, is in the initial phase of market entry and continues to trend upward.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig3_구글트렌드_유럽1.png" alt="&lt;Figure 3&gt; Google Trends — medicube search index in Europe" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;Figure 3&gt; Google Trends — medicube search index in Europe</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig4_구글트렌드_유럽2.png" alt="&lt;Figure 4&gt; Google Trends — medicube search index in Europe (continued)" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p class="filter-note" style="text-align:center">&lt;Figure 4&gt; Google Trends — medicube search index in Europe (continued)</p>
+  </div>
+  <div class="section" id="es4">
+    <h2><span class="num">4</span>Financials</h2>
+    <h3>4.1 Five-Year Results</h3>
+    <p>Revenue grew 5.9-fold in four years, from KRW 259.1bn in 2021 to KRW 1.5273tn in 2025. Over the same period the operating margin rose 18.4pp from 5.5% to 23.9%.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Revenue</td><td>2,591</td><td>3,977</td><td>5,238</td><td>7,228</td><td>15,273</td></tr>
+      <tr><td class="rowlab">Revenue growth</td><td>—</td><td class="hl">+53.5%</td><td class="hl">+31.7%</td><td class="hl">+38.0%</td><td class="hl">+111.3%</td></tr>
+      <tr><td class="rowlab">Operating profit</td><td>143</td><td>392</td><td>1,042</td><td>1,227</td><td>3,655</td></tr>
+      <tr><td class="rowlab">Operating margin</td><td>5.5%</td><td>9.9%</td><td>19.9%</td><td>17.0%</td><td>23.9%</td></tr>
+      <tr><td class="rowlab">Controlling net income</td><td>114</td><td>290</td><td>815</td><td>1,076</td><td>2,897</td></tr>
+      <tr><td class="rowlab">Earnings per share (KRW)</td><td>328</td><td>816</td><td>2,249</td><td>2,875</td><td>7,765</td></tr>
+      <tr><td class="rowlab">Return on equity (average equity)</td><td>19.4%</td><td>35.1%</td><td>55.0%</td><td>41.4%</td><td>75.3%</td></tr>
+      <tr><td class="rowlab">Payout ratio</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>65.8%</td></tr>
+      <tr><td class="rowlab">Controlling equity</td><td>660</td><td>993</td><td>1,969</td><td>3,235</td><td>4,458</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — summary consolidated financials from annual reports (Dec 2021 – Dec 2025) · KRW 0.1bn</p>
+    <p>The operating margin dipped once in 2024, from 19.9% to 17.0%. That was because the advertising ratio was pushed up to 19.6% in the first year after listing; it recovered in 2025 as the ratio came down to 17.5%.</p>
+    <h3>4.2 Working Capital and Cash Flow</h3>
+    <p>1H26 operating cash flow was KRW 86.4bn. That was only 33.4% of net income of KRW 258.8bn for the same period, and the gap was created by KRW 217.1bn drained into working capital.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>FY23</th><th>FY24</th><th>FY25</th><th>1H26</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Inventory</td><td>565</td><td>1,097</td><td>1,655</td><td>3,699</td></tr>
+      <tr><td class="rowlab">Trade and other receivables</td><td>230</td><td>479</td><td>911</td><td>1,916</td></tr>
+      <tr><td class="rowlab">Trade and other payables</td><td>386</td><td>684</td><td>1,431</td><td>2,474</td></tr>
+      <tr><td class="rowlab">Inventory turnover (x)</td><td>—</td><td>2.2</td><td>2.6</td><td>2.2</td></tr>
+      <tr><td class="rowlab">Operating cash flow</td><td>1,078</td><td>791</td><td>3,410</td><td>864</td></tr>
+      <tr><td class="rowlab">Purchases of PP&amp;amp;E</td><td>97</td><td>450</td><td>154</td><td>168</td></tr>
+      <tr><td class="rowlab">Cash and cash equivalents</td><td>1,253</td><td>904</td><td>1,544</td><td>945</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — annual report (Dec 2025) and interim report (Jun 2026) · turnover on annualised cost of goods sold · KRW 0.1bn</p>
+    <p>Inventory grew 2.2-fold in six months, from KRW 165.5bn to KRW 369.9bn. This followed a build of event volumes for the United States and Europe plus local safety stock, and turnover fell from 2.6x to 2.2x. Trade payables rose alongside from KRW 143.1bn to KRW 247.4bn, so half of the inventory increase was carried on contract-manufacturer credit.</p>
+    <p>As of the end of June 2026 there is no debt, and 1H26 purchases of property, plant and equipment came to only KRW 16.8bn. The money that growth consumes flows into inventory and marketing rather than facilities.</p>
+  </div>
+  <div class="section" id="es5">
+    <h2><span class="num">5</span>Valuation</h2>
+    <h3>5.1 Near-Term Trading Value (EPS × PER)</h3>
+    <p>The arithmetic mean of the 2027 forward price-earnings ratios of three brand comparables is 18.4x. AMOREPACIFIC at 20.3x and LG H&amp;H at 18.9x sit above it, and d'Alba Global at 15.9x below.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Comparable</th><th>Business</th><th>Forward PER</th><th>Basis</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">AMOREPACIFIC</td><td>Korean cosmetics brand</td><td>20.3x</td><td>2027 estimate</td></tr>
+      <tr><td class="rowlab">LG H&amp;amp;H</td><td>Korean cosmetics brand</td><td>18.9x</td><td>2027 estimate</td></tr>
+      <tr><td class="rowlab">d'Alba Global</td><td>K-beauty brand</td><td>15.9x</td><td>2027 estimate</td></tr>
+      <tr><td class="rowlab">Brand peer average</td><td>arithmetic mean of the three above</td><td>18.4x</td><td>2027 estimate</td></tr>
+      <tr><td class="rowlab">Applied PER</td><td>peer average as is · no discount or premium</td><td>18.4x</td><td>same across four scenarios</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — Bloomberg and BNK Investment Securities estimates (on the 20 Aug 2026 close)</p>
+    <p>The applied multiple is 18.4x, used in common across the four scenarios. The applied year is likewise fixed at FY28E, and the scenarios differ only in North American and European share, Asian and Korean revenue, and operating margin. Because the peer multiple is on a 2027 basis, one year of earnings growth is not reflected in the multiple.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>Bear FY28E</th><th>Base FY28E</th><th>Bull FY28E</th><th>Best FY28E</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">North America share</td><td>1.10%</td><td>1.40%</td><td>1.75%</td><td>2.20%</td></tr>
+      <tr><td class="rowlab">Europe share</td><td>0.50%</td><td>0.70%</td><td>0.95%</td><td>1.25%</td></tr>
+      <tr><td class="rowlab">Asia &amp;amp; other revenue (KRW 0.1bn)</td><td>9,000</td><td>11,000</td><td>13,500</td><td>16,500</td></tr>
+      <tr><td class="rowlab">Korea revenue (KRW 0.1bn)</td><td>2,200</td><td>2,500</td><td>2,800</td><td>3,100</td></tr>
+      <tr><td class="rowlab">Revenue (KRW 0.1bn)</td><td>41,440</td><td>53,092</td><td>67,092</td><td>84,420</td></tr>
+      <tr><td class="rowlab">Operating margin</td><td>20.0%</td><td>23.0%</td><td>25.0%</td><td>27.0%</td></tr>
+      <tr><td class="rowlab">Operating profit (KRW 0.1bn)</td><td>8,288</td><td>12,211</td><td>16,773</td><td>22,793</td></tr>
+      <tr><td class="rowlab">Controlling net income (KRW 0.1bn)</td><td>6,441</td><td>9,383</td><td>12,805</td><td>17,320</td></tr>
+      <tr><td class="rowlab">EPS (KRW)</td><td>17,204</td><td>25,064</td><td>34,202</td><td>46,263</td></tr>
+      <tr><td class="rowlab">Applied PER (x)</td><td>18.4</td><td>18.4</td><td>18.4</td><td>18.4</td></tr>
+      <tr><td class="rowlab">Target price (KRW)</td><td>316,554</td><td>461,178</td><td>629,317</td><td>851,239</td></tr>
+      <tr><td class="rowlab">vs. current price</td><td class="no">-22.0%</td><td class="hl">+13.6%</td><td class="hl">+55.0%</td><td class="hl">+109.7%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — market size from Euromonitor · FX 1,400 KRW/USD · tax rate 25.0% · non-operating income +KRW 30.0bn · close of 3 Sep 2026</p>
+    <h3 class="scn">Bear — Amazon rankings slip and promotional spending rises</h3>
+    <p>Market size is held equal to Base and only share and operating margin are lowered. North America at 1.10% still rises from 0.77% in 2026, but at half the pace, and corresponds to the case where the number of Amazon top-100 products falls back to single digits.</p>
+    <p>An operating margin of 20.0% is the combination of the advertising ratio rising further from 21.1% in 1H26 while offline retailer commissions are added on top. In this case the target price sits 22.0% below the current price.</p>
+    <h3 class="scn">Base — North America settles in and Europe completes its early expansion</h3>
+    <p>North American share of 1.40% is a 1.8-fold increase from 0.77% in 2026 over two years. It is reachable if Ulta, Target and Walmart shelf space is added to holding on to Amazon rankings.</p>
+    <p>The operating margin of 23.0% is set below the 1H26 actual. That is because retailer commissions and promotional burdens grow together as the offline share rises, and if US offline shelf space does not convert from initial listing into reorders, share expansion stops in 2027.</p>
+    <h3 class="scn">Bull — European offline follows the American precedent</h3>
+    <p>European share of 0.95% is a 0.65pp rise from 0.30% in 2026 over two years. It reproduces over two years in Europe the 0.46pp the United States added in the single year 2025–2026, and it presumes that listings at large retailers including Boots in the United Kingdom are booked as revenue in 2027.</p>
+    <p>If European revenue was leaning on initial stocking rather than final consumption, reorders break in 2027. In that case the share gain does not materialise and the case settles back to Base.</p>
+    <h3 class="scn">Best — Mainstream Western shelf space is secured</h3>
+    <p>North America at 2.20% and Europe at 1.25% correspond to combined revenue of KRW 6.482tn across the two regions. The company would move beyond indie status and stand at the entrance to the global brand tier.</p>
+    <p>The operating margin of 27.0% rests on two premises: that the advertising ratio is held below 20%, and that air freight normalises back to sea. If the advertising ratio rises further from 21.1% in 1H26, this assumption does not hold.</p>
+    <h3>5.2 Long-Term Holding Value (ROE × PBR)</h3>
+    <p>At 406,000 won the current price is 23.46 times the price-to-book ratio against controlling-interest equity of KRW 648.0bn at the end of June 2026.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>FY21</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>3Q25(TTM)</th><th>4Q25(TTM)</th><th>1Q26(TTM)</th><th>2Q26(TTM)</th><th>FY26E</th><th>FY27F</th><th>FY28F</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">ROE (average equity)</td><td>19.4%</td><td>35.1%</td><td>55.0%</td><td>41.4%</td><td>75.3%</td><td>59.0%</td><td>72.9%</td><td>75.0%</td><td>74.9%</td><td>81.9%</td><td>78.4%</td><td>64.3%</td></tr>
+      <tr><td class="rowlab">ROE (period-end equity)</td><td>17.3%</td><td>29.2%</td><td>41.4%</td><td>33.3%</td><td>65.0%</td><td>67.2%</td><td>65.0%</td><td>70.5%</td><td>66.7%</td><td>73.3%</td><td>61.3%</td><td>52.1%</td></tr>
+      <tr><td class="rowlab">Controlling net income (KRW 0.1bn)</td><td>114</td><td>290</td><td>815</td><td>1,076</td><td>2,897</td><td>2,343</td><td>2,897</td><td>3,570</td><td>4,322</td><td>6,005</td><td>8,895</td><td>12,143</td></tr>
+      <tr><td class="rowlab">Period-end equity (KRW 0.1bn)</td><td>660</td><td>993</td><td>1,969</td><td>3,235</td><td>4,458</td><td>3,487</td><td>4,458</td><td>5,066</td><td>6,480</td><td>8,193</td><td>14,505</td><td>23,294</td></tr>
+      <tr><td class="rowlab">Number of estimating houses</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>3</td><td>3</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — consolidated statements from annual and quarterly filings (no minority interest) · quarters are TTM derived by cumulative subtraction · estimates are the average of Shinhan, Kyobo and BNK</p>
+    <p>The applied ROE of 64.3% is taken directly from the FY28F average-equity value in the trend table and is shared by all four scenarios. The only remaining variable is the holding period, which is stretched from three to fifteen years.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Item</th><th>Bear</th><th>Base</th><th>Bull</th><th>Best</th><th>Note</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Book value per share (KRW)</td><td>17,309</td><td>17,309</td><td>17,309</td><td>17,309</td><td>as of the last balance-sheet date</td></tr>
+      <tr><td class="rowlab">Price-to-book (x)</td><td>23.46</td><td>23.46</td><td>23.46</td><td>23.46</td><td>current price ÷ BPS</td></tr>
+      <tr><td class="rowlab">Holding period N (years)</td><td>3</td><td>5</td><td>10</td><td>15</td><td>the scenario key factor</td></tr>
+      <tr><td class="rowlab">Expected return (annualised)</td><td class="no">-42.6%</td><td class="no">-12.6%</td><td class="hl">+19.8%</td><td class="hl">+33.1%</td><td>(1+ROE)÷PBR^(1/N)−1</td></tr>
+      <tr><td class="rowlab">Years to meet the required return</td><td>7.9</td><td>7.9</td><td>7.9</td><td>7.9</td><td>ln(PBR)÷ln((1+ROE)÷(1+r))</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — consolidated balance sheet from the 1H26 filing · applied ROE 64.3% (FY28F, average equity) · required return 10.0% a year · close of 3 Sep 2026</p>
+    <p>Expected returns run from -42.6% a year on a three-year hold to +33.1% a year on a fifteen-year hold. Five years is -12.6% a year and ten years is +19.8% a year, and the break-even holding period that meets a 10.0% required return is 7.9 years.</p>
+  </div>
+  <div class="section" id="es6">
+    <h2><span class="num">6</span>Governance &amp; Shareholder Returns</h2>
+    <h3>6.1 Shareholder Base</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Category</th><th>Detail</th><th>Stake</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Largest shareholder and related parties</td><td>Kim Byung-hoon and five others, 13,035,760 shares</td><td>34.81%</td></tr>
+      <tr><td class="rowlab">National Pension Service</td><td>pension fund</td><td>9.00%</td></tr>
+      <tr><td class="rowlab">Fidelity Management &amp;amp; Research</td><td>per the 9 Jun 2026 major-holding report</td><td>5.01%</td></tr>
+      <tr><td class="rowlab">Treasury shares</td><td>613,400 shares cancelled in full, August 2025</td><td>0.00%</td></tr>
+      <tr><td class="rowlab">Free float</td><td>100% − (largest shareholder bloc + treasury + NPS)</td><td>56.19%</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — shareholder section of the interim report (Jun 2026) · on 37,438,155 shares outstanding</p>
+    <p>Founder and CEO Kim Byung-hoon holds 31.93% directly. Adding the 2.88% split among five executives brings the largest-shareholder bloc to 34.81%, so control is stable. A free float of 56.19% is not low for a company with a market capitalisation in the KRW 15tn range. No unexercised stock options remain, so 1H26 diluted earnings per share equals basic earnings per share.</p>
+    <h3>6.2 Board Composition</h3>
+    <p>As of 30 June 2026 the board is a five-member body with two executive directors and three independent directors. Independent director Kim Hyung-yi chairs the board, so the chief executive and the chair are separated. The audit committee is composed entirely of the three independent directors, two of whom are certified public accountants and one a tax specialist.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Name</th><th>Type</th><th>Tenure</th><th>Background</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Kim Byung-hoon</td><td>Executive director</td><td>11 yr 8 mo</td><td>Chief executive · founder</td></tr>
+      <tr><td class="rowlab">Shin Jae-ha</td><td>Executive director</td><td>10 yr 0 mo</td><td>Chief financial officer · transparency committee · Headland Capital</td></tr>
+      <tr><td class="rowlab">Kim Hyung-yi</td><td>Independent director</td><td>3 yr 0 mo</td><td>Board chair · audit committee chair · CPA, Daejoo Accounting</td></tr>
+      <tr><td class="rowlab">Noh Yu-ri</td><td>Independent director</td><td>3 yr 0 mo</td><td>Compensation committee chair · audit committee · CPA, Samdeok Accounting</td></tr>
+      <tr><td class="rowlab">Oh Ju-dong</td><td>Independent director</td><td>2 yr 3 mo</td><td>Audit committee · partner, Dasung Tax Firm</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — officer roster in the interim report (Jun 2026) · tenure as of 30 Jun 2026</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Test</th><th>Criterion</th><th>Status</th><th>Result</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Independent-director ratio</td><td>warning if below 50%</td><td>60.0% (3 of 5 directors)</td><td>Pass</td></tr>
+      <tr><td class="rowlab">Independent-director background</td><td>warning if placeholders exceed half, partial warning at exactly half. Having headed an institution is distinguished from hands-on experience in that field</td><td>0 of 3 are title-only</td><td>Pass</td></tr>
+      <tr><td class="rowlab">Average tenure</td><td>one full term has not elapsed since listing — judged on post-listing mid-term resignations instead of average tenure (three-year post-listing exception)</td><td>2 yr 9 mo · 0 mid-term resignations</td><td>Pass</td></tr>
+      <tr><td class="rowlab">Audit independence</td><td>warning if the audit body has no one with accounting, finance or audit experience</td><td>audit committee (Kim Hyung-yi)</td><td>Pass</td></tr>
+      <tr><td class="rowlab">Total</td><td></td><td></td><td>0 of 4 warnings</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — automated five-gate checklist · as of 30 Jun 2026 · officer roster from the interim report (Jun 2026)</p>
+    <p>Average tenure was two years and nine months as of 30 June 2026, short of the three-year single term. Because three years have not yet passed since the February 2024 listing, tenure cannot reach three years, and in this window the test is substituted by mid-term resignations after listing. There have been none since listing, so the item passes.</p>
+    <h3>6.3 Shareholder Returns</h3>
+    <p>The company has announced that for each of the three years 2024–2026 it will return at least 25% of consolidated adjusted net income through cash dividends or share cancellation. Actual execution has run well above that floor.</p>
+    <p>The FY2025 dividend was KRW 190.5bn, combining an interim dividend of KRW 134.3bn and a year-end dividend of KRW 56.2bn. Against controlling-interest net income of KRW 289.7bn that year, the payout ratio is 65.8%. Treasury shares were bought through trusts for KRW 60.0bn in 2024 and KRW 30.0bn in 2025 and cancelled in full in January and August 2025 respectively. The two cancellations reduced shares outstanding by 1,497,735.</p>
+    <p>On 16 July 2026 the board resolved an interim dividend of KRW 93.6bn. Cumulative shareholder returns since listing, as disclosed by the company in its annual report, exceed KRW 280.0bn, and adding this interim dividend brings the total into the KRW 370.0bn range.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+      <thead><tr><th>Test</th><th>Status</th><th>Implication</th></tr></thead>
+      <tbody>
+      <tr><td class="rowlab">Dividend policy</td><td>at least 25% of adjusted net income, 2024–2026</td><td>a stated floor</td></tr>
+      <tr><td class="rowlab">Payout ratio</td><td>65.8% in 2025 · 13.2% five-year average</td><td>second year of dividends</td></tr>
+      <tr><td class="rowlab">Total dividend</td><td>KRW 190.5bn for FY2025</td><td>65.8% of KRW 289.7bn net income</td></tr>
+      <tr><td class="rowlab">Treasury shares</td><td>KRW 90.0bn bought in 2024–2025, cancelled in full</td><td>shares outstanding reduced by 1,497,735</td></tr>
+      <tr><td class="rowlab">Treasury holdings</td><td>zero as of end-June 2026</td><td>no re-supply from resale</td></tr>
+      <tr><td class="rowlab">Debt</td><td>debt-free as of end-June 2026</td><td>capacity for returns preserved</td></tr>
+      </tbody></table></div>
+      <p class="filter-note">Source — dividend and share-count sections of the annual report (Dec 2025) and interim report (Jun 2026)</p>
+  </div>
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>에이피알(278470) 주가 차트</span><span class="ct-en" hidden>APR (278470) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-09-04 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-09-04</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-09-04 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 밸류에이션이 사용한 2026-09-03 종가 406,000원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-09-03 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the 49,150 KRW close of 2026-08-27 used throughout the valuation.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p><b>기준일</b> — 최초작성 2026-09-02. 본문의 모든 수치는 2026-09-03 종가 및 그 시점까지 공시된 자료 기준이며, 이후의 주가·실적·공시 변동은 반영돼 있지 않습니다.</p>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p><b>As of</b> — Originally written September 2, 2026. All figures in this report are based on the September 3, 2026 close and on disclosures available as of that date; subsequent changes in price, earnings, or filings are not reflected.</p>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Overview'],['es2','2 · Industry'],['es3','3 · Business'],['es4','4 · Financials'],['es5','5 · Valuation'],['es6','6 · Governance']],
+    ko: [['ks1','1 · 회사 개요'],['ks2','2 · 산업 분석'],['ks3','3 · 사업 분석'],['ks4','4 · 재무 추정'],['ks5','5 · 밸류에이션'],['ks6','6 · 지배구조']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('hs-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('hs-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ return sym + Math.round(p).toLocaleString(); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
