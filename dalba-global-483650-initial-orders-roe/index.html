@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NSTL7K368"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1NSTL7K368');
+</script>
+<!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
+<script>
+(function(){
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  var kst = new Date(Date.now() + 9 * 3600 * 1000);
+  var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
+  function setCount(id, val) {
+    function apply() {
+      var el = document.getElementById(id);
+      if (el) el.textContent = val.toLocaleString();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', apply); }
+    else { apply(); }
+  }
+  var gateKey = 'hs-counted:' + location.pathname;
+  var already = false;
+  try { already = sessionStorage.getItem(gateKey) === '1'; } catch (e) {}
+  if (already) {
+    try {
+      var t = sessionStorage.getItem('hs-total-cache');
+      var d0 = sessionStorage.getItem('hs-today-cache');
+      if (t != null) setCount('visit-count-total', parseInt(t, 10));
+      if (d0 != null) setCount('visit-count-today', parseInt(d0, 10));
+    } catch (e) {}
+    return;
+  }
+  try { sessionStorage.setItem(gateKey, '1'); } catch (e) {}
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/views-dalba-global-483650-initial-orders-roe').catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-total', d.value);
+      try { sessionStorage.setItem('hs-total-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+  fetch('https://abacus.jasoncameron.dev/hit/henryshin-research/site-visits-daily-' + today)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      setCount('visit-count-today', d.value);
+      try { sessionStorage.setItem('hs-today-cache', d.value); } catch (e) {}
+    })
+    .catch(function(){});
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>d&#x27;Alba Global (483650, KOSPI) — How Did North America and Europe Sales Triple in a Year?</title>
+<meta name="description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+<meta name="keywords" content="d&#x27;Alba Global, 달바글로벌, 483650, KOSPI, d&#x27;Alba, K-beauty, Korean cosmetics, Costco, initial stocking orders, reorders, Amazon, TikTok Shop, ROE PBR expected return, See&#x27;s Candies">
+<link rel="canonical" href="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/">
+<!-- hreflang:auto (add_hreflang.py) -->
+<link rel="alternate" hreflang="ko" href="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/">
+<!-- /hreflang:auto -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Henry Shin Research">
+<meta name="theme-color" content="#3f4d1e">
+<!-- social:auto (add_social_meta.py) -->
+<meta property="og:image" content="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/assets/og.png?v=551bcd64">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="d&#x27;Alba Global (483650) Research Note — social card">
+<meta name="twitter:image" content="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/assets/og.png?v=551bcd64">
+<meta name="twitter:image:alt" content="d&#x27;Alba Global (483650) Research Note — social card">
+<!-- /social:auto -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="d&#x27;Alba Global (483650) Research Note">
+<meta property="og:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+<meta property="og:url" content="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/">
+<meta property="og:site_name" content="Henry Shin Research">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="d&#x27;Alba Global (483650) Research Note">
+<meta name="twitter:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "d'Alba Global (483650, KOSPI) — How Did North America and Europe Sales Triple in a Year?",
+  "description": "d'Alba Global's North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "inLanguage": [
+    "en",
+    "ko"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Henry Shin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Henry Shin Research"
+  },
+  "about": [
+    {
+      "@type": "Corporation",
+      "name": "d'Alba Global",
+      "tickerSymbol": "KRX:483650"
+    }
+  ],
+  "keywords": "d'Alba Global 483650, 달바글로벌, K-beauty, Costco initial orders, ROE PBR expected return",
+  "mainEntityOfPage": "https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/"
+}
+</script>
+
+<style>
+  :root {
+    --bg:#f7f7f2; --card:#fffefb; --ink:#16180f; --ink-soft:#3f4433; --ink-faint:#7d8271;
+    --line:#ecede3; --line-2:#d9dbc9; --brand:#3f4d1e; --brand-2:#55652c; --accent:#55652c;
+    --accent-hero:#a9b491; --neg:#c05b41; --warn:#c98b2d; --info:#55652c; --pos:#2e9e5b;
+    --note-bg:#f3f4ea; --hl:#eef0e2;
+    --nav-bg:rgba(250,250,246,0.88);
+    --shadow:0 2px 12px rgba(38,42,24,0.06); --shadow-lg:0 8px 30px rgba(38,42,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#14160f; --card:#1c1f15; --ink:#edeee6; --ink-soft:#c2c5b4; --ink-faint:#8b8f7d;
+      --line:#262a1c; --line-2:#363b28; --brand:#55652c; --brand-2:#6b7d3a; --accent:#b5c193;
+      --accent-hero:#a9b491; --neg:#e08a70; --warn:#d9a952; --info:#b5c193; --pos:#57c17e;
+      --note-bg:#191c12; --hl:#262a18;
+      --nav-bg:rgba(18,20,13,0.88);
+      --shadow:0 2px 12px rgba(0,0,0,0.3); --shadow-lg:0 8px 30px rgba(0,0,0,0.45);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.55; margin:0;
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;
+  }
+  [hidden] { display:none !important; }
+
+  .nav { position:sticky; top:0; z-index:100; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:0 auto; padding:10px 22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .nav .home { font-weight:800; font-size:15.5px; color:var(--ink); text-decoration:none; letter-spacing:-0.2px; white-space:nowrap; }
+  .nav .home:hover { color:var(--accent); }
+  .nav .home .arrow { color:var(--ink-faint); font-weight:400; margin-right:5px; }
+  .lang-toggle { display:inline-flex; border:1px solid var(--line-2); border-radius:999px; overflow:hidden; }
+  .lang-toggle button {
+    border:none; background:transparent; color:var(--ink-soft); font-size:13.5px; font-weight:700;
+    padding:5px 13px; cursor:pointer; letter-spacing:-0.2px; font-family:inherit;
+  }
+  .lang-toggle button:hover { background:var(--line); color:var(--ink); }
+  .lang-toggle button.active { background:var(--brand); color:#fff; }
+  .nav .toc { display:flex; gap:4px; flex-wrap:wrap; margin-left:auto; }
+  .nav .toc a { font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:4px 9px; border-radius:6px; white-space:nowrap; }
+  .nav .toc a:hover { background:var(--line); color:var(--ink); }
+
+  .container { max-width:1080px; margin:0 auto; padding:24px 22px 64px; }
+
+  .hero { background:var(--card); color:var(--ink); border:1px solid var(--line);
+    border-radius:24px; padding:44px 40px 36px; margin-bottom:18px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; right:-80px; bottom:-120px; width:320px; height:320px; border-radius:48px;
+    background:var(--accent-hero); opacity:0.22; }
+  .hero .eyebrow { display:inline-block; font-size:13px; letter-spacing:1.2px; color:#fff; background:var(--brand);
+    border-radius:999px; padding:6px 14px; text-transform:uppercase; margin-bottom:18px; font-weight:600; }
+  .hero h1 { font-size:35px; font-weight:800; letter-spacing:-0.8px; line-height:1.18;
+    margin:0 0 14px; text-wrap:balance; color:var(--ink); position:relative; z-index:1; }
+  .hero .lede { font-size:15px; color:var(--ink-soft); line-height:1.7; margin:0 0 16px; max-width:760px; position:relative; z-index:1; }
+  .hero .meta { font-size:14.5px; color:var(--ink-faint); display:flex; gap:20px; flex-wrap:wrap; position:relative; z-index:1; }
+  .hero .meta span::before { content:"·"; margin-right:8px; color:var(--accent); }
+  .hero .meta span:first-child::before { content:""; margin:0; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .kpi-card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); border-left:4px solid var(--info); }
+  .kpi-card.neg { border-left-color:var(--neg); } .kpi-card.warn { border-left-color:var(--warn); }
+  .kpi-card .label { font-size:12.5px; color:var(--ink-faint); letter-spacing:0.4px; text-transform:uppercase; margin-bottom:7px; font-weight:600; }
+  .kpi-card .value { font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-0.5px; line-height:1.05; }
+  .kpi-card .value .unit { font-size:14.5px; color:var(--ink-faint); font-weight:600; margin-left:3px; }
+  .kpi-card .sub { font-size:12.5px; color:var(--ink-faint); margin-top:7px; }
+
+  .section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 32px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:60px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); margin:0 0 4px; display:flex; align-items:center; gap:11px; }
+  .section h2 .num { display:inline-flex; align-items:center; justify-content:center; width:27px; height:27px; background:var(--brand); color:#fff; border-radius:50%; font-size:14px; font-weight:700; flex-shrink:0; }
+  .section .sub-h { font-size:14px; color:var(--ink-faint); margin:0 0 18px 36px; }
+  .section h3 { font-size:16px; font-weight:700; color:var(--ink); margin:22px 0 9px; letter-spacing:-0.2px; }
+  .section h3 .no { color:var(--ink-faint); font-weight:700; margin-right:6px; }
+  .section h4 { font-size:14.8px; font-weight:700; color:var(--ink); margin:16px 0 7px; }
+  .section p { font-size:15px; color:var(--ink-soft); line-height:1.75; margin:0 0 11px; }
+  .section p b { color:var(--ink); }
+  .section ul { margin:6px 0 11px; padding-left:20px; }
+  .section li { font-size:15px; color:var(--ink-soft); line-height:1.72; margin:0 0 8px; }
+  .section li b { color:var(--ink); }
+  .lang-ko .section p, .lang-ko .section li { font-size:15.5px; line-height:1.78; word-break:keep-all; }
+
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.tbl { width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px; margin:6px 0 8px; }
+  table.tbl th { background:var(--line); color:var(--ink-soft); font-weight:700; padding:10px 12px; text-align:left; border-bottom:2px solid var(--line-2); font-size:13.5px; letter-spacing:-0.2px; white-space:nowrap; }
+  table.tbl td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink); word-break:keep-all; }
+  table.tbl td.num, table.tbl th.num { text-align:right; }
+  table.tbl td.rowlab { font-weight:700; color:var(--ink); }
+  table.tbl tr.hl td { background:var(--hl); }
+
+  .filter-note { color:var(--ink-faint); font-size:13.3px; margin:8px 0 4px; line-height:1.62; }
+  .filter-note b { color:var(--ink-soft); }
+
+  .chart-range { display:flex; gap:6px; margin:2px 0 12px; }
+  .chart-range button { border:1px solid var(--line-2); background:var(--card); color:var(--ink-soft); font-family:inherit;
+    font-size:13.5px; font-weight:700; padding:5px 13px; border-radius:999px; cursor:pointer; letter-spacing:-0.2px; }
+  .chart-range button:hover { background:var(--line); color:var(--ink); }
+  .chart-range button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
+  #price-chart-box { height:460px; width:100%; }
+
+  footer.report-foot { text-align:center; font-size:13px; color:var(--ink-faint); padding:22px 0 0; line-height:1.7; }
+  footer.report-foot a { color:var(--accent); text-decoration:none; }
+
+  .disclaimer { background:var(--note-bg); border:1px solid var(--line-2); border-radius:14px; padding:18px 22px; margin-top:16px; }
+  .disclaimer h3 { font-size:13px; font-weight:800; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .disclaimer p { font-size:13px; line-height:1.7; color:var(--ink-faint); margin:0; }
+  .disclaimer p + p { margin-top:7px; }
+
+  @media (max-width:860px) {
+    .container { padding:18px 15px 56px; }
+    .nav-inner { padding:9px 15px; gap:10px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .hero { padding:28px 24px 26px; border-radius:18px; }
+    .hero h1 { font-size:23px; }
+    .section { padding:20px 18px; }
+    #price-chart-box { height:380px; }
+    .nav .toc { display:none; }
+  }
+  @media (max-width:520px) {
+    .container { padding:14px 12px 52px; }
+    .nav .home { font-size:15px; }
+    .lang-toggle button, .chart-range button { padding:7px 14px; font-size:14px; }
+    .hero { padding:24px 20px 22px; }
+    .hero h1 { font-size:22px; letter-spacing:-0.4px; }
+    .hero .eyebrow { font-size:12px; margin-bottom:12px; }
+    .hero .meta { gap:4px 14px; font-size:13.5px; }
+    .kpi-grid { gap:10px; }
+    .kpi-card { padding:14px 15px; border-radius:14px; }
+    .kpi-card .value { font-size:22px; }
+    .kpi-card .value .unit { font-size:13px; }
+    .section { padding:18px 15px; border-radius:14px; }
+    .section h2 { font-size:19px; }
+    .section .sub-h { margin-left:0; margin-top:2px; }
+    .section p, .section li { font-size:15.5px; }
+    table.tbl { font-size:14px; }
+    table.tbl th, table.tbl td { padding:9px 10px; }
+    #price-chart-box { height:320px; }
+    .disclaimer { padding:16px 16px; }
+  }
+
+  /* tldr */
+  .tldr { border-left:3px solid var(--accent); padding:2px 0 2px 18px; margin:0 0 20px; }
+  .tldr-row { display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .tldr-row + .tldr-row { border-top:1px solid var(--line); }
+  .tldr-k { flex:0 0 74px; font-size:11.5px; font-weight:800; letter-spacing:0.7px; color:var(--accent); text-transform:uppercase; }
+  .tldr-v { font-size:14.5px; color:var(--ink); line-height:1.65; word-break:keep-all; }
+  @media (max-width:520px) {
+    .tldr { padding-left:14px; }
+    .tldr-row { flex-direction:column; gap:2px; padding:6px 0; }
+    .tldr-k { flex:none; }
+    .tldr-v { font-size:14px; }
+  }
+
+/* type-scale:+2px, flat-notes */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="home" href="../"><span class="arrow">←</span>Henry Shin Research</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" onclick="setLang('ko')">한국어</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+<!-- ==================== KOREAN ==================== -->
+<article id="lang-ko" class="lang-ko" lang="ko" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Research Note · KOSPI 483650</div>
+    <h1>달바글로벌 북미·유럽 매출은 어떻게 1년만에 3배가 됐을까?</h1>
+    <p class="lede">달바글로벌 반기보고서와 8월 증권사 리포트를 보다가, 숫자 하나가 눈에 걸려서 정리해 봅니다.</p>
+    <div class="meta">
+      <span>최초작성 2026-09-14 (v2.10)</span>
+      <span>기준주가 167,600원 (2026-09-11 종가)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">기준주가</div>
+      <div class="value">167,600<span class="unit">원</span></div>
+      <div class="sub">2026-09-11 종가</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">주가순자산비율</div>
+      <div class="value">8.32<span class="unit">배</span></div>
+      <div class="sub">BPS 20,155원</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">ROE (2026~2028)</div>
+      <div class="value">49<span class="unit">%</span></div>
+      <div class="sub">증권사 10곳 평균 이익 기준</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">기대수익률 Base</div>
+      <div class="value">연 8.0<span class="unit">%</span></div>
+      <div class="sub">ROE 49%·5년 · Bull 연 25.8%</div>
+    </div>
+  </div>
+
+  <div class="section" id="ks1">
+    <h2><span class="num">1</span>매출 이야기</h2>
+    <p class="filter-note">5~12번은 해외 매출이 잡히는 방식을 설명하는 내용이라, 아는 내용이면 스킵하면 됩니다.</p>
+    <p><b>1.</b> 달바글로벌의 2026년 2분기 북미·유럽 매출은 553억원임. 1년 전 같은 분기에는 187억원이었으니, 1년 만에 약 3배가 된 것임.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1-ko.png" alt="그림 1 — 지역별 분기 매출" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>2.</b> 달바글로벌은 화이트 트러플 원료를 앞세운 화장품 브랜드 d&#x27;Alba(달바)를 기획해서 파는 회사임. 공장은 없고, 비앤비코리아·한국콜마 같은 외주 제조사(OEM)에서 완제품을 사 와서 팖.</p>
+    <p><b>3.</b> 2025년 5월 유가증권시장에 상장했고, 2025년 매출은 5,197억원이었음. 2024년 45.6%였던 수출 비중은 2026년 상반기 72.4%까지 올라감.</p>
+    <p><b>4.</b> 이렇게만 보면 &quot;K-뷰티가 미국·유럽에서 잘 팔리는구나&quot; 하고 읽힘. 틀린 말은 아니지만, 이 숫자에는 조심해서 볼 부분이 섞여 있음.</p>
+    <p><b>5.</b> 달바글로벌이 해외 새 시장에 들어가는 순서는 정해져 있음. 먼저 아마존 같은 온라인몰에서 소비자에게 직접 팔아 이름을 알림. 소비자에게 직접 파는 이 방식을 B2C(기업-소비자 거래)라고 부름.</p>
+    <p><b>6.</b> 이름이 알려지면 얼타·코스트코 같은 현지 오프라인 유통사로 넓힘. 오프라인은 유통사가 물건을 사서 매대에 까는 방식이라 B2B(기업 간 거래)가 됨.</p>
+    <p><b>7.</b> 두 방식은 매출이 잡히는 리듬이 다름. 온라인 B2C는 할인 행사가 언제 열리느냐에 따라 출렁이고, 오프라인 B2B는 입점한 매장 수와 유통사가 발주를 넣는 주기에 따라 움직임.</p>
+    <p><b>8.</b> 여기서 중요한 게 B2B 매출이 잡히는 시점임. B2B 발주는 물건을 배에 실어 보낼 때(선적) 매출로 잡힘. 소비자가 매장에서 사 갔는지와 상관없이, 유통사로 출발한 물건은 달바글로벌 매출이 됨.</p>
+    <p><b>9.</b> 동네에 편의점이 새로 문을 연다고 가정해 봄.</p>
+    <p><b>10.</b> 문을 열기 전에 빈 매대부터 채워야 하니, 음료 회사는 첫 주에 냉장고 한 칸을 가득 채울 만큼 물건을 넣음. 음료 회사 장부에는 이 첫 입고가 그대로 매출로 찍힘. 둘째 주부터는 손님이 사 간 만큼만 다시 채움.</p>
+    <p><b>11.</b> 편의점 10곳이 한꺼번에 문을 열면, 음료 회사 매출은 그 분기에 확 튀어 오름. 그 매출이 이어질지는 첫 입고가 아니라 두 번째, 세 번째 발주를 봐야 알 수 있음.</p>
+    <p><b>12.</b> 매대를 처음 채우는 물량을 초도 물량, 팔린 만큼 다시 채우는 물량을 재발주(리오더)라고 부름.</p>
+    <p><b>13.</b> 달바글로벌이 지금 편의점이 한꺼번에 문을 여는 구간에 있음. 해외 오프라인 매장은 2026년 1분기 약 8,000개에서 2분기 9,607개로 늘었고, 미국 코스트코는 2분기 225개에서 4분기 625개까지 입점을 늘릴 계획임. 삼성증권·교보증권·하나증권 리포트에 실린 회사 설명임.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig2-ko.png" alt="그림 2 — 미국 코스트코 입점 매장 수" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>14.</b> 다만 편의점 비유와 다른 점이 하나 있음. 편의점은 첫 주와 둘째 주가 나뉘지만, 달바글로벌은 매장이 계속 늘어나는 중이라 초도 물량과 재발주가 같은 분기에 섞여 들어옴.</p>
+    <p><b>15.</b> 회사는 2분기 북미 매출에 코스트코·얼타 리오더 약 80억원이 들어 있다고 설명함(KB증권). 그런데 같은 분기에 새 매장도 늘었으니, 북미 348억원 중 어디까지가 첫 입고인지는 숫자로 나눌 수 없음.</p>
+    <p><b>16.</b> 재발주율, 매장당 판매량, 소비자가 실제로 사 간 양(sell-out), 유통 재고는 공시되지 않음.</p>
+    <p><b>17.</b> 여기까지 보면 &quot;그럼 북미·유럽 성장은 초도 물량 덕분이구나&quot; 하고 생각할 수 있음. 그런데 채널별 숫자를 보면 이야기가 조금 달라짐.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig3-ko.png" alt="그림 3 — 채널별 매출" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>18.</b> 2026년 상반기 매출은 3,581억원으로 1년 전보다 1,160억원 늘었음. 늘어난 1,160억원 중 812억원(70.0%)이 아마존·틱톡샵 같은 수출 B2C 온라인에서 나왔고, 오프라인 발주인 수출 B2B는 332억원 늘었음.</p>
+    <p><b>19.</b> 전체 매출에서 B2B가 차지하는 비중도 38.0%에서 38.4%로 거의 그대로임. 뉴스에서는 코스트코 입점이 크게 보였지만, 상반기 성장을 끌고 간 건 온라인이었다는 말임.</p>
+    <p><b>20.</b> 온라인에는 초도 물량 문제가 없는 대신, 행사 시점에 따라 출렁인다는 다른 약점이 있음. 올해는 아마존 프라임데이 매출이 3분기가 아니라 2분기에 잡혔음(신한투자증권·NH투자증권).</p>
+    <p><b>21.</b> 2분기 숫자에는 매대를 처음 채운 물량과 앞당겨진 행사 매출이 같이 섞여 있을 수 있는 것임.</p>
+    <p><b>22.</b> 코스트코 매대가 달바글로벌만의 자리도 아님.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig4-ko.png" alt="그림 4 — 같은 매대를 두고 경쟁하는 한국 브랜드" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>23.</b> 에이피알(메디큐브)은 미국 얼타 1,400개·타겟 약 1,500개에 들어가 있고, 코스트코·월마트도 추가할 계획임. LG생활건강 닥터그루트는 코스트코 682개에 들어가 있음(BNK투자증권, 7월 기준).</p>
+    <p><b>24.</b> 입점은 경쟁사도 따내는 조건이라, 매대를 지키려면 매장에서 팔려서 재발주가 들어와야 함.</p>
+    <p><b>25.</b> 한 가지 더 볼 게 있음. 새 지역이 3배가 되는 동안 기존 지역은 멈췄음.</p>
+    <p><b>26.</b> 2분기 국내 매출은 471억원에서 453억원으로, 러시아는 187억원에서 123억원으로 줄었음. 일본은 1분기 368억원에서 2분기 360억원으로 증가가 멈췄음.</p>
+    <p><b>27.</b> 회사는 선크림 PP 용기 수급 차질, 러시아 고객사 와일드베리 창고의 전쟁 피해, 일본 큐텐의 성장 둔화를 이유로 설명함. 용기가 부족했던 거라면 하반기에 회복되고, 채널이 포화된 거라면 회복되지 않을 것임.</p>
+    <p><b>28.</b> 상반기에는 매출의 10.1%(362억원)를 차지하는 고객 A가 새로 생겼는데, 누구인지는 공시되지 않음. 코스트코인지, 일본 벤더인지, 러시아 유통사인지에 따라 의미가 달라짐.</p>
+  </div>
+  <div class="section" id="ks2">
+    <h2><span class="num">2</span>기대수익률</h2>
+    <p><b>29.</b> 여기까지가 매출 이야기임. 이제 지금 가격에 사면 수익률이 얼마나 될지 계산해 봄.</p>
+    <p><b>30.</b> 워렌 버핏은 1972년 씨즈캔디를 2,500만달러에 샀음. 회사의 순유형자산은 800만달러였으니, 장부가의 3배 넘게 준 것임.</p>
+    <p><b>31.</b> 버핏은 이 가격을 ROE로 설명했음. 씨즈캔디는 빚 없이 순유형자산 대비 세후 25%를 벌고 있었고, 이런 회사는 드물어서 장부가보다 비싸게 줄 만하다는 것임.</p>
+    <p><b>32.</b> 증권사 리포트는 보통 내년 이익에 PER 몇 배를 곱해서 목표주가를 냄. 여기서는 PER 멀티플 대신, 버핏이 씨즈캔디를 샀던 방식으로 달바글로벌의 기대수익률을 계산해 봄.</p>
+    <p><b>33.</b> 계산은 단순함. 달바글로벌의 ROE가 앞으로 N년간 유지된다고 가정했을 때, 1년에 몇 %가 남는지를 봄.</p>
+    <p><b>34.</b> 달바글로벌은 9월 11일 종가 167,600원 기준으로 장부가(주당 20,155원)의 8.32배임. 증권사 10곳의 평균 이익으로 그린 2026~2028년 ROE는 평균 49%임.</p>
+    <p><b>35.</b> 핵심변수는 ROE를 몇 %로 보느냐, 그 ROE가 몇 년 이어지느냐임. 그래서 Base와 Bull 두 경우로 나눠 봄.</p>
+    <p><b>36.</b> Base는 ROE 49%가 5년 유지되는 경우임. 증권사 추정이 있는 2028년 뒤로 2년 정도 더 이어진다고 보는 것이고, 이때 기대수익률은 연 8.0%임.</p>
+    <p><b>37.</b> Bull은 ROE 52%가 7년 유지되는 경우임. 해외 매장 확대가 재발주로 이어지고 쌓인 현금도 주주 몫으로 굴러가는 경우이고, 이때 기대수익률은 연 25.8%임.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig5-ko.png" alt="그림 5 — 지금 가격의 기대수익률" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>38.</b> 지금 가격의 기대수익률은 연 8~26% 밴드로 볼 수 있음. Base면 연 10%에 조금 못 미치고, Bull이면 넉넉히 넘는 가격임.</p>
+    <p><b>39.</b> 이 밴드는 결국 ROE가 얼마나 오래 버티느냐에 달려 있음. 그러려면 먼저 지금까지 ROE가 왜 높았는지를 알아야 함.</p>
+    <p><b>40.</b> 달바글로벌의 ROE는 2025년 52.6%, 최근 4개 분기 기준 49.4%임. 사업으로 보면 이유는 두 가지임.</p>
+    <p><b>41.</b> 첫번째는 비싸게 파는 구조라는 점임. 아마존·틱톡샵 같은 온라인에서 소비자에게 직접 파는 매출이 커서, 상반기 매출 3,581억원 중 1,710.6억원이 수출 B2C 온라인이었음. 소비자가격을 그대로 매출로 인식하니 매출총이익률이 76.8%까지 나옴.</p>
+    <p><b>42.</b> 두번째는 매출이 빨리 늘었다는 점임. 매출은 2023년 +38.3%, 2024년 +53.9%, 2025년 +68.2% 늘었고, 영업이익률은 19%대를 지켰음. 이익률은 그대로인데 매출 규모가 급증하다 보니, 자본이 불어나는데도 ROE가 유지된 것임.</p>
+    <p><b>43.</b> 찰리 멍거는 &quot;내가 어디서 죽을지만 알면, 거기에는 절대 가지 않겠다&quot;는 말을 자주 했음. 이 방식으로 뒤집어 보면, ROE가 꺾이는 건 이 두 이유가 사라질 때임.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig6-ko.png" alt="그림 6 — 화장품 수출 (2025년 1~11월)" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>44.</b> 첫번째 시나리오는 중국 제품의 시장 진입임. 2025년 1~11월 화장품 수출은 중국 39.9억달러, 한국 103억달러로 아직 2.6배 차이가 남. 다만 2020~2024년 연평균 수출 증가율은 중국이 18%로 한국(6%)의 세 배였고, 미국 얼타도 중국 뷰티 브랜드를 들이기 시작했다는 보도가 있음.</p>
+    <p><b>45.</b> K-뷰티가 미국에서 먹힌 건 품질에 비해 가격이 부담 없다는 점이었음. 중국 제품이 비슷한 품질을 더 싼 값에 들고 오면, 아마존·틱톡샵에서 소비자가격을 그대로 받기가 어려워짐.</p>
+    <p><b>46.</b> 두번째 시나리오는 매출 성장이 꺾이는 것임. 앞에서 본 것처럼 지금의 매출 성장에는 매장이 늘어나는 동안의 초도 물량이 섞여 있음. 매장 확대가 끝났는데 재발주가 붙지 않으면 매출 성장이 꺾이고, 이익도 자본이 쌓이는 속도를 못 따라감.</p>
+    <p><b>47.</b> 이 시나리오는 4분기 북미·유럽 매출로 확인 가능할 것으로 보임. 코스트코 입점 확대가 끝나는 4분기에 2분기 553억원 아래로 내려가면 성장이 꺾이는 쪽이고, 700억원을 넘으면 재발주가 붙어 매출이 계속 빨리 늘어나는 쪽임.</p>
+  </div>
+  <div class="section" id="ks3">
+    <h2><span class="num">3</span>한줄 코멘트</h2>
+    <p>달바글로벌 북미·유럽 매출은 1년 새 187억원에서 553억원으로 약 3배가 됐지만, 매장이 늘어나는 구간이라 매대를 처음 채운 물량과 앞당겨진 프라임데이 매출이 섞여 있음. 버핏이 씨즈캔디를 산 방식으로 계산하면, 지금 가격의 기대수익률은 ROE 49%가 5년 유지되는 Base에서 연 8.0%, ROE 52%가 7년 유지되는 Bull에서 연 25.8%임. 그 ROE가 높았던 건 낮은 원가로 만든 제품을 소비자에게 직접 비싸게 팔면서 매출이 빨리 늘었기 때문임. 다만, 중국 제품 시장 진입으로 비싸게 파는 구조가 흔들리고 재발주까지 꺾이면, 현재 수준의 ROE는 유지되기 어렵고 기대수익률은 마이너스가 될 수 있음. 4분기 북미·유럽 매출을 모니터링할 필요가 있음.</p>
+  </div>
+</article>
+
+<!-- ==================== ENGLISH ==================== -->
+<article id="lang-en" lang="en" hidden>
+
+  <div class="hero">
+    <div class="eyebrow">Research Note · KOSPI 483650</div>
+    <h1>d&#x27;Alba Global (483650): How did North America and Europe sales triple in a year?</h1>
+    <p class="lede">I was going through d&#x27;Alba Global&#x27;s interim report and the August broker reports when one number caught my eye, so I wrote this up.</p>
+    <div class="meta">
+      <span>Originally written 14 Sep 2026 (v2.10)</span>
+      <span>Reference price KRW 167,600 (11 Sep 2026 close)</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Reference price</div>
+      <div class="value">167,600<span class="unit">KRW</span></div>
+      <div class="sub">11 Sep 2026 close</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Price / book</div>
+      <div class="value">8.32<span class="unit">x</span></div>
+      <div class="sub">BPS KRW 20,155</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">ROE (2026–2028)</div>
+      <div class="value">49<span class="unit">%</span></div>
+      <div class="sub">average of 10 brokers&#x27; earnings</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Expected return, Base</div>
+      <div class="value">8.0<span class="unit">% p.a.</span></div>
+      <div class="sub">ROE 49% for 5 yrs · Bull 25.8% p.a.</div>
+    </div>
+  </div>
+
+  <div class="section" id="es1">
+    <h2><span class="num">1</span>The revenue story</h2>
+    <p class="filter-note">Points 5–12 explain how overseas sales get booked; skip them if you already know this.</p>
+    <p><b>1.</b> d&#x27;Alba Global&#x27;s North America and Europe revenue in 2Q26 was KRW 55.3bn. In the same quarter a year earlier it was KRW 18.7bn, so it roughly tripled in one year.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig1-en.png" alt="Quarterly sales by region, 1Q25–2Q26: North America and Europe climb to KRW 34.8bn and 20.5bn while Korea, Japan and Russia stall or fall." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>2.</b> d&#x27;Alba Global designs and sells d&#x27;Alba, a cosmetics brand built around white truffle ingredients. It has no factories; it buys finished products from contract manufacturers (OEMs) such as B&amp;B Korea and Kolmar Korea and sells them.</p>
+    <p><b>3.</b> It listed on the KOSPI in May 2025, and 2025 revenue was KRW 519.7bn. The export share, 45.6% in 2024, rose to 72.4% in 1H26.</p>
+    <p><b>4.</b> Read this way, the takeaway is &quot;K-beauty is selling well in the US and Europe.&quot; That is not wrong, but parts of this number need a careful look.</p>
+    <p><b>5.</b> d&#x27;Alba Global enters a new overseas market in a set order. First it sells directly to consumers on online marketplaces such as Amazon to build name recognition. Selling directly to consumers like this is called B2C (business-to-consumer).</p>
+    <p><b>6.</b> Once the name is known, it expands to local offline retailers such as Ulta Beauty and Costco. Offline, the retailer buys the goods and stocks its shelves, which makes it B2B (business-to-business).</p>
+    <p><b>7.</b> The two channels book revenue on different rhythms. Online B2C swings with the timing of sales events; offline B2B moves with the number of stores carrying the brand and the retailers&#x27; ordering cycle.</p>
+    <p><b>8.</b> What matters here is when B2B revenue is recognized. A B2B order is booked as revenue when the goods are shipped. Whether or not consumers have bought them in store, goods that have left for the retailer become d&#x27;Alba Global revenue.</p>
+    <p><b>9.</b> Suppose a new convenience store is opening in your neighborhood.</p>
+    <p><b>10.</b> Before it opens, the empty shelves have to be filled, so in the first week a beverage company delivers enough to fill a whole fridge section. That first delivery goes straight onto the beverage company&#x27;s books as revenue. From the second week on, it only restocks what customers bought.</p>
+    <p><b>11.</b> If ten convenience stores open at once, the beverage company&#x27;s revenue spikes that quarter. Whether that revenue continues can only be seen from the second and third orders, not the first delivery.</p>
+    <p><b>12.</b> The volume that fills shelves for the first time is called initial stocking orders, and the volume that refills what sold is called reorders.</p>
+    <p><b>13.</b> d&#x27;Alba Global is now in the phase where the convenience stores are opening all at once. Its overseas offline doors grew from about 8,000 in 1Q26 to 9,607 in 2Q26, and it plans to expand US Costco from 225 locations in 2Q to 625 by 4Q. This is the company&#x27;s account as carried in Samsung Securities, Kyobo Securities and Hana Securities reports.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig2-en.png" alt="d&#x27;Alba&#x27;s US Costco presence: 225 stores in 2Q26, planned to reach 625 by 4Q26." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>14.</b> There is one difference from the convenience store analogy, though. A convenience store has a distinct first week and second week, but because d&#x27;Alba Global&#x27;s store count keeps growing, initial orders and reorders arrive mixed together in the same quarter.</p>
+    <p><b>15.</b> The company says 2Q North America revenue included about KRW 8.0bn of Costco and Ulta reorders (KB Securities). But new stores were also added in the same quarter, so the numbers cannot split out how much of the KRW 34.8bn North America figure was first deliveries.</p>
+    <p><b>16.</b> The reorder rate, sales per store, the quantity consumers actually bought (sell-out) and channel inventory are not disclosed.</p>
+    <p><b>17.</b> At this point you might think, &quot;So the North America and Europe growth came from initial orders.&quot; But the channel numbers tell a somewhat different story.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig3-en.png" alt="Sales by channel, 1H25 vs 1H26: export B2C online nearly doubled to KRW 171.06bn and drove most of the growth." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>18.</b> 1H26 revenue was KRW 358.1bn, up KRW 116.0bn from a year earlier. Of that KRW 116.0bn increase, KRW 81.2bn (70.0%) came from export B2C online such as Amazon and TikTok Shop, while export B2B, the offline orders, rose KRW 33.2bn.</p>
+    <p><b>19.</b> B2B&#x27;s share of total revenue also barely moved, from 38.0% to 38.4%. Costco listings loomed large in the news, but what drove first-half growth was online.</p>
+    <p><b>20.</b> Online has no initial-order problem, but it has a different weakness: it swings with event timing. This year, Amazon Prime Day revenue landed in 2Q rather than 3Q (Shinhan Securities, NH Investment &amp; Securities).</p>
+    <p><b>21.</b> So the 2Q numbers may contain both the volume that filled shelves for the first time and event revenue that was pulled forward.</p>
+    <p><b>22.</b> Nor is the Costco shelf reserved for d&#x27;Alba Global.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig4-en.png" alt="Table of US offline retail presence for d&#x27;Alba Global, APR (Medicube), VT and LG H&amp;H." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>23.</b> APR (Medicube) is in 1,400 Ulta and about 1,500 Target stores in the US, and plans to add Costco and Walmart as well. LG H&amp;H&#x27;s Dr.Groot is in 682 Costco locations (BNK Securities, as of July).</p>
+    <p><b>24.</b> Getting listed is something competitors achieve too, so to keep the shelf, products have to sell in store and bring in reorders.</p>
+    <p><b>25.</b> There is one more thing to look at. While the new regions tripled, the existing regions stalled.</p>
+    <p><b>26.</b> In 2Q, domestic revenue fell from KRW 47.1bn to KRW 45.3bn, and Russia from KRW 18.7bn to KRW 12.3bn. Japan stopped growing, going from KRW 36.8bn in 1Q to KRW 36.0bn in 2Q.</p>
+    <p><b>27.</b> The company cites a supply disruption of PP containers for sunscreen, war damage to the warehouse of its Russian customer Wildberries, and slowing growth at Qoo10 in Japan. If the containers were short, sales will recover in the second half; if the channels are saturated, they will not.</p>
+    <p><b>28.</b> In the first half a new Customer A appeared, accounting for 10.1% of revenue (KRW 36.2bn), but who it is has not been disclosed. What it means depends on whether it is Costco, a Japanese vendor or a Russian distributor.</p>
+  </div>
+  <div class="section" id="es2">
+    <h2><span class="num">2</span>Expected return</h2>
+    <p><b>29.</b> That is the revenue story. Now let&#x27;s work out the return you would get buying at today&#x27;s price.</p>
+    <p><b>30.</b> In 1972 Warren Buffett bought See&#x27;s Candies for $25 million. The company&#x27;s net tangible assets were $8 million, so he paid more than three times book.</p>
+    <p><b>31.</b> Buffett explained that price with ROE. See&#x27;s was earning 25% after tax on net tangible assets with no debt, and because businesses like that are rare, it was worth paying more than book.</p>
+    <p><b>32.</b> Broker reports usually set a price target by multiplying next year&#x27;s earnings by some P/E. Here, instead of a P/E multiple, I calculate d&#x27;Alba Global&#x27;s expected return the way Buffett bought See&#x27;s Candies.</p>
+    <p><b>33.</b> The calculation is simple. Assuming d&#x27;Alba Global&#x27;s ROE holds for the next N years, I look at what annual return that leaves.</p>
+    <p><b>34.</b> At the September 11 close of KRW 167,600, d&#x27;Alba Global trades at 8.32x book value (KRW 20,155 per share). ROE for 2026–2028, drawn from the average earnings estimates of 10 brokers, averages 49%.</p>
+    <p><b>35.</b> The key variables are what ROE to assume and how many years it lasts. So I split it into two cases, Base and Bull.</p>
+    <p><b>36.</b> Base is ROE of 49% sustained for 5 years. It assumes the level lasts about two years beyond 2028, where the broker estimates end, and the expected return is 8.0% a year.</p>
+    <p><b>37.</b> Bull is ROE of 52% sustained for 7 years. This is the case where overseas store expansion turns into reorders and the accumulated cash is also put to work for shareholders; the expected return is 25.8% a year.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig5-en.png" alt="Expected annual return at KRW 167,600: 8.0% in the Base case (ROE 49% for 5 years) and 25.8% in the Bull case (ROE 52% for 7 years), against a 10% required return." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>38.</b> The expected return at today&#x27;s price can be seen as a band of 8–26% a year. Under Base it falls slightly short of 10% a year; under Bull it clears 10% comfortably.</p>
+    <p><b>39.</b> This band ultimately depends on how long ROE holds up. To judge that, we first need to know why ROE has been so high.</p>
+    <p><b>40.</b> d&#x27;Alba Global&#x27;s ROE was 52.6% in 2025 and 49.4% on a trailing four-quarter basis. In business terms there are two reasons.</p>
+    <p><b>41.</b> The first is that it sells at high prices. Direct online sales to consumers on Amazon and TikTok Shop are large: of KRW 358.1bn in first-half revenue, KRW 171.06bn was export B2C online. Because the consumer price is booked as revenue as is, gross margin reaches 76.8%.</p>
+    <p><b>42.</b> The second is that revenue grew fast. Revenue rose 38.3% in 2023, 53.9% in 2024 and 68.2% in 2025, while operating margin held in the 19% range. With margins steady and revenue scaling rapidly, ROE held up even as equity grew.</p>
+    <p><b>43.</b> Charlie Munger often said, &quot;All I want to know is where I&#x27;m going to die, so I&#x27;ll never go there.&quot; Inverting the question that way, ROE breaks when these two reasons disappear.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig6-en.png" alt="Cosmetics exports, Jan–Nov 2025: Korea $10.3bn vs China $3.99bn, though China grew 18% a year in 2020–2024 against Korea&#x27;s 6%." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>44.</b> The first scenario is Chinese products entering the market. In January–November 2025, cosmetics exports were $3.99bn for China and $10.3bn for Korea, still a 2.6x gap. But from 2020 to 2024 China&#x27;s exports grew 18% a year on average, three times Korea&#x27;s 6%, and there are reports that Ulta in the US has started bringing in Chinese beauty brands.</p>
+    <p><b>45.</b> What made K-beauty work in the US was that prices felt affordable for the quality. If Chinese products offer similar quality at lower prices, it becomes hard to keep charging full consumer prices on Amazon and TikTok Shop.</p>
+    <p><b>46.</b> The second scenario is revenue growth breaking. As we saw, current revenue growth includes initial orders shipped while stores are being added. If store expansion ends and reorders don&#x27;t follow, revenue growth breaks, and earnings can&#x27;t keep pace with the growth of equity.</p>
+    <p><b>47.</b> This scenario should be checkable through 4Q North America and Europe revenue. If it falls below 2Q&#x27;s KRW 55.3bn in 4Q, when the Costco rollout ends, it points to growth breaking; if it tops KRW 70.0bn, it points to reorders sticking and revenue continuing to grow fast.</p>
+  </div>
+  <div class="section" id="es3">
+    <h2><span class="num">3</span>Bottom line</h2>
+    <p>d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year, from KRW 18.7bn to KRW 55.3bn, but because stores are still being added, it mixes the volume that filled shelves for the first time with Prime Day revenue that was pulled forward. Calculated the way Buffett bought See&#x27;s Candies, the expected return at today&#x27;s price is 8.0% a year under Base, where ROE of 49% lasts 5 years, and 25.8% a year under Bull, where ROE of 52% lasts 7 years. ROE was high because the company sold products made at low cost directly to consumers at high prices while revenue grew fast. However, if Chinese products entering the market shake that high-price model and reorders also falter, today&#x27;s ROE will be hard to sustain and the expected return could turn negative. 4Q North America and Europe revenue is worth monitoring.</p>
+  </div>
+</article>
+
+<!-- ==================== PRICE CHART (interactive, self-contained) ==================== -->
+<div class="section" id="price-chart">
+  <h2><span class="num">₩</span><span class="ct-ko" hidden>달바글로벌(483650) 주가 차트</span><span class="ct-en" hidden>d&#x27;Alba Global (483650) Price Chart</span></h2>
+  <div class="sub-h"><span class="ct-ko" hidden>인터랙티브 일봉 차트 · 마우스로 줌·이동 · 2026-09-16 기준 스냅샷</span><span class="ct-en" hidden>Interactive daily chart · zoom &amp; pan with the mouse · snapshot as of 2026-09-16</span></div>
+  <div class="chart-range">
+    <button type="button" data-r="1" onclick="setRange(1)">1M</button>
+    <button type="button" data-r="3" onclick="setRange(3)">3M</button>
+    <button type="button" data-r="6" onclick="setRange(6)">6M</button>
+    <button type="button" data-r="12" class="active" onclick="setRange(12)">1Y</button>
+    <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
+  </div>
+  <div id="price-chart-box"></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-09-16 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 기대수익률 계산에 쓴 2026-09-11 종가 167,600원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-09-16 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the KRW 167,600 close of 2026-09-11 used in the expected-return calculation.</span></div>
+</div>
+
+<div class="disclaimer">
+  <div class="ct-ko" hidden>
+    <h3>면책 조항 (Disclaimer)</h3>
+    <p><b>기준일</b> — 최초작성 2026-09-14. 본문의 모든 수치는 2026-09-11 종가 및 그 시점까지 공시된 자료 기준이며, 이후의 주가·실적·공시 변동은 반영돼 있지 않습니다.</p>
+    <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
+    <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
+    <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
+  </div>
+  <div class="ct-en" hidden>
+    <h3>Disclaimer</h3>
+    <p><b>As of</b> — Originally written September 14, 2026. All figures in this report are based on the September 11, 2026 close and on disclosures available as of that date; subsequent changes in price, earnings, or filings are not reflected.</p>
+    <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
+    <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
+    <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
+  </div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script src="./chart-data.js"></script>
+<script>
+  var TOC = {
+    en: [['es1','1 · Revenue'],['es2','2 · Return'],['es3','3 · Bottom line']],
+    ko: [['ks1','1 · 매출 이야기'],['ks2','2 · 기대수익률'],['ks3','3 · 한줄 코멘트']]
+  };
+  function setLang(l) {
+    if (l !== 'ko') l = 'en';
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.getElementById('lang-ko').hidden = (l !== 'ko');
+    document.documentElement.setAttribute('lang', l);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === l);
+    }
+    var koEls = document.querySelectorAll('.ct-ko'), enEls = document.querySelectorAll('.ct-en');
+    for (var k = 0; k < koEls.length; k++) koEls[k].hidden = (l !== 'ko');
+    for (var m = 0; m < enEls.length; m++) enEls[m].hidden = (l !== 'en');
+    var toc = document.getElementById('toc');
+    var html = '';
+    for (var j = 0; j < TOC[l].length; j++) {
+      html += '<a href="#' + TOC[l][j][0] + '">' + TOC[l][j][1] + '</a>';
+    }
+    toc.innerHTML = html;
+    try { localStorage.setItem('hs-lang', l); } catch (e) {}
+  }
+  (function () {
+    var l = null;
+    try { l = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (!l) { try { l = localStorage.getItem('hs-lang'); } catch (e) {} }
+    if (!l) { l = ((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en'; }
+    setLang(l);
+    initChart();
+  })();
+
+  var _chart, _series, _data;
+  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function setRange(months){
+    var btns = document.querySelectorAll('.chart-range button');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-r')===String(months));
+    if(!_chart||!_data||!_data.length) return;
+    var n = _data.length;
+    var bars = Math.round(months * 21); // ~21 trading days per month
+    var from = Math.max(0, n - bars);
+    try { _chart.timeScale().setVisibleLogicalRange({ from: from - 0.5, to: n - 0.5 }); } catch(e) {}
+  }
+  function initChart(){
+    if (typeof LightweightCharts === 'undefined' || !window.OHLC) return;
+    var box = document.getElementById('price-chart-box');
+    var sym = window.CURSYM || '₩';
+    _data = window.OHLC.map(function(d){ return { time:d.t, open:d.o, high:d.h, low:d.l, close:d.c }; });
+    _chart = LightweightCharts.createChart(box, {
+      height: 460, autoSize: true,
+      layout: { background:{ color:'transparent' }, textColor: cssVar('--ink-soft') || '#3f4433', fontFamily: "'Pretendard', -apple-system, sans-serif" },
+      grid: { vertLines:{ color: cssVar('--line') }, horzLines:{ color: cssVar('--line') } },
+      rightPriceScale: { borderColor: cssVar('--line-2') },
+      timeScale: { borderColor: cssVar('--line-2'), timeVisible:false },
+      crosshair: { mode: 1 },
+      localization: {
+        locale: (document.documentElement.getAttribute('lang')==='ko') ? 'ko-KR' : 'en-US',
+        priceFormatter: function(p){ var dd = window.PXDEC || 0; return sym + p.toLocaleString('en-US', { minimumFractionDigits: dd, maximumFractionDigits: dd }); }
+      }
+    });
+    var up = cssVar('--pos') || '#2e9e5b', down = cssVar('--neg') || '#c05b41';
+    _series = _chart.addCandlestickSeries({
+      priceFormat: { type: 'price', precision: window.PXDEC || 0, minMove: window.PXDEC ? Math.pow(10, -window.PXDEC) : 1 },
+      upColor: up, downColor: down, borderUpColor: up, borderDownColor: down, wickUpColor: up, wickDownColor: down
+    });
+    _series.setData(_data);
+    if (window.REFPX) {
+      _series.createPriceLine({ price: window.REFPX, color: cssVar('--brand'), lineStyle: 2, lineWidth: 1, axisLabelVisible: true, title: window.REFLABEL || '' });
+    }
+    _chart.timeScale().fitContent();
+    window.addEventListener('resize', function(){ _chart.timeScale().fitContent(); });
+  }
+</script>
+</body>
+</html>
