@@ -8,11 +8,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  if (location.hostname !== 'henryshin.github.io') window['ga-disable-G-1NSTL7K368'] = true; // skip local/preview visits
   gtag('config', 'G-1NSTL7K368');
 </script>
 <!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
 <script>
 (function(){
+  if (location.hostname !== 'henryshin.github.io') return; // local/preview visits are never counted
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
   var kst = new Date(Date.now() + 9 * 3600 * 1000);
   var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());

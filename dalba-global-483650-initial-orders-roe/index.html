@@ -8,11 +8,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  if (location.hostname !== 'henryshin.github.io') window['ga-disable-G-1NSTL7K368'] = true; // skip local/preview visits
   gtag('config', 'G-1NSTL7K368');
 </script>
 <!-- Simple visit counter (abacus.jasoncameron.dev) -- today = KST calendar day, refresh-safe -->
 <script>
 (function(){
+  if (location.hostname !== 'henryshin.github.io') return; // local/preview visits are never counted
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
   var kst = new Date(Date.now() + 9 * 3600 * 1000);
   var today = kst.getUTCFullYear() + '-' + pad(kst.getUTCMonth() + 1) + '-' + pad(kst.getUTCDate());
@@ -56,7 +58,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>d&#x27;Alba Global (483650, KOSPI) — How Did North America and Europe Sales Triple in a Year?</title>
-<meta name="description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+<meta name="description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 160,100 (7.94x book), the expected return is 8.9% a year if 49% ROE lasts 5 years and 26.6% if 52% ROE lasts 7 years.">
 <meta name="keywords" content="d&#x27;Alba Global, 달바글로벌, 483650, KOSPI, d&#x27;Alba, K-beauty, Korean cosmetics, Costco, initial stocking orders, reorders, Amazon, TikTok Shop, ROE PBR expected return, See&#x27;s Candies">
 <link rel="canonical" href="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/">
 <!-- hreflang:auto (add_hreflang.py) -->
@@ -80,21 +82,21 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="d&#x27;Alba Global (483650) Research Note">
-<meta property="og:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+<meta property="og:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 160,100 (7.94x book), the expected return is 8.9% a year if 49% ROE lasts 5 years and 26.6% if 52% ROE lasts 7 years.">
 <meta property="og:url" content="https://henryshin.github.io/research/dalba-global-483650-initial-orders-roe/">
 <meta property="og:site_name" content="Henry Shin Research">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="d&#x27;Alba Global (483650) Research Note">
-<meta name="twitter:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.">
+<meta name="twitter:description" content="d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 160,100 (7.94x book), the expected return is 8.9% a year if 49% ROE lasts 5 years and 26.6% if 52% ROE lasts 7 years.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AnalysisNewsArticle",
   "headline": "d'Alba Global (483650, KOSPI) — How Did North America and Europe Sales Triple in a Year?",
-  "description": "d'Alba Global's North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 167,600 (8.32x book), the expected return is 8.0% a year if 49% ROE lasts 5 years and 25.8% if 52% ROE lasts 7 years.",
+  "description": "d'Alba Global's North America and Europe revenue roughly tripled in a year to KRW 55.3bn, but initial stocking orders for newly added stores and a Prime Day pulled into 2Q are mixed into that number. Export B2C online drove 70% of 1H26 revenue growth. At KRW 160,100 (7.94x book), the expected return is 8.9% a year if 49% ROE lasts 5 years and 26.6% if 52% ROE lasts 7 years.",
   "datePublished": "2026-09-16",
   "dateModified": "2026-09-16",
   "inLanguage": [
@@ -303,19 +305,19 @@
     <p class="lede">달바글로벌 반기보고서와 8월 증권사 리포트를 보다가, 숫자 하나가 눈에 걸려서 정리해 봅니다.</p>
     <div class="meta">
       <span>최초작성 2026-09-14 (v2.10)</span>
-      <span>기준주가 167,600원 (2026-09-11 종가)</span>
+      <span>기준주가 160,100원 (2026-09-16 종가)</span>
     </div>
   </div>
 
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="label">기준주가</div>
-      <div class="value">167,600<span class="unit">원</span></div>
-      <div class="sub">2026-09-11 종가</div>
+      <div class="value">160,100<span class="unit">원</span></div>
+      <div class="sub">2026-09-16 종가</div>
     </div>
     <div class="kpi-card">
       <div class="label">주가순자산비율</div>
-      <div class="value">8.32<span class="unit">배</span></div>
+      <div class="value">7.94<span class="unit">배</span></div>
       <div class="sub">BPS 20,155원</div>
     </div>
     <div class="kpi-card">
@@ -325,8 +327,8 @@
     </div>
     <div class="kpi-card">
       <div class="label">기대수익률 Base</div>
-      <div class="value">연 8.0<span class="unit">%</span></div>
-      <div class="sub">ROE 49%·5년 · Bull 연 25.8%</div>
+      <div class="value">연 8.9<span class="unit">%</span></div>
+      <div class="sub">ROE 49%·5년 · Bull 연 26.6%</div>
     </div>
   </div>
 
@@ -373,12 +375,12 @@
     <p><b>31.</b> 버핏은 이 가격을 ROE로 설명했음. 씨즈캔디는 빚 없이 순유형자산 대비 세후 25%를 벌고 있었고, 이런 회사는 드물어서 장부가보다 비싸게 줄 만하다는 것임.</p>
     <p><b>32.</b> 증권사 리포트는 보통 내년 이익에 PER 몇 배를 곱해서 목표주가를 냄. 여기서는 PER 멀티플 대신, 버핏이 씨즈캔디를 샀던 방식으로 달바글로벌의 기대수익률을 계산해 봄.</p>
     <p><b>33.</b> 계산은 단순함. 달바글로벌의 ROE가 앞으로 N년간 유지된다고 가정했을 때, 1년에 몇 %가 남는지를 봄.</p>
-    <p><b>34.</b> 달바글로벌은 9월 11일 종가 167,600원 기준으로 장부가(주당 20,155원)의 8.32배임. 증권사 10곳의 평균 이익으로 그린 2026~2028년 ROE는 평균 49%임.</p>
+    <p><b>34.</b> 달바글로벌은 9월 16일 종가 160,100원 기준으로 장부가(주당 20,155원)의 7.94배임. 증권사 10곳의 평균 이익으로 그린 2026~2028년 ROE는 평균 49%임.</p>
     <p><b>35.</b> 핵심변수는 ROE를 몇 %로 보느냐, 그 ROE가 몇 년 이어지느냐임. 그래서 Base와 Bull 두 경우로 나눠 봄.</p>
-    <p><b>36.</b> Base는 ROE 49%가 5년 유지되는 경우임. 증권사 추정이 있는 2028년 뒤로 2년 정도 더 이어진다고 보는 것이고, 이때 기대수익률은 연 8.0%임.</p>
-    <p><b>37.</b> Bull은 ROE 52%가 7년 유지되는 경우임. 해외 매장 확대가 재발주로 이어지고 쌓인 현금도 주주 몫으로 굴러가는 경우이고, 이때 기대수익률은 연 25.8%임.</p>
+    <p><b>36.</b> Base는 ROE 49%가 5년 유지되는 경우임. 증권사 추정이 있는 2028년 뒤로 2년 정도 더 이어진다고 보는 것이고, 이때 기대수익률은 연 8.9%임.</p>
+    <p><b>37.</b> Bull은 ROE 52%가 7년 유지되는 경우임. 해외 매장 확대가 재발주로 이어지고 쌓인 현금도 주주 몫으로 굴러가는 경우이고, 이때 기대수익률은 연 26.6%임.</p>
     <figure style="margin:18px 0;text-align:center"><img src="assets/fig5-ko.png" alt="그림 5 — 지금 가격의 기대수익률" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
-    <p><b>38.</b> 지금 가격의 기대수익률은 연 8~26% 밴드로 볼 수 있음. Base면 연 10%에 조금 못 미치고, Bull이면 넉넉히 넘는 가격임.</p>
+    <p><b>38.</b> 지금 가격의 기대수익률은 연 9~27% 밴드로 볼 수 있음. Base면 연 10%에 조금 못 미치고, Bull이면 넉넉히 넘는 가격임.</p>
     <p><b>39.</b> 이 밴드는 결국 ROE가 얼마나 오래 버티느냐에 달려 있음. 그러려면 먼저 지금까지 ROE가 왜 높았는지를 알아야 함.</p>
     <p><b>40.</b> 달바글로벌의 ROE는 2025년 52.6%, 최근 4개 분기 기준 49.4%임. 사업으로 보면 이유는 두 가지임.</p>
     <p><b>41.</b> 첫번째는 비싸게 파는 구조라는 점임. 아마존·틱톡샵 같은 온라인에서 소비자에게 직접 파는 매출이 커서, 상반기 매출 3,581억원 중 1,710.6억원이 수출 B2C 온라인이었음. 소비자가격을 그대로 매출로 인식하니 매출총이익률이 76.8%까지 나옴.</p>
@@ -389,10 +391,11 @@
     <p><b>45.</b> K-뷰티가 미국에서 먹힌 건 품질에 비해 가격이 부담 없다는 점이었음. 중국 제품이 비슷한 품질을 더 싼 값에 들고 오면, 아마존·틱톡샵에서 소비자가격을 그대로 받기가 어려워짐.</p>
     <p><b>46.</b> 두번째 시나리오는 매출 성장이 꺾이는 것임. 앞에서 본 것처럼 지금의 매출 성장에는 매장이 늘어나는 동안의 초도 물량이 섞여 있음. 매장 확대가 끝났는데 재발주가 붙지 않으면 매출 성장이 꺾이고, 이익도 자본이 쌓이는 속도를 못 따라감.</p>
     <p><b>47.</b> 이 시나리오는 4분기 북미·유럽 매출로 확인 가능할 것으로 보임. 코스트코 입점 확대가 끝나는 4분기에 2분기 553억원 아래로 내려가면 성장이 꺾이는 쪽이고, 700억원을 넘으면 재발주가 붙어 매출이 계속 빨리 늘어나는 쪽임.</p>
+    <p class="filter-note">주: 원고는 2026-09-11 종가 167,600원(PBR 8.32배, Base 연 8.0%·Bull 연 25.8%) 기준이며, 게시본은 2026-09-16 종가 160,100원으로 PBR·기대수익률만 다시 계산함. ROE·유지 기간 가정은 원고 그대로임.</p>
   </div>
   <div class="section" id="ks3">
     <h2><span class="num">3</span>한줄 코멘트</h2>
-    <p>달바글로벌 북미·유럽 매출은 1년 새 187억원에서 553억원으로 약 3배가 됐지만, 매장이 늘어나는 구간이라 매대를 처음 채운 물량과 앞당겨진 프라임데이 매출이 섞여 있음. 버핏이 씨즈캔디를 산 방식으로 계산하면, 지금 가격의 기대수익률은 ROE 49%가 5년 유지되는 Base에서 연 8.0%, ROE 52%가 7년 유지되는 Bull에서 연 25.8%임. 그 ROE가 높았던 건 낮은 원가로 만든 제품을 소비자에게 직접 비싸게 팔면서 매출이 빨리 늘었기 때문임. 다만, 중국 제품 시장 진입으로 비싸게 파는 구조가 흔들리고 재발주까지 꺾이면, 현재 수준의 ROE는 유지되기 어렵고 기대수익률은 마이너스가 될 수 있음. 4분기 북미·유럽 매출을 모니터링할 필요가 있음.</p>
+    <p>달바글로벌 북미·유럽 매출은 1년 새 187억원에서 553억원으로 약 3배가 됐지만, 매장이 늘어나는 구간이라 매대를 처음 채운 물량과 앞당겨진 프라임데이 매출이 섞여 있음. 버핏이 씨즈캔디를 산 방식으로 계산하면, 지금 가격의 기대수익률은 ROE 49%가 5년 유지되는 Base에서 연 8.9%, ROE 52%가 7년 유지되는 Bull에서 연 26.6%임. 그 ROE가 높았던 건 낮은 원가로 만든 제품을 소비자에게 직접 비싸게 팔면서 매출이 빨리 늘었기 때문임. 다만, 중국 제품 시장 진입으로 비싸게 파는 구조가 흔들리고 재발주까지 꺾이면, 현재 수준의 ROE는 유지되기 어렵고 기대수익률은 마이너스가 될 수 있음. 4분기 북미·유럽 매출을 모니터링할 필요가 있음.</p>
   </div>
 </article>
 
@@ -405,19 +408,19 @@
     <p class="lede">I was going through d&#x27;Alba Global&#x27;s interim report and the August broker reports when one number caught my eye, so I wrote this up.</p>
     <div class="meta">
       <span>Originally written 14 Sep 2026 (v2.10)</span>
-      <span>Reference price KRW 167,600 (11 Sep 2026 close)</span>
+      <span>Reference price KRW 160,100 (16 Sep 2026 close)</span>
     </div>
   </div>
 
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="label">Reference price</div>
-      <div class="value">167,600<span class="unit">KRW</span></div>
-      <div class="sub">11 Sep 2026 close</div>
+      <div class="value">160,100<span class="unit">KRW</span></div>
+      <div class="sub">16 Sep 2026 close</div>
     </div>
     <div class="kpi-card">
       <div class="label">Price / book</div>
-      <div class="value">8.32<span class="unit">x</span></div>
+      <div class="value">7.94<span class="unit">x</span></div>
       <div class="sub">BPS KRW 20,155</div>
     </div>
     <div class="kpi-card">
@@ -427,8 +430,8 @@
     </div>
     <div class="kpi-card">
       <div class="label">Expected return, Base</div>
-      <div class="value">8.0<span class="unit">% p.a.</span></div>
-      <div class="sub">ROE 49% for 5 yrs · Bull 25.8% p.a.</div>
+      <div class="value">8.9<span class="unit">% p.a.</span></div>
+      <div class="sub">ROE 49% for 5 yrs · Bull 26.6% p.a.</div>
     </div>
   </div>
 
@@ -475,12 +478,12 @@
     <p><b>31.</b> Buffett explained that price with ROE. See&#x27;s was earning 25% after tax on net tangible assets with no debt, and because businesses like that are rare, it was worth paying more than book.</p>
     <p><b>32.</b> Broker reports usually set a price target by multiplying next year&#x27;s earnings by some P/E. Here, instead of a P/E multiple, I calculate d&#x27;Alba Global&#x27;s expected return the way Buffett bought See&#x27;s Candies.</p>
     <p><b>33.</b> The calculation is simple. Assuming d&#x27;Alba Global&#x27;s ROE holds for the next N years, I look at what annual return that leaves.</p>
-    <p><b>34.</b> At the September 11 close of KRW 167,600, d&#x27;Alba Global trades at 8.32x book value (KRW 20,155 per share). ROE for 2026–2028, drawn from the average earnings estimates of 10 brokers, averages 49%.</p>
+    <p><b>34.</b> At the September 16 close of KRW 160,100, d&#x27;Alba Global trades at 7.94x book value (KRW 20,155 per share). ROE for 2026–2028, drawn from the average earnings estimates of 10 brokers, averages 49%.</p>
     <p><b>35.</b> The key variables are what ROE to assume and how many years it lasts. So I split it into two cases, Base and Bull.</p>
-    <p><b>36.</b> Base is ROE of 49% sustained for 5 years. It assumes the level lasts about two years beyond 2028, where the broker estimates end, and the expected return is 8.0% a year.</p>
-    <p><b>37.</b> Bull is ROE of 52% sustained for 7 years. This is the case where overseas store expansion turns into reorders and the accumulated cash is also put to work for shareholders; the expected return is 25.8% a year.</p>
-    <figure style="margin:18px 0;text-align:center"><img src="assets/fig5-en.png" alt="Expected annual return at KRW 167,600: 8.0% in the Base case (ROE 49% for 5 years) and 25.8% in the Bull case (ROE 52% for 7 years), against a 10% required return." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
-    <p><b>38.</b> The expected return at today&#x27;s price can be seen as a band of 8–26% a year. Under Base it falls slightly short of 10% a year; under Bull it clears 10% comfortably.</p>
+    <p><b>36.</b> Base is ROE of 49% sustained for 5 years. It assumes the level lasts about two years beyond 2028, where the broker estimates end, and the expected return is 8.9% a year.</p>
+    <p><b>37.</b> Bull is ROE of 52% sustained for 7 years. This is the case where overseas store expansion turns into reorders and the accumulated cash is also put to work for shareholders; the expected return is 26.6% a year.</p>
+    <figure style="margin:18px 0;text-align:center"><img src="assets/fig5-en.png" alt="Expected annual return at KRW 160,100: 8.9% in the Base case (ROE 49% for 5 years) and 26.6% in the Bull case (ROE 52% for 7 years), against a 10% required return." loading="lazy" style="max-width:100%;height:auto;border-radius:8px"></figure>
+    <p><b>38.</b> The expected return at today&#x27;s price can be seen as a band of 9–27% a year. Under Base it falls slightly short of 10% a year; under Bull it clears 10% comfortably.</p>
     <p><b>39.</b> This band ultimately depends on how long ROE holds up. To judge that, we first need to know why ROE has been so high.</p>
     <p><b>40.</b> d&#x27;Alba Global&#x27;s ROE was 52.6% in 2025 and 49.4% on a trailing four-quarter basis. In business terms there are two reasons.</p>
     <p><b>41.</b> The first is that it sells at high prices. Direct online sales to consumers on Amazon and TikTok Shop are large: of KRW 358.1bn in first-half revenue, KRW 171.06bn was export B2C online. Because the consumer price is booked as revenue as is, gross margin reaches 76.8%.</p>
@@ -491,10 +494,11 @@
     <p><b>45.</b> What made K-beauty work in the US was that prices felt affordable for the quality. If Chinese products offer similar quality at lower prices, it becomes hard to keep charging full consumer prices on Amazon and TikTok Shop.</p>
     <p><b>46.</b> The second scenario is revenue growth breaking. As we saw, current revenue growth includes initial orders shipped while stores are being added. If store expansion ends and reorders don&#x27;t follow, revenue growth breaks, and earnings can&#x27;t keep pace with the growth of equity.</p>
     <p><b>47.</b> This scenario should be checkable through 4Q North America and Europe revenue. If it falls below 2Q&#x27;s KRW 55.3bn in 4Q, when the Costco rollout ends, it points to growth breaking; if it tops KRW 70.0bn, it points to reorders sticking and revenue continuing to grow fast.</p>
+    <p class="filter-note">Note: the original draft used the 11 Sep 2026 close of KRW 167,600 (8.32x book; Base 8.0%, Bull 25.8% a year). This page recalculates only price-to-book and expected returns at the 16 Sep 2026 close of KRW 160,100; the ROE and holding-period assumptions are unchanged.</p>
   </div>
   <div class="section" id="es3">
     <h2><span class="num">3</span>Bottom line</h2>
-    <p>d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year, from KRW 18.7bn to KRW 55.3bn, but because stores are still being added, it mixes the volume that filled shelves for the first time with Prime Day revenue that was pulled forward. Calculated the way Buffett bought See&#x27;s Candies, the expected return at today&#x27;s price is 8.0% a year under Base, where ROE of 49% lasts 5 years, and 25.8% a year under Bull, where ROE of 52% lasts 7 years. ROE was high because the company sold products made at low cost directly to consumers at high prices while revenue grew fast. However, if Chinese products entering the market shake that high-price model and reorders also falter, today&#x27;s ROE will be hard to sustain and the expected return could turn negative. 4Q North America and Europe revenue is worth monitoring.</p>
+    <p>d&#x27;Alba Global&#x27;s North America and Europe revenue roughly tripled in a year, from KRW 18.7bn to KRW 55.3bn, but because stores are still being added, it mixes the volume that filled shelves for the first time with Prime Day revenue that was pulled forward. Calculated the way Buffett bought See&#x27;s Candies, the expected return at today&#x27;s price is 8.9% a year under Base, where ROE of 49% lasts 5 years, and 26.6% a year under Bull, where ROE of 52% lasts 7 years. ROE was high because the company sold products made at low cost directly to consumers at high prices while revenue grew fast. However, if Chinese products entering the market shake that high-price model and reorders also falter, today&#x27;s ROE will be hard to sustain and the expected return could turn negative. 4Q North America and Europe revenue is worth monitoring.</p>
   </div>
 </article>
 
@@ -510,20 +514,20 @@
     <button type="button" data-r="24" onclick="setRange(24)">2Y</button>
   </div>
   <div id="price-chart-box"></div>
-  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-09-16 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 기대수익률 계산에 쓴 2026-09-11 종가 167,600원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-09-16 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the KRW 167,600 close of 2026-09-11 used in the expected-return calculation.</span></div>
+  <div class="filter-note"><span class="ct-ko" hidden><b>주:</b> 정적 스냅샷(2026-09-16 기준, Yahoo Finance 일봉). 실시간이 아니며 정보 제공용임. 기준선은 본문 기대수익률 계산에 쓴 2026-09-16 종가 160,100원임.</span><span class="ct-en" hidden><b>Note:</b> static snapshot as of 2026-09-16 (Yahoo Finance daily). Not real-time; for information only. The reference line marks the KRW 160,100 close of 2026-09-16 used in the expected-return calculation.</span></div>
 </div>
 
 <div class="disclaimer">
   <div class="ct-ko" hidden>
     <h3>면책 조항 (Disclaimer)</h3>
-    <p><b>기준일</b> — 최초작성 2026-09-14. 본문의 모든 수치는 2026-09-11 종가 및 그 시점까지 공시된 자료 기준이며, 이후의 주가·실적·공시 변동은 반영돼 있지 않습니다.</p>
+    <p><b>기준일</b> — 최초작성 2026-09-14. 본문의 모든 수치는 2026-09-16 종가 및 그 시점까지 공시된 자료 기준이며, 이후의 주가·실적·공시 변동은 반영돼 있지 않습니다.</p>
     <p>본 보고서는 작성자 개인의 견해를 담은 <b>정보 제공용 자료</b>이며, 특정 종목의 매수·매도·보유를 권유하거나 유도하기 위한 <b>투자 자문 또는 투자 권유가 아닙니다.</b> 작성자는 공인된 투자자문업자·금융투자업자가 아닙니다.</p>
     <p>본 자료는 공개된 자료(DART 공시, 금융정보 제공사, 언론 등)를 바탕으로 작성되었으나 그 <b>정확성·완전성·적시성을 보장하지 않으며</b>, 수치·전망·추정치는 오류를 포함할 수 있고 사전 고지 없이 변경될 수 있습니다. 미래 실적·목표주가 등 전망 정보는 불확실성을 내포하며 실제 결과와 다를 수 있습니다.</p>
     <p>작성자는 본 자료에서 다룬 종목을 보유하고 있거나 향후 매매할 수 있습니다. 모든 투자의 <b>최종 판단과 책임은 투자자 본인</b>에게 있으며, 작성자는 본 자료의 이용으로 발생하는 어떠한 직·간접적 손실에 대해서도 책임지지 않습니다. 투자 전 반드시 스스로 확인(DYOR)하시고 필요 시 전문가와 상담하시기 바랍니다.</p>
   </div>
   <div class="ct-en" hidden>
     <h3>Disclaimer</h3>
-    <p><b>As of</b> — Originally written September 14, 2026. All figures in this report are based on the September 11, 2026 close and on disclosures available as of that date; subsequent changes in price, earnings, or filings are not reflected.</p>
+    <p><b>As of</b> — Originally written September 14, 2026. All figures in this report are based on the September 16, 2026 close and on disclosures available as of that date; subsequent changes in price, earnings, or filings are not reflected.</p>
     <p>This report reflects the author's personal opinions and is provided <b>for informational purposes only.</b> It is <b>not investment advice, nor a recommendation or solicitation</b> to buy, sell, or hold any security. The author is not a licensed investment adviser or financial professional.</p>
     <p>The material is based on publicly available sources (regulatory filings, financial-data providers, news, etc.) but its <b>accuracy, completeness, and timeliness are not guaranteed</b>; figures, projections, and estimates may contain errors and are subject to change without notice. Forward-looking statements such as forecasts and price targets involve uncertainty and may differ materially from actual results.</p>
     <p>The author may hold or may in the future trade positions in the securities discussed. <b>All investment decisions and their consequences are solely the reader's own responsibility;</b> the author accepts no liability for any direct or indirect loss arising from the use of this material. Always do your own research (DYOR) and consult a qualified professional where appropriate.</p>
